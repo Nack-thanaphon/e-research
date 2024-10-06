@@ -1,3 +1,4 @@
+<?php
 class Paginator {
     public $items_per_page;
     public $items_total;
@@ -104,4 +105,13 @@ class Paginator {
     public function display_pages() {
         return $this->return;
     }
+
+    function utf8_substr($str, $start, $length = null) {
+        if ($length === null) {
+            return mb_substr($str, $start);
+        } else {
+            return mb_substr($str, $start, $length);
+        }
+    }
+    
 }

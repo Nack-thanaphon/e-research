@@ -540,12 +540,12 @@ include("./include/config_db.php");
 
 				<div id="tblResponsive">
 
-					<table class="table table-striped table-bordered sticky-header" id="table-1" style="background: url('./images/<?php if (defined('__EC_PICHOME__')) {
-																																		echo __EC_PICHOME__;
-																																	} ?>') repeat-y; background-attachment:fixed; background-size:contain;height:100%;width:100%;">
+					<table class="table table-striped table-bordered sticky-header" id="table-1"
+						style="background: url('./images/<?php if (defined('__EC_PICHOME__')) {
+																echo __EC_PICHOME__;
+															} ?>') repeat-y; background-attachment:fixed; background-size:contain;height:100%;width:100%;">
 						<thead>
-							<tr id="ontop1" style="background-color:#e5e5e5">
-								<th style="vertical-align:middle;text-align:center;" id="ontop3">&nbsp;<a href="index.php?sd=2&sh_order=<?= $sh_order; ?>" target="_parent" style="white-space: nowrap;">ชื่อผลงานวิจัย <?= $a2sort; ?></a>&nbsp;</th>
+							<tr id="ontop1" style="background-color: #e5e5e5;"><th style="vertical-align:middle;text-align:center;" id="ontop3">&nbsp;<a href="index.php?sd=2&sh_order=<?= $sh_order; ?>" target="_parent" style="white-space: nowrap;">ชื่อผลงานวิจัย <?= $a2sort; ?></a>&nbsp;</th>
 								<th style="vertical-align:middle;text-align:center;" id="ontop4">&nbsp;<a href="index.php?sd=4&sh_order=<?= $sh_order; ?>" target="_parent" style="white-space: nowrap;">ภาควิชา/ฝ่าย <?= $a4sort; ?></a>&nbsp;</th>
 								<th style="vertical-align:middle;text-align:center;" id="ontop5">&nbsp;<a href="index.php?sd=5&sh_order=<?= $sh_order; ?>" target="_parent" style="white-space: nowrap;">ส่วนงาน <?= $a5sort; ?></a>&nbsp;</th>
 								<th style="vertical-align:middle;text-align:center;" id="ontop6">&nbsp;<a href="index.php?sd=6&sh_order=<?= $sh_order; ?>" target="_parent" style="white-space: nowrap;">ปีงบประมาณ <?= $a6sort; ?></a>&nbsp;</th>
@@ -684,14 +684,14 @@ include("./include/config_db.php");
 									$thlen = mb_strlen($c_ed_name_th, 'UTF-8');
 									$thlen2 = 100;
 									if ($thlen > $thlen2) {
-										$c_ed_name_th2 = utf8_substr($c_ed_name_th, 0, $thlen2) . "..";
+										$c_ed_name_th2 = $this->utf8_substr($c_ed_name_th, 0, $thlen2) . "..";
 									}
 									$c_ed_name_en = $result["ed_name_en"];
 									$c_ed_name_en2 = $c_ed_name_en;
 									$enlen = mb_strlen($c_ed_name_en, 'UTF-8');
 									$enlen2 = 60;
 									if ($enlen > $enlen2) {
-										$c_ed_name_en2 = utf8_substr($c_ed_name_en, 0, $enlen2) . "..";
+										$c_ed_name_en2 = $this->utf8_substr($c_ed_name_en, 0, $enlen2) . "..";
 									}
 									$c_section_id = $result["section_id"];
 									$c_faculty_id = $result["faculty_id"];
@@ -701,7 +701,7 @@ include("./include/config_db.php");
 									$ttlen = mb_strlen($c_ed_detail, 'UTF-8');
 									$ttlen2 = 70;
 									if ($ttlen > $ttlen2) {
-										$c_ed_detail2 = utf8_substr($c_ed_detail, 0, $ttlen2) . "..";
+										$c_ed_detail2 = $this->utf8_substr($c_ed_detail, 0, $ttlen2) . "..";
 									}
 									$c_ed_counter = $result["ed_counter"];
 
@@ -716,7 +716,7 @@ include("./include/config_db.php");
 										$eslen = mb_strlen($c_es_name, 'UTF-8');
 										$eslen2 = 30;
 										if ($eslen > $eslen2) {
-											$c_es_name2 = utf8_substr($c_es_name, 0, $eslen2) . "..";
+											$c_es_name2 = $this->utf8_substr($c_es_name, 0, $eslen2) . "..";
 										}
 									}
 									$sql_d = "select * from `ers_faculty` where `id`='" . $c_faculty_id . "' ";
@@ -730,7 +730,7 @@ include("./include/config_db.php");
 										$eflen = mb_strlen($c_ef_name, 'UTF-8');
 										$eflen2 = 30;
 										if ($eflen > $eflen2) {
-											$c_ef_name2 = utf8_substr($c_ef_name, 0, $eflen2) . "..";
+											$c_ef_name2 = $this->utf8_substr($c_ef_name, 0, $eflen2) . "..";
 										}
 									}
 
@@ -804,7 +804,7 @@ include("./include/config_db.php");
 
 			</div>
 		</div>
-<!-- 
+
 		<div class="row" style="margin:0;padding:0;">
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-7" style="font-size:14px;">
@@ -838,8 +838,8 @@ include("./include/config_db.php");
 			</div>
 
 
-			
-		</div> -->
+
+		</div>
 
 	</div>
 	<div id="ersshow"></div>
