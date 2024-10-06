@@ -152,7 +152,7 @@ function confirmDelete(span_id,id_order,filename,content_id) {
 
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 				<div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 text-right">ผลงานวิจัย&nbsp;:&nbsp;</div>
-				<div class="col-lg-7 col-md-7 col-sm-7 col-xs-7"><?echo $c_ed_name_th." [ID:$doc_id]";?><input type="hidden" name="s_document_id" id="s_document_id" maxlength="120" class="form-control input_width"  value="<?=$doc_id;?>"></div>
+				<div class="col-lg-7 col-md-7 col-sm-7 col-xs-7"><?echo $c_ed_name_th." [ID:$doc_id]";?><input type="hidden" name="s_document_id" id="s_document_id" maxlength="120" class="form-control input_width"  value="<?= $doc_id;?>"></div>
 			  </div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 				<div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 text-right">นักวิจัย&nbsp;:&nbsp;</div>
@@ -294,7 +294,7 @@ function confirmDelete(span_id,id_order,filename,content_id) {
 
 				?>
 
-				<tr style="background-color:<?=$bcolor;?>">
+				<tr style="background-color:<?= $bcolor;?>">
 				<td style="text-align:center;width:100px;min-width:100px;">
 				<?
 				echo "<a href='eresearcher.php?c_id=$c_id&doc_id=$doc_id' style='color:green;font-size:16px;' title='แก้ไข'><span class='glyphicon glyphicon-edit'></span>&nbsp;<span style='font-size:14px;'>แก้ไข</span></a>";
@@ -305,9 +305,9 @@ function confirmDelete(span_id,id_order,filename,content_id) {
 				echo "<span id=\"dfile1\"><a href='javascript:void(0)' onclick=\"javascript:confirmDelete('dfile1','".$c_id."','".$c_name."',".$doc_id.")\" style='color:red;font-size:16px;' title='ลบ'><span class='glyphicon glyphicon-trash'></span>&nbsp;<span style='font-size:14px;'>ลบ</span></a></span>";
 				?>
 				</td>
-				<td><?=$c_name;?></td>
-				<td><?=$c_position_name;?></td>
-				<td><?=$c_ratio;?></td>
+				<td><?= $c_name;?></td>
+				<td><?= $c_position_name;?></td>
+				<td><?= $c_ratio;?></td>
 				</tr>
 
 				<?

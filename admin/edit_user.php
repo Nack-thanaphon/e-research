@@ -70,7 +70,7 @@ if(($chk_edit=="1") and (trim($_POST["s_password"]) != "")){
 			//echo "<p align=\"center\"><a href=\"users.php\">กลับหน้าหลัก</a></p><br />";
 			?>
 			<Script language="javascript">
-				alert("User name : <?=$u_name;?> มีอยู่ในระบบแล้ว ไม่สามารถแก้ไขได้");
+				alert("User name : <?= $u_name;?> มีอยู่ในระบบแล้ว ไม่สามารถแก้ไขได้");
 				window.location="users.php";
 			</script>
 			<?
@@ -194,7 +194,7 @@ function check(){
 <div class="container">
 	<div class="row">
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 clearmp">
-		  <div class="col-lg-12 col-md-12 col-sm-12" style="border-bottom:1px solid #89472d;font-size:18px;color:#89472d;"><span class="glyphicon glyphicon-lock"></span>&nbsp;แก้ไขผู้ใช้งาน [ คุณเข้าระบบด้วย <?=$admin;?> ]</div>
+		  <div class="col-lg-12 col-md-12 col-sm-12" style="border-bottom:1px solid #89472d;font-size:18px;color:#89472d;"><span class="glyphicon glyphicon-lock"></span>&nbsp;แก้ไขผู้ใช้งาน [ คุณเข้าระบบด้วย <?= $admin;?> ]</div>
 		  <div class="col-lg-12 col-md-12 col-sm-12" >&nbsp;</div>
 	   </div>
 	</div>

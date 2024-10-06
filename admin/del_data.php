@@ -255,7 +255,7 @@ if($chk_del==1){
 <form name="form1" enctype="multipart/form-data" method="post" action="del_data.php">
      <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
           <tr> 
-            <td align="center" valign="middle" width="100%"><div style="background-color:#ff9900;color:#fff;width:100%;padding:3px;"><h4>ลบข้อมูล&nbsp;<?=$s_caption_1; ?></h4></div></td>
+            <td align="center" valign="middle" width="100%"><div style="background-color:#ff9900;color:#fff;width:100%;padding:3px;"><h4>ลบข้อมูล&nbsp;<?= $s_caption_1; ?></h4></div></td>
           </tr>
 		  <tr>
 			<td>
@@ -264,7 +264,7 @@ if($chk_del==1){
 					<td>&nbsp;</td>
 				</tr>
 				<tr style="color:#ff0000">
-					<td width="100%" align="center"><h4><?=$s_name_1;?> :&nbsp;
+					<td width="100%" align="center"><h4><?= $s_name_1;?> :&nbsp;
 					<?
 					if(!empty($c_id) and ($c_id>0))
 					{

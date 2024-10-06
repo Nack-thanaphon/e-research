@@ -258,11 +258,11 @@ $mysqli->query("update `ers_member_request` set `er_request_read`='1',`er_reques
 			  </div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">หน่วยงานที่สังกัด&nbsp;:&nbsp;</div>
-				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><?=$c_institution;?>&nbsp;<?=$c_institution_name;?></div>
+				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><?= $c_institution;?>&nbsp;<?= $c_institution_name;?></div>
 			  </div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">โทรศัพท์&nbsp;:&nbsp;</div>
-				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><a href='tel:<?=$c_phone;?>' target="_blank" title='<?=$c_phone;?>'><?=$c_phone;?></a></div>
+				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><a href='tel:<?= $c_phone;?>' target="_blank" title='<?= $c_phone;?>'><?= $c_phone;?></a></div>
 			  </div>
 			  <?
 			    $subject_text = "ผลการร้องขอเอกสารผลงานวิจัย ".__EC_NAME__;
@@ -280,11 +280,11 @@ $mysqli->query("update `ers_member_request` set `er_request_read`='1',`er_reques
 			  ?>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">อีเมล&nbsp;:&nbsp;</div>
-				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><a href='mailto:<?=$c_email;?>?subject=<?=$encodedSubject;?>&body=<?=$encodedBody;?>' target='_blank' title="<?=$c_email;?>"><?=$c_email;?></a></div>
+				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><a href='mailto:<?= $c_email;?>?subject=<?= $encodedSubject;?>&body=<?= $encodedBody;?>' target='_blank' title="<?= $c_email;?>"><?= $c_email;?></a></div>
 			  </div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">ที่อยู่&nbsp;:&nbsp;</div>
-				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><?=$c_address;?></div>
+				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><?= $c_address;?></div>
 			  </div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">ผลงานวิจัย&nbsp;:&nbsp;</div>
@@ -297,7 +297,7 @@ $mysqli->query("update `ers_member_request` set `er_request_read`='1',`er_reques
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">ข้อความตอบกลับ&nbsp;:&nbsp;</div>
 				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-				<textarea name="s_er_answer_text" id="s_er_answer_text" rows="5" class="form-control" style="border-radius:5px;border:1px solid #ccc;max-width:500px;" maxlength="500" placeholder="ระบุข้อความรายละเอียด ตอบกลับการขอเอกสารงานวิจัย"><?=$c_er_answer_text;?></textarea>
+				<textarea name="s_er_answer_text" id="s_er_answer_text" rows="5" class="form-control" style="border-radius:5px;border:1px solid #ccc;max-width:500px;" maxlength="500" placeholder="ระบุข้อความรายละเอียด ตอบกลับการขอเอกสารงานวิจัย"><?= $c_er_answer_text;?></textarea>
 				</div>
 			  </div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
@@ -310,8 +310,8 @@ $mysqli->query("update `ers_member_request` set `er_request_read`='1',`er_reques
 							if($c_day==$i) $selected="selected='selected'";
 							else  $selected="";
 						?>
-							<option value="<?=$i;?>" <?=$selected; ?>>
-							  <?=$i;?>
+							<option value="<?= $i;?>" <?= $selected; ?>>
+							  <?= $i;?>
 							</option>
 						<?}?>
 				  </select>
@@ -339,8 +339,8 @@ $mysqli->query("update `ers_member_request` set `er_request_read`='1',`er_reques
 						if($c_year==$yy) $selected_y="selected='selected'";
 						else  $selected_y="";
 					?>
-						<option value="<?=$yy;?>" <?=$selected_y;?>>
-					      <?=$yy+543;?>
+						<option value="<?= $yy;?>" <?= $selected_y;?>>
+					      <?= $yy+543;?>
 						</option>
 					<?}?>
 				  </select>
@@ -391,12 +391,12 @@ $mysqli->query("update `ers_member_request` set `er_request_read`='1',`er_reques
 							</div>
 							<?}?>
 							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right" style="font-weight: bold;white-space: nowrap;">เอกสาร <?=$item;?>&nbsp;:&nbsp;</div>
+								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right" style="font-weight: bold;white-space: nowrap;">เอกสาร <?= $item;?>&nbsp;:&nbsp;</div>
 								<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-									<div id="view<?=$item;?>"><input type='checkbox' name='chk<?=$item;?>' id='chkapp<?=$item;?>' value='1' <?php if($c_chk_approve=='1'){echo "checked";}?>>&nbsp;<span style="color:#00cc00;">อนุมัติ</span>&nbsp;<span class='glyphicon glyphicon-file' style='color:#000000'></span>&nbsp;<?=$c_edf_filename;?>&nbsp;</div>
-									<input type="hidden" name="path_file<?=$item;?>" value="<? if(isset($c_edf_filename)){ echo $c_edf_filename;}else{ echo '';}?>">
-									<input type="hidden" name="s_link<?=$item;?>" value="<? if(isset($c_edf_link)){ echo $c_edf_link;}else{ echo '';}?>">
-									<input type="hidden" name="s_file_id<?=$item;?>" value="<? if(isset($c_edf_id)){ echo $c_edf_id;}else{ echo '';}?>">
+									<div id="view<?= $item;?>"><input type='checkbox' name='chk<?= $item;?>' id='chkapp<?= $item;?>' value='1' <?php if($c_chk_approve=='1'){echo "checked";}?>>&nbsp;<span style="color:#00cc00;">อนุมัติ</span>&nbsp;<span class='glyphicon glyphicon-file' style='color:#000000'></span>&nbsp;<?= $c_edf_filename;?>&nbsp;</div>
+									<input type="hidden" name="path_file<?= $item;?>" value="<? if(isset($c_edf_filename)){ echo $c_edf_filename;}else{ echo '';}?>">
+									<input type="hidden" name="s_link<?= $item;?>" value="<? if(isset($c_edf_link)){ echo $c_edf_link;}else{ echo '';}?>">
+									<input type="hidden" name="s_file_id<?= $item;?>" value="<? if(isset($c_edf_id)){ echo $c_edf_id;}else{ echo '';}?>">
 								</div>
 							</div>
 							<?

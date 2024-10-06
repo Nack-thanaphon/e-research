@@ -131,26 +131,26 @@ if($tRows > 0){
 
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-4 text-right" style="font-weight: bold;">ชื่อผลงาน(ท.)&nbsp;:&nbsp;</div>
-				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-8"><?=$c_ed_name_th;?></div>
+				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-8"><?= $c_ed_name_th;?></div>
 			</div>
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-4 text-right" style="font-weight: bold;">ชื่อผลงาน(อ.)&nbsp;:&nbsp;</div>
-				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-8"><?=$c_ed_name_en;?></div>
+				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-8"><?= $c_ed_name_en;?></div>
 			</div>
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-4 text-right" style="font-weight: bold;">ส่วนงาน&nbsp;:&nbsp;</div>
-				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-8"><?=$c_es_name." ".$c_ef_name;?></div>
+				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-8"><?= $c_es_name." ".$c_ef_name;?></div>
 			</div>
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-4 text-right" style="font-weight: bold;">ปีงบประมาณ&nbsp;:&nbsp;</div>
-				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-8"><?=$c_ed_year;?></div>
+				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-8"><?= $c_ed_year;?></div>
 			</div>
 			<?
 			if($c_ed_detail!=""){ 
 			?>
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-4 text-right" style="font-weight: bold;">รายละเอียด&nbsp;:&nbsp;</div>
-				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-8"><div style="max-width: 95%"><?=$c_ed_detail;?></div></div>
+				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-8"><div style="max-width: 95%"><?= $c_ed_detail;?></div></div>
 			</div>
 			<?
 			}
@@ -158,7 +158,7 @@ if($tRows > 0){
 			?>
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-4 text-right" style="font-weight: bold;">ประเภทของเงินอุดหนุนงานวิจัย&nbsp;:&nbsp;</div>
-				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-8"><?=$c_et_name;?></div>
+				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-8"><?= $c_et_name;?></div>
 			</div>
 			<?
 			}
@@ -166,7 +166,7 @@ if($tRows > 0){
 			?>
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-4 text-right" style="font-weight: bold;">แหล่งทุน&nbsp;:&nbsp;</div>
-				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-8"><?=$c_ed_capital;?></div>
+				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-8"><?= $c_ed_capital;?></div>
 			</div>
 			<?
 			}
@@ -192,7 +192,7 @@ if($tRows > 0){
 						</div>
 						<?}?>
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-							<div class="col-lg-3 col-md-3 col-sm-3 col-xs-4 text-right" style="font-weight: bold;white-space: nowrap;">เอกสาร <?=$item;?>&nbsp;:&nbsp;</div>
+							<div class="col-lg-3 col-md-3 col-sm-3 col-xs-4 text-right" style="font-weight: bold;white-space: nowrap;">เอกสาร <?= $item;?>&nbsp;:&nbsp;</div>
 							<div class="col-lg-9 col-md-9 col-sm-9 col-xs-8">
 							<?
 							echo "<div><span class='glyphicon glyphicon-file' style='color:#000000'></span>&nbsp;".$c_edf_filename."<br><a href='../include/filedownload.php?m=".$c_edf_id."&t=1' target='_blank' style='white-space: nowrap;'><span class='glyphicon glyphicon-folder-open'></span>&nbsp;&nbsp;เปิดอ่าน</a>&nbsp;&nbsp;<a href='../include/filedownload.php?m=".$c_edf_id."' target='_blank' style='white-space: nowrap;'><span class='glyphicon glyphicon-download-alt'></span>&nbsp;ดาวน์โหลด</a>&nbsp;[".number_format($c_edf_counter_download_member)."]</div>";

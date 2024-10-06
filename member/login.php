@@ -40,7 +40,7 @@ if(isset($_POST['u_name']) && isset($_POST['u_password']))
 	?>
 	<Script language="javascript">
 		alert("'ชื่อล็อกอิน หรือ รหัสผ่าน' ไม่ถูกต้อง");
-		window.location="index.php?dcid=<?=$dcid;?>";
+		window.location="index.php?dcid=<?= $dcid;?>";
 	</script>
 	<?
 	include("../include/close_db.php");
@@ -121,7 +121,7 @@ if (isset($_SESSION["username"]) && isset($_SESSION["membername"]) && isset($_SE
 							<button class="btn btn-success" type="submit" style="display:block;width:100%;"> เข้าระบบ </button>
 						</form>
 						<div style="margin-top:10px;">
-							<a href="register.php?dcid=<?=$dcid;?>" class="btn btn-primary" style="display:block;width:100%;">สมัครสมาชิก</a>
+							<a href="register.php?dcid=<?= $dcid;?>" class="btn btn-primary" style="display:block;width:100%;">สมัครสมาชิก</a>
 						</div>	
 					</div>
 				</div>

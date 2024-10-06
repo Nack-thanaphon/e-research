@@ -287,8 +287,8 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 			alert ("กรุณาเลือกไฟล์ด้วยค่ะ");
 			return false;
 		}*/
-		if(selectfile.files.length > <?=$_max_file_uploads_pdf;?>){
-			alert ("กรุณาเลือกไฟล์ pdf ไม่เกิน <?=$_max_file_uploads_pdf;?> ไฟล์ ค่ะ");
+		if(selectfile.files.length > <?= $_max_file_uploads_pdf;?>){
+			alert ("กรุณาเลือกไฟล์ pdf ไม่เกิน <?= $_max_file_uploads_pdf;?> ไฟล์ ค่ะ");
 			selectfile.value="";
 			return false;
 		}
@@ -350,11 +350,11 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">ชื่อผลงาน(ไทย)&nbsp;:&nbsp;</div>
-				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><input type="text" name="s_ed_name_th" id="s_ed_name_th" maxlength="255" class="form-control input_width3"  value="<?=$c_ed_name_th;?>"></div>
+				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><input type="text" name="s_ed_name_th" id="s_ed_name_th" maxlength="255" class="form-control input_width3"  value="<?= $c_ed_name_th;?>"></div>
 			  </div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">ชื่อผลงาน(อังกฤษ)&nbsp;:&nbsp;</div>
-				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><input type="text" name="s_ed_name_en" id="s_ed_name_en" maxlength="255" class="form-control input_width3"  value="<?=$c_ed_name_en;?>"></div>
+				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><input type="text" name="s_ed_name_en" id="s_ed_name_en" maxlength="255" class="form-control input_width3"  value="<?= $c_ed_name_en;?>"></div>
 			  </div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">ภาควิชา/ฝ่าย&nbsp;:&nbsp;</div>
@@ -408,8 +408,8 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 						if($c_ed_year==$yy) $selected_y="selected='selected'";
 						else  $selected_y="";
 					?>
-						<option value="<?=$yy;?>" <?=$selected_y;?>>
-					      <?=$yy+543;?>
+						<option value="<?= $yy;?>" <?= $selected_y;?>>
+					      <?= $yy+543;?>
 						</option>
 					<?}?>
 				  </select>
@@ -435,7 +435,7 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 			  </div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">แหล่งทุน&nbsp;:&nbsp;</div>
-				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><input type="text" name="s_ed_capital" id="s_ed_capital" maxlength="120" class="form-control input_width3"  value="<?=$c_ed_capital;?>"></div>
+				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><input type="text" name="s_ed_capital" id="s_ed_capital" maxlength="120" class="form-control input_width3"  value="<?= $c_ed_capital;?>"></div>
 			  </div>
 
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
@@ -443,10 +443,10 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
 					<input type="checkbox" name="chk_doc1" id="chk_doc1" value="1" onclick="check_doc('chk_doc1','s_edf_filename1','file1')" <?php if($c_edf_link1==1){echo "checked";}?>>&nbsp;ระบุที่อยู่&nbsp;
 					<?php if($c_edf_link1==1){?>
-						<input type="text" name="s_edf_filename1" id="s_edf_filename1" class="form-control input_width3"  value="<?=$c_edf_filename1;?>" placeholder="ระบุที่อยู่ไฟล์เอกสาร">
+						<input type="text" name="s_edf_filename1" id="s_edf_filename1" class="form-control input_width3"  value="<?= $c_edf_filename1;?>" placeholder="ระบุที่อยู่ไฟล์เอกสาร">
 						<input name="file1" type="file" id="file1" style="margin-top:3px;max-width:250px;display:none;" accept="application/pdf">
 					<?} else {?>
-						<input type="text" name="s_edf_filename1" id="s_edf_filename1" class="form-control input_width3"  value="<?=$c_edf_filename1;?>" readonly="true" placeholder="ระบุที่อยู่ไฟล์เอกสาร" style="color:#999999;display:none;">
+						<input type="text" name="s_edf_filename1" id="s_edf_filename1" class="form-control input_width3"  value="<?= $c_edf_filename1;?>" readonly="true" placeholder="ระบุที่อยู่ไฟล์เอกสาร" style="color:#999999;display:none;">
 					<?
 						if($c_edf_filename1!=""){ 
 							echo "<div id=\"view1\"><a href=\"../files/".$c_edf_filename1."\" target=\"_blank\"><span id=\"dfile1\">".$c_edf_filename1."</span></a>&nbsp;";
@@ -462,10 +462,10 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
 					<input type="checkbox" name="chk_doc2" id="chk_doc2" value="1" onclick="check_doc('chk_doc2','s_edf_filename2','file2')" <?php if($c_edf_link2==1){echo "checked";}?>>&nbsp;ระบุที่อยู่&nbsp;
 					<?php if($c_edf_link2==1){?>
-						<input type="text" name="s_edf_filename2" id="s_edf_filename2" class="form-control input_width3"  value="<?=$c_edf_filename2;?>" placeholder="ระบุที่อยู่ไฟล์เอกสาร">
+						<input type="text" name="s_edf_filename2" id="s_edf_filename2" class="form-control input_width3"  value="<?= $c_edf_filename2;?>" placeholder="ระบุที่อยู่ไฟล์เอกสาร">
 						<input name="file2" type="file" id="file2" style="margin-top:3px;max-width:250px;display:none;" accept="application/pdf">
 					<?} else {?>
-						<input type="text" name="s_edf_filename2" id="s_edf_filename2" class="form-control input_width3"  value="<?=$c_edf_filename2;?>" readonly="true" placeholder="ระบุที่อยู่ไฟล์เอกสาร" style="color:#999999;display:none;">
+						<input type="text" name="s_edf_filename2" id="s_edf_filename2" class="form-control input_width3"  value="<?= $c_edf_filename2;?>" readonly="true" placeholder="ระบุที่อยู่ไฟล์เอกสาร" style="color:#999999;display:none;">
 					<?
 						if($c_edf_filename2!=""){ 
 							echo "<div id=\"view2\"><a href=\"../files/".$c_edf_filename2."\" target=\"_blank\"><span id=\"dfile2\">".$c_edf_filename2."</span></a>&nbsp;";
@@ -481,10 +481,10 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
 					<input type="checkbox" name="chk_doc3" id="chk_doc3" value="1" onclick="check_doc('chk_doc3','s_edf_filename3','file3')" <?php if($c_edf_link3==1){echo "checked";}?>>&nbsp;ระบุที่อยู่&nbsp;
 					<?php if($c_edf_link3==1){?>
-						<input type="text" name="s_edf_filename3" id="s_edf_filename3" class="form-control input_width3"  value="<?=$c_edf_filename3;?>" placeholder="ระบุที่อยู่ไฟล์เอกสาร">
+						<input type="text" name="s_edf_filename3" id="s_edf_filename3" class="form-control input_width3"  value="<?= $c_edf_filename3;?>" placeholder="ระบุที่อยู่ไฟล์เอกสาร">
 						<input name="file3" type="file" id="file3" style="margin-top:3px;max-width:250px;display:none;" accept="application/pdf">
 					<?} else {?>
-						<input type="text" name="s_edf_filename3" id="s_edf_filename3" class="form-control input_width3"  value="<?=$c_edf_filename3;?>" readonly="true" placeholder="ระบุที่อยู่ไฟล์เอกสาร" style="color:#999999;display:none;">
+						<input type="text" name="s_edf_filename3" id="s_edf_filename3" class="form-control input_width3"  value="<?= $c_edf_filename3;?>" readonly="true" placeholder="ระบุที่อยู่ไฟล์เอกสาร" style="color:#999999;display:none;">
 					<?
 						if($c_edf_filename3!=""){ 
 							echo "<div id=\"view3\"><a href=\"../files/".$c_edf_filename3."\" target=\"_blank\"><span id=\"dfile3\">".$c_edf_filename3."</span></a>&nbsp;";
@@ -500,10 +500,10 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
 					<input type="checkbox" name="chk_doc4" id="chk_doc4" value="1" onclick="check_doc('chk_doc4','s_edf_filename4','file4')" <?php if($c_edf_link4==1){echo "checked";}?>>&nbsp;ระบุที่อยู่&nbsp;
 					<?php if($c_edf_link4==1){?>
-						<input type="text" name="s_edf_filename4" id="s_edf_filename4" class="form-control input_width3"  value="<?=$c_edf_filename4;?>" placeholder="ระบุที่อยู่ไฟล์เอกสาร">
+						<input type="text" name="s_edf_filename4" id="s_edf_filename4" class="form-control input_width3"  value="<?= $c_edf_filename4;?>" placeholder="ระบุที่อยู่ไฟล์เอกสาร">
 						<input name="file4" type="file" id="file4" style="margin-top:3px;max-width:250px;display:none;" accept="application/pdf">
 					<?} else {?>
-						<input type="text" name="s_edf_filename4" id="s_edf_filename4" class="form-control input_width3"  value="<?=$c_edf_filename4;?>" readonly="true" placeholder="ระบุที่อยู่ไฟล์เอกสาร" style="color:#999999;display:none;">
+						<input type="text" name="s_edf_filename4" id="s_edf_filename4" class="form-control input_width3"  value="<?= $c_edf_filename4;?>" readonly="true" placeholder="ระบุที่อยู่ไฟล์เอกสาร" style="color:#999999;display:none;">
 					<?
 						if($c_edf_filename4!=""){ 
 							echo "<div id=\"view4\"><a href=\"../files/".$c_edf_filename4."\" target=\"_blank\"><span id=\"dfile4\">".$c_edf_filename4."</span></a>&nbsp;";
@@ -519,10 +519,10 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
 					<input type="checkbox" name="chk_doc5" id="chk_doc5" value="1" onclick="check_doc('chk_doc5','s_edf_filename5','file5')" <?php if($c_edf_link5==1){echo "checked";}?>>&nbsp;ระบุที่อยู่&nbsp;
 					<?php if($c_edf_link5==1){?>
-						<input type="text" name="s_edf_filename5" id="s_edf_filename5" class="form-control input_width3"  value="<?=$c_edf_filename5;?>" placeholder="ระบุที่อยู่ไฟล์เอกสาร">
+						<input type="text" name="s_edf_filename5" id="s_edf_filename5" class="form-control input_width3"  value="<?= $c_edf_filename5;?>" placeholder="ระบุที่อยู่ไฟล์เอกสาร">
 						<input name="file5" type="file" id="file5" style="margin-top:3px;max-width:250px;display:none;" accept="application/pdf">
 					<?} else {?>
-						<input type="text" name="s_edf_filename5" id="s_edf_filename5" class="form-control input_width3"  value="<?=$c_edf_filename5;?>" readonly="true" placeholder="ระบุที่อยู่ไฟล์เอกสาร" style="color:#999999;display:none;">
+						<input type="text" name="s_edf_filename5" id="s_edf_filename5" class="form-control input_width3"  value="<?= $c_edf_filename5;?>" readonly="true" placeholder="ระบุที่อยู่ไฟล์เอกสาร" style="color:#999999;display:none;">
 					<?
 						if($c_edf_filename5!=""){ 
 							echo "<div id=\"view5\"><a href=\"../files/".$c_edf_filename5."\" target=\"_blank\"><span id=\"dfile5\">".$c_edf_filename5."</span></a>&nbsp;";
@@ -543,7 +543,7 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 						if(($c_edf_filename) != ""){ 
 							?>
 							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
-							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">เอกสาร <?=$item;?>&nbsp;:&nbsp;</div>
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">เอกสาร <?= $item;?>&nbsp;:&nbsp;</div>
 							<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
 							<?
 							echo "<div id=\"view$item\"><a href=\"../files/".$c_edf_filename."\" target=\"_blank\"><span id=\"dfile$item\">".$c_edf_filename."</span></a>&nbsp;";
@@ -561,12 +561,12 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 			  }
 			  ?>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
-				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">เอกสาร <?=$num_rows_files+1;?>-<?=$_max_file_uploads;?> (เลือกเป็นกลุ่ม)&nbsp;:&nbsp;</div>
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">เอกสาร <?= $num_rows_files+1;?>-<?= $_max_file_uploads;?> (เลือกเป็นกลุ่ม)&nbsp;:&nbsp;</div>
 				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
 					<input type="file" title="เลือกไฟล์ที่จะอัพโหลด" accept="application/pdf" multiple="1" name="pdf_files[]" size="0" id="pdf_files" onchange="checkmaxpdf()">
 				</div>
 			  </div>
-			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" style="color:#ff0000;">** เลือกไฟล์ครั้งล่ะรวมกันไม่เกิน <?=$_max_file_uploads;?> ไฟล์ ขนาดของไฟล์รวมกันไม่เกิน <?=$_max_file_size;?> **</div>
+			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" style="color:#ff0000;">** เลือกไฟล์ครั้งล่ะรวมกันไม่เกิน <?= $_max_file_uploads;?> ไฟล์ ขนาดของไฟล์รวมกันไม่เกิน <?= $_max_file_size;?> **</div>
 
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">&nbsp;</div>
 
@@ -634,14 +634,14 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 						if($c_search_year==$yy) $selected_y="selected='selected'";
 						else  $selected_y="";
 					?>
-						<option value="<?=$yy;?>" <?=$selected_y;?>>
-						  <?=$yy+543;?>
+						<option value="<?= $yy;?>" <?= $selected_y;?>>
+						  <?= $yy+543;?>
 						</option>
 					<?}?>
 				  </select>&nbsp;
 				  </span>
 				  <span class="sbreak2">
-				  <input type="text" name="c_code_1" id="c_code_1" class="searchbox-control" maxlength="30"placeholder="ข้อความที่ต้องการค้นหา" value="<?=$_SESSION["u_code_1"];?>">&nbsp;
+				  <input type="text" name="c_code_1" id="c_code_1" class="searchbox-control" maxlength="30"placeholder="ข้อความที่ต้องการค้นหา" value="<?= $_SESSION["u_code_1"];?>">&nbsp;
 				  <input type="submit" name="Submit" id="Submit" value="ค้นหา" class="btn btn-success" style="width:70px; margin-top:0;">&nbsp;<input type="button" name="Clear" id="Clear" value="ยกเลิก" class="btn btn-info" style="width:70px;margin-top:0;" onclick="window.location='eresearch.php?iRegister=1';"></span>
 
 		  </div>
@@ -681,11 +681,11 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 				  <th>&nbsp;</th>
                   <th>&nbsp;</th>
 				  <th>&nbsp;</th>
-                  <th style="vertical-align:middle;text-align:center;"><a href="eresearch.php?sd=1&sh_order=<?=$sh_order;?>#top_page" target="_parent" style="white-space: nowrap;">ID <?=$a1sort;?></a></th>
-                  <th style="vertical-align:middle;text-align:left;"><a href="eresearch.php?sd=2&sh_order=<?=$sh_order;?>#top_page" target="_parent" style="white-space: nowrap;">ชื่อผลงานวิจัย <?=$a2sort;?></a></th>
-				  <th style="vertical-align:middle;text-align:center;"><a href="eresearch.php?sd=4&sh_order=<?=$sh_order;?>#top_page" target="_parent" style="white-space: nowrap;">ภาควิชา/ฝ่าย <?=$a4sort;?></a></th>
-				  <th style="vertical-align:middle;text-align:center;"><a href="eresearch.php?sd=5&sh_order=<?=$sh_order;?>#top_page" target="_parent" style="white-space: nowrap;">ส่วนงาน <?=$a5sort;?></a></th>
-				  <th style="vertical-align:middle;text-align:center;"><a href="eresearch.php?sd=6&sh_order=<?=$sh_order;?>#top_page" target="_parent" style="white-space: nowrap;">ปีงบประมาณ <?=$a6sort;?></a></th>
+                  <th style="vertical-align:middle;text-align:center;"><a href="eresearch.php?sd=1&sh_order=<?= $sh_order;?>#top_page" target="_parent" style="white-space: nowrap;">ID <?= $a1sort;?></a></th>
+                  <th style="vertical-align:middle;text-align:left;"><a href="eresearch.php?sd=2&sh_order=<?= $sh_order;?>#top_page" target="_parent" style="white-space: nowrap;">ชื่อผลงานวิจัย <?= $a2sort;?></a></th>
+				  <th style="vertical-align:middle;text-align:center;"><a href="eresearch.php?sd=4&sh_order=<?= $sh_order;?>#top_page" target="_parent" style="white-space: nowrap;">ภาควิชา/ฝ่าย <?= $a4sort;?></a></th>
+				  <th style="vertical-align:middle;text-align:center;"><a href="eresearch.php?sd=5&sh_order=<?= $sh_order;?>#top_page" target="_parent" style="white-space: nowrap;">ส่วนงาน <?= $a5sort;?></a></th>
+				  <th style="vertical-align:middle;text-align:center;"><a href="eresearch.php?sd=6&sh_order=<?= $sh_order;?>#top_page" target="_parent" style="white-space: nowrap;">ปีงบประมาณ <?= $a6sort;?></a></th>
 				  <th style="vertical-align:middle;text-align:left;">รายละเอียด</th>
 				  <th style="vertical-align:middle;text-align:center;">ไฟล์</th>
 				  <th style="vertical-align:middle;text-align:center;">อ่าน</th>
@@ -876,7 +876,7 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 						echo "<a href='del_data.php?c_id=$c_id&chk_p=7&code_1=$code_1' style='color:red;font-size:16px;' title='ลบผลงานวิจัย'><span class='glyphicon glyphicon-trash'></span>&nbsp;<span style='font-size:14px;'>ลบ</span></a>";
 						?>
 					</td>
-					<td style="text-align:center;padding-left:0;padding-right:0;"><?=$c_id;?>
+					<td style="text-align:center;padding-left:0;padding-right:0;"><?= $c_id;?>
 					</td>
 					<td style="text-align:left;padding-left:0;padding-right:0;">
 						<?
@@ -912,7 +912,7 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 						?>
 					</td>
 					<td style="text-align:center;padding-left:0;padding-right:0;min-width:80px;">
-						<?=$c_ed_year;?>
+						<?= $c_ed_year;?>
 					</td>
 					<td style="text-align:left;padding-left:0;padding-right:0;min-width:180px;">
 						<?
@@ -1061,8 +1061,8 @@ function openWindow(idp) {
 }
 function checkmaxpdf(){
 		var selectfile = document.getElementById('pdf_files');
-		if(selectfile.files.length > <?=$_max_file_uploads_pdf;?>){
-			alert ("กรุณาเลือกไฟล์ pdf ไม่เกิน <?=$_max_file_uploads_pdf;?> ไฟล์ ค่ะ");
+		if(selectfile.files.length > <?= $_max_file_uploads_pdf;?>){
+			alert ("กรุณาเลือกไฟล์ pdf ไม่เกิน <?= $_max_file_uploads_pdf;?> ไฟล์ ค่ะ");
 			selectfile.value="";
 			return false;
 		}

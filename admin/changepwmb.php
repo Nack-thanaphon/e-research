@@ -156,8 +156,8 @@ if(isset($mb_id)){
 
 					<form method="post" role="form" action="changepwmb.php" onSubmit="return checkSubmit();">
 
-					<div class="col-xs-12 col-sm-12">ชื่อ login : <?=$c_username;?></div>
-					<div class="col-xs-12 col-sm-12">ชื่อ-นามสกุล : <?=$c_name;?></div>
+					<div class="col-xs-12 col-sm-12">ชื่อ login : <?= $c_username;?></div>
+					<div class="col-xs-12 col-sm-12">ชื่อ-นามสกุล : <?= $c_name;?></div>
 
 					<div class="col-xs-5 col-sm-3 text-right" style="padding: 3px 5px 3px 0px;"><font color="#FF0000">*</font>&nbsp;รหัสผ่าน&nbsp;</div>
 					<div class="col-xs-7 col-sm-9" style="padding: 3px 5px 3px 0px;"><input name="u_password" id="u_password" type="password" maxlength="30" class="form-control" placeholder="Password"></div>

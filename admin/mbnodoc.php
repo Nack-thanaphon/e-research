@@ -191,11 +191,11 @@ $mysqli->query("update `ers_member_request_nodoc` set `er_request_read`='1',`er_
 			  </div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">หน่วยงานที่สังกัด&nbsp;:&nbsp;</div>
-				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><?=$c_institution;?>&nbsp;<?=$c_institution_name;?></div>
+				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><?= $c_institution;?>&nbsp;<?= $c_institution_name;?></div>
 			  </div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">โทรศัพท์&nbsp;:&nbsp;</div>
-				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><a href='tel:<?=$c_phone;?>' target="_blank" title='<?=$c_phone;?>'><?=$c_phone;?></a></div>
+				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><a href='tel:<?= $c_phone;?>' target="_blank" title='<?= $c_phone;?>'><?= $c_phone;?></a></div>
 			  </div>
 			  <?
 			    $subject_text = "ผลการร้องขอเอกสารผลงานวิจัย ".__EC_NAME__;
@@ -208,11 +208,11 @@ $mysqli->query("update `ers_member_request_nodoc` set `er_request_read`='1',`er_
 			  ?>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">อีเมล&nbsp;:&nbsp;</div>
-				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><a href='mailto:<?=$c_email;?>?subject=<?=$encodedSubject;?>&body=<?=$encodedBody;?>' target='_blank' title="<?=$c_email;?>"><?=$c_email;?></a></div>
+				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><a href='mailto:<?= $c_email;?>?subject=<?= $encodedSubject;?>&body=<?= $encodedBody;?>' target='_blank' title="<?= $c_email;?>"><?= $c_email;?></a></div>
 			  </div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">ที่อยู่&nbsp;:&nbsp;</div>
-				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><?=$c_address;?></div>
+				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><?= $c_address;?></div>
 			  </div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">ข้อความร้องขอ&nbsp;:&nbsp;</div>
@@ -221,7 +221,7 @@ $mysqli->query("update `ers_member_request_nodoc` set `er_request_read`='1',`er_
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">ข้อความตอบกลับ&nbsp;:&nbsp;</div>
 				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-				<textarea name="s_er_answer_text" id="s_er_answer_text" rows="10" class="form-control" style="border-radius:5px;border:1px solid #ccc;max-width:500px;" maxlength="500" placeholder="ระบุข้อความรายละเอียด ตอบกลับการขอเอกสารงานวิจัย"><?=$c_er_answer_text;?></textarea>
+				<textarea name="s_er_answer_text" id="s_er_answer_text" rows="10" class="form-control" style="border-radius:5px;border:1px solid #ccc;max-width:500px;" maxlength="500" placeholder="ระบุข้อความรายละเอียด ตอบกลับการขอเอกสารงานวิจัย"><?= $c_er_answer_text;?></textarea>
 				</div>
 			  </div>
 			  

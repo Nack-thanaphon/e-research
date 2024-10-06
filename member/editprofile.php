@@ -30,7 +30,7 @@ if($chk_edit=="1")
 			include("../include/close_db.php");*/
 			?>
 			<!--<Script language="javascript">
-				alert("ชื่อล็อกอิน : <?=$username;?> มีอยู่ในระบบ ไม่สามารถใช้ซ้ำกันได้");
+				alert("ชื่อล็อกอิน : <?= $username;?> มีอยู่ในระบบ ไม่สามารถใช้ซ้ำกันได้");
 				window.history.back();
 			</script>-->
 			<?
@@ -187,17 +187,17 @@ if(isset($c_id)){
 						<input name="title_v" type="radio" value="3" <?php if($c_title_v == "3"){echo "checked";}?> onclick="chkother('3')">&nbsp;นางสาว&nbsp;
 						<input name="title_v" type="radio" value="4" <?php if($c_title_v == "4"){echo "checked";}?> onclick="chkother('4')">&nbsp;อื่นๆ
 						<?php if($c_title_v == "4"){?>
-							<input type="text" name="title_other" id="title_other" maxlength="30" class="form-control" value="<?=$c_title;?>" placeholder="คำนำหน้าชื่อ">
+							<input type="text" name="title_other" id="title_other" maxlength="30" class="form-control" value="<?= $c_title;?>" placeholder="คำนำหน้าชื่อ">
 						<?} else {?>
-							<input type="text" name="title_other" id="title_other" maxlength="30" class="form-control" value="<?=$c_title;?>" style="display:none;" placeholder="คำนำหน้าชื่อ">
+							<input type="text" name="title_other" id="title_other" maxlength="30" class="form-control" value="<?= $c_title;?>" style="display:none;" placeholder="คำนำหน้าชื่อ">
 						<?}?>
 					</div>
 
 					<div class="col-xs-5 col-sm-3" style="text-align:right;padding: 3px 5px 3px 0px;"><font color="#FF0000">*</font>&nbsp;ชื่อจริง&nbsp;</div>
-					<div class="col-xs-7 col-sm-9" style="padding: 3px 5px 3px 0px;"><input name="firstname" id="firstname" type="text" maxlength="120" class="form-control"  value="<?=$c_firstname;?>"></div>
+					<div class="col-xs-7 col-sm-9" style="padding: 3px 5px 3px 0px;"><input name="firstname" id="firstname" type="text" maxlength="120" class="form-control"  value="<?= $c_firstname;?>"></div>
 
 					<div class="col-xs-5 col-sm-3" style="text-align:right;padding: 3px 5px 3px 0px;"><font color="#FF0000">*</font>&nbsp;นามสกุล&nbsp;</div>
-					<div class="col-xs-7 col-sm-9" style="padding: 3px 5px 3px 0px;"><input name="lastname" id="lastname" type="text" maxlength="120" class="form-control"  value="<?=$c_lastname;?>"></div>
+					<div class="col-xs-7 col-sm-9" style="padding: 3px 5px 3px 0px;"><input name="lastname" id="lastname" type="text" maxlength="120" class="form-control"  value="<?= $c_lastname;?>"></div>
 
 					<div class="col-xs-5 col-sm-3" style="text-align:right;padding: 3px 5px 3px 0px;">เพศ&nbsp;</div>
 					<div class="col-xs-7 col-sm-9" style="padding: 3px 5px 3px 0px;">
@@ -209,7 +209,7 @@ if(isset($c_id)){
 					</div>
 
 					<div class="col-xs-5 col-sm-3" style="text-align:right;padding: 3px 5px 3px 0px;"><font color="#FF0000">*</font>&nbsp;หน่วยงานที่สังกัด&nbsp;</div>
-					<div class="col-xs-7 col-sm-9" style="padding: 3px 5px 3px 0px;"><input name="institution" id="institution" type="text" maxlength="255" class="form-control" value="<?=$c_institution;?>"></div>
+					<div class="col-xs-7 col-sm-9" style="padding: 3px 5px 3px 0px;"><input name="institution" id="institution" type="text" maxlength="255" class="form-control" value="<?= $c_institution;?>"></div>
 
 					<div class="col-xs-5 col-sm-3" style="text-align:right;padding: 3px 5px 3px 0px;">ประเภทหน่วยงาน&nbsp;</div>
 					<div class="col-xs-7 col-sm-9" style="padding: 3px 5px 3px 0px;">
@@ -224,20 +224,20 @@ if(isset($c_id)){
 							<option value="7" <?php if($c_institution_type == "7"){echo "selected";}?>>อื่น ๆ</option>
 						</select>
 						<?php if($c_institution_type == "7"){?>
-							<input type="text" name="institution_other" id="institution_other" maxlength="255" class="form-control" value="<?=$c_institution_other;?>" placeholder="อื่นๆระบุ">
+							<input type="text" name="institution_other" id="institution_other" maxlength="255" class="form-control" value="<?= $c_institution_other;?>" placeholder="อื่นๆระบุ">
 						<?} else {?>
-							<input type="text" name="institution_other" id="institution_other" maxlength="255" class="form-control" value="<?=$c_institution_other;?>" style="display:none;" placeholder="อื่นๆระบุ">
+							<input type="text" name="institution_other" id="institution_other" maxlength="255" class="form-control" value="<?= $c_institution_other;?>" style="display:none;" placeholder="อื่นๆระบุ">
 						<?}?>
 					</div>
 
 					<div class="col-xs-5 col-sm-3" style="text-align:right;padding: 3px 5px 3px 0px;"><font color="#FF0000">*</font>&nbsp;โทรศัพท์&nbsp;</div>
-					<div class="col-xs-7 col-sm-9" style="padding: 3px 5px 3px 0px;"><input name="phone" id="phone" type="tel" maxlength="30" class="form-control" value="<?=$c_phone;?>"></div>
+					<div class="col-xs-7 col-sm-9" style="padding: 3px 5px 3px 0px;"><input name="phone" id="phone" type="tel" maxlength="30" class="form-control" value="<?= $c_phone;?>"></div>
 
 					<div class="col-xs-5 col-sm-3" style="text-align:right;padding: 3px 5px 3px 0px;"><font color="#FF0000">*</font>&nbsp;อีเมล&nbsp;</div>
-					<div class="col-xs-7 col-sm-9" style="padding: 3px 5px 3px 0px;"><input type="text" name="email" id="email" maxlength="120" class="form-control" value="<?=$c_email;?>"></div>
+					<div class="col-xs-7 col-sm-9" style="padding: 3px 5px 3px 0px;"><input type="text" name="email" id="email" maxlength="120" class="form-control" value="<?= $c_email;?>"></div>
 
 					<div class="col-xs-5 col-sm-3" style="text-align:right;padding: 3px 5px 3px 0px;"><font color="#FF0000">*</font>&nbsp;ที่อยู่&nbsp;</div>
-					<div class="col-xs-7 col-sm-9" style="padding: 3px 5px 3px 0px;"><textarea name="address" id="address" rows="3" class="form-control" style="border-radius:5px;border:1px solid #ccc;" maxlength="500"><?=$c_address;?></textarea></div>
+					<div class="col-xs-7 col-sm-9" style="padding: 3px 5px 3px 0px;"><textarea name="address" id="address" rows="3" class="form-control" style="border-radius:5px;border:1px solid #ccc;" maxlength="500"><?= $c_address;?></textarea></div>
 					
 					<!--<div class="col-xs-5 col-sm-3" style="text-align:right;padding: 3px 5px 3px 0px;"><font color="#FF0000">*</font>&nbsp;ชื่อล็อกอิน&nbsp;</div>
 					<div class="col-xs-7 col-sm-9" style="padding: 3px 5px 3px 0px;"><input name="username" type="text" id="username"  value="<?//=$c_username;?>" maxlength="30" class="form-control" placeholder="Username"><font color="#FF0000">*ตัวอักษรภาษาอังกฤษและ ตัวเลข ไม่เกิน 30 ตัวอักษร</font></div>-->

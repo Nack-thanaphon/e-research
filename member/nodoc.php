@@ -313,11 +313,11 @@ if(isset($c_id)){
 	<div class="row">
 
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-left">
-				<div class="h1member">ยีนดีต้อนรับคุณ <font color="#000099"><?=$c_firstname," ".$c_lastname;?></font></div>
-				<div class="h2member">ชื่อ Login&nbsp;:&nbsp;<font color="#000099"><?=$c_username;?></font>&nbsp;<?php if(isset($_SESSION["memberpass"])){echo ",รหัสผ่าน : <font color='#000099'>".$_SESSION["memberpass"]."</font>";}?></div>
-				<div class="h3member">หน่วยงานที่สังกัด : <?=$c_institution;?>&nbsp;<?=$c_institution_name;?></div>
-				<div class="h3member">โทรศัพท์ : <?=$c_phone;?>&nbsp;,อีเมล : <?=$c_email;?></div>
-				<div class="h3member">ที่อยู่ : <?=$c_address;?></div>
+				<div class="h1member">ยีนดีต้อนรับคุณ <font color="#000099"><?= $c_firstname," ".$c_lastname;?></font></div>
+				<div class="h2member">ชื่อ Login&nbsp;:&nbsp;<font color="#000099"><?= $c_username;?></font>&nbsp;<?php if(isset($_SESSION["memberpass"])){echo ",รหัสผ่าน : <font color='#000099'>".$_SESSION["memberpass"]."</font>";}?></div>
+				<div class="h3member">หน่วยงานที่สังกัด : <?= $c_institution;?>&nbsp;<?= $c_institution_name;?></div>
+				<div class="h3member">โทรศัพท์ : <?= $c_phone;?>&nbsp;,อีเมล : <?= $c_email;?></div>
+				<div class="h3member">ที่อยู่ : <?= $c_address;?></div>
 			</div>
 
 	</div><!-- /.row -->
@@ -337,7 +337,7 @@ if(isset($c_id)){
 				?>
 			  </div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-				<div><textarea name="s_er_request_text" id="s_er_request_text" rows="5" class="form-control" style="border-radius:5px;border:1px solid #ccc;" maxlength="500" placeholder="ระบุข้อความรายละเอียด ที่ต้องการเอกสารงานวิจัย"><?=$c_er_request_text;?></textarea></div>
+				<div><textarea name="s_er_request_text" id="s_er_request_text" rows="5" class="form-control" style="border-radius:5px;border:1px solid #ccc;" maxlength="500" placeholder="ระบุข้อความรายละเอียด ที่ต้องการเอกสารงานวิจัย"><?= $c_er_request_text;?></textarea></div>
 			  </div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" >&nbsp;</div>
 		      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
@@ -382,10 +382,10 @@ if(isset($c_id)){
 					<tr id="ontop1" style="background-color:#e5e5e5">
 						  <th id="ontop2">&nbsp;</th>
 						  <th id="ontop3">&nbsp;</th>
-						  <th style="text-align:center;" id="ontop4">&nbsp;<a href="nodoc.php?sd=1&sh_order=<?=$sh_order;?>" target="_parent">ID <?=$a1sort;?></a>&nbsp;</th>
+						  <th style="text-align:center;" id="ontop4">&nbsp;<a href="nodoc.php?sd=1&sh_order=<?= $sh_order;?>" target="_parent">ID <?= $a1sort;?></a>&nbsp;</th>
 						  <th style="text-align:center;" id="ontop5">&nbsp;ข้อความร้องขอ&nbsp;</th>
-						  <th style="text-align:center;" id="ontop7">&nbsp;<a href="nodoc.php?sd=3&sh_order=<?=$sh_order;?>" target="_parent" style="white-space: nowrap;">วันที่ร้องขอ <?=$a3sort;?></a>&nbsp;</th>
-						  <th style="text-align:center;" id="ontop8">&nbsp;<a href="index.php?sd=4&sh_order=<?=$sh_order;?>" target="_parent" >ผลการดำเนินการ <?=$a4sort;?></a>&nbsp;</th>
+						  <th style="text-align:center;" id="ontop7">&nbsp;<a href="nodoc.php?sd=3&sh_order=<?= $sh_order;?>" target="_parent" style="white-space: nowrap;">วันที่ร้องขอ <?= $a3sort;?></a>&nbsp;</th>
+						  <th style="text-align:center;" id="ontop8">&nbsp;<a href="index.php?sd=4&sh_order=<?= $sh_order;?>" target="_parent" >ผลการดำเนินการ <?= $a4sort;?></a>&nbsp;</th>
 						  <th style="text-align:center;" id="ontop9">&nbsp;ข้อความที่ตอบ&nbsp;</th>
 						  <th style="text-align:center;" id="ontop10">&nbsp;วันที่ตอบ&nbsp;</th>
 					</tr>
@@ -487,23 +487,23 @@ if(isset($c_id)){
 							if($c_er_answer==0){
 							$dfile =  'dfile'.$jk;
 							?>
-							<a href="javascript:void(0)" style="color:red;font-size:16px;" title="ยกเลิก" onclick="confirmCancel('<?=$dfile;?>','<?=$c_id;?>','<?=$code_1;?>','1')"><span class="glyphicon glyphicon-minus-sign"></span>&nbsp;<span style="font-size:14px;">ยกเลิก</span><span id="<?=$dfile;?>"></span></a>
+							<a href="javascript:void(0)" style="color:red;font-size:16px;" title="ยกเลิก" onclick="confirmCancel('<?= $dfile;?>','<?= $c_id;?>','<?= $code_1;?>','1')"><span class="glyphicon glyphicon-minus-sign"></span>&nbsp;<span style="font-size:14px;">ยกเลิก</span><span id="<?= $dfile;?>"></span></a>
 							<?}?>
 						</td>
-						<td style="text-align:center;"><?=$c_id;?></td>
+						<td style="text-align:center;"><?= $c_id;?></td>
 						<td style="text-align:left;">&nbsp;
 							<?
 							echo "<a href=\"javascript:void(0)\" title='' style='color:#000000;'>".$c_er_request_text."</a>";
 							?>&nbsp;
 						</td>
-						<td style="text-align:center;"><?=$c_er_request_date;?></td>
-						<td style="text-align:center;"><?=$c_er_answer_approve;?></td>
+						<td style="text-align:center;"><?= $c_er_request_date;?></td>
+						<td style="text-align:center;"><?= $c_er_answer_approve;?></td>
 						<td style="text-align:left;">&nbsp;
 							<?
 								echo "<a href=\"javascript:void(0)\" title='' style='color:#000000;'>".$c_er_answert_text."</a>";
 							?>&nbsp;
 						</td>
-						<td style="text-align:center;"><?=$c_er_answer_date;?></td>
+						<td style="text-align:center;"><?= $c_er_answer_date;?></td>
 					</tr>
 					<?
 					}//while

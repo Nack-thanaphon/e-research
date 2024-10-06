@@ -289,14 +289,14 @@ include("../include/config_db.php");
 							if($c_search_year==$yy) $selected_y="selected='selected'";
 							else  $selected_y="";
 						?>
-							<option value="<?=$yy;?>" <?=$selected_y;?>>
-							  <?=$yy+543;?>
+							<option value="<?= $yy;?>" <?= $selected_y;?>>
+							  <?= $yy+543;?>
 							</option>
 						<?}?>
 					  </select>&nbsp;
 					  </span>
 					  <span class="sbreak2">
-					  <input type="text" name="c_code_1" id="c_code_1" class="searchbox-control" maxlength="30"placeholder="ข้อความที่ต้องการค้นหา" value="<?=$_SESSION["u_code_1"];?>">&nbsp;
+					  <input type="text" name="c_code_1" id="c_code_1" class="searchbox-control" maxlength="30"placeholder="ข้อความที่ต้องการค้นหา" value="<?= $_SESSION["u_code_1"];?>">&nbsp;
 					  <input type="submit" name="Submit" id="Submit" value="ค้นหา" class="btn btn-success" style="width:70px; margin-top:0;">&nbsp;<input type="button" name="Clear" id="Clear" value="ยกเลิก" class="btn btn-info" style="width:70px;margin-top:0;" onclick="window.location='ers-document.php?iRegister=1';"></span>
 			    </div>
 			</form>
@@ -331,11 +331,11 @@ include("../include/config_db.php");
 			<table class="table table-striped table-bordered sticky-header" id="table-1" style="background: url('../images/<?php if(defined('__EC_PICHOME__')){echo __EC_PICHOME__;}?>') repeat-y; background-attachment:fixed; background-size:contain;height:100%;width:100%;">
 				<thead>
 					<tr id="ontop1" style="background-color:#e5e5e5">
-						  <th style="vertical-align:middle;text-align:center;" id="ontop2"><a href="ers-document.php?sd=1&sh_order=<?=$sh_order;?>" target="_parent" style="white-space: nowrap;">ID <?=$a1sort;?></a></th>
-						  <th style="vertical-align:middle;text-align:center;"  id="ontop3"><a href="ers-document.php?sd=2&sh_order=<?=$sh_order;?>" target="_parent" style="white-space: nowrap;">ชื่อผลงานวิจัย <?=$a2sort;?></a></th>
-						  <th style="vertical-align:middle;text-align:center;" id="ontop4"><a href="ers-document.php?sd=4&sh_order=<?=$sh_order;?>" target="_parent" style="white-space: nowrap;">ภาควิชา/ฝ่าย <?=$a4sort;?></a></th>
-						  <th style="vertical-align:middle;text-align:center;" id="ontop5"><a href="ers-document.php?sd=5&sh_order=<?=$sh_order;?>" target="_parent" style="white-space: nowrap;">ส่วนงาน <?=$a5sort;?></a></th>
-						  <th style="vertical-align:middle;text-align:center;" id="ontop6"><a href="ers-document.php?sd=6&sh_order=<?=$sh_order;?>" target="_parent" style="white-space: nowrap;">ปีงบประมาณ <?=$a6sort;?></a></th>
+						  <th style="vertical-align:middle;text-align:center;" id="ontop2"><a href="ers-document.php?sd=1&sh_order=<?= $sh_order;?>" target="_parent" style="white-space: nowrap;">ID <?= $a1sort;?></a></th>
+						  <th style="vertical-align:middle;text-align:center;"  id="ontop3"><a href="ers-document.php?sd=2&sh_order=<?= $sh_order;?>" target="_parent" style="white-space: nowrap;">ชื่อผลงานวิจัย <?= $a2sort;?></a></th>
+						  <th style="vertical-align:middle;text-align:center;" id="ontop4"><a href="ers-document.php?sd=4&sh_order=<?= $sh_order;?>" target="_parent" style="white-space: nowrap;">ภาควิชา/ฝ่าย <?= $a4sort;?></a></th>
+						  <th style="vertical-align:middle;text-align:center;" id="ontop5"><a href="ers-document.php?sd=5&sh_order=<?= $sh_order;?>" target="_parent" style="white-space: nowrap;">ส่วนงาน <?= $a5sort;?></a></th>
+						  <th style="vertical-align:middle;text-align:center;" id="ontop6"><a href="ers-document.php?sd=6&sh_order=<?= $sh_order;?>" target="_parent" style="white-space: nowrap;">ปีงบประมาณ <?= $a6sort;?></a></th>
 						  <th style="vertical-align:middle;text-align:center;" id="ontop7">รายละเอียด</th>
 						  <th style="vertical-align:middle;text-align:center;" id="ontop8">ไฟล์</th>
 						  <th style="vertical-align:middle;text-align:center;" id="ontop9">อ่าน</th>
@@ -536,7 +536,7 @@ include("../include/config_db.php");
 
 					?>
 					<tr>
-						<td style="text-align:center;padding-left:5px;padding-right:5px;">&nbsp;<?=$c_id;?>&nbsp;</td>
+						<td style="text-align:center;padding-left:5px;padding-right:5px;">&nbsp;<?= $c_id;?>&nbsp;</td>
 						<td style="text-align:left;padding-left:5px;padding-right:5px;">&nbsp;
 							<?
 							if($thlen > $thlen2) {
@@ -571,7 +571,7 @@ include("../include/config_db.php");
 							?>&nbsp;
 						</td>
 						<td style="text-align:center;padding-left:5px;padding-right:5px;min-width:80px;">
-							<?=$c_ed_year;?>
+							<?= $c_ed_year;?>
 						</td>
 						<td style="text-align:left;padding-left:5px;padding-right:5px;min-width:180px;">&nbsp;
 							<?
@@ -655,7 +655,7 @@ include("../include/config_db.php");
 				?>
 			</div>
 			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-5 text-right">
-				<form name="form3" method="post" action="ers-document.php?sd=<?=$sd;?>&sh_order=<?=$sh_order;?>&Page=1" role="form">
+				<form name="form3" method="post" action="ers-document.php?sd=<?= $sd;?>&sh_order=<?= $sh_order;?>&Page=1" role="form">
 					<select name="Per_Page" id="Per_Page" style="width:130px;border-radius:5px;border:1px solid #<?echo __EC_BGSHOW__;?>;padding:5px;" onchange="document.form3.submit()">
 					<option value="18" <?php if($Per_Page=='18'){echo "selected";}?>>18 รายการ/หน้า</option>
 					<option value="30"<?php if($Per_Page=='30'){echo "selected";}?>>30 รายการ/หน้า</option>

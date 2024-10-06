@@ -522,7 +522,7 @@ function edshowfc(){
 
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right" style="margin:0;padding:0;">ชื่อหน่วยงาน&nbsp;:&nbsp;</div>
-				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" style="margin:0;padding:0;"><input type="text" name="s_ec_name" id="s_ec_name" maxlength="255" class="form-control" style="max-width:400px;" value="<?=$c_ec_name;?>"></div>
+				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" style="margin:0;padding:0;"><input type="text" name="s_ec_name" id="s_ec_name" maxlength="255" class="form-control" style="max-width:400px;" value="<?= $c_ec_name;?>"></div>
 			  </div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><hr align="center" width="90%" noshade size="1"></div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -631,11 +631,11 @@ function edshowfc(){
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><hr align="center" width="90%" noshade size="1"></div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-top:3px;">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 text-right" style="margin:0;padding:0;">สีพื้นหลังแถบแสดงข้อมูล&nbsp;:&nbsp;</div>
-				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-6" style="margin:0;padding:0;"><input type="text" name="s_ec_bgshow" id="s_ec_bgshow" maxlength="10" class="form-control" style="max-width:100px;" value="<?=$c_ec_bgshow;?>" onkeyup="edshowbg();"></div>
+				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-6" style="margin:0;padding:0;"><input type="text" name="s_ec_bgshow" id="s_ec_bgshow" maxlength="10" class="form-control" style="max-width:100px;" value="<?= $c_ec_bgshow;?>" onkeyup="edshowbg();"></div>
 			  </div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-top:3px;">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 text-right" style="margin:0;padding:0;">สีตัวอักษรแถบแสดงข้อมูล&nbsp;:&nbsp;</div>
-				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-6" style="margin:0;padding:0;"><input type="text" name="s_ec_fontshow" id="s_ec_fontshow" maxlength="10" class="form-control" style="max-width:100px;" value="<?=$c_ec_fontshow;?>" onkeyup="edshowfc();"></div>
+				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-6" style="margin:0;padding:0;"><input type="text" name="s_ec_fontshow" id="s_ec_fontshow" maxlength="10" class="form-control" style="max-width:100px;" value="<?= $c_ec_fontshow;?>" onkeyup="edshowfc();"></div>
 			  </div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-top:3px;">
 				<div class="col-lg-4 col-md-4 col-sm-4 hidden-xs text-right">&nbsp;</div>
@@ -644,7 +644,7 @@ function edshowfc(){
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><hr align="center" width="90%" noshade size="1"></div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-top:3px;">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 text-right" style="margin:0;padding:0;">Copyright&nbsp;:&nbsp;</div>
-				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-6" style="margin:0;padding:0;"><input type="text" name="s_ec_copyright" id="s_ec_copyright" maxlength="255" class="form-control" style="max-width:400px;" value="<?=$c_ec_copyright;?>" onkeyup="edshowfc();"></div>
+				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-6" style="margin:0;padding:0;"><input type="text" name="s_ec_copyright" id="s_ec_copyright" maxlength="255" class="form-control" style="max-width:400px;" value="<?= $c_ec_copyright;?>" onkeyup="edshowfc();"></div>
 			  </div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><hr align="center" width="90%" noshade size="1"></div>
 

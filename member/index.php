@@ -358,11 +358,11 @@ $mysqli->query("update `ers_document` set `ed_counter`=`ed_counter`+1 where `id`
 	<div class="row">
 
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-left">
-				<div class="h1member">ยีนดีต้อนรับคุณ <font color="#000099"><?=$c_firstname," ".$c_lastname;?></font></div>
-				<div class="h2member">ชื่อ Login&nbsp;:&nbsp;<font color="#000099"><?=$c_username;?></font>&nbsp;<?php if(isset($_SESSION["memberpass"])){echo ",รหัสผ่าน : <font color='#000099'>".$_SESSION["memberpass"]."</font>";}?></div>
-				<div class="h3member">หน่วยงานที่สังกัด : <?=$c_institution;?>&nbsp;<?=$c_institution_name;?></div>
-				<div class="h3member">โทรศัพท์ : <?=$c_phone;?>&nbsp;,อีเมล : <?=$c_email;?></div>
-				<div class="h3member">ที่อยู่ : <?=$c_address;?></div>
+				<div class="h1member">ยีนดีต้อนรับคุณ <font color="#000099"><?= $c_firstname," ".$c_lastname;?></font></div>
+				<div class="h2member">ชื่อ Login&nbsp;:&nbsp;<font color="#000099"><?= $c_username;?></font>&nbsp;<?php if(isset($_SESSION["memberpass"])){echo ",รหัสผ่าน : <font color='#000099'>".$_SESSION["memberpass"]."</font>";}?></div>
+				<div class="h3member">หน่วยงานที่สังกัด : <?= $c_institution;?>&nbsp;<?= $c_institution_name;?></div>
+				<div class="h3member">โทรศัพท์ : <?= $c_phone;?>&nbsp;,อีเมล : <?= $c_email;?></div>
+				<div class="h3member">ที่อยู่ : <?= $c_address;?></div>
 			</div>
 
 	</div><!-- /.row -->
@@ -382,7 +382,7 @@ $mysqli->query("update `ers_document` set `ed_counter`=`ed_counter`+1 where `id`
 				?>
 			  </div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-				<div><textarea name="s_er_request_text" id="s_er_request_text" rows="5" class="form-control" style="border-radius:5px;border:1px solid #ccc;" maxlength="500" placeholder="ระบุข้อความรายละเอียด ที่ต้องการเอกสารงานวิจัย"><?=$c_er_request_text;?></textarea></div>
+				<div><textarea name="s_er_request_text" id="s_er_request_text" rows="5" class="form-control" style="border-radius:5px;border:1px solid #ccc;" maxlength="500" placeholder="ระบุข้อความรายละเอียด ที่ต้องการเอกสารงานวิจัย"><?= $c_er_request_text;?></textarea></div>
 			  </div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" >&nbsp;</div>
 		      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
@@ -428,11 +428,11 @@ $mysqli->query("update `ers_document` set `ed_counter`=`ed_counter`+1 where `id`
 					<tr id="ontop1" style="background-color:#e5e5e5">
 						  <th id="ontop2">&nbsp;</th>
 						  <th id="ontop3">&nbsp;</th>
-						  <th style="text-align:center;" id="ontop4">&nbsp;<a href="index.php?sd=1&sh_order=<?=$sh_order;?>&dcid=<?=$dcid;?>" target="_parent">ID <?=$a1sort;?></a>&nbsp;</th>
+						  <th style="text-align:center;" id="ontop4">&nbsp;<a href="index.php?sd=1&sh_order=<?= $sh_order;?>&dcid=<?= $dcid;?>" target="_parent">ID <?= $a1sort;?></a>&nbsp;</th>
 						  <th style="text-align:center;" id="ontop5">&nbsp;ข้อความร้องขอ&nbsp;</th>
 						  <th style="text-align:center;" id="ontop6">&nbsp;ชื่อผลงานวิจัย&nbsp;</th>
-						  <th style="text-align:center;" id="ontop7">&nbsp;<a href="index.php?sd=3&sh_order=<?=$sh_order;?>&dcid=<?=$dcid;?>" target="_parent" style="white-space: nowrap;">วันที่ร้องขอ <?=$a3sort;?></a>&nbsp;</th>
-						  <th style="text-align:center;" id="ontop8">&nbsp;<a href="index.php?sd=4&sh_order=<?=$sh_order;?>&dcid=<?=$dcid;?>" target="_parent" >อนุมัติ <?=$a4sort;?></a>&nbsp;</th>
+						  <th style="text-align:center;" id="ontop7">&nbsp;<a href="index.php?sd=3&sh_order=<?= $sh_order;?>&dcid=<?= $dcid;?>" target="_parent" style="white-space: nowrap;">วันที่ร้องขอ <?= $a3sort;?></a>&nbsp;</th>
+						  <th style="text-align:center;" id="ontop8">&nbsp;<a href="index.php?sd=4&sh_order=<?= $sh_order;?>&dcid=<?= $dcid;?>" target="_parent" >อนุมัติ <?= $a4sort;?></a>&nbsp;</th>
 						  <th style="text-align:center;" id="ontop13">&nbsp;วันที่หมดอายุ&nbsp;</th>
 						  <th style="text-align:center;" id="ontop12">&nbsp;</th>
 						  <th style="text-align:center;" id="ontop9">&nbsp;ข้อความที่ตอบ&nbsp;</th>
@@ -585,10 +585,10 @@ $mysqli->query("update `ers_document` set `ed_counter`=`ed_counter`+1 where `id`
 							if($c_er_answer==0){
 							$dfile =  'dfile'.$jk;
 							?>
-							<a href="javascript:void(0)" style="color:red;font-size:16px;" title="ยกเลิก" onclick="confirmCancel('<?=$dfile;?>','<?=$c_id;?>','<?=$code_1;?>','1')"><span class="glyphicon glyphicon-minus-sign"></span>&nbsp;<span style="font-size:14px;">ยกเลิก</span><span id="<?=$dfile;?>"></span></a>
+							<a href="javascript:void(0)" style="color:red;font-size:16px;" title="ยกเลิก" onclick="confirmCancel('<?= $dfile;?>','<?= $c_id;?>','<?= $code_1;?>','1')"><span class="glyphicon glyphicon-minus-sign"></span>&nbsp;<span style="font-size:14px;">ยกเลิก</span><span id="<?= $dfile;?>"></span></a>
 							<?}?>
 						</td>
-						<td style="text-align:center;"><?=$c_id;?></td>
+						<td style="text-align:center;"><?= $c_id;?></td>
 						<td style="text-align:left;">&nbsp;
 							<?
 							if($reqlen > $reqlen2) {
@@ -607,12 +607,12 @@ $mysqli->query("update `ers_document` set `ed_counter`=`ed_counter`+1 where `id`
 							}
 							?>&nbsp;
 						</td>
-						<td style="text-align:center;"><?=$c_er_request_date;?></td>
-						<td style="text-align:left;"><?=$c_er_answer_approve;?></td>
-						<td style="text-align:center;"><?=$c_er_answert_expire;?></td>
+						<td style="text-align:center;"><?= $c_er_request_date;?></td>
+						<td style="text-align:left;"><?= $c_er_answer_approve;?></td>
+						<td style="text-align:center;"><?= $c_er_answert_expire;?></td>
 						<td style="text-align:center;">
 							<?php if(($c_er_answer==1) && ($chk_expire==1)){ ?>
-								<a href="javascript:void(0)" onclick="show_detail('<?=$c_id;?>', '1')" style="color:#000000;"><div  style="background-color:#f8dc67;padding:4px 1px 2px 1px;border-radius:5px;"><span class="glyphicon glyphicon-download" style="color:#006633;font-size:14px;"></span>&nbsp;ดาวน์โหลด</div></a>
+								<a href="javascript:void(0)" onclick="show_detail('<?= $c_id;?>', '1')" style="color:#000000;"><div  style="background-color:#f8dc67;padding:4px 1px 2px 1px;border-radius:5px;"><span class="glyphicon glyphicon-download" style="color:#006633;font-size:14px;"></span>&nbsp;ดาวน์โหลด</div></a>
 							<?}?>
 						</td>
 						<td style="text-align:left;">&nbsp;
@@ -624,7 +624,7 @@ $mysqli->query("update `ers_document` set `ed_counter`=`ed_counter`+1 where `id`
 							}
 							?>&nbsp;
 						</td>
-						<td style="text-align:center;"><?=$c_er_answer_date;?></td>
+						<td style="text-align:center;"><?= $c_er_answer_date;?></td>
 						<!--<td style="text-align:center;"><?//=$c_er_answer_name;?></td>-->
 					</tr>
 					<?

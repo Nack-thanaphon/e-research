@@ -22,7 +22,7 @@ if(isset($_POST['username']) && isset($_POST['u_password']))
 		<SCRIPT LANGUAGE="JavaScript">
 		alert("กรุณายืนยัน ไม่ใช่โปรแกรมอัตโนมัติ");
 	    window.history.back();
-		//window.location="register.php?dcid=<?=$dcid;?>";
+		//window.location="register.php?dcid=<?= $dcid;?>";
 		</SCRIPT> 
 		<?
 		die();
@@ -35,7 +35,7 @@ if(isset($_POST['username']) && isset($_POST['u_password']))
 		<SCRIPT LANGUAGE="JavaScript">
 		alert("กรุณายืนยัน ไม่ใช่โปรแกรมอัตโนมัติ");
 	    window.history.back();
-		//window.location="register.php?dcid=<?=$dcid;?>";
+		//window.location="register.php?dcid=<?= $dcid;?>";
 		</SCRIPT> 
 		<?
 		die();
@@ -51,7 +51,7 @@ if(isset($_POST['username']) && isset($_POST['u_password']))
 		<SCRIPT LANGUAGE="JavaScript">
 		alert("ชื่อผู้ใช้งาน หรือ รหัสผ่าน ไม่ถูกต้อง กรุณาลงทะเบียนใหม่");
 	    window.history.back();
-		//window.location="register.php?dcid=<?=$dcid;?>";
+		//window.location="register.php?dcid=<?= $dcid;?>";
 		</SCRIPT> 
 		<?
 		//echo "<Script language=\"javascript\">window.location=\""._web_path."\"</script>";
@@ -68,9 +68,9 @@ if(isset($_POST['username']) && isset($_POST['u_password']))
 		include("../include/close_db.php");
 		?>
 		<Script language="javascript">
-			alert("ชื่อล็อกอิน : <?=$username;?> มีอยู่ในระบบ ไม่สามารถใช้ซ้ำกันได้");
+			alert("ชื่อล็อกอิน : <?= $username;?> มีอยู่ในระบบ ไม่สามารถใช้ซ้ำกันได้");
 			window.history.back();
-			//window.location="register.php?dcid=<?=$dcid;?>";
+			//window.location="register.php?dcid=<?= $dcid;?>";
 		</script>
 		<?
 		die();
@@ -237,7 +237,7 @@ if(isset($_POST['username']) && isset($_POST['u_password']))
 						</div>
 						<div class="col-xs-12 col-sm-12">
 						<div class="col-xs-5 col-sm-3 text-right" style="padding: 3px 5px 3px 0px;"><font color="#FF0000">*</font>&nbsp;หน่วยงานที่สังกัด&nbsp;</div>
-						<div class="col-xs-7 col-sm-9 text-left" style="padding: 3px 5px 3px 0px;"><input name="institution" id="institution" type="text" maxlength="255" class="form-control" value="<?=$c_institution;?>"></div>
+						<div class="col-xs-7 col-sm-9 text-left" style="padding: 3px 5px 3px 0px;"><input name="institution" id="institution" type="text" maxlength="255" class="form-control" value="<?= $c_institution;?>"></div>
 						</div>
 						<div class="col-xs-12 col-sm-12">
 						<div class="col-xs-5 col-sm-3 text-right" style="padding: 3px 5px 3px 0px;">ประเภทหน่วยงาน&nbsp;</div>

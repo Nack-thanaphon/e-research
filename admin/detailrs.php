@@ -156,63 +156,63 @@ if($tRows > 0){
 			<?}?>
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-5 text-right" style="font-weight: bold;">ชื่อ-นามสกุล(ท.)&nbsp;:&nbsp;</div>
-				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-7 text-left"><?=$c_ec_name_th;?></div>
+				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-7 text-left"><?= $c_ec_name_th;?></div>
 			</div>
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-5 text-right" style="font-weight: bold;">ชื่อ-นามสกุล(อ.)&nbsp;:&nbsp;</div>
-				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-7text-left"><?=$c_ec_name_en;?></div>
+				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-7text-left"><?= $c_ec_name_en;?></div>
 			</div>
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-5 text-right" style="font-weight: bold;">เลขบัตรประชาชน&nbsp;:&nbsp;</div>
-				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-7 text-left"><?=$c_ec_idcard;?></div>
+				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-7 text-left"><?= $c_ec_idcard;?></div>
 		    </div>
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-5 text-right" style="font-weight: bold;">ส่วนงาน&nbsp;:&nbsp;</div>
-				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-7 text-left"><?=$cc_ef_name;?></div>
+				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-7 text-left"><?= $cc_ef_name;?></div>
 			</div>
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-5 text-right" style="font-weight: bold;">ภาควิชา/ฝ่าย&nbsp;:&nbsp;</div>
-				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-7 text-left"><?=$c_es_name;?></div>
+				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-7 text-left"><?= $c_es_name;?></div>
 			</div>
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-5 text-right" style="font-weight: bold;">ตำแหน่งทางวิชาการ&nbsp;:&nbsp;</div>
-				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-7 text-left"><?=$c_ea_name;?></div>
+				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-7 text-left"><?= $c_ea_name;?></div>
 			</div>
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-5 text-right" style="font-weight: bold;">โทรศัพท์ที่ทำงาน&nbsp;:&nbsp;</div>
-				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-7 text-left"><?=$c_ec_phone;?></div>
+				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-7 text-left"><?= $c_ec_phone;?></div>
 			</div>
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-5 text-right" style="font-weight: bold;">โทรศัพท์มือถือ&nbsp;:&nbsp;</div>
-				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-7 text-left"><?=$c_ec_mobile;?></div>
+				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-7 text-left"><?= $c_ec_mobile;?></div>
 			</div>
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-5 text-right" style="font-weight: bold;">โทรสาร&nbsp;:&nbsp;</div>
-				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-7 text-left"><?=$c_ec_fax;?></div>
+				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-7 text-left"><?= $c_ec_fax;?></div>
 			</div>
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-5 text-right" style="font-weight: bold;">อีเมล&nbsp;:&nbsp;</div>
-				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-7 text-left"><?=$c_ec_email;?></div>
+				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-7 text-left"><?= $c_ec_email;?></div>
 			</div>
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-5 text-right" style="font-weight: bold;">วุฒิสูงสุด&nbsp;:&nbsp;</div>
-				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-7 text-left"><?=$c_ec_highest;?></div>
+				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-7 text-left"><?= $c_ec_highest;?></div>
 			</div>
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-5 text-right" style="font-weight: bold;">ประวัติการศึกษา&nbsp;:&nbsp;</div>
-				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-7 text-left"><div style="max-width: 95%"><?=$c_ec_educationrecord;?></div></div>
+				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-7 text-left"><div style="max-width: 95%"><?= $c_ec_educationrecord;?></div></div>
 			</div>
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-5 text-right" style="font-weight: bold;">ประวัติการทำงาน&nbsp;:&nbsp;</div>
-				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-7 text-left"><div style="max-width: 95%"><?=$c_ec_workhistory;?></div></div>
+				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-7 text-left"><div style="max-width: 95%"><?= $c_ec_workhistory;?></div></div>
 			</div>
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-5 text-right" style="font-weight: bold;">เชี่ยวชาญในสาขาวิชา&nbsp;:&nbsp;</div>
-				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-7 text-left"><div style="max-width: 95%"><?=$c_ec_specialization;?></div></div>
+				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-7 text-left"><div style="max-width: 95%"><?= $c_ec_specialization;?></div></div>
 			</div>
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-5 text-right" style="font-weight: bold;">ประสบการณ์พิเศษ&nbsp;:&nbsp;</div>
-				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-7 text-left"><div style="max-width: 95%"><?=$c_ec_experience;?></div></div>
+				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-7 text-left"><div style="max-width: 95%"><?= $c_ec_experience;?></div></div>
 			</div>
 
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">&nbsp;</div>

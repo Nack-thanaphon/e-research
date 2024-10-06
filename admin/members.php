@@ -156,7 +156,7 @@ include("../include/config_db.php");
 					  </select>
 					  </span>
 					  <span class="sbreak2">
-					  <input type="text" name="c_code_1" id="c_code_1" class="searchbox-control" maxlength="30" placeholder="ข้อความที่ต้องการค้นหา" value="<?=$_SESSION["u_code_1"];?>">&nbsp;
+					  <input type="text" name="c_code_1" id="c_code_1" class="searchbox-control" maxlength="30" placeholder="ข้อความที่ต้องการค้นหา" value="<?= $_SESSION["u_code_1"];?>">&nbsp;
 					  <input type="submit" name="Submit" id="Submit" value="ค้นหา" class="btn btn-success" style="width:70px; margin:2px;">&nbsp;<input type="button" name="Clear" id="Clear" value="ยกเลิก" class="btn btn-info" style="width:70px;margin-top:0;" onclick="window.location='members.php?iRegister=1';"></span>
 			    </div>
 			</form>
@@ -193,11 +193,11 @@ include("../include/config_db.php");
 					<tr id="ontop1" style="background-color:#e5e5e5">
 						  <th id="ontop2">&nbsp;</th>
 						  <th id="ontop3">&nbsp;</th>
-						  <th style="vertical-align:middle;text-align:center;" id="ontop4"><a href="members.php?sd=1&sh_order=<?=$sh_order;?>" target="_parent" style="white-space: nowrap;">ID <?=$a1sort;?></a></th>
-						  <th style="vertical-align:middle;text-align:center;"  id="ontop5"><a href="members.php?sd=2&sh_order=<?=$sh_order;?>" target="_parent" style="white-space: nowrap;">ชื่อ-นามสกุล <?=$a2sort;?></a></th>
-						  <th style="vertical-align:middle;text-align:center;"  id="ontop6"><a href="members.php?sd=3&sh_order=<?=$sh_order;?>" target="_parent" style="white-space: nowrap;">ชื่อ login <?=$a3sort;?></a></th>
-						  <th style="vertical-align:middle;text-align:center;" id="ontop7"><a href="members.php?sd=4&sh_order=<?=$sh_order;?>" target="_parent" style="white-space: nowrap;">หน่วยงานที่สังกัด <?=$a4sort;?></a></th>
-						  <th style="vertical-align:middle;text-align:center;" id="ontop8"><a href="members.php?sd=5&sh_order=<?=$sh_order;?>" target="_parent" style="white-space: nowrap;">ประเภทหน่วยงาน <?=$a5sort;?></a></th>
+						  <th style="vertical-align:middle;text-align:center;" id="ontop4"><a href="members.php?sd=1&sh_order=<?= $sh_order;?>" target="_parent" style="white-space: nowrap;">ID <?= $a1sort;?></a></th>
+						  <th style="vertical-align:middle;text-align:center;"  id="ontop5"><a href="members.php?sd=2&sh_order=<?= $sh_order;?>" target="_parent" style="white-space: nowrap;">ชื่อ-นามสกุล <?= $a2sort;?></a></th>
+						  <th style="vertical-align:middle;text-align:center;"  id="ontop6"><a href="members.php?sd=3&sh_order=<?= $sh_order;?>" target="_parent" style="white-space: nowrap;">ชื่อ login <?= $a3sort;?></a></th>
+						  <th style="vertical-align:middle;text-align:center;" id="ontop7"><a href="members.php?sd=4&sh_order=<?= $sh_order;?>" target="_parent" style="white-space: nowrap;">หน่วยงานที่สังกัด <?= $a4sort;?></a></th>
+						  <th style="vertical-align:middle;text-align:center;" id="ontop8"><a href="members.php?sd=5&sh_order=<?= $sh_order;?>" target="_parent" style="white-space: nowrap;">ประเภทหน่วยงาน <?= $a5sort;?></a></th>
 						  <th style="vertical-align:middle;text-align:center;" id="ontop9">โทรศัพท์</th>
 						  <th style="vertical-align:middle;text-align:center;" id="ontop10">อีเมล</th>
 						  <th style="vertical-align:middle;text-align:center;" id="ontop11">ที่อยู่</th>
@@ -324,14 +324,14 @@ include("../include/config_db.php");
 						echo "<a href='javascript:void(0)' style='color:red;font-size:16px;' title='ลบ' onclick=\"javascript:confirmDelete('dfile$jk','".$c_id."','".$code_1."','1');\"><span class='glyphicon glyphicon-trash'></span>&nbsp;<span style='font-size:14px;'>ลบ</span></a><span id='dfile$jk'></span>";
 						?>
 						</td>
-						<td style="text-align:center;padding-left:0;padding-right:0;">&nbsp;<?=$c_id;?>&nbsp;</td>
-						<td style="text-align:left;padding-left:0;padding-right:0;white-space: nowrap;">&nbsp;<?=$c_name;?>&nbsp;</td>
-						<td style="text-align:center;padding-left:0;padding-right:0;white-space: nowrap;">&nbsp;<?=$c_username;?>&nbsp;</td>
-						<td style="text-align:left;padding-left:0;padding-right:0;white-space: nowrap;">&nbsp;<?=$c_institution;?>&nbsp;</td>
-						<td style="text-align:left;padding-left:0;padding-right:0;white-space: nowrap;">&nbsp;<?=$c_institution_name;?>&nbsp;</td>
-						<td style="text-align:center;padding-left:0;padding-right:0;white-space: nowrap;">&nbsp;<a href='tel:<?=$c_phone;?>' target="_blank" title='<?=$c_phone;?>'><?=$c_phone;?></a>&nbsp;</td>
-						<td style="text-align:center;padding-left:0;padding-right:0;white-space: nowrap;">&nbsp;<a href='mailto:<?=$c_email;?>' target='_blank' title="<?=$c_email;?>"><?=$c_email;?></a>&nbsp;</td>
-						<td style="text-align:left;"><div style="margin-left:5px;margin-right:5px;"><?=$c_address;?></span>
+						<td style="text-align:center;padding-left:0;padding-right:0;">&nbsp;<?= $c_id;?>&nbsp;</td>
+						<td style="text-align:left;padding-left:0;padding-right:0;white-space: nowrap;">&nbsp;<?= $c_name;?>&nbsp;</td>
+						<td style="text-align:center;padding-left:0;padding-right:0;white-space: nowrap;">&nbsp;<?= $c_username;?>&nbsp;</td>
+						<td style="text-align:left;padding-left:0;padding-right:0;white-space: nowrap;">&nbsp;<?= $c_institution;?>&nbsp;</td>
+						<td style="text-align:left;padding-left:0;padding-right:0;white-space: nowrap;">&nbsp;<?= $c_institution_name;?>&nbsp;</td>
+						<td style="text-align:center;padding-left:0;padding-right:0;white-space: nowrap;">&nbsp;<a href='tel:<?= $c_phone;?>' target="_blank" title='<?= $c_phone;?>'><?= $c_phone;?></a>&nbsp;</td>
+						<td style="text-align:center;padding-left:0;padding-right:0;white-space: nowrap;">&nbsp;<a href='mailto:<?= $c_email;?>' target='_blank' title="<?= $c_email;?>"><?= $c_email;?></a>&nbsp;</td>
+						<td style="text-align:left;"><div style="margin-left:5px;margin-right:5px;"><?= $c_address;?></span>
 							<?
 							//if($adrlen > $adrlen2) {
 							//	echo "<a href=\"javascript:void(0)\" title='".$c_address."' style='color:#000000;'>".$c_address2."</a>";
@@ -371,7 +371,7 @@ include("../include/config_db.php");
 				?>
 			</div>
 			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-5 text-right">
-				<form name="form3" method="post" action="members.php?sd=<?=$sd;?>&sh_order=<?=$sh_order;?>&Page=1" role="form">
+				<form name="form3" method="post" action="members.php?sd=<?= $sd;?>&sh_order=<?= $sh_order;?>&Page=1" role="form">
 					<select name="Per_Page" id="Per_Page" style="width:130px;border-radius:5px;border:1px solid #<?echo __EC_BGSHOW__;?>;padding:5px;" onchange="document.form3.submit()">
 					<option value="18" <?php if($Per_Page=='18'){echo "selected";}?>>18 รายการ/หน้า</option>
 					<option value="30"<?php if($Per_Page=='30'){echo "selected";}?>>30 รายการ/หน้า</option>

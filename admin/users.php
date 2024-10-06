@@ -48,7 +48,7 @@ if($chk_add=="1"){
 			//echo "<p align=\"center\"><a href=\"users.php\">กลับหน้าหลัก</a></p><br />";
 			?>
 			<Script language="javascript">
-				alert("User name : <?=$u_name;?> มีอยู่ในระบบแล้ว ไม่สามารถเพิ่มได้");
+				alert("User name : <?= $u_name;?> มีอยู่ในระบบแล้ว ไม่สามารถเพิ่มได้");
 				window.location="users.php";
 			</script>
 			<?
@@ -149,7 +149,7 @@ function check(){
 <div class="container">
 	<div class="row">
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 clearmp">
-		   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="border-bottom:1px solid #ff9900;font-size:18px;color:#ff9900;"><span class="glyphicon glyphicon-lock"></span>&nbsp;ตั้งค่าผู้ใช้งาน [ คุณเข้าระบบด้วย <?=$admin;?> ]</div>
+		   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="border-bottom:1px solid #ff9900;font-size:18px;color:#ff9900;"><span class="glyphicon glyphicon-lock"></span>&nbsp;ตั้งค่าผู้ใช้งาน [ คุณเข้าระบบด้วย <?= $admin;?> ]</div>
 		   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" >&nbsp;</div>
 		</div><!-- /.col-lg-12 col-md-12 col-sm-12 col-xs-12 -->
 	</div><!-- /.row -->
@@ -273,7 +273,7 @@ function check(){
 
 						?>
 
-						<tr style="background-color:<?=$bcolor;?>">
+						<tr style="background-color:<?= $bcolor;?>">
 						<td style="text-align:center;width:100px;min-width:100px;">
 						<?
 						echo "<a href='edit_user.php?code_id=$code_id&code_1=$code_1' style='color:green;font-size:20px;' title='แก้ไข'><span class='glyphicon glyphicon-edit'></span>&nbsp;<span style='font-size:14px;'>แก้ไข</span></a>";
@@ -285,19 +285,19 @@ function check(){
 						?>
 						</td>
 						<td style="text-align:center;">
-						<?= $code_id;?>
+						<?=  $code_id;?>
 						</td>
 						<td>
-						<?= $code_1;?>
+						<?=  $code_1;?>
 						</td>
 						<td>
-						<?= $name;?>
+						<?=  $name;?>
 						</td>
 						<td>
-						<?= $code_5;?>
+						<?=  $code_5;?>
 						</td>
 						<td>
-						<?= $code_6;?>
+						<?=  $code_6;?>
 						</td>
 						</tr>
 

@@ -148,11 +148,11 @@ $mysqli->query("update `ers_member_request` set `er_answer_read`='1',`er_answer_
 	  </div>
 	  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">ข้อความตอบกลับ&nbsp;:&nbsp;</div>
-		<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><?=$c_er_answer_text;?></div>
+		<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><?= $c_er_answer_text;?></div>
 	  </div>
 	  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">วันที่หมดอายุ&nbsp;:&nbsp;</div>
-		<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" style="margin:0;padding:0;"><?=$c_er_answer_expire;?></div>
+		<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" style="margin:0;padding:0;"><?= $c_er_answer_expire;?></div>
 	  </div>
 	  <?
 		$sql = "select * from `ers_member_files` where (`request_id`='".$c_id."') and (`emf_approve`='1') order by `id`ASC";
@@ -185,7 +185,7 @@ $mysqli->query("update `ers_member_request` set `er_answer_read`='1',`er_answer_
 						</div>
 						<?}?>
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right" style="font-weight: bold;white-space: nowrap;">เอกสาร <?=$item;?>&nbsp;:&nbsp;</div>
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right" style="font-weight: bold;white-space: nowrap;">เอกสาร <?= $item;?>&nbsp;:&nbsp;</div>
 							<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
 								<?
 									echo "<div id=\"view$item\"><span class='glyphicon glyphicon-file' style='color:#000000'></span>&nbsp;".$c_edf_filename."<br><a href='../include/filedownloadmb.php?m=".$c_document_files_id."&r=".$c_id."' target='_blank' style='white-space: nowrap;'><span class='glyphicon glyphicon-download-alt'></span>&nbsp;ดาวน์โหลด</a>&nbsp;&nbsp;</div>";

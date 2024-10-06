@@ -49,7 +49,7 @@ if($chk_edit=="1")
 		include("../include/close_db.php");
 		?>
 		<Script language="javascript">
-			alert("ตำแหน่งในโครงการ : <?=$s_ep_name;?> มีอยู่ในระบบ ไม่สามารถบันทึกซ้ำได้");
+			alert("ตำแหน่งในโครงการ : <?= $s_ep_name;?> มีอยู่ในระบบ ไม่สามารถบันทึกซ้ำได้");
 			window.location="proposition.php?iRegister=1";
 		</script>
 		<?
@@ -154,7 +154,7 @@ function c_check2(){
 		  <form name="form1"  method="post" action="proposition.php" onSubmit="return c_check();" role="form">
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				<div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 text-right">ชื่อ ตำแหน่งในโครงการ&nbsp;:&nbsp;</div>
-				<div class="col-lg-7 col-md-7 col-sm-7 col-xs-7"><input type="text" name="s_ep_name" id="s_ep_name" maxlength="120" class="form-control input_width"  value="<?=$c_ep_name;?>"></div>
+				<div class="col-lg-7 col-md-7 col-sm-7 col-xs-7"><input type="text" name="s_ep_name" id="s_ep_name" maxlength="120" class="form-control input_width"  value="<?= $c_ep_name;?>"></div>
 			  </div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" >&nbsp;</div>
 		      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
@@ -205,8 +205,8 @@ function c_check2(){
                 <tr style="background-color:#f7f7f7">
                   <th>&nbsp;</th>
 				  <th>&nbsp;</th>
-                  <th style="text-align:center;"><a href="proposition.php?sd=1&sh_order=<?=$sh_order;?>#top_page" target="_parent">ID <?=$a1sort;?></a></th>
-                  <th><a href="proposition.php?sd=2&sh_order=<?=$sh_order;?>#top_page" target="_parent">ชื่อ ตำแหน่งในโครงการ <?=$a2sort;?></a></th>
+                  <th style="text-align:center;"><a href="proposition.php?sd=1&sh_order=<?= $sh_order;?>#top_page" target="_parent">ID <?= $a1sort;?></a></th>
+                  <th><a href="proposition.php?sd=2&sh_order=<?= $sh_order;?>#top_page" target="_parent">ชื่อ ตำแหน่งในโครงการ <?= $a2sort;?></a></th>
                 </tr>
               </thead>
               <tbody>
@@ -274,7 +274,7 @@ function c_check2(){
 
 				?>
 
-					<tr style="background-color:<?=$bcolor;?>">
+					<tr style="background-color:<?= $bcolor;?>">
 					<td style="text-align:center;width:100px;min-width:100px;">
 					<?
 					echo "<a href='proposition.php?c_id=$c_id' style='color:green;font-size:16px;' title='แก้ไข'><span class='glyphicon glyphicon-edit'></span>&nbsp;<span style='font-size:14px;'>แก้ไข</span></a>";
@@ -285,8 +285,8 @@ function c_check2(){
 					echo "<a href='del_data.php?c_id=$c_id&chk_p=5&code_1=$code_1' style='color:red;font-size:16px;' title='ลบ'><span class='glyphicon glyphicon-trash'></span>&nbsp;<span style='font-size:14px;'>ลบ</span></a>";
 					?>
 					</td>
-					<td style="text-align:center;"><?=$c_id;?></td>
-					<td><?=$c_name;?></td>
+					<td style="text-align:center;"><?= $c_id;?></td>
+					<td><?= $c_name;?></td>
 					</tr>
 
 				<?

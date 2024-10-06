@@ -66,8 +66,8 @@ if($tRows_nodoc > 0){
             </ul>
             <ul class="nav navbar-nav navbar-right" style="margin-right:10px;">
               <li>
-					<?php if($tRows_n>0){?><a href="members_approve.php?iRegister=1" title="ขอเอกสารที่รอตรวจสอบ ในระบบ <?=number_format($tRows_n);?> รายการ <?php if($tRows_nodoc>0){?> นอกระบบ <?=number_format($tRows_nodoc);?> รายการ<?}?>"><span class="blink" style="border: 1px solid #ff0099;border-radius:50%;padding:1px;color:#ff0099;">&nbsp;<?=number_format($tRows_n2);?>&nbsp;</span></a><?} else {?>
-					<?php if($tRows_nodoc>0){?><a href="members_nodoc.php?iRegister=1" title="ขอเอกสารที่รอตรวจสอบ นอกระบบ <?=number_format($tRows_nodoc);?> รายการ"><span class="blink" style="border: 1px solid #ff0099;border-radius:50%;padding:1px;color:#ff0099;">&nbsp;<?=number_format($tRows_nodoc);?>&nbsp;</span></a><?}}?>
+					<?php if($tRows_n>0){?><a href="members_approve.php?iRegister=1" title="ขอเอกสารที่รอตรวจสอบ ในระบบ <?= number_format($tRows_n);?> รายการ <?php if($tRows_nodoc>0){?> นอกระบบ <?= number_format($tRows_nodoc);?> รายการ<?}?>"><span class="blink" style="border: 1px solid #ff0099;border-radius:50%;padding:1px;color:#ff0099;">&nbsp;<?= number_format($tRows_n2);?>&nbsp;</span></a><?} else {?>
+					<?php if($tRows_nodoc>0){?><a href="members_nodoc.php?iRegister=1" title="ขอเอกสารที่รอตรวจสอบ นอกระบบ <?= number_format($tRows_nodoc);?> รายการ"><span class="blink" style="border: 1px solid #ff0099;border-radius:50%;padding:1px;color:#ff0099;">&nbsp;<?= number_format($tRows_nodoc);?>&nbsp;</span></a><?}}?>
 			  </li>
 			  <li class="dropdown">
 					<?php if($_menu_id==5){?>
@@ -87,7 +87,7 @@ if($tRows_nodoc > 0){
 								$row_admin = $dbquery_admin->fetch_assoc();
 								$code_id = $row_admin["id"];
 								?>
-								<li><a href="edit_user.php?code_id=<?=$code_id;?>&code_1=<?=$code_admin;?>" style="font-size:16px;">&nbsp;<span class="glyphicon glyphicon-lock" style="color:#ff9900;"></span>&nbsp;ผู้ดูแลระบบ</a></li>
+								<li><a href="edit_user.php?code_id=<?= $code_id;?>&code_1=<?= $code_admin;?>" style="font-size:16px;">&nbsp;<span class="glyphicon glyphicon-lock" style="color:#ff9900;"></span>&nbsp;ผู้ดูแลระบบ</a></li>
 								<?
 								$dbquery_admin->close();
 							}

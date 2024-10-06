@@ -409,19 +409,19 @@ function confirmDelete(span_id,id_order,filename,content_id,div_id) {
 						<input name="s_title_th_v" type="radio" value="3" <?php if($c_title_th_v == "3"){echo "checked";}?> onclick="chkother('3')">&nbsp;นางสาว&nbsp;
 						<input name="s_title_th_v" type="radio" value="4" <?php if($c_title_th_v == "4"){echo "checked";}?> onclick="chkother('4')">&nbsp;อื่นๆ
 						<?php if($c_title_th_v == "4"){?>
-							<input type="text" name="s_title_th_other" id="s_title_th_other" maxlength="30" class="form-control input_width2"  value="<?=$c_title_th;?>" placeholder="คำนำหน้าชื่อ(ภาษาไทย)">
+							<input type="text" name="s_title_th_other" id="s_title_th_other" maxlength="30" class="form-control input_width2"  value="<?= $c_title_th;?>" placeholder="คำนำหน้าชื่อ(ภาษาไทย)">
 						<?} else {?>
-							<input type="text" name="s_title_th_other" id="s_title_th_other" maxlength="30" class="form-control input_width2"  value="<?=$c_title_th;?>" style="display:none;" placeholder="คำนำหน้าชื่อ(ภาษาไทย)">
+							<input type="text" name="s_title_th_other" id="s_title_th_other" maxlength="30" class="form-control input_width2"  value="<?= $c_title_th;?>" style="display:none;" placeholder="คำนำหน้าชื่อ(ภาษาไทย)">
 						<?}?>
 					</div>
 				  </div>
 				  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">ชื่อ(ไทย)&nbsp;:&nbsp;</div>
-					<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><input type="text" name="s_firstname_th" id="s_firstname_th" maxlength="120" class="form-control input_width"  value="<?=$c_firstname_th;?>"></div>
+					<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><input type="text" name="s_firstname_th" id="s_firstname_th" maxlength="120" class="form-control input_width"  value="<?= $c_firstname_th;?>"></div>
 				  </div>
 				  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">นามสกุล(ไทย)&nbsp;:&nbsp;</div>
-					<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><input type="text" name="s_lastname_th" id="s_lastname_th" maxlength="120" class="form-control input_width"  value="<?=$c_lastname_th;?>"></div>
+					<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><input type="text" name="s_lastname_th" id="s_lastname_th" maxlength="120" class="form-control input_width"  value="<?= $c_lastname_th;?>"></div>
 				  </div>
 				  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">คำนำหน้าชื่อ(อังกฤษ)&nbsp;:&nbsp;</div>
@@ -431,23 +431,23 @@ function confirmDelete(span_id,id_order,filename,content_id,div_id) {
 						<input name="s_title_en_v" type="radio" value="3" <?php if($c_title_en_v == "3"){echo "checked";}?> onclick="chkothereng('3')">&nbsp;Miss&nbsp;
 						<input name="s_title_en_v" type="radio" value="4" <?php if($c_title_en_v == "4"){echo "checked";}?> onclick="chkothereng('4')">&nbsp;อื่นๆ
 						<?php if($c_title_en_v == "4"){?>
-							<input type="text" name="s_title_en_other" id="s_title_en_other" maxlength="30" class="form-control input_width2"  value="<?=$c_title_en;?>" placeholder="คำนำหน้าชื่อ(อังกฤษ)">
+							<input type="text" name="s_title_en_other" id="s_title_en_other" maxlength="30" class="form-control input_width2"  value="<?= $c_title_en;?>" placeholder="คำนำหน้าชื่อ(อังกฤษ)">
 						<?} else {?>
-							<input type="text" name="s_title_en_other" id="s_title_en_other" maxlength="30" class="form-control input_width2"  value="<?=$c_title_en;?>" style="display:none;" placeholder="คำนำหน้าชื่อ(อังกฤษ)">
+							<input type="text" name="s_title_en_other" id="s_title_en_other" maxlength="30" class="form-control input_width2"  value="<?= $c_title_en;?>" style="display:none;" placeholder="คำนำหน้าชื่อ(อังกฤษ)">
 						<?}?>
 					</div>
 				  </div>
 				  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">ชื่อ(อังกฤษ)&nbsp;:&nbsp;</div>
-					<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><input type="text" name="s_firstname_en" id="s_firstname_en" maxlength="120" class="form-control input_width"  value="<?=$c_firstname_en;?>"></div>
+					<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><input type="text" name="s_firstname_en" id="s_firstname_en" maxlength="120" class="form-control input_width"  value="<?= $c_firstname_en;?>"></div>
 				  </div>
 				  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">นามสกุล(อังกฤษ)&nbsp;:&nbsp;</div>
-					<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><input type="text" name="s_lastname_en" id="s_lastname_en" maxlength="120" class="form-control input_width"  value="<?=$c_lastname_en;?>"></div>
+					<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><input type="text" name="s_lastname_en" id="s_lastname_en" maxlength="120" class="form-control input_width"  value="<?= $c_lastname_en;?>"></div>
 				  </div>
 				  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">เลขบัตรประชาชน&nbsp;:&nbsp;</div>
-					<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><input type="text" name="s_idcard" id="s_idcard" maxlength="20" class="form-control input_width2"  value="<?=$c_idcard;?>"></div>
+					<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><input type="text" name="s_idcard" id="s_idcard" maxlength="20" class="form-control input_width2"  value="<?= $c_idcard;?>"></div>
 				  </div>
 				  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">สถานภาพของนักวิจัย&nbsp;:&nbsp;</div>
@@ -531,11 +531,11 @@ function confirmDelete(span_id,id_order,filename,content_id,div_id) {
 				  </div>
 				  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">โทรศัพท์ที่ทำงาน&nbsp;:&nbsp;</div>
-					<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><input type="text" name="s_phone" id="s_phone" maxlength="50" class="form-control input_width2"  value="<?=$c_phone;?>"></div>
+					<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><input type="text" name="s_phone" id="s_phone" maxlength="50" class="form-control input_width2"  value="<?= $c_phone;?>"></div>
 				  </div>
 				  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">โทรศัพท์มือถือ&nbsp;:&nbsp;</div>
-					<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><input type="text" name="s_mobile" id="s_mobile" maxlength="50" class="form-control input_width2"  value="<?=$c_mobile;?>"></div>
+					<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><input type="text" name="s_mobile" id="s_mobile" maxlength="50" class="form-control input_width2"  value="<?= $c_mobile;?>"></div>
 				  </div>
 
 			  </div><!-- /.col-lg-6 col-md-6 col-sm-6 col-xs-12 -->
@@ -543,15 +543,15 @@ function confirmDelete(span_id,id_order,filename,content_id,div_id) {
 
 				  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">โทรสาร&nbsp;:&nbsp;</div>
-					<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><input type="text" name="s_fax" id="s_fax" maxlength="50" class="form-control input_width2"  value="<?=$c_fax;?>"></div>
+					<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><input type="text" name="s_fax" id="s_fax" maxlength="50" class="form-control input_width2"  value="<?= $c_fax;?>"></div>
 				  </div>
 				  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">อีเมล&nbsp;:&nbsp;</div>
-					<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><input type="text" name="s_email" id="s_email" maxlength="120" class="form-control input_width"  value="<?=$c_email;?>"></div>
+					<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><input type="text" name="s_email" id="s_email" maxlength="120" class="form-control input_width"  value="<?= $c_email;?>"></div>
 				  </div>
 				  <div class="col-lg-12 col-md-12 col-sm-12" style="padding:3px;">
 					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">วุฒิสูงสุด&nbsp;:&nbsp;</div>
-					<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><input type="text" name="s_highest" id="s_highest" maxlength="120" class="form-control input_width"  value="<?=$c_highest;?>"></div>
+					<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><input type="text" name="s_highest" id="s_highest" maxlength="120" class="form-control input_width"  value="<?= $c_highest;?>"></div>
 				  </div>
 				  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">ประวัติการศึกษา&nbsp;:&nbsp;</div>
@@ -563,11 +563,11 @@ function confirmDelete(span_id,id_order,filename,content_id,div_id) {
 				  </div>
 				  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">เชี่ยวชาญในสาขาวิชา&nbsp;:&nbsp;</div>
-					<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><input type="text" name="s_specialization" id="s_specialization" maxlength="255" class="form-control input_width"  value="<?=$c_specialization;?>"></div>
+					<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><input type="text" name="s_specialization" id="s_specialization" maxlength="255" class="form-control input_width"  value="<?= $c_specialization;?>"></div>
 				  </div>
 				  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">ประสบการณ์พิเศษ&nbsp;:&nbsp;</div>
-					<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><input type="text" name="s_experience" id="s_experience" maxlength="255" class="form-control input_width"  value="<?=$c_experience;?>"></div>
+					<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><input type="text" name="s_experience" id="s_experience" maxlength="255" class="form-control input_width"  value="<?= $c_experience;?>"></div>
 				  </div>
 
 			  </div><!-- /.col-lg-6 col-md-6 col-sm-6 col-xs-12 -->
@@ -688,14 +688,14 @@ function confirmDelete(span_id,id_order,filename,content_id,div_id) {
                 <tr style="background-color:#f7f7f7">
                   <th>&nbsp;</th>
 				  <th>&nbsp;</th>
-                  <th style="text-align:center;"><a href="researcher.php?sd=1&sh_order=<?=$sh_order;?>#top_page" target="_parent">ID <?=$a1sort;?></a></th>
-                  <th><a href="researcher.php?sd=2&sh_order=<?=$sh_order;?>#top_page" target="_parent">ชื่อ-นามสกุล <?=$a2sort;?></a></th>
-				  <th><a href="researcher.php?sd=3&sh_order=<?=$sh_order;?>#top_page" target="_parent">โทรศัพท์ที่ทำงาน <?=$a3sort;?></a></th>
-				  <th><a href="researcher.php?sd=4&sh_order=<?=$sh_order;?>#top_page" target="_parent">โทรศัพท์มือถือ <?=$a4sort;?></a></th>
+                  <th style="text-align:center;"><a href="researcher.php?sd=1&sh_order=<?= $sh_order;?>#top_page" target="_parent">ID <?= $a1sort;?></a></th>
+                  <th><a href="researcher.php?sd=2&sh_order=<?= $sh_order;?>#top_page" target="_parent">ชื่อ-นามสกุล <?= $a2sort;?></a></th>
+				  <th><a href="researcher.php?sd=3&sh_order=<?= $sh_order;?>#top_page" target="_parent">โทรศัพท์ที่ทำงาน <?= $a3sort;?></a></th>
+				  <th><a href="researcher.php?sd=4&sh_order=<?= $sh_order;?>#top_page" target="_parent">โทรศัพท์มือถือ <?= $a4sort;?></a></th>
 				  <!--<th><a href="researcher.php?sd=5&sh_order=<?//=$sh_order;?>#top_page" target="_parent">อีเมล <?//=$a5sort;?></a></th>-->
-				  <th><a href="researcher.php?sd=6&sh_order=<?=$sh_order;?>#top_page" target="_parent">ภาควิชา/ฝ่าย <?=$a6sort;?></a></th>
-				  <th><a href="researcher.php?sd=7&sh_order=<?=$sh_order;?>#top_page" target="_parent">ส่วนงาน <?=$a7sort;?></a></th>
-				  <th><a href="researcher.php?sd=8&sh_order=<?=$sh_order;?>#top_page" target="_parent">สถานภาพ <?=$a8sort;?></a></th>
+				  <th><a href="researcher.php?sd=6&sh_order=<?= $sh_order;?>#top_page" target="_parent">ภาควิชา/ฝ่าย <?= $a6sort;?></a></th>
+				  <th><a href="researcher.php?sd=7&sh_order=<?= $sh_order;?>#top_page" target="_parent">ส่วนงาน <?= $a7sort;?></a></th>
+				  <th><a href="researcher.php?sd=8&sh_order=<?= $sh_order;?>#top_page" target="_parent">สถานภาพ <?= $a8sort;?></a></th>
                 </tr>
               </thead>
               <tbody>
@@ -819,7 +819,7 @@ function confirmDelete(span_id,id_order,filename,content_id,div_id) {
 
 				?>
 
-				<tr style="background-color:<?=$bcolor;?>">
+				<tr style="background-color:<?= $bcolor;?>">
 				<td style="text-align:center;width:100px;min-width:100px;">
 				<?
 				echo "<a href='researcher.php?c_id=$c_id' style='color:green;font-size:16px;' title='แก้ไข'><span class='glyphicon glyphicon-edit'></span>&nbsp;<span style='font-size:14px;'>แก้ไข</span></a>";
@@ -830,14 +830,14 @@ function confirmDelete(span_id,id_order,filename,content_id,div_id) {
 				echo "<a href='del_data.php?c_id=$c_id&chk_p=6&code_1=$code_1' style='color:red;font-size:16px;' title='ลบ'><span class='glyphicon glyphicon-trash'></span>&nbsp;<span style='font-size:14px;'>ลบ</span></a>";
 				?>
 				</td>
-				<td style="text-align:center;"><?=$c_id;?></td>
-				<td><?=$c_name;?></td>
-				<td><?=$c_phone;?></td>
-				<td><?=$c_mobile;?></td>
+				<td style="text-align:center;"><?= $c_id;?></td>
+				<td><?= $c_name;?></td>
+				<td><?= $c_phone;?></td>
+				<td><?= $c_mobile;?></td>
 				<!--<td><?//=$c_email;?></td>-->
-				<td><?=$c_section_name;?></td>
-				<td><?=$c_faculty_name;?></td>
-				<td><?=$c_status_name;?></td>
+				<td><?= $c_section_name;?></td>
+				<td><?= $c_faculty_name;?></td>
+				<td><?= $c_status_name;?></td>
 				</tr>
 
 				<?

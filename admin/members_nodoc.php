@@ -211,7 +211,7 @@ $dbquery->free();
 			<form name="form2" method="post" action="members_nodoc.php" role="form">
 			    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
 					  <span class="sbreak2">
-					  <input type="text" name="c_code_1" id="c_code_1" class="searchbox-control" maxlength="30" placeholder="ข้อความที่ต้องการค้นหา" value="<?=$_SESSION["u_code_1"];?>">&nbsp;
+					  <input type="text" name="c_code_1" id="c_code_1" class="searchbox-control" maxlength="30" placeholder="ข้อความที่ต้องการค้นหา" value="<?= $_SESSION["u_code_1"];?>">&nbsp;
 					  <input type="submit" name="Submit" id="Submit" value="ค้นหา" class="btn btn-success" style="width:70px; margin:2px;">&nbsp;<input type="button" name="Clear" id="Clear" value="ยกเลิก" class="btn btn-info" style="width:70px;margin-top:0;" onclick="window.location='members_nodoc.php?iRegister=1';"></span>
 			    </div>
 			</form>
@@ -222,9 +222,9 @@ $dbquery->free();
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 			<!--<span style="font-size:14px;font-weight: bold;margin-left:10px;">-->
 			<div style="margin-left:10px;">
-			<span class="glyphicon glyphicon-flag" style="color:#00cc00;"></span>&nbsp;ตอบกลับแล้ว : <font style='color:#00cc00;'><?=number_format($tRows_y);?></font>&nbsp;&nbsp;
-			<span class="glyphicon glyphicon-flag" style="color:#ff0099;"></span>&nbsp;รอตรวจสอบ : <font style='color:#ff0099;'><?=number_format($tRows_w);?></font>&nbsp;&nbsp;
-			<span class="glyphicon glyphicon-flag" style="color:#ff9933;"></span>&nbsp;สมาชิกยกเลิก : <font style='color:#ff9933;'><?=number_format($tRows_c);?></font>&nbsp;&nbsp;
+			<span class="glyphicon glyphicon-flag" style="color:#00cc00;"></span>&nbsp;ตอบกลับแล้ว : <font style='color:#00cc00;'><?= number_format($tRows_y);?></font>&nbsp;&nbsp;
+			<span class="glyphicon glyphicon-flag" style="color:#ff0099;"></span>&nbsp;รอตรวจสอบ : <font style='color:#ff0099;'><?= number_format($tRows_w);?></font>&nbsp;&nbsp;
+			<span class="glyphicon glyphicon-flag" style="color:#ff9933;"></span>&nbsp;สมาชิกยกเลิก : <font style='color:#ff9933;'><?= number_format($tRows_c);?></font>&nbsp;&nbsp;
 			</div>
 		</div>
 	</div><!-- /.row -->
@@ -257,14 +257,14 @@ $dbquery->free();
 				<thead>
 					<tr id="ontop1" style="background-color:#e5e5e5">
 						  <th id="ontop2">&nbsp;</th>
-						  <th style="vertical-align:middle;text-align:center;" id="ontop3"><a href="members_nodoc.php?sd=1&sh_order=<?=$sh_order;?>" target="_parent" style="white-space: nowrap;">ID <?=$a1sort;?></a></th>
-						  <th style="vertical-align:middle;text-align:center;"  id="ontop4"><a href="members_nodoc.php?sd=2&sh_order=<?=$sh_order;?>" target="_parent" style="white-space: nowrap;">ชื่อ-นามสกุล <?=$a2sort;?></a></th>
-						  <th style="vertical-align:middle;text-align:center;"  id="ontop5"><a href="members_nodoc.php?sd=3&sh_order=<?=$sh_order;?>" target="_parent" style="white-space: nowrap;">ชื่อ login <?=$a3sort;?></a></th>
+						  <th style="vertical-align:middle;text-align:center;" id="ontop3"><a href="members_nodoc.php?sd=1&sh_order=<?= $sh_order;?>" target="_parent" style="white-space: nowrap;">ID <?= $a1sort;?></a></th>
+						  <th style="vertical-align:middle;text-align:center;"  id="ontop4"><a href="members_nodoc.php?sd=2&sh_order=<?= $sh_order;?>" target="_parent" style="white-space: nowrap;">ชื่อ-นามสกุล <?= $a2sort;?></a></th>
+						  <th style="vertical-align:middle;text-align:center;"  id="ontop5"><a href="members_nodoc.php?sd=3&sh_order=<?= $sh_order;?>" target="_parent" style="white-space: nowrap;">ชื่อ login <?= $a3sort;?></a></th>
 						  <th style="vertical-align:middle;text-align:center;" id="ontop6">โทรศัพท์</th>
 						  <th style="vertical-align:middle;text-align:center;" id="ontop7">อีเมล</th>
 						  <th style="vertical-align:middle;text-align:center;" id="ontop8">&nbsp;ข้อความร้องขอ&nbsp;</th>
-						  <th style="vertical-align:middle;text-align:center;" id="ontop10">&nbsp;<a href="members_nodoc.php?sd=4&sh_order=<?=$sh_order;?>" target="_parent" style="white-space: nowrap;">วันที่ร้องขอ <?=$a3sort;?></a>&nbsp;</th>
-						  <th style="vertical-align:middle;text-align:center;" id="ontop11">&nbsp;<a href="members_nodoc.php?sd=5&sh_order=<?=$sh_order;?>" target="_parent" >ผลการดำเนินการ <?=$a4sort;?></a>&nbsp;</th>
+						  <th style="vertical-align:middle;text-align:center;" id="ontop10">&nbsp;<a href="members_nodoc.php?sd=4&sh_order=<?= $sh_order;?>" target="_parent" style="white-space: nowrap;">วันที่ร้องขอ <?= $a3sort;?></a>&nbsp;</th>
+						  <th style="vertical-align:middle;text-align:center;" id="ontop11">&nbsp;<a href="members_nodoc.php?sd=5&sh_order=<?= $sh_order;?>" target="_parent" >ผลการดำเนินการ <?= $a4sort;?></a>&nbsp;</th>
 						  <th style="vertical-align:middle;text-align:center;" id="ontop13">&nbsp;ข้อความที่ตอบ&nbsp;</th>
 						  <th style="vertical-align:middle;text-align:center;" id="ontop14">&nbsp;วันที่ตอบ&nbsp;</th>
 					</tr>
@@ -417,23 +417,23 @@ $dbquery->free();
 					<tr>
 						<td style="text-align:center;width:100px;min-width:100px;">
 							<?$dfile =  'dfile'.$jk;?>
-							<a href="javascript:void(0)" style="color:red;font-size:16px;" title="ลบ" onclick="confirmDelete('<?=$dfile;?>','<?=$c_id;?>','<?=$code_1;?>','1')"><span class="glyphicon glyphicon-trash"></span>&nbsp;<span style="font-size:14px;">ลบ</span><span id="<?=$dfile;?>"></span></a>
+							<a href="javascript:void(0)" style="color:red;font-size:16px;" title="ลบ" onclick="confirmDelete('<?= $dfile;?>','<?= $c_id;?>','<?= $code_1;?>','1')"><span class="glyphicon glyphicon-trash"></span>&nbsp;<span style="font-size:14px;">ลบ</span><span id="<?= $dfile;?>"></span></a>
 						</td>
-						<td style="text-align:center;padding-left:0;padding-right:0;">&nbsp;<?=$c_id;?>&nbsp;</td>
-						<td style="text-align:left;padding-left:0;padding-right:0;white-space: nowrap;">&nbsp;<?=$c_name;?>&nbsp;</td>
-						<td style="text-align:center;padding-left:0;padding-right:0;white-space: nowrap;">&nbsp;<?=$c_username;?>&nbsp;</td>
+						<td style="text-align:center;padding-left:0;padding-right:0;">&nbsp;<?= $c_id;?>&nbsp;</td>
+						<td style="text-align:left;padding-left:0;padding-right:0;white-space: nowrap;">&nbsp;<?= $c_name;?>&nbsp;</td>
+						<td style="text-align:center;padding-left:0;padding-right:0;white-space: nowrap;">&nbsp;<?= $c_username;?>&nbsp;</td>
 						<td style="text-align:center;padding-left:0;padding-right:0;white-space: nowrap;">
 							<?php if($c_er_request_cancel>=1){
 								echo "&nbsp;".$c_phone."&nbsp;";
 							} else {?>
-								<a href='tel:<?=$c_phone;?>' target="_blank" title='<?=$c_phone;?>'>&nbsp;<?=$c_phone;?>&nbsp;</a>
+								<a href='tel:<?= $c_phone;?>' target="_blank" title='<?= $c_phone;?>'>&nbsp;<?= $c_phone;?>&nbsp;</a>
 							<?}?>
 						</td>
 						<td style="text-align:center;padding-left:0;padding-right:0;white-space: nowrap;">
 						<?php if($c_er_request_cancel>=1){
 								echo "&nbsp;".$c_email."&nbsp;";
 							} else {?>
-								<a href='mailto:<?=$c_email;?>?subject=<?=$encodedSubject;?>&body=<?=$encodedBody;?>' target='_blank' title="<?=$c_email;?>">&nbsp;<?=$c_email;?>&nbsp;</a>
+								<a href='mailto:<?= $c_email;?>?subject=<?= $encodedSubject;?>&body=<?= $encodedBody;?>' target='_blank' title="<?= $c_email;?>">&nbsp;<?= $c_email;?>&nbsp;</a>
 							<?}?>
 						</td>
 						<td style="text-align:left;">
@@ -453,14 +453,14 @@ $dbquery->free();
 							}
 							?>
 						</td>
-						<td style="text-align:center;">&nbsp;<?=$c_er_request_date;?>&nbsp;</td>
+						<td style="text-align:center;">&nbsp;<?= $c_er_request_date;?>&nbsp;</td>
 						<td style="text-align:center;">
 							<?
 							if($c_er_request_cancel>=1){
 									echo "<div style='color:#fff9900;'>&nbsp;<span class='glyphicon glyphicon-remove-sign' style='color:#ff9933;font-size:14px;'></span>&nbsp;สมาชิกยกเลิก</div>";
 							} else {
 							?>
-								<div>&nbsp;<a href='javascript:void(0)' onclick='openWindow(<?=$c_id;?>)' title='ตอบกลับสมาชิก'><?=$c_er_answer_approve;?></a>&nbsp;</div>
+								<div>&nbsp;<a href='javascript:void(0)' onclick='openWindow(<?= $c_id;?>)' title='ตอบกลับสมาชิก'><?= $c_er_answer_approve;?></a>&nbsp;</div>
 							<?}?>
 						</td>
 						<td style="text-align:left;">&nbsp;
@@ -472,7 +472,7 @@ $dbquery->free();
 							}
 							?>&nbsp;
 						</td>
-						<td style="text-align:center;">&nbsp;<?=$c_er_answer_date;?>&nbsp;</td>
+						<td style="text-align:center;">&nbsp;<?= $c_er_answer_date;?>&nbsp;</td>
 					</tr>
 					<?
 					}//while
@@ -504,7 +504,7 @@ $dbquery->free();
 				?>
 			</div>
 			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-5 text-right">
-				<form name="form3" method="post" action="members_nodoc.php?sd=<?=$sd;?>&sh_order=<?=$sh_order;?>&Page=1" role="form">
+				<form name="form3" method="post" action="members_nodoc.php?sd=<?= $sd;?>&sh_order=<?= $sh_order;?>&Page=1" role="form">
 					<select name="Per_Page" id="Per_Page" style="width:130px;border-radius:5px;border:1px solid #<?echo __EC_BGSHOW__;?>;padding:5px;" onchange="document.form3.submit()">
 					<option value="18" <?php if($Per_Page=='18'){echo "selected";}?>>18 รายการ/หน้า</option>
 					<option value="30"<?php if($Per_Page=='30'){echo "selected";}?>>30 รายการ/หน้า</option>
