@@ -1,5 +1,6 @@
 <?php
-class Paginator {
+class Paginator
+{
     public $items_per_page;
     public $items_total;
     public $current_page;
@@ -16,15 +17,18 @@ class Paginator {
     public $start_range; // Define the start_range property
     public $end_range; // Define the end_range property
 
-    public function __construct() {
+    public function __construct()
+    {
         // Set default values for pagination
         $this->current_page = 1;
         $this->mid_range = 7;
         $this->items_per_page = $this->default_ipp ?? 10; // Fallback if default_ipp is not set
         $this->url_next = $this->url_next ?? ''; // Fallback if url_next is not set
+        print(22222);
     }
 
-    public function paginate() {
+    public function paginate()
+    {
         // Validate items per page
         if (!is_numeric($this->items_per_page) || $this->items_per_page <= 0) {
             $this->items_per_page = $this->default_ipp;
@@ -105,11 +109,13 @@ class Paginator {
         $this->limit = ($_GET['ipp'] == 'All') ? '' : " LIMIT $this->low, $this->items_per_page";
     }
 
-    public function display_pages() {
+    public function display_pages()
+    {
         return $this->return;
     }
 
-    public function utf8_substr($str, $start, $length = null) {
+    public function utf8_substr($str, $start, $length = null)
+    {
         if ($length === null) {
             return mb_substr($str, $start);
         } else {
