@@ -12,6 +12,9 @@ class Paginator {
     public $default_ipp;
     public $querystring;
     public $url_next;
+    public $range; // Define the range property
+    public $start_range; // Define the start_range property
+    public $end_range; // Define the end_range property
 
     public function __construct() {
         // Set default values for pagination
@@ -106,12 +109,11 @@ class Paginator {
         return $this->return;
     }
 
-    function utf8_substr($str, $start, $length = null) {
+    public function utf8_substr($str, $start, $length = null) {
         if ($length === null) {
             return mb_substr($str, $start);
         } else {
             return mb_substr($str, $start, $length);
         }
     }
-    
 }
