@@ -545,8 +545,7 @@ include("./include/config_db.php");
 																echo __EC_PICHOME__;
 															} ?>') repeat-y; background-attachment:fixed; background-size:contain;height:100%;width:100%;">
 						<thead>
-							<tr id="ontop1" style="background-color: #e5e5e5;">
-								<th style="vertical-align:middle;text-align:center;" id="ontop3">&nbsp;<a href="index.php?sd=2&sh_order=<?= $sh_order; ?>" target="_parent" style="white-space: nowrap;">ชื่อผลงานวิจัย <?= $a2sort; ?></a>&nbsp;</th>
+							<tr id="ontop1" style="background-color: #e5e5e5;"><th style="vertical-align:middle;text-align:center;" id="ontop3">&nbsp;<a href="index.php?sd=2&sh_order=<?= $sh_order; ?>" target="_parent" style="white-space: nowrap;">ชื่อผลงานวิจัย <?= $a2sort; ?></a>&nbsp;</th>
 								<th style="vertical-align:middle;text-align:center;" id="ontop4">&nbsp;<a href="index.php?sd=4&sh_order=<?= $sh_order; ?>" target="_parent" style="white-space: nowrap;">ภาควิชา/ฝ่าย <?= $a4sort; ?></a>&nbsp;</th>
 								<th style="vertical-align:middle;text-align:center;" id="ontop5">&nbsp;<a href="index.php?sd=5&sh_order=<?= $sh_order; ?>" target="_parent" style="white-space: nowrap;">ส่วนงาน <?= $a5sort; ?></a>&nbsp;</th>
 								<th style="vertical-align:middle;text-align:center;" id="ontop6">&nbsp;<a href="index.php?sd=6&sh_order=<?= $sh_order; ?>" target="_parent" style="white-space: nowrap;">ปีงบประมาณ <?= $a6sort; ?></a>&nbsp;</th>
