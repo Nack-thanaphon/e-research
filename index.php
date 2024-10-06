@@ -344,7 +344,7 @@ include("./include/config_db.php");
 
 
 	<div class="container-fluid">
-		
+		<?php require_once "./headerpb.php"; ?>
 		<div class="row text-center">
 
 			<div class="container-top hSelect ">
