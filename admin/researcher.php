@@ -295,9 +295,9 @@ if(isset($c_id)){
 	<meta name="KeyWords" content="">
 	<meta name="Description" content="">
 	<meta name="ROBOTS" content="index, follow">
-    <title>ระบบคลังข้อมูลงานวิจัย <?if(defined('__EC_NAME__')){echo __EC_NAME__;}?></title>
-	<link href="../images/<?if(defined('__EC_FAVICON__')){echo __EC_FAVICON_ICO__;}?>" rel="icon" type="image/ico">
-	<link href="../images/<?if(defined('__EC_FAVICON__')){echo __EC_FAVICON__;}?>" rel="icon" type="image/png" sizes="32x32">
+    <title>ระบบคลังข้อมูลงานวิจัย <?php if(defined('__EC_NAME__')){echo __EC_NAME__;}?></title>
+	<link href="../images/<?php if(defined('__EC_FAVICON__')){echo __EC_FAVICON_ICO__;}?>" rel="icon" type="image/ico">
+	<link href="../images/<?php if(defined('__EC_FAVICON__')){echo __EC_FAVICON__;}?>" rel="icon" type="image/png" sizes="32x32">
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css?v=<?php echo filemtime('../bootstrap/css/bootstrap.min.css');?>">
     <script src="../js/jquery.min.js"></script>
     <script src="../bootstrap/js/bootstrap.min.js"></script>
@@ -404,11 +404,11 @@ function confirmDelete(span_id,id_order,filename,content_id,div_id) {
 				  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">คำนำหน้าชื่อ(ไทย)&nbsp;:&nbsp;</div>
 					<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-						<input name="s_title_th_v" type="radio" value="1" <?if($c_title_th_v == "1"){echo "checked";}?> onclick="chkother('1')">&nbsp;นาย&nbsp;
-						<input name="s_title_th_v" type="radio" value="2" <?if($c_title_th_v == "2"){echo "checked";}?> onclick="chkother('2')">&nbsp;นาง&nbsp;
-						<input name="s_title_th_v" type="radio" value="3" <?if($c_title_th_v == "3"){echo "checked";}?> onclick="chkother('3')">&nbsp;นางสาว&nbsp;
-						<input name="s_title_th_v" type="radio" value="4" <?if($c_title_th_v == "4"){echo "checked";}?> onclick="chkother('4')">&nbsp;อื่นๆ
-						<?if($c_title_th_v == "4"){?>
+						<input name="s_title_th_v" type="radio" value="1" <?php if($c_title_th_v == "1"){echo "checked";}?> onclick="chkother('1')">&nbsp;นาย&nbsp;
+						<input name="s_title_th_v" type="radio" value="2" <?php if($c_title_th_v == "2"){echo "checked";}?> onclick="chkother('2')">&nbsp;นาง&nbsp;
+						<input name="s_title_th_v" type="radio" value="3" <?php if($c_title_th_v == "3"){echo "checked";}?> onclick="chkother('3')">&nbsp;นางสาว&nbsp;
+						<input name="s_title_th_v" type="radio" value="4" <?php if($c_title_th_v == "4"){echo "checked";}?> onclick="chkother('4')">&nbsp;อื่นๆ
+						<?php if($c_title_th_v == "4"){?>
 							<input type="text" name="s_title_th_other" id="s_title_th_other" maxlength="30" class="form-control input_width2"  value="<?=$c_title_th;?>" placeholder="คำนำหน้าชื่อ(ภาษาไทย)">
 						<?} else {?>
 							<input type="text" name="s_title_th_other" id="s_title_th_other" maxlength="30" class="form-control input_width2"  value="<?=$c_title_th;?>" style="display:none;" placeholder="คำนำหน้าชื่อ(ภาษาไทย)">
@@ -426,11 +426,11 @@ function confirmDelete(span_id,id_order,filename,content_id,div_id) {
 				  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">คำนำหน้าชื่อ(อังกฤษ)&nbsp;:&nbsp;</div>
 					<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-						<input name="s_title_en_v" type="radio" value="1" <?if($c_title_en_v == "1"){echo "checked";}?> onclick="chkothereng('1')">&nbsp;Mr.&nbsp;
-						<input name="s_title_en_v" type="radio" value="2" <?if($c_title_en_v == "2"){echo "checked";}?> onclick="chkothereng('2')">&nbsp;Mrs.&nbsp;
-						<input name="s_title_en_v" type="radio" value="3" <?if($c_title_en_v == "3"){echo "checked";}?> onclick="chkothereng('3')">&nbsp;Miss&nbsp;
-						<input name="s_title_en_v" type="radio" value="4" <?if($c_title_en_v == "4"){echo "checked";}?> onclick="chkothereng('4')">&nbsp;อื่นๆ
-						<?if($c_title_en_v == "4"){?>
+						<input name="s_title_en_v" type="radio" value="1" <?php if($c_title_en_v == "1"){echo "checked";}?> onclick="chkothereng('1')">&nbsp;Mr.&nbsp;
+						<input name="s_title_en_v" type="radio" value="2" <?php if($c_title_en_v == "2"){echo "checked";}?> onclick="chkothereng('2')">&nbsp;Mrs.&nbsp;
+						<input name="s_title_en_v" type="radio" value="3" <?php if($c_title_en_v == "3"){echo "checked";}?> onclick="chkothereng('3')">&nbsp;Miss&nbsp;
+						<input name="s_title_en_v" type="radio" value="4" <?php if($c_title_en_v == "4"){echo "checked";}?> onclick="chkothereng('4')">&nbsp;อื่นๆ
+						<?php if($c_title_en_v == "4"){?>
 							<input type="text" name="s_title_en_other" id="s_title_en_other" maxlength="30" class="form-control input_width2"  value="<?=$c_title_en;?>" placeholder="คำนำหน้าชื่อ(อังกฤษ)">
 						<?} else {?>
 							<input type="text" name="s_title_en_other" id="s_title_en_other" maxlength="30" class="form-control input_width2"  value="<?=$c_title_en;?>" style="display:none;" placeholder="คำนำหน้าชื่อ(อังกฤษ)">

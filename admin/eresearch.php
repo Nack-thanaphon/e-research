@@ -259,9 +259,9 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 	<meta name="KeyWords" content="">
 	<meta name="Description" content="">
 	<meta name="ROBOTS" content="index, follow">
-    <title>ระบบคลังข้อมูลงานวิจัย <?if(defined('__EC_NAME__')){echo __EC_NAME__;}?></title>
-	<link href="../images/<?if(defined('__EC_FAVICON__')){echo __EC_FAVICON_ICO__;}?>" rel="icon" type="image/ico">
-	<link href="../images/<?if(defined('__EC_FAVICON__')){echo __EC_FAVICON__;}?>" rel="icon" type="image/png" sizes="32x32">
+    <title>ระบบคลังข้อมูลงานวิจัย <?php if(defined('__EC_NAME__')){echo __EC_NAME__;}?></title>
+	<link href="../images/<?php if(defined('__EC_FAVICON__')){echo __EC_FAVICON_ICO__;}?>" rel="icon" type="image/ico">
+	<link href="../images/<?php if(defined('__EC_FAVICON__')){echo __EC_FAVICON__;}?>" rel="icon" type="image/png" sizes="32x32">
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css?v=<?php echo filemtime('../bootstrap/css/bootstrap.min.css');?>">
     <script src="../js/jquery.min.js"></script>
     <script src="../bootstrap/js/bootstrap.min.js"></script>
@@ -441,8 +441,8 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">เอกสาร 1&nbsp;:&nbsp;</div>
 				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-					<input type="checkbox" name="chk_doc1" id="chk_doc1" value="1" onclick="check_doc('chk_doc1','s_edf_filename1','file1')" <?if($c_edf_link1==1){echo "checked";}?>>&nbsp;ระบุที่อยู่&nbsp;
-					<?if($c_edf_link1==1){?>
+					<input type="checkbox" name="chk_doc1" id="chk_doc1" value="1" onclick="check_doc('chk_doc1','s_edf_filename1','file1')" <?php if($c_edf_link1==1){echo "checked";}?>>&nbsp;ระบุที่อยู่&nbsp;
+					<?php if($c_edf_link1==1){?>
 						<input type="text" name="s_edf_filename1" id="s_edf_filename1" class="form-control input_width3"  value="<?=$c_edf_filename1;?>" placeholder="ระบุที่อยู่ไฟล์เอกสาร">
 						<input name="file1" type="file" id="file1" style="margin-top:3px;max-width:250px;display:none;" accept="application/pdf">
 					<?} else {?>
@@ -460,8 +460,8 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">เอกสาร 2&nbsp;:&nbsp;</div>
 				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-					<input type="checkbox" name="chk_doc2" id="chk_doc2" value="1" onclick="check_doc('chk_doc2','s_edf_filename2','file2')" <?if($c_edf_link2==1){echo "checked";}?>>&nbsp;ระบุที่อยู่&nbsp;
-					<?if($c_edf_link2==1){?>
+					<input type="checkbox" name="chk_doc2" id="chk_doc2" value="1" onclick="check_doc('chk_doc2','s_edf_filename2','file2')" <?php if($c_edf_link2==1){echo "checked";}?>>&nbsp;ระบุที่อยู่&nbsp;
+					<?php if($c_edf_link2==1){?>
 						<input type="text" name="s_edf_filename2" id="s_edf_filename2" class="form-control input_width3"  value="<?=$c_edf_filename2;?>" placeholder="ระบุที่อยู่ไฟล์เอกสาร">
 						<input name="file2" type="file" id="file2" style="margin-top:3px;max-width:250px;display:none;" accept="application/pdf">
 					<?} else {?>
@@ -479,8 +479,8 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">เอกสาร 3&nbsp;:&nbsp;</div>
 				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-					<input type="checkbox" name="chk_doc3" id="chk_doc3" value="1" onclick="check_doc('chk_doc3','s_edf_filename3','file3')" <?if($c_edf_link3==1){echo "checked";}?>>&nbsp;ระบุที่อยู่&nbsp;
-					<?if($c_edf_link3==1){?>
+					<input type="checkbox" name="chk_doc3" id="chk_doc3" value="1" onclick="check_doc('chk_doc3','s_edf_filename3','file3')" <?php if($c_edf_link3==1){echo "checked";}?>>&nbsp;ระบุที่อยู่&nbsp;
+					<?php if($c_edf_link3==1){?>
 						<input type="text" name="s_edf_filename3" id="s_edf_filename3" class="form-control input_width3"  value="<?=$c_edf_filename3;?>" placeholder="ระบุที่อยู่ไฟล์เอกสาร">
 						<input name="file3" type="file" id="file3" style="margin-top:3px;max-width:250px;display:none;" accept="application/pdf">
 					<?} else {?>
@@ -498,8 +498,8 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">เอกสาร 4&nbsp;:&nbsp;</div>
 				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-					<input type="checkbox" name="chk_doc4" id="chk_doc4" value="1" onclick="check_doc('chk_doc4','s_edf_filename4','file4')" <?if($c_edf_link4==1){echo "checked";}?>>&nbsp;ระบุที่อยู่&nbsp;
-					<?if($c_edf_link4==1){?>
+					<input type="checkbox" name="chk_doc4" id="chk_doc4" value="1" onclick="check_doc('chk_doc4','s_edf_filename4','file4')" <?php if($c_edf_link4==1){echo "checked";}?>>&nbsp;ระบุที่อยู่&nbsp;
+					<?php if($c_edf_link4==1){?>
 						<input type="text" name="s_edf_filename4" id="s_edf_filename4" class="form-control input_width3"  value="<?=$c_edf_filename4;?>" placeholder="ระบุที่อยู่ไฟล์เอกสาร">
 						<input name="file4" type="file" id="file4" style="margin-top:3px;max-width:250px;display:none;" accept="application/pdf">
 					<?} else {?>
@@ -517,8 +517,8 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">เอกสาร 5&nbsp;:&nbsp;</div>
 				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-					<input type="checkbox" name="chk_doc5" id="chk_doc5" value="1" onclick="check_doc('chk_doc5','s_edf_filename5','file5')" <?if($c_edf_link5==1){echo "checked";}?>>&nbsp;ระบุที่อยู่&nbsp;
-					<?if($c_edf_link5==1){?>
+					<input type="checkbox" name="chk_doc5" id="chk_doc5" value="1" onclick="check_doc('chk_doc5','s_edf_filename5','file5')" <?php if($c_edf_link5==1){echo "checked";}?>>&nbsp;ระบุที่อยู่&nbsp;
+					<?php if($c_edf_link5==1){?>
 						<input type="text" name="s_edf_filename5" id="s_edf_filename5" class="form-control input_width3"  value="<?=$c_edf_filename5;?>" placeholder="ระบุที่อยู่ไฟล์เอกสาร">
 						<input name="file5" type="file" id="file5" style="margin-top:3px;max-width:250px;display:none;" accept="application/pdf">
 					<?} else {?>

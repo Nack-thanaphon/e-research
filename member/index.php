@@ -170,9 +170,9 @@ $mysqli->query("update `ers_document` set `ed_counter`=`ed_counter`+1 where `id`
 <meta name="KeyWords" content="">
 <meta name="Description" content="">
 <meta name="ROBOTS" content="index, follow">
-<title>ระบบคลังข้อมูลงานวิจัย <?if(defined('__EC_NAME__')){echo __EC_NAME__;}?></title>
-<link href="../images/<?if(defined('__EC_FAVICON__')){echo __EC_FAVICON_ICO__;}?>" rel="icon" type="image/ico">
-<link href="../images/<?if(defined('__EC_FAVICON__')){echo __EC_FAVICON__;}?>" rel="icon" type="image/png" sizes="32x32">
+<title>ระบบคลังข้อมูลงานวิจัย <?php if(defined('__EC_NAME__')){echo __EC_NAME__;}?></title>
+<link href="../images/<?php if(defined('__EC_FAVICON__')){echo __EC_FAVICON_ICO__;}?>" rel="icon" type="image/ico">
+<link href="../images/<?php if(defined('__EC_FAVICON__')){echo __EC_FAVICON__;}?>" rel="icon" type="image/png" sizes="32x32">
 <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css?v=<?php echo filemtime('../bootstrap/css/bootstrap.min.css');?>">
 <script src="../js/jquery.min.js"></script>
 <script src="../bootstrap/js/bootstrap.min.js"></script>
@@ -334,7 +334,7 @@ $mysqli->query("update `ers_document` set `ed_counter`=`ed_counter`+1 where `id`
 	}
 	</style>
 </head>
-<body role="document" style="background: url('../images/<?if(defined('__EC_PICHOME__')){echo __EC_PICHOME__;}?>') no-repeat;background-attachment:fixed; background-size: 60% auto;height:auto;width:auto;background-position: center;">
+<body role="document" style="background: url('../images/<?php if(defined('__EC_PICHOME__')){echo __EC_PICHOME__;}?>') no-repeat;background-attachment:fixed; background-size: 60% auto;height:auto;width:auto;background-position: center;">
 <a name="detailtop"></a>
 <div id="detailoverlay"></div>
 <a href="#0" class="cd-top">Top</a>
@@ -359,7 +359,7 @@ $mysqli->query("update `ers_document` set `ed_counter`=`ed_counter`+1 where `id`
 
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-left">
 				<div class="h1member">ยีนดีต้อนรับคุณ <font color="#000099"><?=$c_firstname," ".$c_lastname;?></font></div>
-				<div class="h2member">ชื่อ Login&nbsp;:&nbsp;<font color="#000099"><?=$c_username;?></font>&nbsp;<?if(isset($_SESSION["memberpass"])){echo ",รหัสผ่าน : <font color='#000099'>".$_SESSION["memberpass"]."</font>";}?></div>
+				<div class="h2member">ชื่อ Login&nbsp;:&nbsp;<font color="#000099"><?=$c_username;?></font>&nbsp;<?php if(isset($_SESSION["memberpass"])){echo ",รหัสผ่าน : <font color='#000099'>".$_SESSION["memberpass"]."</font>";}?></div>
 				<div class="h3member">หน่วยงานที่สังกัด : <?=$c_institution;?>&nbsp;<?=$c_institution_name;?></div>
 				<div class="h3member">โทรศัพท์ : <?=$c_phone;?>&nbsp;,อีเมล : <?=$c_email;?></div>
 				<div class="h3member">ที่อยู่ : <?=$c_address;?></div>
@@ -369,7 +369,7 @@ $mysqli->query("update `ers_document` set `ed_counter`=`ed_counter`+1 where `id`
 
 	<div class="row">
 		<div class="col-lg-6 col-md- 8 col-sm-10 col-xs-12 col-lg-offset-3 col-md-offset-2 col-sm-offset-1" style="padding-top:5px;padding-bottom:20px;">
-		<?if(!empty($dcid)){?>
+		<?php if(!empty($dcid)){?>
 		  <form name="form1"  method="post" action="index.php" onSubmit="return c_check();" role="form">
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
 				<div class="h1member">&nbsp;:&nbsp;ข้อความร้องขอเอกสารงานวิจัย (งานวิจัยในระบบ)&nbsp;:&nbsp;</div>
@@ -611,7 +611,7 @@ $mysqli->query("update `ers_document` set `ed_counter`=`ed_counter`+1 where `id`
 						<td style="text-align:left;"><?=$c_er_answer_approve;?></td>
 						<td style="text-align:center;"><?=$c_er_answert_expire;?></td>
 						<td style="text-align:center;">
-							<?if(($c_er_answer==1) && ($chk_expire==1)){ ?>
+							<?php if(($c_er_answer==1) && ($chk_expire==1)){ ?>
 								<a href="javascript:void(0)" onclick="show_detail('<?=$c_id;?>', '1')" style="color:#000000;"><div  style="background-color:#f8dc67;padding:4px 1px 2px 1px;border-radius:5px;"><span class="glyphicon glyphicon-download" style="color:#006633;font-size:14px;"></span>&nbsp;ดาวน์โหลด</div></a>
 							<?}?>
 						</td>

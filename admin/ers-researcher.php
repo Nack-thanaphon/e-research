@@ -63,9 +63,9 @@ include("../include/config_db.php");
 	<meta name="KeyWords" content="">
 	<meta name="Description" content="">
 	<meta name="ROBOTS" content="index, follow">
-    <title>ระบบคลังข้อมูลงานวิจัย <?if(defined('__EC_NAME__')){echo __EC_NAME__;}?></title>
-	<link href="../images/<?if(defined('__EC_FAVICON__')){echo __EC_FAVICON_ICO__;}?>" rel="icon" type="image/ico">
-	<link href="../images/<?if(defined('__EC_FAVICON__')){echo __EC_FAVICON__;}?>" rel="icon" type="image/png" sizes="32x32">
+    <title>ระบบคลังข้อมูลงานวิจัย <?php if(defined('__EC_NAME__')){echo __EC_NAME__;}?></title>
+	<link href="../images/<?php if(defined('__EC_FAVICON__')){echo __EC_FAVICON_ICO__;}?>" rel="icon" type="image/ico">
+	<link href="../images/<?php if(defined('__EC_FAVICON__')){echo __EC_FAVICON__;}?>" rel="icon" type="image/png" sizes="32x32">
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css?v=<?php echo filemtime('../bootstrap/css/bootstrap.min.css');?>">
     <script src="../js/jquery.min.js"></script>
     <script src="../bootstrap/js/bootstrap.min.js"></script>
@@ -332,7 +332,7 @@ include("../include/config_db.php");
 
 			<div id="tblResponsive">
 
-			<table class="table table-striped table-bordered sticky-header" id="table-1" style="background: url('../images/<?if(defined('__EC_PICHOME__')){echo __EC_PICHOME__;}?>') repeat-y; background-attachment:fixed; background-size:contain;height:100%;width:100%;">
+			<table class="table table-striped table-bordered sticky-header" id="table-1" style="background: url('../images/<?php if(defined('__EC_PICHOME__')){echo __EC_PICHOME__;}?>') repeat-y; background-attachment:fixed; background-size:contain;height:100%;width:100%;">
 				<thead>
 					<tr id="ontop1" style="background-color:#e5e5e5">
 						  <th style="vertical-align:middle;text-align:center;" id="ontop2"><a href="ers-researcher.php?sd=1&sh_order=<?=$sh_order;?>" target="_parent" style="white-space: nowrap;">ID <?=$a1sort;?></a></th>
@@ -531,10 +531,10 @@ include("../include/config_db.php");
 			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-5 text-right">
 				<form name="form3" method="post" action="ers-researcher.php?sd=<?=$sd;?>&sh_order=<?=$sh_order;?>&Page=1" role="form">
 					<select name="Per_Page" id="Per_Page" style="width:130px;border-radius:5px;border:1px solid #<?echo __EC_BGSHOW__;?>;padding:5px;" onchange="document.form3.submit()">
-					<option value="18" <?if($Per_Page=='18'){echo "selected";}?>>18 รายการ/หน้า</option>
-					<option value="30"<?if($Per_Page=='30'){echo "selected";}?>>30 รายการ/หน้า</option>
-					<option value="60"<?if($Per_Page=='60'){echo "selected";}?>>60 รายการ/หน้า</option>
-					<option value="90"<?if($Per_Page=='90'){echo "selected";}?>>90 รายการ/หน้า</option>
+					<option value="18" <?php if($Per_Page=='18'){echo "selected";}?>>18 รายการ/หน้า</option>
+					<option value="30"<?php if($Per_Page=='30'){echo "selected";}?>>30 รายการ/หน้า</option>
+					<option value="60"<?php if($Per_Page=='60'){echo "selected";}?>>60 รายการ/หน้า</option>
+					<option value="90"<?php if($Per_Page=='90'){echo "selected";}?>>90 รายการ/หน้า</option>
 					</select>
 					<input type="hidden" name="f_section_id" id="f_section_id" value="<? if($c_search_section){ echo $c_search_section;}else{ echo '';}?>">
 					<input type="hidden" name="f_faculty_id" id="f_faculty_id" value="<? if($c_search_faculty){ echo $c_search_faculty;}else{ echo '';}?>">
@@ -544,7 +544,7 @@ include("../include/config_db.php");
 		</div>
 
 		 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-			<div align="center" style="padding-bottom:<?if($Per_Page=='18'){echo "10px";}else{echo "80px";}?>;"><? require_once "../admin/footer.php"; ?></div>
+			<div align="center" style="padding-bottom:<?php if($Per_Page=='18'){echo "10px";}else{echo "80px";}?>;"><? require_once "../admin/footer.php"; ?></div>
 	    </div>
 	</div><!-- /.row -->
 

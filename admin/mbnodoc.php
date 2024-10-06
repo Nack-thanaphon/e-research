@@ -155,9 +155,9 @@ $mysqli->query("update `ers_member_request_nodoc` set `er_request_read`='1',`er_
 	<meta name="KeyWords" content="">
 	<meta name="Description" content="">
 	<meta name="ROBOTS" content="index, follow">
-    <title>ระบบคลังข้อมูลงานวิจัย <?if(defined('__EC_NAME__')){echo __EC_NAME__;}?></title>
-	<link href="../images/<?if(defined('__EC_FAVICON__')){echo __FAVICON_ICO__;}?>" rel="icon" type="image/ico">
-	<link href="../images/<?if(defined('__EC_FAVICON__')){echo __EC_FAVICON__;}?>" rel="icon" type="image/png" sizes="32x32">
+    <title>ระบบคลังข้อมูลงานวิจัย <?php if(defined('__EC_NAME__')){echo __EC_NAME__;}?></title>
+	<link href="../images/<?php if(defined('__EC_FAVICON__')){echo __FAVICON_ICO__;}?>" rel="icon" type="image/ico">
+	<link href="../images/<?php if(defined('__EC_FAVICON__')){echo __EC_FAVICON__;}?>" rel="icon" type="image/png" sizes="32x32">
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css?v=<?php echo filemtime('../bootstrap/css/bootstrap.min.css');?>">
     <script src="../js/jquery.min.js"></script>
     <script src="../bootstrap/js/bootstrap.min.js"></script>
@@ -169,13 +169,13 @@ $mysqli->query("update `ers_member_request_nodoc` set `er_request_read`='1',`er_
 	.col-sm-12 ,.col-sm-8 ,.col-sm-4 ,.col-sm-3 ,.col-sm-1 { margin:0;padding:0; }
 	</style>
 </head>
-<body role="document" style="background: url('../images/<?if(defined('__EC_PICHOME__')){echo __EC_PICHOME__;}?>') no-repeat; background-attachment:fixed; background-size:contain;height:100%;width:100%;background-position: left center;">
+<body role="document" style="background: url('../images/<?php if(defined('__EC_PICHOME__')){echo __EC_PICHOME__;}?>') no-repeat; background-attachment:fixed; background-size:contain;height:100%;width:100%;background-position: left center;">
 
 <div class="container bgw1">
 
 	<div class="row  bgw2">
 		
-		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" style="margin-bottom:30px;background-color:#<?echo __EC_BGSHOW__;?>;color:#<?echo __EC_FONTSHOW__;?>;font-weight: bold;"><h4><?if(defined('__EC_NAME__')){echo "การตอบกลับ การร้องขอเอกสารผลงานวิจัย";} else echo "ระบบคลังข้อมูลงานวิจัย";?></h4></div>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" style="margin-bottom:30px;background-color:#<?echo __EC_BGSHOW__;?>;color:#<?echo __EC_FONTSHOW__;?>;font-weight: bold;"><h4><?php if(defined('__EC_NAME__')){echo "การตอบกลับ การร้องขอเอกสารผลงานวิจัย";} else echo "ระบบคลังข้อมูลงานวิจัย";?></h4></div>
 
 		<div style="padding-top:20px;">
 

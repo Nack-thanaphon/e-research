@@ -137,9 +137,9 @@ if(($chk_edit=="1") and (trim($_POST["s_password"]) != "")){
 	<meta name="KeyWords" content="">
 	<meta name="Description" content="">
 	<meta name="ROBOTS" content="index, follow">
-    <title>ระบบคลังข้อมูลงานวิจัย <?if(defined('__EC_NAME__')){echo __EC_NAME__;}?></title>
-	<link href="../images/<?if(defined('__EC_FAVICON__')){echo __EC_FAVICON_ICO__;}?>" rel="icon" type="image/ico">
-	<link href="../images/<?if(defined('__EC_FAVICON__')){echo __EC_FAVICON__;}?>" rel="icon" type="image/png" sizes="32x32">
+    <title>ระบบคลังข้อมูลงานวิจัย <?php if(defined('__EC_NAME__')){echo __EC_NAME__;}?></title>
+	<link href="../images/<?php if(defined('__EC_FAVICON__')){echo __EC_FAVICON_ICO__;}?>" rel="icon" type="image/ico">
+	<link href="../images/<?php if(defined('__EC_FAVICON__')){echo __EC_FAVICON__;}?>" rel="icon" type="image/png" sizes="32x32">
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css?v=<?php echo filemtime('../bootstrap/css/bootstrap.min.css');?>">
     <script src="../js/jquery.min.js"></script>
     <script src="../bootstrap/js/bootstrap.min.js"></script>
@@ -204,8 +204,8 @@ function check(){
 
 			<div class="col-sm-4 col-xs-4 text-right" style="margin:0;padding:0;padding:3px;">ชื่อ Login&nbsp;:&nbsp;</div>
 			<div class="col-sm-8 col-xs-8" style="margin:0;padding:0;padding:3px;">
-			<?if($admin == 'admin'){?>
-				<?if($c_name != 'admin'){?>
+			<?php if($admin == 'admin'){?>
+				<?php if($c_name != 'admin'){?>
 				<input type="text" name="u_name" id="u_name" maxlength="30" class="form-control input_width" autocomplete="off" value="<? echo $c_name; ?>">
 				<?} else { echo $c_name;?>
 				<input type="hidden" name="u_name" id="u_name" value="<?echo $c_name;?>">

@@ -99,9 +99,9 @@ if(isset($c_id)){
 	<meta name="KeyWords" content="">
 	<meta name="Description" content="">
 	<meta name="ROBOTS" content="index, follow">
-    <title>ระบบคลังข้อมูลงานวิจัย <?if(defined('__EC_NAME__')){echo __EC_NAME__;}?></title>
-	<link href="../images/<?if(defined('__EC_FAVICON__')){echo __EC_FAVICON_ICO__;}?>" rel="icon" type="image/ico">
-	<link href="../images/<?if(defined('__EC_FAVICON__')){echo __EC_FAVICON__;}?>" rel="icon" type="image/png" sizes="32x32">
+    <title>ระบบคลังข้อมูลงานวิจัย <?php if(defined('__EC_NAME__')){echo __EC_NAME__;}?></title>
+	<link href="../images/<?php if(defined('__EC_FAVICON__')){echo __EC_FAVICON_ICO__;}?>" rel="icon" type="image/ico">
+	<link href="../images/<?php if(defined('__EC_FAVICON__')){echo __EC_FAVICON__;}?>" rel="icon" type="image/png" sizes="32x32">
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css?v=<?php echo filemtime('../bootstrap/css/bootstrap.min.css');?>">
     <script src="../js/jquery.min.js"></script>
     <script src="../bootstrap/js/bootstrap.min.js"></script>
@@ -161,8 +161,8 @@ function c_check2(){
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 				<div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 text-right">&nbsp;</div>
 				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-					<div><input name="s_et_status" type="radio" value="1" <?if($c_et_status == "1"){echo "checked";}?>>&nbsp;นักวิจัยภายใน&nbsp;</div>
-					<div><input name="s_et_status" type="radio" value="2" <?if($c_et_status == "2"){echo "checked";}?>>&nbsp;นักวิจัยภายนอก&nbsp;</div>
+					<div><input name="s_et_status" type="radio" value="1" <?php if($c_et_status == "1"){echo "checked";}?>>&nbsp;นักวิจัยภายใน&nbsp;</div>
+					<div><input name="s_et_status" type="radio" value="2" <?php if($c_et_status == "2"){echo "checked";}?>>&nbsp;นักวิจัยภายนอก&nbsp;</div>
 				</div>
 			  </div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" >&nbsp;</div>

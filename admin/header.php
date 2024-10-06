@@ -20,17 +20,17 @@ if($tRows_nodoc > 0){
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a href="./" title=""><img src="../images/<?if(defined('__EC_LOGO__')){echo __EC_LOGO__;}?>"  alt="ระบบคลังข้อมูลงานวิจัย"   style="padding-left:5px;padding-right:5px;max-height:50px"></a>
+            <a href="./" title=""><img src="../images/<?php if(defined('__EC_LOGO__')){echo __EC_LOGO__;}?>"  alt="ระบบคลังข้อมูลงานวิจัย"   style="padding-left:5px;padding-right:5px;max-height:50px"></a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <?if($_menu_id==1){?>
+              <?php if($_menu_id==1){?>
 					<li class="active"><a href="./" style="background:#dddcdc;font-size:16px;"><font style="color:#ff0000;font-size:16px;">&nbsp;<span class="glyphicon glyphicon-home" style="color:#00ccff;"></span>&nbsp;Home&nbsp;</a></font></li>
 				<?}else{?>
 					<li><a href="./" style="font-size:16px;">&nbsp;<span class="glyphicon glyphicon-home" style="color:#ffce00;"></span>&nbsp;Home&nbsp;</a></li>
 				<?}?>
 				<li class="dropdown">
-					<?if($_menu_id==2){?>
+					<?php if($_menu_id==2){?>
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="background:#dddcdc;"><font style="color:#ff0000;font-size:16px;">&nbsp;<span class="glyphicon glyphicon-th" style="color:#003399;"></span>&nbsp;บันทึกข้อมูล&nbsp;&nbsp;<span class="caret"></span></font></a>
 					<?}else{?>
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="font-size:16px;">&nbsp;<span class="glyphicon glyphicon-th" style="color:#003399;"></span>&nbsp;บันทึกข้อมูล&nbsp;<span class="caret"></span></a>
@@ -51,7 +51,7 @@ if($tRows_nodoc > 0){
 					</ul>
 				</li>
 				<li class="dropdown">
-					<?if($_menu_id==3){?>
+					<?php if($_menu_id==3){?>
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="background:#dddcdc;"><font style="color:#ff0000;font-size:16px;">&nbsp;<span class="glyphicon glyphicon-search" style="color:#ff0099;"></span>&nbsp;ค้นหา&nbsp;<span class="caret"></span></font></a>
 					<?}else{?>
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="font-size:16px;">&nbsp;<span class="glyphicon glyphicon-search" style="color:#ff0099;"></span>&nbsp;ค้นหา&nbsp;<span class="caret"></span></a>
@@ -59,24 +59,24 @@ if($tRows_nodoc > 0){
 					<ul class="dropdown-menu">						
 						<li><a href="ers-document.php?iRegister=1" style="font-size:16px;">&nbsp;<span class="glyphicon glyphicon-list" style="color:#cc0066;"></span>&nbsp;ผลงานวิจัย</a></li>
 						<li><a href="ers-researcher.php?iRegister=1" style="font-size:16px;">&nbsp;<span class="glyphicon glyphicon-user" style="color:#ff3399;"></span>&nbsp;นักวิจัย</a></li>
-						<li><a href="members.php?iRegister=1" style="font-size:16px;">&nbsp;<span class="glyphicon glyphicon-user" style="color:#ff66cc;"></span>&nbsp;<span style="color:<?if($userlevel >= 2){echo "#cccccc";}else{echo "inherit";}?>">สมาชิกที่ลงทะเบียน</span></a></li>
+						<li><a href="members.php?iRegister=1" style="font-size:16px;">&nbsp;<span class="glyphicon glyphicon-user" style="color:#ff66cc;"></span>&nbsp;<span style="color:<?php if($userlevel >= 2){echo "#cccccc";}else{echo "inherit";}?>">สมาชิกที่ลงทะเบียน</span></a></li>
 						<li class="divider"></li>
 					</ul>
 				</li>
             </ul>
             <ul class="nav navbar-nav navbar-right" style="margin-right:10px;">
               <li>
-					<?if($tRows_n>0){?><a href="members_approve.php?iRegister=1" title="ขอเอกสารที่รอตรวจสอบ ในระบบ <?=number_format($tRows_n);?> รายการ <?if($tRows_nodoc>0){?> นอกระบบ <?=number_format($tRows_nodoc);?> รายการ<?}?>"><span class="blink" style="border: 1px solid #ff0099;border-radius:50%;padding:1px;color:#ff0099;">&nbsp;<?=number_format($tRows_n2);?>&nbsp;</span></a><?} else {?>
-					<?if($tRows_nodoc>0){?><a href="members_nodoc.php?iRegister=1" title="ขอเอกสารที่รอตรวจสอบ นอกระบบ <?=number_format($tRows_nodoc);?> รายการ"><span class="blink" style="border: 1px solid #ff0099;border-radius:50%;padding:1px;color:#ff0099;">&nbsp;<?=number_format($tRows_nodoc);?>&nbsp;</span></a><?}}?>
+					<?php if($tRows_n>0){?><a href="members_approve.php?iRegister=1" title="ขอเอกสารที่รอตรวจสอบ ในระบบ <?=number_format($tRows_n);?> รายการ <?php if($tRows_nodoc>0){?> นอกระบบ <?=number_format($tRows_nodoc);?> รายการ<?}?>"><span class="blink" style="border: 1px solid #ff0099;border-radius:50%;padding:1px;color:#ff0099;">&nbsp;<?=number_format($tRows_n2);?>&nbsp;</span></a><?} else {?>
+					<?php if($tRows_nodoc>0){?><a href="members_nodoc.php?iRegister=1" title="ขอเอกสารที่รอตรวจสอบ นอกระบบ <?=number_format($tRows_nodoc);?> รายการ"><span class="blink" style="border: 1px solid #ff0099;border-radius:50%;padding:1px;color:#ff0099;">&nbsp;<?=number_format($tRows_nodoc);?>&nbsp;</span></a><?}}?>
 			  </li>
 			  <li class="dropdown">
-					<?if($_menu_id==5){?>
+					<?php if($_menu_id==5){?>
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="background:#dddcdc;"><font style="color:#ff0000;font-size:16px;"><span class="glyphicon glyphicon-wrench" style="color:#000000;"></span>&nbsp;ควบคุมระบบ&nbsp;<span class="caret"></span></font></a>
 					<?}else{?>
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><font style="font-size:16px;"><span class="glyphicon glyphicon-wrench" style="color:#000000;"></span>&nbsp;ควบคุมระบบ&nbsp;<span class="caret"></span></font></a>
 					<?}?>
 					<ul class="dropdown-menu">	
-						<li><a href="configs_eresearch.php?iRegister=1" style="font-size:16px;">&nbsp;<span class="glyphicon glyphicon-cog" style="color:<?if($admin != 'admin'){echo "#cccccc";}else{echo "#000000";}?>;"></span>&nbsp;<span style="color:<?if($admin != 'admin'){echo "#cccccc";}else{echo "inherit";}?>">ตั้งค่าระบบ</span>&nbsp;</a></li>		
+						<li><a href="configs_eresearch.php?iRegister=1" style="font-size:16px;">&nbsp;<span class="glyphicon glyphicon-cog" style="color:<?php if($admin != 'admin'){echo "#cccccc";}else{echo "#000000";}?>;"></span>&nbsp;<span style="color:<?php if($admin != 'admin'){echo "#cccccc";}else{echo "inherit";}?>">ตั้งค่าระบบ</span>&nbsp;</a></li>		
 						<?
 						if($admin != 'admin'){
 							$sql = "select id,user_name from ers_admin where (user_name='".$admin."') ";
@@ -93,9 +93,9 @@ if($tRows_nodoc > 0){
 							}
 						} else {
 						?>
-							<li><a href="users.php?iRegister=1" style="font-size:16px;">&nbsp;<span class="glyphicon glyphicon-lock" style="color:#ff9900;"></span>&nbsp;<span style="color:<?if($userlevel >= 2){echo "#cccccc";}else{echo "inherit";}?>">ผู้ดูแลระบบ</span></a></li>
+							<li><a href="users.php?iRegister=1" style="font-size:16px;">&nbsp;<span class="glyphicon glyphicon-lock" style="color:#ff9900;"></span>&nbsp;<span style="color:<?php if($userlevel >= 2){echo "#cccccc";}else{echo "inherit";}?>">ผู้ดูแลระบบ</span></a></li>
 						<?}?>
-						<li><a href="logout.php" style="font-size:16px;">&nbsp;<span class="glyphicon glyphicon-off" style="color:#ff0066;"></span>&nbsp;ออกจากระบบ&nbsp;[<?if(isset($_SESSION['admin'])){echo $_SESSION['admin'];}?>]</a></li>
+						<li><a href="logout.php" style="font-size:16px;">&nbsp;<span class="glyphicon glyphicon-off" style="color:#ff0066;"></span>&nbsp;ออกจากระบบ&nbsp;[<?php if(isset($_SESSION['admin'])){echo $_SESSION['admin'];}?>]</a></li>
 						 <li class="divider"></li>
 					</ul>
 				</li>

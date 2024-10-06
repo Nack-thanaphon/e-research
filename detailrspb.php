@@ -90,9 +90,9 @@ $mysqli->query("update `ers_researcher` set `ec_counter`=`ec_counter`+1 where `i
 	<meta name="KeyWords" content="">
 	<meta name="Description" content="">
 	<meta name="ROBOTS" content="index, follow">
-     <title>ระบบคลังข้อมูลงานวิจัย <?if(defined('__EC_NAME__')){echo __EC_NAME__;}?></title>
-	<link href="./images/<?if(defined('__EC_FAVICON__')){echo __EC_FAVICON_ICO__;}?>" rel="icon" type="image/ico">
-	<link href="./images/<?if(defined('__EC_FAVICON__')){echo __EC_FAVICON__;}?>" rel="icon" type="image/png" sizes="32x32">
+     <title>ระบบคลังข้อมูลงานวิจัย <?php if(defined('__EC_NAME__')){echo __EC_NAME__;}?></title>
+	<link href="./images/<?php if(defined('__EC_FAVICON__')){echo __EC_FAVICON_ICO__;}?>" rel="icon" type="image/ico">
+	<link href="./images/<?php if(defined('__EC_FAVICON__')){echo __EC_FAVICON__;}?>" rel="icon" type="image/png" sizes="32x32">
     <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css?v=<?php echo filemtime('./bootstrap/css/bootstrap.min.css');?>">
     <script src="./js/jquery.min.js"></script>
     <script src="./bootstrap/js/bootstrap.min.js"></script>
@@ -124,15 +124,15 @@ $mysqli->query("update `ers_researcher` set `ec_counter`=`ec_counter`+1 where `i
 	</script>
 </head>
 
-<body role="document" style="background: url('./images/<?if(defined('__EC_PICHOME__')){echo __EC_PICHOME__;}?>') no-repeat; background-attachment:fixed; background-size:contain;height:100%;width:100%;background-position: left center;">
+<body role="document" style="background: url('./images/<?php if(defined('__EC_PICHOME__')){echo __EC_PICHOME__;}?>') no-repeat; background-attachment:fixed; background-size:contain;height:100%;width:100%;background-position: left center;">
 
 <div class="container bgw1">
 	<div class="row bgw2">
 
-		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" style="margin-bottom:15px;background-color:#<?echo __EC_BGSHOW__;?>;color:#<?echo __EC_FONTSHOW__;?>;font-weight: bold;"><h4><?if(defined('__EC_NAME__')){echo "นักวิจัย";} else echo "ระบบคลังข้อมูลงานวิจัย";?></h4></div>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" style="margin-bottom:15px;background-color:#<?echo __EC_BGSHOW__;?>;color:#<?echo __EC_FONTSHOW__;?>;font-weight: bold;"><h4><?php if(defined('__EC_NAME__')){echo "นักวิจัย";} else echo "ระบบคลังข้อมูลงานวิจัย";?></h4></div>
 
 		<!--<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 col-lg-offset-1 col-md-offset-1 col-sm-offset-1" style="padding-top:20px;padding-bottom:20px;">-->
-			<?if(!empty($c_ec_photopath)){ $images = "./photo/".$c_ec_photopath; ?>
+			<?php if(!empty($c_ec_photopath)){ $images = "./photo/".$c_ec_photopath; ?>
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" style="padding:3px;padding-bottom:10px;">
 				<div class="col-lg-3 col-md-3 col-sm-3 col hidden-xs" style="font-weight: bold;">&nbsp;</div>
 				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 palignl">

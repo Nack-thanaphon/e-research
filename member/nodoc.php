@@ -158,9 +158,9 @@ if(isset($c_id)){
 <meta name="KeyWords" content="">
 <meta name="Description" content="">
 <meta name="ROBOTS" content="index, follow">
-<title>ระบบคลังข้อมูลงานวิจัย <?if(defined('__EC_NAME__')){echo __EC_NAME__;}?></title>
-<link href="../images/<?if(defined('__EC_FAVICON__')){echo __EC_FAVICON_ICO__;}?>" rel="icon" type="image/ico">
-<link href="../images/<?if(defined('__EC_FAVICON__')){echo __EC_FAVICON__;}?>" rel="icon" type="image/png" sizes="32x32">
+<title>ระบบคลังข้อมูลงานวิจัย <?php if(defined('__EC_NAME__')){echo __EC_NAME__;}?></title>
+<link href="../images/<?php if(defined('__EC_FAVICON__')){echo __EC_FAVICON_ICO__;}?>" rel="icon" type="image/ico">
+<link href="../images/<?php if(defined('__EC_FAVICON__')){echo __EC_FAVICON__;}?>" rel="icon" type="image/png" sizes="32x32">
 <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css?v=<?php echo filemtime('../bootstrap/css/bootstrap.min.css');?>">
 <script src="../js/jquery.min.js"></script>
 <script src="../bootstrap/js/bootstrap.min.js"></script>
@@ -289,7 +289,7 @@ if(isset($c_id)){
 	}
 	</style>
 </head>
-<body role="document" style="background: url('../images/<?if(defined('__EC_PICHOME__')){echo __EC_PICHOME__;}?>') no-repeat;background-attachment:fixed; background-size: 60% auto;height:auto;width:auto;background-position: center;">
+<body role="document" style="background: url('../images/<?php if(defined('__EC_PICHOME__')){echo __EC_PICHOME__;}?>') no-repeat;background-attachment:fixed; background-size: 60% auto;height:auto;width:auto;background-position: center;">
 <a name="detailtop"></a>
 <div id="detailoverlay"></div>
 <a href="#0" class="cd-top">Top</a>
@@ -314,7 +314,7 @@ if(isset($c_id)){
 
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-left">
 				<div class="h1member">ยีนดีต้อนรับคุณ <font color="#000099"><?=$c_firstname," ".$c_lastname;?></font></div>
-				<div class="h2member">ชื่อ Login&nbsp;:&nbsp;<font color="#000099"><?=$c_username;?></font>&nbsp;<?if(isset($_SESSION["memberpass"])){echo ",รหัสผ่าน : <font color='#000099'>".$_SESSION["memberpass"]."</font>";}?></div>
+				<div class="h2member">ชื่อ Login&nbsp;:&nbsp;<font color="#000099"><?=$c_username;?></font>&nbsp;<?php if(isset($_SESSION["memberpass"])){echo ",รหัสผ่าน : <font color='#000099'>".$_SESSION["memberpass"]."</font>";}?></div>
 				<div class="h3member">หน่วยงานที่สังกัด : <?=$c_institution;?>&nbsp;<?=$c_institution_name;?></div>
 				<div class="h3member">โทรศัพท์ : <?=$c_phone;?>&nbsp;,อีเมล : <?=$c_email;?></div>
 				<div class="h3member">ที่อยู่ : <?=$c_address;?></div>

@@ -118,9 +118,9 @@ if(isset($c_id)){
 	<meta name="KeyWords" content="">
 	<meta name="Description" content="">
 	<meta name="ROBOTS" content="index, follow">
-    <title>ระบบคลังข้อมูลงานวิจัย <?if(defined('__EC_NAME__')){echo __EC_NAME__;}?></title>
-	<link href="../images/<?if(defined('__EC_FAVICON__')){echo __EC_FAVICON_ICO__;}?>" rel="icon" type="image/ico">
-	<link href="../images/<?if(defined('__EC_FAVICON__')){echo __EC_FAVICON__;}?>" rel="icon" type="image/png" sizes="32x32">
+    <title>ระบบคลังข้อมูลงานวิจัย <?php if(defined('__EC_NAME__')){echo __EC_NAME__;}?></title>
+	<link href="../images/<?php if(defined('__EC_FAVICON__')){echo __EC_FAVICON_ICO__;}?>" rel="icon" type="image/ico">
+	<link href="../images/<?php if(defined('__EC_FAVICON__')){echo __EC_FAVICON__;}?>" rel="icon" type="image/png" sizes="32x32">
 	<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css?v=<?php echo filemtime('../bootstrap/css/bootstrap.min.css');?>">
     <script src="../js/jquery.min.js"></script>
     <script src="../bootstrap/js/bootstrap.min.js"></script>
@@ -157,7 +157,7 @@ if(isset($c_id)){
 	}
 	</style>
 </head>
-<body role="document" style="background: url('../images/<?if(defined('__EC_PICHOME__')){echo __EC_PICHOME__;}?>') no-repeat;background-attachment:fixed; background-size: 60% auto;height:auto;width:auto;background-position: center;">
+<body role="document" style="background: url('../images/<?php if(defined('__EC_PICHOME__')){echo __EC_PICHOME__;}?>') no-repeat;background-attachment:fixed; background-size: 60% auto;height:auto;width:auto;background-position: center;">
 
 <div class="container-fluid" style="margin:0;padding:0;">
 	<? require_once "../headerpb.php"; ?>
@@ -182,11 +182,11 @@ if(isset($c_id)){
 
 					<div class="col-xs-5 col-sm-3" style="text-align:right;padding: 3px 5px 3px 0px;">คำนำหน้าชื่อ&nbsp;</div>
 					<div class="col-xs-7 col-sm-9 text-left" style="padding: 3px 5px 3px 0px;">
-						<input name="title_v" type="radio" value="1" <?if($c_title_v == "1"){echo "checked";}?> onclick="chkother('1')">&nbsp;นาย&nbsp;
-						<input name="title_v" type="radio" value="2" <?if($c_title_v == "2"){echo "checked";}?> onclick="chkother('2')">&nbsp;นาง&nbsp;
-						<input name="title_v" type="radio" value="3" <?if($c_title_v == "3"){echo "checked";}?> onclick="chkother('3')">&nbsp;นางสาว&nbsp;
-						<input name="title_v" type="radio" value="4" <?if($c_title_v == "4"){echo "checked";}?> onclick="chkother('4')">&nbsp;อื่นๆ
-						<?if($c_title_v == "4"){?>
+						<input name="title_v" type="radio" value="1" <?php if($c_title_v == "1"){echo "checked";}?> onclick="chkother('1')">&nbsp;นาย&nbsp;
+						<input name="title_v" type="radio" value="2" <?php if($c_title_v == "2"){echo "checked";}?> onclick="chkother('2')">&nbsp;นาง&nbsp;
+						<input name="title_v" type="radio" value="3" <?php if($c_title_v == "3"){echo "checked";}?> onclick="chkother('3')">&nbsp;นางสาว&nbsp;
+						<input name="title_v" type="radio" value="4" <?php if($c_title_v == "4"){echo "checked";}?> onclick="chkother('4')">&nbsp;อื่นๆ
+						<?php if($c_title_v == "4"){?>
 							<input type="text" name="title_other" id="title_other" maxlength="30" class="form-control" value="<?=$c_title;?>" placeholder="คำนำหน้าชื่อ">
 						<?} else {?>
 							<input type="text" name="title_other" id="title_other" maxlength="30" class="form-control" value="<?=$c_title;?>" style="display:none;" placeholder="คำนำหน้าชื่อ">
@@ -202,9 +202,9 @@ if(isset($c_id)){
 					<div class="col-xs-5 col-sm-3" style="text-align:right;padding: 3px 5px 3px 0px;">เพศ&nbsp;</div>
 					<div class="col-xs-7 col-sm-9" style="padding: 3px 5px 3px 0px;">
 						<select name="gender" id="gender" class="form-control">
-							<option value="0" <?if($c_gender == "0"){echo "selected";}?>>เลือกเพศ</option>
-							<option value="1" <?if($c_gender == "1"){echo "selected";}?>>ชาย</option>
-							<option value="2" <?if($c_gender == "2"){echo "selected";}?>>หญิง</option>
+							<option value="0" <?php if($c_gender == "0"){echo "selected";}?>>เลือกเพศ</option>
+							<option value="1" <?php if($c_gender == "1"){echo "selected";}?>>ชาย</option>
+							<option value="2" <?php if($c_gender == "2"){echo "selected";}?>>หญิง</option>
 						</select>
 					</div>
 
@@ -214,16 +214,16 @@ if(isset($c_id)){
 					<div class="col-xs-5 col-sm-3" style="text-align:right;padding: 3px 5px 3px 0px;">ประเภทหน่วยงาน&nbsp;</div>
 					<div class="col-xs-7 col-sm-9" style="padding: 3px 5px 3px 0px;">
 						<select name="institution_type" id="institution_type" class="form-control" onchange="chkins()">
-							<option value="0" <?if($c_institution_type == "0"){echo "selected";}?>>เลือกประเภท</option>
-							<option value="1" <?if($c_institution_type == "1"){echo "selected";}?>>หน่วยงานภาครัฐ/วิสาหกิจ</option>
-							<option value="2" <?if($c_institution_type == "2"){echo "selected";}?>>หน่วยงานภาคเอกชน</option>
-							<option value="3" <?if($c_institution_type == "3"){echo "selected";}?>>องค์กรอิสระ</option>
-							<option value="4" <?if($c_institution_type == "4"){echo "selected";}?>>สถาบันการศึกษาภาครัฐ</option>
-							<option value="5" <?if($c_institution_type == "5"){echo "selected";}?>>สถาบันการศึกษาเอกชน</option>
-							<option value="6" <?if($c_institution_type == "6"){echo "selected";}?>>ประชาชน</option>
-							<option value="7" <?if($c_institution_type == "7"){echo "selected";}?>>อื่น ๆ</option>
+							<option value="0" <?php if($c_institution_type == "0"){echo "selected";}?>>เลือกประเภท</option>
+							<option value="1" <?php if($c_institution_type == "1"){echo "selected";}?>>หน่วยงานภาครัฐ/วิสาหกิจ</option>
+							<option value="2" <?php if($c_institution_type == "2"){echo "selected";}?>>หน่วยงานภาคเอกชน</option>
+							<option value="3" <?php if($c_institution_type == "3"){echo "selected";}?>>องค์กรอิสระ</option>
+							<option value="4" <?php if($c_institution_type == "4"){echo "selected";}?>>สถาบันการศึกษาภาครัฐ</option>
+							<option value="5" <?php if($c_institution_type == "5"){echo "selected";}?>>สถาบันการศึกษาเอกชน</option>
+							<option value="6" <?php if($c_institution_type == "6"){echo "selected";}?>>ประชาชน</option>
+							<option value="7" <?php if($c_institution_type == "7"){echo "selected";}?>>อื่น ๆ</option>
 						</select>
-						<?if($c_institution_type == "7"){?>
+						<?php if($c_institution_type == "7"){?>
 							<input type="text" name="institution_other" id="institution_other" maxlength="255" class="form-control" value="<?=$c_institution_other;?>" placeholder="อื่นๆระบุ">
 						<?} else {?>
 							<input type="text" name="institution_other" id="institution_other" maxlength="255" class="form-control" value="<?=$c_institution_other;?>" style="display:none;" placeholder="อื่นๆระบุ">

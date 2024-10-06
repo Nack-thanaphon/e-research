@@ -222,9 +222,9 @@ $mysqli->query("update `ers_member_request` set `er_request_read`='1',`er_reques
 	<meta name="KeyWords" content="">
 	<meta name="Description" content="">
 	<meta name="ROBOTS" content="index, follow">
-    <title>ระบบคลังข้อมูลงานวิจัย <?if(defined('__EC_NAME__')){echo __EC_NAME__;}?></title>
-	<link href="../images/<?if(defined('__EC_FAVICON__')){echo __FAVICON_ICO__;}?>" rel="icon" type="image/ico">
-	<link href="../images/<?if(defined('__EC_FAVICON__')){echo __EC_FAVICON__;}?>" rel="icon" type="image/png" sizes="32x32">
+    <title>ระบบคลังข้อมูลงานวิจัย <?php if(defined('__EC_NAME__')){echo __EC_NAME__;}?></title>
+	<link href="../images/<?php if(defined('__EC_FAVICON__')){echo __FAVICON_ICO__;}?>" rel="icon" type="image/ico">
+	<link href="../images/<?php if(defined('__EC_FAVICON__')){echo __EC_FAVICON__;}?>" rel="icon" type="image/png" sizes="32x32">
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css?v=<?php echo filemtime('../bootstrap/css/bootstrap.min.css');?>">
     <script src="../js/jquery.min.js"></script>
     <script src="../bootstrap/js/bootstrap.min.js"></script>
@@ -236,13 +236,13 @@ $mysqli->query("update `ers_member_request` set `er_request_read`='1',`er_reques
 	.col-sm-12 ,.col-sm-8 ,.col-sm-4 ,.col-sm-3 ,.col-sm-1 { margin:0;padding:0; }
 	</style>
 </head>
-<body role="document" style="background: url('../images/<?if(defined('__EC_PICHOME__')){echo __EC_PICHOME__;}?>') no-repeat; background-attachment:fixed; background-size:contain;height:100%;width:100%;background-position: left center;">
+<body role="document" style="background: url('../images/<?php if(defined('__EC_PICHOME__')){echo __EC_PICHOME__;}?>') no-repeat; background-attachment:fixed; background-size:contain;height:100%;width:100%;background-position: left center;">
 
 <div class="container bgw1">
 
 	<div class="row  bgw2">
 		
-		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" style="margin-bottom:30px;background-color:#<?echo __EC_BGSHOW__;?>;color:#<?echo __EC_FONTSHOW__;?>;font-weight: bold;"><h4><?if(defined('__EC_NAME__')){echo "การอนุมัติ การร้องขอเอกสารผลงานวิจัย";} else echo "ระบบคลังข้อมูลงานวิจัย";?></h4></div>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" style="margin-bottom:30px;background-color:#<?echo __EC_BGSHOW__;?>;color:#<?echo __EC_FONTSHOW__;?>;font-weight: bold;"><h4><?php if(defined('__EC_NAME__')){echo "การอนุมัติ การร้องขอเอกสารผลงานวิจัย";} else echo "ระบบคลังข้อมูลงานวิจัย";?></h4></div>
 
 		<div style="padding-top:20px;">
 
@@ -350,13 +350,13 @@ $mysqli->query("update `ers_member_request` set `er_request_read`='1',`er_reques
 				<hr align="center" width="95%" noshade size="1" color="#cccccc">
 			  </div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-				<input type='checkbox' name='chk_disapproved' id='chk_disapproved' value='1' <?if($c_er_answer=='2'){echo "checked";}?> onclick="chkdisapprove()">&nbsp;<span style="color:#ff0000;">ไม่อนุมัติ</span>
+				<input type='checkbox' name='chk_disapproved' id='chk_disapproved' value='1' <?php if($c_er_answer=='2'){echo "checked";}?> onclick="chkdisapprove()">&nbsp;<span style="color:#ff0000;">ไม่อนุมัติ</span>
 			  </div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
 				<hr align="center" width="95%" noshade size="1" color="#cccccc">
 			  </div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-				<input type='checkbox' name='chk_approved' id='chk_approved' value='1' <?if($c_er_answer=='1'){echo "checked";}?> onclick="chkapprove()">&nbsp;<span style="color:#ff0000;">อนุมัติทั้งหมด</span>
+				<input type='checkbox' name='chk_approved' id='chk_approved' value='1' <?php if($c_er_answer=='1'){echo "checked";}?> onclick="chkapprove()">&nbsp;<span style="color:#ff0000;">อนุมัติทั้งหมด</span>
 			  </div>
 			  <?
 				$sql = "select * from `ers_document_files` where (`document_id`='".$c_document_id."') order by `id`ASC";
@@ -393,7 +393,7 @@ $mysqli->query("update `ers_member_request` set `er_request_read`='1',`er_reques
 							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right" style="font-weight: bold;white-space: nowrap;">เอกสาร <?=$item;?>&nbsp;:&nbsp;</div>
 								<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-									<div id="view<?=$item;?>"><input type='checkbox' name='chk<?=$item;?>' id='chkapp<?=$item;?>' value='1' <?if($c_chk_approve=='1'){echo "checked";}?>>&nbsp;<span style="color:#00cc00;">อนุมัติ</span>&nbsp;<span class='glyphicon glyphicon-file' style='color:#000000'></span>&nbsp;<?=$c_edf_filename;?>&nbsp;</div>
+									<div id="view<?=$item;?>"><input type='checkbox' name='chk<?=$item;?>' id='chkapp<?=$item;?>' value='1' <?php if($c_chk_approve=='1'){echo "checked";}?>>&nbsp;<span style="color:#00cc00;">อนุมัติ</span>&nbsp;<span class='glyphicon glyphicon-file' style='color:#000000'></span>&nbsp;<?=$c_edf_filename;?>&nbsp;</div>
 									<input type="hidden" name="path_file<?=$item;?>" value="<? if(isset($c_edf_filename)){ echo $c_edf_filename;}else{ echo '';}?>">
 									<input type="hidden" name="s_link<?=$item;?>" value="<? if(isset($c_edf_link)){ echo $c_edf_link;}else{ echo '';}?>">
 									<input type="hidden" name="s_file_id<?=$item;?>" value="<? if(isset($c_edf_id)){ echo $c_edf_id;}else{ echo '';}?>">
