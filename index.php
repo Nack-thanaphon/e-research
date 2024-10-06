@@ -78,123 +78,7 @@ include("./include/config_db.php");
 	<script src="./bootstrap/js/bootstrap.min.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet">
 	<link rel="stylesheet" href="./admin/style_admin.css?v=<?php echo filemtime('./admin/style_admin.css'); ?>">
-	<SCRIPT LANGUAGE="JavaScript">
-		function c_check2() {
-			/*if(document.getElementById('c_code_1').value == "")
-			{
-				alert("กรุณาใส่ข้อมูลที่ต้องการค้นหา");
-				document.getElementById('c_code_1').select();
-				return false;
-			}*/
-		}
 
-		function show_detail(mid, oid) {
-			var sw = document.body.clientWidth,
-				sh = screen.height,
-				sw2 = 0,
-				sw3 = 0,
-				sh2 = 0;
-			sw = (sw * 80) / 100;
-			sh = (sh * 80) / 100;
-			sh = sh - 20;
-			if (screen.height < 769) {
-				sh2 = 680;
-				if (document.body.clientWidth < 767) {
-					sh2 = 400;
-				}
-				if (document.body.clientWidth < 991) {
-					sh2 = 500;
-				}
-			} else {
-				sh2 = 830;
-				if (document.body.clientWidth < 1300) {
-					sh2 = 700;
-				}
-			}
-			if (document.body.clientWidth > 1367) {
-				sw2 = 1300;
-			} else {
-				sw2 = sw;
-			}
-			sw3 = sw2 + 10;
-
-			var myleft = (document.body.clientWidth) ? (document.body.clientWidth - sw3) / 2 : 100;
-			var mytop = (screen.height) ? (screen.height - sh2) / 2 : 100;
-
-			$('#detailoverlay').fadeIn();
-
-			data = "<div style=\"border-radius:50%;padding: 3px; position: absolute; margin-left: " + sw3 + "px; background: #111;\" onmouseover=\"changebckr();\" onmouseout=\"changebckb();\" id=\"btnclose\"><img OnClick=\"hide_detail();\" style=\"cursor: pointer;width:20px;height:auto;\" src=\"./images/close.png\" alt=\"close\"></div><iframe id=\"ersshowifm\" frameBorder=0 width=\"" + sw2 + "\" height=\"" + sh + "\" src='detailpb.php?m=" + mid + "&t=" + oid + "' style=\"z-ndex:9999;border-radius:5px;\">not supported</iframe>" + "<scr" + "ipt>$(document).keyup(function(e) { if (e.keyCode == 27) { hide_detail() } });  </scr" + "ipt>" + "<scr" + "ipt>$('#detailoverlay').click(function() {{ hide_detail(); } }); </scr" + "ipt>";
-			var sct = $(window).scrollTop(); /*document.body.scrollTop;*/
-			document.getElementById('ersshow').style.left = (myleft) + "px";
-			document.getElementById('ersshow').style.top = (sct + 25) + "px";
-
-			$('#ersshow').html(data).show();
-
-		}
-
-		$(window).resize(function() {
-			var windowWidth = $(window).width();
-			var pw1 = (windowWidth * 80) / 100;
-			var pw2 = 0;
-			if (windowWidth > 1367) {
-				pw2 = 1300;
-			} else {
-				pw2 = pw1;
-			}
-			pw3 = pw2 + 10;
-			var pleft = (windowWidth) ? (windowWidth - pw3) / 2 : 100;
-			if (windowWidth < 768) {
-				document.getElementById('ersshow').style.left = '20px';
-			} else {
-				document.getElementById('ersshow').style.left = (pleft) + "px";
-			}
-		});
-
-		$(window).scroll(function() {
-			var sct = $(window).scrollTop();
-			document.getElementById('ersshow').style.top = (sct + 25) + "px";
-			if (sct > 100) {
-				document.getElementById('ontop1').classList.add("ontop1");
-				/*document.getElementById('ontop2').classList.add("ontop2");*/
-				document.getElementById('ontop3').classList.add("ontop3");
-				document.getElementById('ontop4').classList.add("ontop4");
-				document.getElementById('ontop5').classList.add("ontop5");
-				document.getElementById('ontop6').classList.add("ontop6");
-				document.getElementById('ontop7').classList.add("ontop7");
-				document.getElementById('ontop8').classList.add("ontop8");
-				/*document.getElementById('ontop9').classList.add("ontop9");*/
-			} else {
-				document.getElementById('ontop1').classList.remove("ontop1");
-				/*document.getElementById('ontop2').classList.remove("ontop2");*/
-				document.getElementById('ontop3').classList.remove("ontop3");
-				document.getElementById('ontop4').classList.remove("ontop4");
-				document.getElementById('ontop5').classList.remove("ontop5");
-				document.getElementById('ontop6').classList.remove("ontop6");
-				document.getElementById('ontop7').classList.remove("ontop7");
-				document.getElementById('ontop8').classList.remove("ontop8");
-				/*document.getElementById('ontop9').classList.remove("ontop9");*/
-			}
-		});
-
-		function hide_detail() {
-
-			$('document').unbind('keyup');
-			$('#detailoverlay').unbind('click');
-
-			$('#ersshow').fadeOut();
-			$('#detailoverlay').fadeOut();
-			$('#ersshow').html('');
-
-		}
-
-		function changebckr() {
-			document.getElementById('btnclose').style.backgroundColor = "#ff0000";
-		}
-
-		function changebckb() {
-			document.getElementById('btnclose').style.backgroundColor = "#000";
-		}
-	</SCRIPT>
 	<style>
 		.footrow {
 			display: none;
@@ -545,7 +429,8 @@ include("./include/config_db.php");
 																echo __EC_PICHOME__;
 															} ?>') repeat-y; background-attachment:fixed; background-size:contain;height:100%;width:100%;">
 						<thead>
-							<tr id="ontop1" style="background-color: #e5e5e5;"><th style="vertical-align:middle;text-align:center;" id="ontop3">&nbsp;<a href="index.php?sd=2&sh_order=<?= $sh_order; ?>" target="_parent" style="white-space: nowrap;">ชื่อผลงานวิจัย <?= $a2sort; ?></a>&nbsp;</th>
+							<tr id="ontop1" style="background-color: #e5e5e5;">
+								<th style="vertical-align:middle;text-align:center;" id="ontop3">&nbsp;<a href="index.php?sd=2&sh_order=<?= $sh_order; ?>" target="_parent" style="white-space: nowrap;">ชื่อผลงานวิจัย <?= $a2sort; ?></a>&nbsp;</th>
 								<th style="vertical-align:middle;text-align:center;" id="ontop4">&nbsp;<a href="index.php?sd=4&sh_order=<?= $sh_order; ?>" target="_parent" style="white-space: nowrap;">ภาควิชา/ฝ่าย <?= $a4sort; ?></a>&nbsp;</th>
 								<th style="vertical-align:middle;text-align:center;" id="ontop5">&nbsp;<a href="index.php?sd=5&sh_order=<?= $sh_order; ?>" target="_parent" style="white-space: nowrap;">ส่วนงาน <?= $a5sort; ?></a>&nbsp;</th>
 								<th style="vertical-align:middle;text-align:center;" id="ontop6">&nbsp;<a href="index.php?sd=6&sh_order=<?= $sh_order; ?>" target="_parent" style="white-space: nowrap;">ปีงบประมาณ <?= $a6sort; ?></a>&nbsp;</th>
@@ -858,6 +743,122 @@ include("./include/config_db.php");
 			document.getElementById('table-1').classList.remove("sticky-header");
 		}
 		document.getElementById('c_code_1').focus();
+
+		function c_check2() {
+			/*if(document.getElementById('c_code_1').value == "")
+			{
+				alert("กรุณาใส่ข้อมูลที่ต้องการค้นหา");
+				document.getElementById('c_code_1').select();
+				return false;
+			}*/
+		}
+
+		function show_detail(mid, oid) {
+			var sw = document.body.clientWidth,
+				sh = screen.height,
+				sw2 = 0,
+				sw3 = 0,
+				sh2 = 0;
+			sw = (sw * 80) / 100;
+			sh = (sh * 80) / 100;
+			sh = sh - 20;
+			if (screen.height < 769) {
+				sh2 = 680;
+				if (document.body.clientWidth < 767) {
+					sh2 = 400;
+				}
+				if (document.body.clientWidth < 991) {
+					sh2 = 500;
+				}
+			} else {
+				sh2 = 830;
+				if (document.body.clientWidth < 1300) {
+					sh2 = 700;
+				}
+			}
+			if (document.body.clientWidth > 1367) {
+				sw2 = 1300;
+			} else {
+				sw2 = sw;
+			}
+			sw3 = sw2 + 10;
+
+			var myleft = (document.body.clientWidth) ? (document.body.clientWidth - sw3) / 2 : 100;
+			var mytop = (screen.height) ? (screen.height - sh2) / 2 : 100;
+
+			$('#detailoverlay').fadeIn();
+
+			data = "<div style=\"border-radius:50%;padding: 3px; position: absolute; margin-left: " + sw3 + "px; background: #111;\" onmouseover=\"changebckr();\" onmouseout=\"changebckb();\" id=\"btnclose\"><img OnClick=\"hide_detail();\" style=\"cursor: pointer;width:20px;height:auto;\" src=\"./images/close.png\" alt=\"close\"></div><iframe id=\"ersshowifm\" frameBorder=0 width=\"" + sw2 + "\" height=\"" + sh + "\" src='detailpb.php?m=" + mid + "&t=" + oid + "' style=\"z-ndex:9999;border-radius:5px;\">not supported</iframe>" + "<scr" + "ipt>$(document).keyup(function(e) { if (e.keyCode == 27) { hide_detail() } });  </scr" + "ipt>" + "<scr" + "ipt>$('#detailoverlay').click(function() {{ hide_detail(); } }); </scr" + "ipt>";
+			var sct = $(window).scrollTop(); /*document.body.scrollTop;*/
+			document.getElementById('ersshow').style.left = (myleft) + "px";
+			document.getElementById('ersshow').style.top = (sct + 25) + "px";
+
+			$('#ersshow').html(data).show();
+
+		}
+
+		$(window).resize(function() {
+			var windowWidth = $(window).width();
+			var pw1 = (windowWidth * 80) / 100;
+			var pw2 = 0;
+			if (windowWidth > 1367) {
+				pw2 = 1300;
+			} else {
+				pw2 = pw1;
+			}
+			pw3 = pw2 + 10;
+			var pleft = (windowWidth) ? (windowWidth - pw3) / 2 : 100;
+			if (windowWidth < 768) {
+				document.getElementById('ersshow').style.left = '20px';
+			} else {
+				document.getElementById('ersshow').style.left = (pleft) + "px";
+			}
+		});
+
+		$(window).scroll(function() {
+			var sct = $(window).scrollTop();
+			document.getElementById('ersshow').style.top = (sct + 25) + "px";
+			if (sct > 100) {
+				document.getElementById('ontop1').classList.add("ontop1");
+				/*document.getElementById('ontop2').classList.add("ontop2");*/
+				document.getElementById('ontop3').classList.add("ontop3");
+				document.getElementById('ontop4').classList.add("ontop4");
+				document.getElementById('ontop5').classList.add("ontop5");
+				document.getElementById('ontop6').classList.add("ontop6");
+				document.getElementById('ontop7').classList.add("ontop7");
+				document.getElementById('ontop8').classList.add("ontop8");
+				/*document.getElementById('ontop9').classList.add("ontop9");*/
+			} else {
+				document.getElementById('ontop1').classList.remove("ontop1");
+				/*document.getElementById('ontop2').classList.remove("ontop2");*/
+				document.getElementById('ontop3').classList.remove("ontop3");
+				document.getElementById('ontop4').classList.remove("ontop4");
+				document.getElementById('ontop5').classList.remove("ontop5");
+				document.getElementById('ontop6').classList.remove("ontop6");
+				document.getElementById('ontop7').classList.remove("ontop7");
+				document.getElementById('ontop8').classList.remove("ontop8");
+				/*document.getElementById('ontop9').classList.remove("ontop9");*/
+			}
+		});
+
+		function hide_detail() {
+
+			$('document').unbind('keyup');
+			$('#detailoverlay').unbind('click');
+
+			$('#ersshow').fadeOut();
+			$('#detailoverlay').fadeOut();
+			$('#ersshow').html('');
+
+		}
+
+		function changebckr() {
+			document.getElementById('btnclose').style.backgroundColor = "#ff0000";
+		}
+
+		function changebckb() {
+			document.getElementById('btnclose').style.backgroundColor = "#000";
+		}
 	</script>
 </body>
 
