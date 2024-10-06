@@ -341,7 +341,7 @@ include("./include/config_db.php");
 	<div id="detailoverlay"></div>
 	<a href="#0" class="cd-top">Top</a>
 	<!-- cd-top JS -->
-	<script src="./js/main.js"></script>
+
 
 	<div class="container-fluid">
 		<?php require_once "headerpb.php"; ?>
@@ -545,7 +545,8 @@ include("./include/config_db.php");
 																echo __EC_PICHOME__;
 															} ?>') repeat-y; background-attachment:fixed; background-size:contain;height:100%;width:100%;">
 						<thead>
-							<tr id="ontop1" style="background-color: #e5e5e5;"><th style="vertical-align:middle;text-align:center;" id="ontop3">&nbsp;<a href="index.php?sd=2&sh_order=<?= $sh_order; ?>" target="_parent" style="white-space: nowrap;">ชื่อผลงานวิจัย <?= $a2sort; ?></a>&nbsp;</th>
+							<tr id="ontop1" style="background-color: #e5e5e5;">
+								<th style="vertical-align:middle;text-align:center;" id="ontop3">&nbsp;<a href="index.php?sd=2&sh_order=<?= $sh_order; ?>" target="_parent" style="white-space: nowrap;">ชื่อผลงานวิจัย <?= $a2sort; ?></a>&nbsp;</th>
 								<th style="vertical-align:middle;text-align:center;" id="ontop4">&nbsp;<a href="index.php?sd=4&sh_order=<?= $sh_order; ?>" target="_parent" style="white-space: nowrap;">ภาควิชา/ฝ่าย <?= $a4sort; ?></a>&nbsp;</th>
 								<th style="vertical-align:middle;text-align:center;" id="ontop5">&nbsp;<a href="index.php?sd=5&sh_order=<?= $sh_order; ?>" target="_parent" style="white-space: nowrap;">ส่วนงาน <?= $a5sort; ?></a>&nbsp;</th>
 								<th style="vertical-align:middle;text-align:center;" id="ontop6">&nbsp;<a href="index.php?sd=6&sh_order=<?= $sh_order; ?>" target="_parent" style="white-space: nowrap;">ปีงบประมาณ <?= $a6sort; ?></a>&nbsp;</th>
@@ -843,20 +844,22 @@ include("./include/config_db.php");
 
 	</div>
 	<div id="ersshow"></div>
+
+	<script src="./js/main.js"></script>
+	<?php include("./include/close_db.php"); ?>
+	<script>
+		document.getElementById("fmnavbar").className = "navbar navbar-default navbar-fixed-top";
+		if (document.body.clientWidth > 767) {
+			document.getElementById('tblResponsive').classList.remove("table-responsive");
+			/*$(document).ready(function(){
+			  $(".sticky-header").floatThead({top:50});
+			});*/
+		} else {
+			document.getElementById('tblResponsive').classList.add("table-responsive");
+			document.getElementById('table-1').classList.remove("sticky-header");
+		}
+		document.getElementById('c_code_1').focus();
+	</script>
 </body>
 
 </html>
-<?php include("./include/close_db.php"); ?>
-<script>
-	document.getElementById("fmnavbar").className = "navbar navbar-default navbar-fixed-top";
-	if (document.body.clientWidth > 767) {
-		document.getElementById('tblResponsive').classList.remove("table-responsive");
-		/*$(document).ready(function(){
-		  $(".sticky-header").floatThead({top:50});
-		});*/
-	} else {
-		document.getElementById('tblResponsive').classList.add("table-responsive");
-		document.getElementById('table-1').classList.remove("sticky-header");
-	}
-	document.getElementById('c_code_1').focus();
-</script>
