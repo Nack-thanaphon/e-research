@@ -1,7 +1,7 @@
 <?php
 session_start();
 Header("Content-Type: text/html; charset=UTF-8");
-require_once "./include/config.php";
+//require_once "./include/config.php";
 require_once "./include/convars.php";
 if (!defined('_web_path')) {
 	exit();
