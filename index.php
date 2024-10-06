@@ -51,7 +51,7 @@ if (isset($_GET["c_id"])) {
 		$c_id = $_POST["c_id"];
 	}
 }
-
+phpinfo();
 include("./include/config_db.php");
 ?>
 <!DOCTYPE html>

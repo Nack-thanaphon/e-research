@@ -10,8 +10,6 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 $mysqli = new mysqli($hostname, $user, $passwd, $dbname);
 $mysqli->set_charset('utf8');
 
-print(33333);
-print_r($mysqli);
 $sql = "SELECT * FROM `ers_configs` WHERE `id` = ?";
 $stmt = $mysqli->prepare($sql);
 $id = 1;
