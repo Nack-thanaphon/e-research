@@ -1,4 +1,4 @@
-<?
+<?php
 
 function sslHttp() {
 	$httpURL = 'http';
