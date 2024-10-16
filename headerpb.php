@@ -31,9 +31,9 @@
                     <li><a href="<?=_web_path;?>" style="font-size:16px;">&nbsp;<span class="glyphicon glyphicon-search" style="color:#000000;"></span>&nbsp;ผลงานวิจัย&nbsp;&nbsp;</a></li>
                 <?php } ?>
                 <?php if($_menu_id == 3) { ?>
-                    <li class="active"><a href="<?=_web_path;?>//ers-researcherpb.php" style="background:#dddcdc;color:#ff0000;font-size:16px;">&nbsp;<span class="glyphicon glyphicon-user" style="color:#000000;"></span>&nbsp;นักวิจัย&nbsp;&nbsp;</a></li>
+                    <li class="active"><a href="<?=_web_path;?>/~scia/e-research/ers-researcherpb.php" style="background:#dddcdc;color:#ff0000;font-size:16px;">&nbsp;<span class="glyphicon glyphicon-user" style="color:#000000;"></span>&nbsp;นักวิจัย&nbsp;&nbsp;</a></li>
                 <?php } else { ?>
-                    <li><a href="<?=_web_path;?>//ers-researcherpb.php" style="font-size:16px;">&nbsp;<span class="glyphicon glyphicon-user" style="color:#000000;"></span>&nbsp;นักวิจัย&nbsp;&nbsp;</a></li>
+                    <li><a href="<?=_web_path;?>/~scia/e-research/ers-researcherpb.php" style="font-size:16px;">&nbsp;<span class="glyphicon glyphicon-user" style="color:#000000;"></span>&nbsp;นักวิจัย&nbsp;&nbsp;</a></li>
                 <?php } ?>
             </ul>
             <ul class="nav navbar-nav navbar-right">
