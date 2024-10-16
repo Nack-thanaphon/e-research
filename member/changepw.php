@@ -28,7 +28,7 @@ if(isset($_POST['u_password']))
 		alert("รหัสผ่าน ไม่ถูกต้องกรุณาตรวจสอบ");
 	    window.history.back();
 		</SCRIPT> 
-		<?
+		<?php
 		//echo "<Script language=\"javascript\">window.location=\""._web_path."\"</script>";
 		//echo "<p><h4>รหัสผ่าน ไม่ถูกต้องกรุณาตรวจสอบ</h4></a>&nbsp;<a href='changepw.php' style='color:#ff0000;'><h3>เปลี่ยนรหัสผ่าน</h3></a></p>"; 
 		die();
@@ -110,7 +110,7 @@ if(isset($c_id)){
 <body role="document" style="background: url('../images/<?php if(defined('__EC_PICHOME__')){echo __EC_PICHOME__;}?>') no-repeat;background-attachment:fixed; background-size: 60% auto;height:auto;width:auto;background-position: center;">
 
 <div class="container-fluid" style="margin:0;padding:0;">
-	<? require_once "../headerpb.php"; ?>
+	<?php require_once "../headerpb.php"; ?>
 </div>
 <div class="container" style="width:100vw; height:100vh;-moz-opacity: 0.97;-khtml-opacity: 0.97;opacity: 0.97; background-color: #ffffff;">
 	
@@ -142,7 +142,7 @@ if(isset($c_id)){
 					<div class="col-xs-12 col-sm-12">&nbsp;</div>
 					<div class="col-xs-12 col-sm-12" style="text-align:center;padding: 3px 5px 3px 0px;">
 						<input name="Submit" type="submit" value="ส่งข้อมูล" class="btn btn-info" style="width:100px;">
-						<input type="hidden" name="oldpassword" value="<? if(isset($c_password)){ echo $c_password;}else{ echo '';}?>">
+						<input type="hidden" name="oldpassword" value="<?php if(isset($c_password)){ echo $c_password;}else{ echo '';}?>">
 						<!--<input name="&nbsp;Reset&nbsp;" type="reset" value="Reset" class="btn btn-warning">-->
 					</div>
 					<div class="col-xs-12 col-sm-12">&nbsp;</div>
@@ -154,14 +154,14 @@ if(isset($c_id)){
 		</div><!-- /.col-lg-2 col-md-4 col-sm-6 col-xs-12 col-lg-offset-5 col-md-offset-4 col-sm-offset-3 text-center -->
 
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-			<div align="center"><? require_once("../admin/footer.php") ?></div>
+			<div align="center"><?php require_once("../admin/footer.php") ?></div>
 	    </div>
 
 	</div><!-- /.row -->
 </div>
 </body>
 </html>
-<?
+<?php
 
 include("../include/close_db.php"); 
 

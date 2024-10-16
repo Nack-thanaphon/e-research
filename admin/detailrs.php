@@ -1,4 +1,4 @@
-<? 
+<?php 
 session_start();
 Header("Content-Type: text/html; charset=UTF-8");
 require_once "../include/config.php";
@@ -21,7 +21,7 @@ if ( !isset($_SESSION["admin"]) || !isset($_SESSION["userlevel"]) || ($_SESSION[
 	//window.close();
 	parent.location.href = "login.php";
 	</script>
-	<?
+	<?php
 	exit();
 }
 
@@ -143,17 +143,17 @@ if($tRows > 0){
 <div class="container bgw1">
 	<div class="row bgw2">
 
-		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" style="margin-bottom:15px;background-color:#<?echo __EC_BGSHOW__;?>;color:#<?echo __EC_FONTSHOW__;?>;font-weight: bold;"><h4><?php if(defined('__EC_NAME__')){echo "นักวิจัย";} else echo "ระบบคลังข้อมูลงานวิจัย";?></h4></div>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" style="margin-bottom:15px;background-color:#<?php echo __EC_BGSHOW__;?>;color:#<?php echo __EC_FONTSHOW__;?>;font-weight: bold;"><h4><?php if(defined('__EC_NAME__')){echo "นักวิจัย";} else echo "ระบบคลังข้อมูลงานวิจัย";?></h4></div>
 
 		<!--<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 col-lg-offset-1 col-md-offset-1 col-sm-offset-1" style="padding-top:20px;padding-bottom:20px;">-->
 			<?php if(!empty($c_ec_photopath)){ $images = "../photo/".$c_ec_photopath; ?>
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" style="padding:3px;padding-bottom:10px;">
 				<div class="col-lg-3 col-md-3 col-sm-3 col hidden-xs" style="font-weight: bold;">&nbsp;</div>
 				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 palignl">
-					<?echo "<img src=\"$images\" id=\"photoImage1\" class=\"img-thumbnail-noborder\" styly=\"margin-bottom:10px;\">";?>
+					<?php echo "<img src=\"$images\" id=\"photoImage1\" class=\"img-thumbnail-noborder\" styly=\"margin-bottom:10px;\">";?>
 				</div>
 			</div>
-			<?}?>
+			<?php}?>
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-5 text-right" style="font-weight: bold;">ชื่อ-นามสกุล(ท.)&nbsp;:&nbsp;</div>
 				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-7 text-left"><?= $c_ec_name_th;?></div>
@@ -221,7 +221,7 @@ if($tRows > 0){
 
 	<div class="row bgw2">
 
-			<?
+			<?php
 			$sql = "SELECT m . * , d . * FROM ers_document_researcher m JOIN ers_document d ON m.document_id = d.id WHERE (m.researcher_id = $c_researcher_id) ";
 			$sql .= "Order by d.ed_year DESC ";
 
@@ -229,7 +229,7 @@ if($tRows > 0){
 			$totalRows = $res->num_rows;
 			?>
 
-			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><div class="text-center hdetail"><h4>โครงการวิจัย (<?echo number_format($totalRows);?> โครงการ)</h4></div></div>
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><div class="text-center hdetail"><h4>โครงการวิจัย (<?php echo number_format($totalRows);?> โครงการ)</h4></div></div>
 
 			<div class="table-responsive hdetailtb">
 			<table class="table table-striped table-bordered sticky-header" style="margin:0;padding:0;">
@@ -241,7 +241,7 @@ if($tRows > 0){
 				</tr>
 				</thead>
 				<tbody>
-					<?
+					<?php
 					if($totalRows!="0")
 					{
 						$jk=0;
@@ -330,4 +330,4 @@ if($tRows > 0){
 
 </body>
 </html>
-<?include("../include/close_db.php");?>
+<?phpinclude("../include/close_db.php");?>

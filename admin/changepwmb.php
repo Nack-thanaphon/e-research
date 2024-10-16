@@ -19,7 +19,7 @@ if ( !isset($_SESSION["admin"]) || !isset($_SESSION["userlevel"]) || ($_SESSION[
     }
 	window.close();
 	</script>
-	<?
+	<?php
 	exit();
 }
 $admin = $_SESSION['admin'];
@@ -54,7 +54,7 @@ if(isset($_POST['u_password']))
 		alert("รหัสผ่าน ไม่ถูกต้องกรุณาตรวจสอบ");
 	    window.history.back();
 		</SCRIPT> 
-		<?
+		<?php
 		//echo "<Script language=\"javascript\">window.location=\""._web_path."\"</script>";
 		//echo "<p><h4>รหัสผ่าน ไม่ถูกต้องกรุณาตรวจสอบ</h4></a>&nbsp;<a href='changepwmb.php' style='color:#ff0000;'><h3>เปลี่ยนรหัสผ่าน</h3></a></p>"; 
 		die();
@@ -83,7 +83,7 @@ if(isset($_POST['u_password']))
 		alert("เปลี่ยนรหัสผ่านสำเร็จ");
 		window.close();
 	</script>
-	<?
+	<?php
 	exit();
 }
 
@@ -168,8 +168,8 @@ if(isset($mb_id)){
 					<div class="col-xs-12 col-sm-12">&nbsp;</div>
 					<div class="col-xs-12 col-sm-12" style="text-align:center;padding: 3px 5px 3px 0px;">
 						<input name="Submit" type="submit" value=" บันทึก " class="btn btn-info" style="width:100px;">
-						<input type="hidden" name="mb_id" value="<? if(isset($mb_id)){ echo $mb_id;}else{ echo '';}?>">
-						<input type="hidden" name="oldpassword" value="<? if(isset($c_password)){ echo $c_password;}else{ echo '';}?>">
+						<input type="hidden" name="mb_id" value="<?php if(isset($mb_id)){ echo $mb_id;}else{ echo '';}?>">
+						<input type="hidden" name="oldpassword" value="<?php if(isset($c_password)){ echo $c_password;}else{ echo '';}?>">
 						<!--<input name="&nbsp;Reset&nbsp;" type="reset" value="Reset" class="btn btn-warning">-->
 					</div>
 					<div class="col-xs-12 col-sm-12">&nbsp;</div>
@@ -184,7 +184,7 @@ if(isset($mb_id)){
 </div>
 </body>
 </html>
-<?
+<?php
 
 include("../include/close_db.php"); 
 

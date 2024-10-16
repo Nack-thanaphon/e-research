@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 Header("Content-Type: text/html; charset=UTF-8");
 require_once "../include/config.php";
@@ -52,7 +52,7 @@ if($chk_edit=="1")
 			alert("ตำแหน่งของนักวิจัย : <?= $s_et_name;?> มีอยู่ในระบบ ไม่สามารถบันทึกซ้ำได้");
 			window.location="resposition.php?iRegister=1";
 		</script>
-		<?
+		<?php
 		die();
 	}
 
@@ -140,7 +140,7 @@ function c_check2(){
 <script src="../js/main.js"></script>
 
 <div class="container-fluid" style="margin:0;padding:0;">
-	<? require_once "./header.php"; ?>
+	<?php require_once "./header.php"; ?>
 </div>
 <div class="container">
 	<div class="row">
@@ -167,7 +167,7 @@ function c_check2(){
 			  </div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" >&nbsp;</div>
 		      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-					<input type="hidden" name="c_id" value="<? if(isset($c_id)){ echo $c_id;}else{ echo '';}?>">
+					<input type="hidden" name="c_id" value="<?php if(isset($c_id)){ echo $c_id;}else{ echo '';}?>">
    					<input type="hidden" name="chk_edit" value="1"> 
 					<input type="submit" name="Submit" value=" บันทึก " class="btn btn-warning" style="width:100px;font-size:18px;">&nbsp;
 			  </div>
@@ -191,7 +191,7 @@ function c_check2(){
 		  <div class="clearfix"></div>
 		  <br>
 
-		  <?
+		  <?php
 			  if(isset($_GET["sh_order"])){	$sh_order = $_GET["sh_order"];} else {$sh_order=0;}
 			  if(!isset($_GET["Page"])){
 				if($sh_order==1){$sh_order=0;}else{$sh_order=1;}
@@ -206,7 +206,7 @@ function c_check2(){
 				}
 			?>
 		  
-		  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" style="background-color:#<?echo __EC_BGSHOW__;?>;color:#<?echo __EC_FONTSHOW__;?>;border-radius: 5px 5px 0px 0px;"><h4>แสดงข้อมูล สถานภาพของนักวิจัย</h4><a name="top_page"></a></div>
+		  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" style="background-color:#<?php echo __EC_BGSHOW__;?>;color:#<?php echo __EC_FONTSHOW__;?>;border-radius: 5px 5px 0px 0px;"><h4>แสดงข้อมูล สถานภาพของนักวิจัย</h4><a name="top_page"></a></div>
 
 		  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 			<div class="table-responsive">
@@ -222,7 +222,7 @@ function c_check2(){
               </thead>
               <tbody>
 		  
-			<? 
+			<?php 
 
 			$sql = "select * From `ers_researcher_position` where 1 ";
 			if(isset($_POST["c_code_1"])){$c_code_1 = $_POST["c_code_1"];	}else{$c_code_1 = "";}
@@ -295,12 +295,12 @@ function c_check2(){
 
 					<tr style="background-color:<?= $bcolor;?>">
 					<td style="text-align:center;width:100px;min-width:100px;">
-					<?
+					<?php
 					echo "<a href='resposition.php?c_id=$c_id' style='color:green;font-size:16px;' title='แก้ไข'><span class='glyphicon glyphicon-edit'></span>&nbsp;<span style='font-size:14px;'>แก้ไข</span></a>";
 					?>
 					</td>
 					<td style="text-align:center;width:100px;min-width:100px;">
-					<?
+					<?php
 					echo "<a href='del_data.php?c_id=$c_id&chk_p=4&code_1=$code_1' style='color:red;font-size:16px;' title='ลบ'><span class='glyphicon glyphicon-trash'></span>&nbsp;<span style='font-size:14px;'>ลบ</span></a>";
 					?>
 					</td>
@@ -309,7 +309,7 @@ function c_check2(){
 					<td style="text-align:center;"><?= $c_status_name;?></td>
 					</tr>
 
-				<?
+				<?php
 				}//while
 			} //$totalRows 
 			?>
@@ -323,7 +323,7 @@ function c_check2(){
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-left:5px;padding-right:5px;">
 			<!--<div><hr align="center" width="100%" noshade size="1"></div>-->
 			<div style="font-size:14px;">หน้า :
-				<?
+				<?php
 					$pages = new Paginator;
 					$pages->items_total = $totalRows;
 					$pages->mid_range = 7;
@@ -338,7 +338,7 @@ function c_check2(){
 	    </div>
 
 	    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-			<div align="center"><? require_once("./footer.php") ?></div>
+			<div align="center"><?php require_once("./footer.php") ?></div>
 	    </div>
 
 	</div><!-- /.row -->
@@ -347,7 +347,7 @@ function c_check2(){
 
 </body>
 </html>
-<? include("../include/close_db.php"); ?>
+<?php include("../include/close_db.php"); ?>
 <script>
 var sw = screen.width;
 if(sw < 768)

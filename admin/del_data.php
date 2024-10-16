@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 Header("Content-Type: text/html; charset=UTF-8");
 require_once "../include/config.php";
@@ -18,7 +18,7 @@ if($_GET['chk_p']=="1"){
 			alert('ไม่สามารถลบ "admin" ได้ กรุณาติดต่อผู้ดูแลระบบ');
 			window.location="index.php";
 		</script>
-		<?
+		<?php
 		echo "<Script language=\"javascript\">window.location=\"index.php\"</script>";
 		exit;
 	}
@@ -28,7 +28,7 @@ if($_GET['chk_p']=="1"){
 			alert('ไม่สามารถลบข้อมูลได้ กรุณาติดต่อผู้ดูแลระบบ');
 			window.location="index.php";
 		</script>
-		<?
+		<?php
 		echo "<Script language=\"javascript\">window.location=\"index.php\"</script>";
 		exit;
 	}
@@ -218,7 +218,7 @@ if($chk_del==1){
 <script src="../js/main.js"></script>
 
 <div class="container-fluid" style="margin:0;padding:0;">
-	<? require_once "./header.php"; ?>
+	<?php require_once "./header.php"; ?>
 </div>
 <div class="container">
 	<div class="row">
@@ -227,7 +227,7 @@ if($chk_del==1){
 <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
 <tr> 
 	<td>
-	<?
+	<?php
 	switch ($chk_p) {
 		case 1: echo "&nbsp;&nbsp;<a href=\"users.php?iRegister=1\"><span style='font-size:16px;'><< กลับไปหน้า $s_caption_1</span></a>";
 					   break;
@@ -265,7 +265,7 @@ if($chk_del==1){
 				</tr>
 				<tr style="color:#ff0000">
 					<td width="100%" align="center"><h4><?= $s_name_1;?> :&nbsp;
-					<?
+					<?php
 					if(!empty($c_id) and ($c_id>0))
 					{
 						echo $code_1." ID : ".$c_id ; 
@@ -278,12 +278,12 @@ if($chk_del==1){
 				</tr>
 				<tr> 
 					<td align="center">
-						<input type="hidden" name="code_1" value="<?echo $code_1;?>"> 
-						<input type="hidden" name="c_id" value="<?echo $c_id;?>"> 
-						<input type="hidden" name="s_caption_1" value="<?echo $s_caption_1;?>"> 
+						<input type="hidden" name="code_1" value="<?php echo $code_1;?>"> 
+						<input type="hidden" name="c_id" value="<?php echo $c_id;?>"> 
+						<input type="hidden" name="s_caption_1" value="<?php echo $s_caption_1;?>"> 
    						<input type="hidden" name="chk_del" value="1">
-						<input type="hidden" name="chk_p" value="<?echo $chk_p;?>">
-						<input type="hidden" name="s_description" value="<?echo $s_description;?>"> 
+						<input type="hidden" name="chk_p" value="<?php echo $chk_p;?>">
+						<input type="hidden" name="s_description" value="<?php echo $s_description;?>"> 
 						<input type="submit" name="Submit" value=" ลบ " class="btn btn-danger" style="width:100px;font-size:18px;"> 
 					</td>
 				</tr>
@@ -302,7 +302,7 @@ if($chk_del==1){
 </div>
 </body>
 </html>
-<?
+<?php
 } 
 include("../include/close_db.php");
 ?>

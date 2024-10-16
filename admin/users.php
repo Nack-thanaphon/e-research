@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 Header("Content-Type: text/html; charset=UTF-8");
 require_once "../include/config.php";
@@ -51,7 +51,7 @@ if($chk_add=="1"){
 				alert("User name : <?= $u_name;?> มีอยู่ในระบบแล้ว ไม่สามารถเพิ่มได้");
 				window.location="users.php";
 			</script>
-			<?
+			<?php
 			$chk_add=0;
 			die;
 		}else
@@ -78,7 +78,7 @@ if($chk_add=="1"){
 			alert('ไม่สามารถเพิ่มผู้ใช้งานได้ กรุณาติดต่อผู้ดูแลระบบ');
 			window.location="index.php";
 		</script>
-		<?
+		<?php
 		echo "<Script language=\"javascript\">window.location=\"index.php\"</script>";
 		die();exit();
 	}
@@ -144,7 +144,7 @@ function check(){
 <script src="../js/main.js"></script>
 
 <div class="container-fluid" style="margin:0;padding:0;">
-	<? require_once "./header.php"; ?>
+	<?php require_once "./header.php"; ?>
 </div>
 <div class="container">
 	<div class="row">
@@ -197,7 +197,7 @@ function check(){
 	<div class="row">
 		<!--<hr align="center" width="100%" noshade size="1">-->
 
-		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" style="background-color:#<?echo __EC_BGSHOW__;?>;color:#<?echo __EC_FONTSHOW__;?>;border-radius: 5px 5px 0px 0px;"><h4>แสดงข้อมูลผู้ดูแลระบบ</h4></div>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" style="background-color:#<?php echo __EC_BGSHOW__;?>;color:#<?php echo __EC_FONTSHOW__;?>;border-radius: 5px 5px 0px 0px;"><h4>แสดงข้อมูลผู้ดูแลระบบ</h4></div>
 
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 			<div class="table-responsive">
@@ -215,7 +215,7 @@ function check(){
               </thead>
               <tbody>
 
-				 <? 
+				 <?php 
 				
 				if($_SESSION["admin"]!="admin"){
 					$sql = "select * From `ers_admin` where (`user_name` = '$admin') ";
@@ -275,12 +275,12 @@ function check(){
 
 						<tr style="background-color:<?= $bcolor;?>">
 						<td style="text-align:center;width:100px;min-width:100px;">
-						<?
+						<?php
 						echo "<a href='edit_user.php?code_id=$code_id&code_1=$code_1' style='color:green;font-size:20px;' title='แก้ไข'><span class='glyphicon glyphicon-edit'></span>&nbsp;<span style='font-size:14px;'>แก้ไข</span></a>";
 						?>
 						</td>
 						<td style="text-align:center;width:100px;min-width:100px;">
-						<?
+						<?php
 						echo "<a href='del_data.php?c_id=$code_id&chk_p=1&code_1=$code_1' style='color:red;font-size:20px;' title='ลบ'><span class='glyphicon glyphicon-trash'></span>&nbsp;<span style='font-size:14px;'>ลบ</span></a>";
 						?>
 						</td>
@@ -301,7 +301,7 @@ function check(){
 						</td>
 						</tr>
 
-				<?  
+				<?php  
 					}//while
 				} //$totalRows 
 				?>
@@ -315,7 +315,7 @@ function check(){
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-left:5px;padding-right:5px;">
 			<!--<div><hr align="center" width="100%" noshade size="1"></div>-->
 			<div style="font-size:14px;">
-				<?
+				<?php
 					if($Page>1){echo "หน้า : ";}
 					$pages = new Paginator;
 					$pages->items_total = $totalRows;
@@ -331,7 +331,7 @@ function check(){
 	    </div>
 
 	    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-			<div align="center"><? require_once("./footer.php") ?></div>
+			<div align="center"><?php require_once("./footer.php") ?></div>
 	    </div>
 
 	</div><!-- /.row -->
@@ -340,7 +340,7 @@ function check(){
 
 </body>
 </html>
-<? include("../include/close_db.php"); ?>
+<?php include("../include/close_db.php"); ?>
 <script>
 var sw = screen.width;
 if(sw < 768)

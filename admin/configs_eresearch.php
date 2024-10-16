@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 Header("Content-Type: text/html; charset=UTF-8");
 require_once "../include/config.php";
@@ -509,7 +509,7 @@ function edshowfc(){
 <script src="../js/main.js"></script>
 
 <div class="container-fluid" style="background-color:#fff;margin:0;padding:0;">
-	<? require_once "./header.php"; ?>
+	<?php require_once "./header.php"; ?>
 </div>
 
 <div class="container" style="-moz-opacity: 0.98;-khtml-opacity: 0.98;opacity: 0.98;background-color:#fff">
@@ -528,7 +528,7 @@ function edshowfc(){
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 palignr" style="margin:0;padding:0;">&nbsp;:&nbsp;Shotcut icon(ico 32x32px)&nbsp;:&nbsp;</div>
 				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 palignl" style="margin:0;padding:0;">
-					<?
+					<?php
 						if(!empty($c_ec_favicon_ico)){
 							$images = "../images/".$c_ec_favicon_ico;
 							echo "<div id=\"img4\"><img src=\"$images\" id=\"photoImage4\" class=\"img-thumbnail-noborder\"></div> ";
@@ -545,7 +545,7 @@ function edshowfc(){
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 palignr" style="margin:0;padding:0;">&nbsp;:&nbsp;Shotcut icon(png 32x32px)&nbsp;:&nbsp;</div>
 				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 palignl" style="margin:0;padding:0;">
-					<?
+					<?php
 						if(!empty($c_ec_favicon)){
 							$images = "../images/".$c_ec_favicon;
 							echo "<div id=\"img3\"><img src=\"$images\" id=\"photoImage3\" class=\"img-thumbnail-noborder\"></div> ";
@@ -562,7 +562,7 @@ function edshowfc(){
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 palignr" style="margin:0;padding:0;">&nbsp;:&nbsp;โลโก้(png สูง 50px)&nbsp;:&nbsp;</div>
 				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 palignl" style="margin:0;padding:0;">
-					<?
+					<?php
 						if(!empty($c_ec_logo)){
 							$images = "../images/".$c_ec_logo;
 							echo "<div id=\"img1\"><img src=\"$images\" id=\"photoImage1\" class=\"img-thumbnail-noborder\"></div> ";
@@ -579,7 +579,7 @@ function edshowfc(){
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 palignr" style="margin:0;padding:0;">&nbsp;:&nbsp;รูปหน่วยงาน(jpg,png สูง 650px)&nbsp;:&nbsp;</div>
 				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 palignl" style="margin:0;padding:0;">
-					<?
+					<?php
 						if(!empty($c_ec_pichome)){
 							$images = "../images/".$c_ec_pichome;
 							echo "<div id=\"img2\"><img src=\"$images\" id=\"photoImage2\" class=\"img-thumbnail-noborder\"></div> ";
@@ -596,7 +596,7 @@ function edshowfc(){
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 palignr" style="margin:0;padding:0;">&nbsp;:&nbsp;คู่มือการใช้งานของแอดมิน&nbsp;:&nbsp;</div>
 				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 palignl" style="margin:0;padding:0;">
-					<?
+					<?php
 						if(!empty($c_ec_manual_admin)){ 
 							echo "<div id=\"view_at1\"><a href=\"../files/".$c_ec_manual_admin."\" target=\"_blank\"><span id=\"dfile1\">".$c_ec_manual_admin."</span></a>&nbsp;:&nbsp;</div>";
 						}
@@ -608,7 +608,7 @@ function edshowfc(){
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 palignr" style="margin:0;padding:0;">&nbsp;:&nbsp;คู่มือการใช้งานของสมาชิก&nbsp;:&nbsp;</div>
 				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 palignl" style="margin:0;padding:0;">
-					<?
+					<?php
 						if(!empty($c_ec_manual_member)){ 
 							echo "<div id=\"view_at1\"><a href=\"../files/".$c_ec_manual_member."\" target=\"_blank\"><span id=\"dfile1\">".$c_ec_manual_member."</span></a>&nbsp;:&nbsp;</div>";
 						}
@@ -620,7 +620,7 @@ function edshowfc(){
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 palignr">&nbsp;:&nbsp;คู่มือการใช้งานของบุคคลทั่วไป&nbsp;:&nbsp;</div>
 				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 palignl">
-					<?
+					<?php
 						//if(!empty($c_ec_manual_guest)){ 
 						//	echo "<div id=\"view_at3\"><a href=\"../files/".$c_ec_manual_guest."\" target=\"_blank\"><span id=\"dfile1\">".$c_ec_manual_guest."</span></a>&nbsp;:&nbsp;</div>";
 						//}
@@ -639,7 +639,7 @@ function edshowfc(){
 			  </div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-top:3px;">
 				<div class="col-lg-4 col-md-4 col-sm-4 hidden-xs text-right">&nbsp;</div>
-				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 text-left" style="margin:0;padding:0;"><div id="edshow" class="edshow" style="background-color:#<?echo __EC_BGSHOW__;?>;color:#<?echo __EC_FONTSHOW__;?>;">ระบบคลังข้อมูลงานวิจัย</div></div>
+				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 text-left" style="margin:0;padding:0;"><div id="edshow" class="edshow" style="background-color:#<?php echo __EC_BGSHOW__;?>;color:#<?php echo __EC_FONTSHOW__;?>;">ระบบคลังข้อมูลงานวิจัย</div></div>
 			  </div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><hr align="center" width="90%" noshade size="1"></div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-top:3px;">
@@ -660,7 +660,7 @@ function edshowfc(){
 	     </div><!-- /.col-sm-12 -->
 
 		 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-			<div align="center"><? require_once "./footer.php"; ?></div>
+			<div align="center"><?php require_once "./footer.php"; ?></div>
 	     </div>
 		
 	</div><!-- /.row -->
@@ -668,7 +668,7 @@ function edshowfc(){
 
 </body>
 </html>
-<? include("../include/close_db.php"); ?>
+<?php include("../include/close_db.php"); ?>
 <script>
 var sw = screen.width;
 if(sw < 768)

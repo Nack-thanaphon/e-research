@@ -343,7 +343,7 @@ $mysqli->query($link,"update `ers_document` set `ed_counter`=`ed_counter`+1 wher
 
 <div class="container-fluid" style="width:100vw; height:100vh;-moz-opacity: 0.97;-khtml-opacity: 0.97;opacity: 0.97; background-color: #ffffff;">
 
-	<? require_once "../headerpb.php"; ?>
+	<?php require_once "../headerpb.php"; ?>
 
 	<div class="row" style="padding-top:50px;padding-bottom:10px;">
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 palignr" style="padding-top:10px;padding-left:5px;padding-right:10px;">
@@ -375,7 +375,7 @@ $mysqli->query($link,"update `ers_document` set `ed_counter`=`ed_counter`+1 wher
 				<div class="h1member">&nbsp;:&nbsp;ข้อความร้องขอเอกสารงานวิจัย (งานวิจัยในระบบ)&nbsp;:&nbsp;</div>
 			  </div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-				<?
+				<?php
 				if(!empty($c_ed_name_th)){
 					echo "ชื่อผลงานวิจัย : ".$c_ed_name_th;
 				}
@@ -387,21 +387,21 @@ $mysqli->query($link,"update `ers_document` set `ed_counter`=`ed_counter`+1 wher
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" >&nbsp;</div>
 		      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
    					<input type="hidden" name="chk_edit" value="1"> 
-					<input type="hidden" name="c_id" value="<? if(isset($c_id)){ echo $c_id;}else{ echo '';}?>">
-					<input type="hidden" name="dcid" value="<? if(isset($dcid)){ echo $dcid;}else{ echo '';}?>">
+					<input type="hidden" name="c_id" value="<?php if(isset($c_id)){ echo $c_id;}else{ echo '';}?>">
+					<input type="hidden" name="dcid" value="<?php if(isset($dcid)){ echo $dcid;}else{ echo '';}?>">
 					<input type="submit" name="Submit" value=" ส่งข้อมูล " class="btn btn-warning" style="width:100px;font-size:18px;">&nbsp;
 			  </div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" >&nbsp;</div>			  
 		  </form>
-		<?}?>
+		<?php}?>
 		</div><!-- /.col-lg-6 col-md- 8 col-sm-10 col-xs-12 col-lg-offset-3 col-md-offset-2 col-sm-offset-1 -->
 	</div><!-- /.row -->
 	
 	<div class="row bgw">
-		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" style="background-color:#<?echo __EC_BGSHOW__;?>;color:#<?echo __EC_FONTSHOW__;?>;"><h4 class="sub-header">แสดงข้อมูล ข้อความร้องขอเอกสารงานวิจัย (งานวิจัยในระบบ)</h4></div>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" style="background-color:#<?php echo __EC_BGSHOW__;?>;color:#<?php echo __EC_FONTSHOW__;?>;"><h4 class="sub-header">แสดงข้อมูล ข้อความร้องขอเอกสารงานวิจัย (งานวิจัยในระบบ)</h4></div>
 		 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
 
-			<?
+			<?php
 			  if(isset($_GET["sh_order"])){	$sh_order = $_GET["sh_order"];} else {$sh_order=0;}
 			  if(!isset($_GET["Page"])){
 				if($sh_order==1){$sh_order=0;}else{$sh_order=1;}
@@ -441,7 +441,7 @@ $mysqli->query($link,"update `ers_document` set `ed_counter`=`ed_counter`+1 wher
 					</tr>
 				</thead>
 				<tbody class="bgw">
-				<?
+				<?php
 			$sql = "select * From `ers_member_request` where (`member_id`='".$memberid."') ";
 
 			if(isset($_GET["sd"])){$sd = trim($_GET["sd"]);} else {	$sd = 0;}
@@ -574,23 +574,23 @@ $mysqli->query($link,"update `ers_document` set `ed_counter`=`ed_counter`+1 wher
 					?>
 					<tr>
 						<td style="text-align:center;width:100px;min-width:100px;">
-							<?
+							<?php
 							if($c_er_answer==0){
 							echo "<a href='index.php?c_id=$c_id&dcid=$doc_id' style='color:green;font-size:16px;' title='แก้ไข'><span class='glyphicon glyphicon-edit'></span>&nbsp;<span style='font-size:14px;'>แก้ไข</span></a>";
 							}
 							?>
 						</td>
 						<td style="text-align:center;width:100px;min-width:100px;">
-							<?
+							<?php
 							if($c_er_answer==0){
 							$dfile =  'dfile'.$jk;
 							?>
 							<a href="javascript:void(0)" style="color:red;font-size:16px;" title="ยกเลิก" onclick="confirmCancel('<?= $dfile;?>','<?= $c_id;?>','<?= $code_1;?>','1')"><span class="glyphicon glyphicon-minus-sign"></span>&nbsp;<span style="font-size:14px;">ยกเลิก</span><span id="<?= $dfile;?>"></span></a>
-							<?}?>
+							<?php}?>
 						</td>
 						<td style="text-align:center;"><?= $c_id;?></td>
 						<td style="text-align:left;">&nbsp;
-							<?
+							<?php
 							if($reqlen > $reqlen2) {
 								echo "<a href=\"javascript:void(0)\" title='".$c_er_request_text."' style='color:#000000;'>".$c_er_request_text2."</a>";
 							} else {
@@ -599,7 +599,7 @@ $mysqli->query($link,"update `ers_document` set `ed_counter`=`ed_counter`+1 wher
 							?>&nbsp;
 						</td>
 						<td style="text-align:left;">&nbsp;
-							<?
+							<?php
 							if($doclen > $doclen2) {
 								echo "<a href=\"javascript:void(0)\" title='".$c_ed_name_th."' style='color:#000000;'>".$c_ed_name_th2."</a>";
 							} else {
@@ -613,10 +613,10 @@ $mysqli->query($link,"update `ers_document` set `ed_counter`=`ed_counter`+1 wher
 						<td style="text-align:center;">
 							<?php if(($c_er_answer==1) && ($chk_expire==1)){ ?>
 								<a href="javascript:void(0)" onclick="show_detail('<?= $c_id;?>', '1')" style="color:#000000;"><div  style="background-color:#f8dc67;padding:4px 1px 2px 1px;border-radius:5px;"><span class="glyphicon glyphicon-download" style="color:#006633;font-size:14px;"></span>&nbsp;ดาวน์โหลด</div></a>
-							<?}?>
+							<?php}?>
 						</td>
 						<td style="text-align:left;">&nbsp;
-							<?
+							<?php
 							if($anslen > $anslen2) {
 								echo "<a href=\"javascript:void(0)\" title='".$c_er_answert_text."' style='color:#000000;'>".$c_er_answert_text2."</a>";
 							} else {
@@ -625,9 +625,9 @@ $mysqli->query($link,"update `ers_document` set `ed_counter`=`ed_counter`+1 wher
 							?>&nbsp;
 						</td>
 						<td style="text-align:center;"><?= $c_er_answer_date;?></td>
-						<!--<td style="text-align:center;"><?//=$c_er_answer_name;?></td>-->
+						<!--<td style="text-align:center;"><?php//=$c_er_answer_name;?></td>-->
 					</tr>
-					<?
+					<?php
 					}//while
 					$res->free();
 				} else {
@@ -644,7 +644,7 @@ $mysqli->query($link,"update `ers_document` set `ed_counter`=`ed_counter`+1 wher
 	<div class="row bgw">			  	
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-left:5px;padding-right:5px;">
 			<div style="font-size:14px;">หน้า :
-				<?
+				<?php
 					$pages = new Paginator;
 					$pages->items_total = $totalRows;
 					$pages->mid_range = 7;
@@ -659,13 +659,13 @@ $mysqli->query($link,"update `ers_document` set `ed_counter`=`ed_counter`+1 wher
 	    </div>
 
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-			<div align="center"><? require_once("../admin/footer.php") ?></div>
+			<div align="center"><?php require_once("../admin/footer.php") ?></div>
 	    </div>
 
 	</div><!-- /.row -->
 </div>
 <div id="ersshow"></div>
-<?include("../include/close_db.php");?>
+<?phpinclude("../include/close_db.php");?>
 </body>
 </html>
 <script>

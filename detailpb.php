@@ -1,4 +1,4 @@
-<? 
+<?php 
 session_start();
 Header("Content-Type: text/html; charset=UTF-8");
 require_once "./include/config.php";
@@ -157,7 +157,7 @@ $mysqli->query($link,"update `ers_document` set `ed_counter`=`ed_counter`+1 wher
 <div class="container bgw1">
 	<div class="row bgw2">
 
-			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" style="margin-bottom:30px;background-color:#<?echo __EC_BGSHOW__;?>;color:#<?echo __EC_FONTSHOW__;?>;font-weight: bold;"><h4><?php if(defined('__EC_NAME__')){echo "ผลงานวิจัย";} else echo "ระบบคลังข้อมูลงานวิจัย";?></h4></div>
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" style="margin-bottom:30px;background-color:#<?php echo __EC_BGSHOW__;?>;color:#<?php echo __EC_FONTSHOW__;?>;font-weight: bold;"><h4><?php if(defined('__EC_NAME__')){echo "ผลงานวิจัย";} else echo "ระบบคลังข้อมูลงานวิจัย";?></h4></div>
 
 			<!--<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 col-lg-offset-1 col-md-offset-1 col-sm-offset-1" style="padding-top:20px;padding-bottom:20px;">-->
 
@@ -177,14 +177,14 @@ $mysqli->query($link,"update `ers_document` set `ed_counter`=`ed_counter`+1 wher
 				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-4 text-right" style="font-weight: bold;">ปีงบประมาณ&nbsp;:&nbsp;</div>
 				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-8"><?= $c_ed_year;?></div>
 			</div>
-			<?
+			<?php
 			if($c_ed_detail!=""){ 
 			?>
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-4 text-right" style="font-weight: bold;">รายละเอียด&nbsp;:&nbsp;</div>
 				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-8"><div style="max-width: 95%"><?= $c_ed_detail;?></div></div>
 			</div>
-			<?
+			<?php
 			}
 			if($c_et_name!=""){ 
 			?>
@@ -192,7 +192,7 @@ $mysqli->query($link,"update `ers_document` set `ed_counter`=`ed_counter`+1 wher
 				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-4 text-right" style="font-weight: bold;">ประเภทของเงินอุดหนุนงานวิจัย&nbsp;:&nbsp;</div>
 				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-8"><?= $c_et_name;?></div>
 			</div>
-			<?
+			<?php
 			}
 			if($c_ed_capital!=""){ 
 			?>
@@ -200,7 +200,7 @@ $mysqli->query($link,"update `ers_document` set `ed_counter`=`ed_counter`+1 wher
 				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-4 text-right" style="font-weight: bold;">แหล่งทุน&nbsp;:&nbsp;</div>
 				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-8"><?= $c_ed_capital;?></div>
 			</div>
-			<?
+			<?php
 			}
 			?>
 
@@ -222,7 +222,7 @@ $mysqli->query($link,"update `ers_document` set `ed_counter`=`ed_counter`+1 wher
 				</tr>
 				</thead>
 				<tbody>
-					<?
+					<?php
 					$sql = "SELECT m . * , d . * FROM ers_document_researcher m JOIN ers_researcher d ON m.researcher_id = d.id WHERE (m.document_id = $c_document_id) AND (d.researcher_position_status =1) ";
 					$sql .= "Order by d.id ASC ";
 
@@ -299,7 +299,7 @@ $mysqli->query($link,"update `ers_document` set `ed_counter`=`ed_counter`+1 wher
 				</tr>
 				</thead>
 				<tbody>
-					<?
+					<?php
 					$sql = "SELECT m . * , d . * FROM ers_document_researcher m JOIN ers_researcher d ON m.researcher_id = d.id WHERE (m.document_id = $c_document_id) AND (d.researcher_position_status =2) ";
 					$sql .= "Order by d.id DESC ";
 
@@ -365,4 +365,4 @@ $mysqli->query($link,"update `ers_document` set `ed_counter`=`ed_counter`+1 wher
 
 </body>
 </html>
-<?include("./include/close_db.php");?>
+<?phpinclude("./include/close_db.php");?>

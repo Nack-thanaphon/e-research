@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 Header("Content-Type: text/html; charset=UTF-8");
 require_once "../include/config.php";
@@ -19,7 +19,7 @@ if ( !isset($_SESSION["admin"]) || !isset($_SESSION["userlevel"]) || ($_SESSION[
     }
 	window.close();
 	</script>
-	<?
+	<?php
 	exit();
  }
 
@@ -105,7 +105,7 @@ if($chk_edit=="1")
 		}
 		window.close();
 		</script>
-	<?
+	<?php
 	}
 	exit();
 }
@@ -242,7 +242,7 @@ $mysqli->query($link,"update `ers_member_request` set `er_request_read`='1',`er_
 
 	<div class="row  bgw2">
 		
-		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" style="margin-bottom:30px;background-color:#<?echo __EC_BGSHOW__;?>;color:#<?echo __EC_FONTSHOW__;?>;font-weight: bold;"><h4><?php if(defined('__EC_NAME__')){echo "การอนุมัติ การร้องขอเอกสารผลงานวิจัย";} else echo "ระบบคลังข้อมูลงานวิจัย";?></h4></div>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" style="margin-bottom:30px;background-color:#<?php echo __EC_BGSHOW__;?>;color:#<?php echo __EC_FONTSHOW__;?>;font-weight: bold;"><h4><?php if(defined('__EC_NAME__')){echo "การอนุมัติ การร้องขอเอกสารผลงานวิจัย";} else echo "ระบบคลังข้อมูลงานวิจัย";?></h4></div>
 
 		<div style="padding-top:20px;">
 
@@ -250,11 +250,11 @@ $mysqli->query($link,"update `ers_member_request` set `er_request_read`='1',`er_
 
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right" style="">ชือสมาชิก&nbsp;:&nbsp;</div>
-				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><?echo $c_name;?></div>
+				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><?php echo $c_name;?></div>
 			  </div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">ชือ login&nbsp;:&nbsp;</div>
-				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><?echo $c_username;?></div>
+				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><?php echo $c_username;?></div>
 			  </div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">หน่วยงานที่สังกัด&nbsp;:&nbsp;</div>
@@ -264,7 +264,7 @@ $mysqli->query($link,"update `ers_member_request` set `er_request_read`='1',`er_
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">โทรศัพท์&nbsp;:&nbsp;</div>
 				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><a href='tel:<?= $c_phone;?>' target="_blank" title='<?= $c_phone;?>'><?= $c_phone;?></a></div>
 			  </div>
-			  <?
+			  <?php
 			    $subject_text = "ผลการร้องขอเอกสารผลงานวิจัย ".__EC_NAME__;
 			    $encodedSubject = htmlspecialchars($subject_text);
 			    $body_text = "สวัสดีคุณ ".$c_name2;
@@ -288,11 +288,11 @@ $mysqli->query($link,"update `ers_member_request` set `er_request_read`='1',`er_
 			  </div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">ผลงานวิจัย&nbsp;:&nbsp;</div>
-				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><?echo $c_ed_name_th;?></div>
+				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><?php echo $c_ed_name_th;?></div>
 			  </div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">ข้อความร้องขอ&nbsp;:&nbsp;</div>
-				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><?echo $c_er_request_text;?></div>
+				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><?php echo $c_er_request_text;?></div>
 			  </div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">ข้อความตอบกลับ&nbsp;:&nbsp;</div>
@@ -305,7 +305,7 @@ $mysqli->query($link,"update `ers_member_request` set `er_request_read`='1',`er_
 				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
 				  <select name="s_day" id="s_day" style="width:50px;border-radius:5px;border:1px solid #cccccc;">
 						<option value="0">วันที่</option>
-						<?
+						<?php
 						for($i=1;$i<=31;$i++){
 							if($c_day==$i) $selected="selected='selected'";
 							else  $selected="";
@@ -313,26 +313,26 @@ $mysqli->query($link,"update `ers_member_request` set `er_request_read`='1',`er_
 							<option value="<?= $i;?>" <?= $selected; ?>>
 							  <?= $i;?>
 							</option>
-						<?}?>
+						<?php}?>
 				  </select>
 				  <select name="s_month" id="s_month" style="width:100px;border-radius:5px;border:1px solid #cccccc;">
 					<option value="0">เดือน</option>
-					<option value="01" <? if($c_month=="01")echo "selected='selected'";?> >มกราคม</option>
-					<option value="02" <? if($c_month=="02")echo "selected='selected'";?>>กุมภาพันธ์</option>
-					<option value="03" <? if($c_month=="03")echo "selected='selected'";?>>มีนาคม</option>
-					<option value="04" <? if($c_month=="04")echo "selected='selected'";?>>เมษายน</option>
-					<option value="05" <? if($c_month=="05")echo "selected='selected'";?>>พฤษภาคม</option>
-					<option value="06" <? if($c_month=="06")echo "selected='selected'";?>>มิถุนายน</option>
-					<option value="07" <? if($c_month=="07")echo "selected='selected'";?>>กรกฎาคม</option>
-					<option value="08" <? if($c_month=="08")echo "selected='selected'";?>>สิงหาคม</option>
-					<option value="09" <? if($c_month=="09")echo "selected='selected'";?>>กันยายน</option>
-					<option value="10" <? if($c_month=="10")echo "selected='selected'";?>>ตุลาคม</option>
-					<option value="11" <? if($c_month=="11")echo "selected='selected'";?>>พฤศจิกายน</option>
-					<option value="12" <? if($c_month=="12")echo "selected='selected'";?>>ธันวาคม</option>
+					<option value="01" <?php if($c_month=="01")echo "selected='selected'";?> >มกราคม</option>
+					<option value="02" <?php if($c_month=="02")echo "selected='selected'";?>>กุมภาพันธ์</option>
+					<option value="03" <?php if($c_month=="03")echo "selected='selected'";?>>มีนาคม</option>
+					<option value="04" <?php if($c_month=="04")echo "selected='selected'";?>>เมษายน</option>
+					<option value="05" <?php if($c_month=="05")echo "selected='selected'";?>>พฤษภาคม</option>
+					<option value="06" <?php if($c_month=="06")echo "selected='selected'";?>>มิถุนายน</option>
+					<option value="07" <?php if($c_month=="07")echo "selected='selected'";?>>กรกฎาคม</option>
+					<option value="08" <?php if($c_month=="08")echo "selected='selected'";?>>สิงหาคม</option>
+					<option value="09" <?php if($c_month=="09")echo "selected='selected'";?>>กันยายน</option>
+					<option value="10" <?php if($c_month=="10")echo "selected='selected'";?>>ตุลาคม</option>
+					<option value="11" <?php if($c_month=="11")echo "selected='selected'";?>>พฤศจิกายน</option>
+					<option value="12" <?php if($c_month=="12")echo "selected='selected'";?>>ธันวาคม</option>
 				  </select>
 				  <select name="s_year" id="s_year" style="width:70px;border-radius:5px;border:1px solid #cccccc;">
 					<option value="0">ปี</option>
-					<?
+					<?php
 					$start_y=(date("Y")-5); 
 					$end_y=(date("Y")+10);
 					for($yy=$start_y; $yy<=$end_y; $yy++){
@@ -342,7 +342,7 @@ $mysqli->query($link,"update `ers_member_request` set `er_request_read`='1',`er_
 						<option value="<?= $yy;?>" <?= $selected_y;?>>
 					      <?= $yy+543;?>
 						</option>
-					<?}?>
+					<?php}?>
 				  </select>
 				</div>
 			  </div>
@@ -358,7 +358,7 @@ $mysqli->query($link,"update `ers_member_request` set `er_request_read`='1',`er_
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
 				<input type='checkbox' name='chk_approved' id='chk_approved' value='1' <?php if($c_er_answer=='1'){echo "checked";}?> onclick="chkapprove()">&nbsp;<span style="color:#ff0000;">อนุมัติทั้งหมด</span>
 			  </div>
-			  <?
+			  <?php
 				$sql = "select * from `ers_document_files` where (`document_id`='".$c_document_id."') order by `id`ASC";
 				$dbquery = $mysqli->query($link,$sql);
 				$num_rows = $dbquery->num_rows;
@@ -389,17 +389,17 @@ $mysqli->query($link,"update `ers_member_request` set `er_request_read`='1',`er_
 							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
 								<hr align="center" width="95%" noshade size="1" color="#cccccc">
 							</div>
-							<?}?>
+							<?php}?>
 							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right" style="font-weight: bold;white-space: nowrap;">เอกสาร <?= $item;?>&nbsp;:&nbsp;</div>
 								<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
 									<div id="view<?= $item;?>"><input type='checkbox' name='chk<?= $item;?>' id='chkapp<?= $item;?>' value='1' <?php if($c_chk_approve=='1'){echo "checked";}?>>&nbsp;<span style="color:#00cc00;">อนุมัติ</span>&nbsp;<span class='glyphicon glyphicon-file' style='color:#000000'></span>&nbsp;<?= $c_edf_filename;?>&nbsp;</div>
-									<input type="hidden" name="path_file<?= $item;?>" value="<? if(isset($c_edf_filename)){ echo $c_edf_filename;}else{ echo '';}?>">
-									<input type="hidden" name="s_link<?= $item;?>" value="<? if(isset($c_edf_link)){ echo $c_edf_link;}else{ echo '';}?>">
-									<input type="hidden" name="s_file_id<?= $item;?>" value="<? if(isset($c_edf_id)){ echo $c_edf_id;}else{ echo '';}?>">
+									<input type="hidden" name="path_file<?= $item;?>" value="<?php if(isset($c_edf_filename)){ echo $c_edf_filename;}else{ echo '';}?>">
+									<input type="hidden" name="s_link<?= $item;?>" value="<?php if(isset($c_edf_link)){ echo $c_edf_link;}else{ echo '';}?>">
+									<input type="hidden" name="s_file_id<?= $item;?>" value="<?php if(isset($c_edf_id)){ echo $c_edf_id;}else{ echo '';}?>">
 								</div>
 							</div>
-							<?
+							<?php
 						}
 					}//while
 				}
@@ -407,8 +407,8 @@ $mysqli->query($link,"update `ers_member_request` set `er_request_read`='1',`er_
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">&nbsp;</div>
 
 		      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-					<input type="hidden" name="req_id" value="<? if(isset($req_id)){ echo $req_id;}else{ echo '';}?>">
-					<input type="hidden" name="document_id" value="<? if(isset($c_document_id)){ echo $c_document_id;}else{ echo '';}?>">
+					<input type="hidden" name="req_id" value="<?php if(isset($req_id)){ echo $req_id;}else{ echo '';}?>">
+					<input type="hidden" name="document_id" value="<?php if(isset($c_document_id)){ echo $c_document_id;}else{ echo '';}?>">
    					<input type="hidden" name="chk_edit" value="1"> 
 					<input type="submit" name="Submit" value=" บันทึกการอนุมัติ/ไม่อนุมัติ " class="btn btn-warning" style="width:200px;font-size:16px;">&nbsp;
 			  </div>
@@ -425,7 +425,7 @@ $mysqli->query($link,"update `ers_member_request` set `er_request_read`='1',`er_
 
 </body>
 </html>
-<? include("../include/close_db.php"); ?>
+<?php include("../include/close_db.php"); ?>
 <script>
 function chkapprove(){
 	if(document.getElementById('chk_approved').checked == true)

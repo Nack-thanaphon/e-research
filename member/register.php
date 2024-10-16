@@ -24,7 +24,7 @@ if(isset($_POST['username']) && isset($_POST['u_password']))
 	    window.history.back();
 		//window.location="register.php?dcid=<?= $dcid;?>";
 		</SCRIPT> 
-		<?
+		<?php
 		die();
 	}
 	$response=file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6Ldyp90dAAAAAEG1ZjI0lKiMo10qJPTEf-roqPXq&response=".$captcha."&remoteip=".$_SERVER['REMOTE_ADDR']);
@@ -37,7 +37,7 @@ if(isset($_POST['username']) && isset($_POST['u_password']))
 	    window.history.back();
 		//window.location="register.php?dcid=<?= $dcid;?>";
 		</SCRIPT> 
-		<?
+		<?php
 		die();
 	}
 
@@ -53,7 +53,7 @@ if(isset($_POST['username']) && isset($_POST['u_password']))
 	    window.history.back();
 		//window.location="register.php?dcid=<?= $dcid;?>";
 		</SCRIPT> 
-		<?
+		<?php
 		//echo "<Script language=\"javascript\">window.location=\""._web_path."\"</script>";
 		//echo "<p><h4>ชื่อผู้ใช้งาน หรือ รหัสผ่าน ไม่ถูกต้อง กรุณาลงทะเบียนใหม่</h4></a>&nbsp;<a href='register.php' style='color:#ff0000;'><h3>ลงทะเบียนใหม่</h3></a></p>"; 
 		die();
@@ -72,7 +72,7 @@ if(isset($_POST['username']) && isset($_POST['u_password']))
 			window.history.back();
 			//window.location="register.php?dcid=<?= $dcid;?>";
 		</script>
-		<?
+		<?php
 		die();
 	}
 
@@ -186,7 +186,7 @@ if(isset($_POST['username']) && isset($_POST['u_password']))
 <body role="document" style="background: url('../images/<?php if(defined('__EC_PICHOME__')){echo __EC_PICHOME__;}?>') no-repeat;background-attachment:fixed; background-size: 60% auto;height:auto;width:auto;background-position: center;">
 
 <div class="container-fluid" style="margin:0;padding:0;">
-	<? require_once "../headerpb.php"; ?>
+	<?php require_once "../headerpb.php"; ?>
 </div>
 <div class="container" style="width:100vw; height:100vh;-moz-opacity: 0.97;-khtml-opacity: 0.97;opacity: 0.97; background-color: #ffffff;">
 	
@@ -298,7 +298,7 @@ if(isset($_POST['username']) && isset($_POST['u_password']))
 						<div class="col-xs-12 col-sm-12">&nbsp;</div>
 						<div class="col-xs-12 col-sm-12" style="text-align:center;padding: 3px 5px 3px 0px;">
 							<input name="Submit" type="submit" value="ส่งข้อมูล" class="btn btn-info" style="width:100px;">
-							<input type="hidden" name="dcid" value="<? if(isset($dcid)){ echo $dcid;}else{ echo '';}?>">
+							<input type="hidden" name="dcid" value="<?php if(isset($dcid)){ echo $dcid;}else{ echo '';}?>">
 							<!--<input name="&nbsp;Reset&nbsp;" type="reset" value="Reset" class="btn btn-warning">-->
 						</div>
 						<div class="col-xs-12 col-sm-12">&nbsp;</div>
@@ -313,14 +313,14 @@ if(isset($_POST['username']) && isset($_POST['u_password']))
 		<div class="col-lg-2 col-md-1 col-sm-1 col-xs-12"></div>
 
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-			<div align="center"><? require_once("../admin/footer.php") ?></div>
+			<div align="center"><?php require_once("../admin/footer.php") ?></div>
 		</div>
 
 	</div><!-- /.row -->
 </div>
 </body>
 </html>
-<?
+<?php
 
 include("../include/close_db.php"); 
 

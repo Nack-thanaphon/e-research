@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 Header("Content-Type: text/html; charset=UTF-8");
 require_once "../include/config.php";
@@ -239,13 +239,13 @@ include("../include/config_db.php");
 <script src="../js/main.js"></script>
 
 <div class="container-fluid">
-	<? require_once "header.php"; ?>
+	<?php require_once "header.php"; ?>
 	<div class="row" style="padding-top:50px;padding-bottom:10px;">			  
 		<div id="hSelect" class="hSelect">
 
 			<form name="form2" method="post" action="ers-document.php" onSubmit="return c_check2();" role="form">
 			    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-					  <?
+					  <?php
 					  if(isset($_POST["c_code_1"]) ){$c_code_1 = $_POST["c_code_1"];	}else{$c_code_1 = "";}
 					  if(trim($c_code_1)!=""){
 						  $_SESSION["u_code_1"] = $c_code_1;
@@ -256,33 +256,33 @@ include("../include/config_db.php");
 					  <span class="sbreak1">
 					  <select name="f_faculty_id" id="f_faculty_id" style="width:180px;border-radius:5px;height:35px;border:1px solid #ccc;padding:5px; margin-top:3px;">
 						<option value="0">ส่วนงาน</option>
-						<?
+						<?php
 						$sql_d = "select * from `ers_faculty` where 1 ";
 						$dbquery_d = $mysqli->query($link,$sql_d);
 						$nRows_d = $dbquery_d->num_rows;
 						if($nRows_d>0){
 						?>
-							<? while ($row_d = $dbquery_d->fetch_assoc()) { ?>
-								<option value="<? echo $row_d['id']; ?>" <? if($c_search_faculty==$row_d['id']) echo "selected"?> >&nbsp;&nbsp;- <? echo $row_d['ef_name']; ?></option>
-							<? } //while
+							<?php while ($row_d = $dbquery_d->fetch_assoc()) { ?>
+								<option value="<?php echo $row_d['id']; ?>" <?php if($c_search_faculty==$row_d['id']) echo "selected"?> >&nbsp;&nbsp;- <?php echo $row_d['ef_name']; ?></option>
+							<?php } //while
 						}?>
 					  </select>&nbsp;
 					  <select name="f_section_id" id="f_section_id" style="width:150px;border-radius:5px;height:35px;border:1px solid #ccc;padding:5px; margin-top:3px;">
 						<option value="0">ภาควิชา/ฝ่าย</option>
-						<?
+						<?php
 						$sql_d = "select * from `ers_section` where 1 ";
 						$dbquery_d = $mysqli->query($link,$sql_d);
 						$nRows_d = $dbquery_d->num_rows;
 						if($nRows_d>0){
 						?>
-							<? while ($row_d = $dbquery_d->fetch_assoc()) { ?>
-								<option value="<? echo $row_d['id']; ?>" <? if($c_search_section==$row_d['id']) echo "selected"?> >&nbsp;&nbsp;- <? echo $row_d['es_name']; ?></option>
-							<? } //while
+							<?php while ($row_d = $dbquery_d->fetch_assoc()) { ?>
+								<option value="<?php echo $row_d['id']; ?>" <?php if($c_search_section==$row_d['id']) echo "selected"?> >&nbsp;&nbsp;- <?php echo $row_d['es_name']; ?></option>
+							<?php } //while
 						}?>
 					  </select>&nbsp;
 					  <select name="f_ed_year" id="f_ed_year" style="width:110px;border-radius:5px;height:35px;border:1px solid #ccc;padding:5px; margin-top:3px;">
 						<option value="0">ปีงบประมาณ</option>
-						<?
+						<?php
 						$start_y=(date("Y")-40); 
 						$end_y=(date("Y")+2);
 						for($yy=$end_y; $yy>=$start_y; $yy--){
@@ -292,7 +292,7 @@ include("../include/config_db.php");
 							<option value="<?= $yy;?>" <?= $selected_y;?>>
 							  <?= $yy+543;?>
 							</option>
-						<?}?>
+						<?php}?>
 					  </select>&nbsp;
 					  </span>
 					  <span class="sbreak2">
@@ -304,10 +304,10 @@ include("../include/config_db.php");
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" style="background-color:#<?echo __EC_BGSHOW__;?>;color:#<?echo __EC_FONTSHOW__;?>;"><h4 class="sub-header">ผลงานวิจัย</h4></div>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" style="background-color:#<?php echo __EC_BGSHOW__;?>;color:#<?php echo __EC_FONTSHOW__;?>;"><h4 class="sub-header">ผลงานวิจัย</h4></div>
 		 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
 
-			<?
+			<?php
 			  if(isset($_GET["sh_order"])){	$sh_order = $_GET["sh_order"];} else {$sh_order=0;}
 			  if(!isset($_GET["Page"])){
 				if($sh_order==1){$sh_order=0;}else{$sh_order=1;}
@@ -342,7 +342,7 @@ include("../include/config_db.php");
 					</tr>
 				</thead>
 				<tbody class="bgw">
-				<?
+				<?php
 				$sql = "select * From `ers_document` where 1 ";
 				if(isset($_SESSION["u_code_1"]) and !empty($_SESSION["u_code_1"]))
 				{
@@ -538,7 +538,7 @@ include("../include/config_db.php");
 					<tr>
 						<td style="text-align:center;padding-left:5px;padding-right:5px;">&nbsp;<?= $c_id;?>&nbsp;</td>
 						<td style="text-align:left;padding-left:5px;padding-right:5px;">&nbsp;
-							<?
+							<?php
 							if($thlen > $thlen2) {
 								echo "<a href=\"javascript:void(0)\" onclick=\"show_detail(".$c_id.", '1');\" title='".$c_ed_name_th."'>".$c_ed_name_th2."</a>";
 							} else {
@@ -547,7 +547,7 @@ include("../include/config_db.php");
 							?>&nbsp;
 						</td>
 						<td style="text-align:center;padding-left:5px;padding-right:5px;">&nbsp;
-							<?
+							<?php
 							if(!empty($c_es_name))
 							{
 								if($eslen > $eslen2) {
@@ -559,7 +559,7 @@ include("../include/config_db.php");
 							?>&nbsp;
 						</td>
 						<td style="text-align:center;padding-left:5px;padding-right:5px;">&nbsp;
-							<?
+							<?php
 							if(!empty($c_ef_name))
 							{
 								if($eflen > $eflen2) {
@@ -574,7 +574,7 @@ include("../include/config_db.php");
 							<?= $c_ed_year;?>
 						</td>
 						<td style="text-align:left;padding-left:5px;padding-right:5px;min-width:180px;">&nbsp;
-							<?
+							<?php
 							if($ttlen > $ttlen2) {
 								echo "<a href=\"javascript:void(0)\" title='".$c_ed_detail."' style=\"color:#000;\">".$c_ed_detail2."</a>";
 							} else {
@@ -583,7 +583,7 @@ include("../include/config_db.php");
 							?>&nbsp;
 						</td>
 						<td style="text-align:center;padding-left:5px;padding-right:5px;min-width:50px;">
-							<?
+							<?php
 							echo "<div style='white-space: nowrap;'>&nbsp;";
 							$link_path = "../files/";
 							if($c_edf_filename1!=""){ 
@@ -623,9 +623,9 @@ include("../include/config_db.php");
 							echo "&nbsp;</div>";
 							?>
 						</td>
-						<td style="text-align:center;padding-left:5px;padding-right:5px;min-width:30px;">&nbsp;<?echo number_format($c_ed_counter);?>&nbsp;</td>
+						<td style="text-align:center;padding-left:5px;padding-right:5px;min-width:30px;">&nbsp;<?php echo number_format($c_ed_counter);?>&nbsp;</td>
 					</tr>
-					<?
+					<?php
 					}//while
 					$res->free();
 				} else {
@@ -642,7 +642,7 @@ include("../include/config_db.php");
 	<div class="row" style="margin:0;padding:0;">			  	
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 			<div class="col-lg-9 col-md-9 col-sm-9 col-xs-7" style="font-size:14px;">หน้า :
-				<?
+				<?php
 					$pages = new Paginator;
 					$pages->items_total = $totalRows;
 					$pages->mid_range = 7;
@@ -656,21 +656,21 @@ include("../include/config_db.php");
 			</div>
 			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-5 text-right">
 				<form name="form3" method="post" action="ers-document.php?sd=<?= $sd;?>&sh_order=<?= $sh_order;?>&Page=1" role="form">
-					<select name="Per_Page" id="Per_Page" style="width:130px;border-radius:5px;border:1px solid #<?echo __EC_BGSHOW__;?>;padding:5px;" onchange="document.form3.submit()">
+					<select name="Per_Page" id="Per_Page" style="width:130px;border-radius:5px;border:1px solid #<?php echo __EC_BGSHOW__;?>;padding:5px;" onchange="document.form3.submit()">
 					<option value="18" <?php if($Per_Page=='18'){echo "selected";}?>>18 รายการ/หน้า</option>
 					<option value="30"<?php if($Per_Page=='30'){echo "selected";}?>>30 รายการ/หน้า</option>
 					<option value="60"<?php if($Per_Page=='60'){echo "selected";}?>>60 รายการ/หน้า</option>
 					<option value="90"<?php if($Per_Page=='90'){echo "selected";}?>>90 รายการ/หน้า</option>
 					</select>
-					<input type="hidden" name="f_section_id" id="f_section_id" value="<? if($c_search_section){ echo $c_search_section;}else{ echo '';}?>">
-					<input type="hidden" name="f_faculty_id" id="f_faculty_id" value="<? if($c_search_faculty){ echo $c_search_faculty;}else{ echo '';}?>">
-					<input type="hidden" name="f_ed_year" id="f_ed_year" value="<? if($c_search_year){ echo $c_search_year;}else{ echo '';}?>">
+					<input type="hidden" name="f_section_id" id="f_section_id" value="<?php if($c_search_section){ echo $c_search_section;}else{ echo '';}?>">
+					<input type="hidden" name="f_faculty_id" id="f_faculty_id" value="<?php if($c_search_faculty){ echo $c_search_faculty;}else{ echo '';}?>">
+					<input type="hidden" name="f_ed_year" id="f_ed_year" value="<?php if($c_search_year){ echo $c_search_year;}else{ echo '';}?>">
 				</form>
 			</div>
 		</div>
 
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-			<div align="center" style="padding-bottom:<?php if($Per_Page=='18'){echo "10px";}else{echo "80px";}?>;"><? require_once "./footer.php"; ?></div>
+			<div align="center" style="padding-bottom:<?php if($Per_Page=='18'){echo "10px";}else{echo "80px";}?>;"><?php require_once "./footer.php"; ?></div>
 	    </div>
 	</div><!-- /.row -->
 
@@ -678,7 +678,7 @@ include("../include/config_db.php");
 <div id="ersshow"></div>
 </body>
 </html>
-<? include("../include/close_db.php"); ?>
+<?php include("../include/close_db.php"); ?>
 <script>
 document.getElementById("fmnavbar").className = "navbar navbar-default navbar-fixed-top";
 if( document.body.clientWidth > 767) {

@@ -38,7 +38,7 @@ if(isset($_POST['u_name']) && isset($_POST['u_password']))
 			alert('ไม่มีสิทธิ์ใช้งานในส่วนนี้');
 			window.location="index.php";
 		</script>
-		<?
+		<?php
 		die();exit();
 	}
 	$u_ip = $_SERVER["REMOTE_ADDR"];
@@ -51,7 +51,7 @@ if(isset($_POST['u_name']) && isset($_POST['u_password']))
 		alert("'ชื่อล็อกอิน หรือ รหัสผ่าน' ไม่ถูกต้อง");
 		window.location="index.php";
 	</script>
-	<?
+	<?php
 	include("../include/close_db.php");
 	die();exit();
   }
@@ -139,7 +139,7 @@ if (isset($_SESSION["admin"]) && isset($_SESSION["userlevel"]) && isset($_SESSIO
 </div>
 </body>
 </html>
-<?
+<?php
 } //end else
 
 include("../include/close_db.php"); 

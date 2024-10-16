@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 Header("Content-Type: text/html; charset=UTF-8");
 require_once "../include/config.php";
@@ -225,7 +225,7 @@ $dbquery->free();
 <script src="../js/main.js"></script>
 
 <div class="container-fluid">
-	<? require_once "header.php"; ?>
+	<?php require_once "header.php"; ?>
 	<div class="row" style="padding-top:50px;padding-bottom:10px;">			  
 		<div id="hSelect" class="hSelect">
 
@@ -251,10 +251,10 @@ $dbquery->free();
 		</div>
 	</div><!-- /.row -->
 	<div class="row">
-		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" style="background-color:#<?echo __EC_BGSHOW__;?>;color:#<?echo __EC_FONTSHOW__;?>;"><h4 class="sub-header">อนุมัติการร้องขอเอกสารผลงานวิจัย</h4></div>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" style="background-color:#<?php echo __EC_BGSHOW__;?>;color:#<?php echo __EC_FONTSHOW__;?>;"><h4 class="sub-header">อนุมัติการร้องขอเอกสารผลงานวิจัย</h4></div>
 		 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
 
-			<?
+			<?php
 			  if(isset($_GET["sh_order"])){	$sh_order = $_GET["sh_order"];} else {$sh_order=0;}
 			  if(!isset($_GET["Page"])){
 				if($sh_order==1){$sh_order=0;}else{$sh_order=1;}
@@ -295,7 +295,7 @@ $dbquery->free();
 					</tr>
 				</thead>
 				<tbody class="bgw">
-				<?
+				<?php
 				$sql = "SELECT m . * , d . *,s.id,s.ed_name_th,s.ed_name_en,s.ed_detail,m.id as req_id FROM (`ers_member_request` m JOIN `ers_document` s ON m.document_id=s.id) JOIN `ers_member` d ON m.member_id = d.id WHERE (d.id > 0) and (m.document_id >0) ";
 				if(isset($_SESSION["u_code_1"]) and !empty($_SESSION["u_code_1"]))
 				{
@@ -475,7 +475,7 @@ $dbquery->free();
 					?>
 					<tr>
 						<td style="text-align:center;width:100px;min-width:100px;">
-							<?$dfile =  'dfile'.$jk;?>
+							<?php$dfile =  'dfile'.$jk;?>
 							<a href="javascript:void(0)" style="color:red;font-size:16px;" title="ลบ" onclick="confirmDelete('<?= $dfile;?>','<?= $c_id;?>','<?= $code_1;?>','1')"><span class="glyphicon glyphicon-trash"></span>&nbsp;<span style="font-size:14px;">ลบ</span><span id="<?= $dfile;?>"></span></a>
 						</td>
 						<td style="text-align:center;padding-left:0;padding-right:0;">&nbsp;<?= $c_id;?>&nbsp;</td>
@@ -486,17 +486,17 @@ $dbquery->free();
 								echo "&nbsp;".$c_phone."&nbsp;";
 							} else {?>
 								<a href='tel:<?= $c_phone;?>' target="_blank" title='<?= $c_phone;?>'>&nbsp;<?= $c_phone;?>&nbsp;</a>
-							<?}?>
+							<?php}?>
 						</td>
 						<td style="text-align:center;padding-left:0;padding-right:0;white-space: nowrap;">
 						<?php if($c_er_request_cancel>=1){
 								echo "&nbsp;".$c_email."&nbsp;";
 							} else {?>
 								<a href='mailto:<?= $c_email;?>?subject=<?= $encodedSubject;?>&body=<?= $encodedBody;?>' target='_blank' title="<?= $c_email;?>">&nbsp;<?= $c_email;?>&nbsp;</a>
-							<?}?>
+							<?php}?>
 						</td>
 						<td style="text-align:left;">
-							<?
+							<?php
 							if($c_er_request_cancel>=1){
 								if($reqlen > $reqlen2) {
 									echo "&nbsp;<a href='javascript:void(0)' style='color:#000000;' title='".$c_er_request_text."'>".$c_er_request_text2."</a>&nbsp;";
@@ -513,7 +513,7 @@ $dbquery->free();
 							?>
 						</td>
 						<td style="text-align:left;">&nbsp;
-							<?
+							<?php
 							if($doclen > $doclen2) {
 								echo "<a href=\"javascript:void(0)\" title='".$c_ed_name_th."' style='color:#000000;'>".$c_ed_name_th2."</a>";
 							} else {
@@ -523,17 +523,17 @@ $dbquery->free();
 						</td>
 						<td style="text-align:center;">&nbsp;<?= $c_er_request_date;?>&nbsp;</td>
 						<td style="text-align:left;">
-							<?
+							<?php
 							if($c_er_request_cancel>=1){
 									echo "<div style='color:#fff9900;'>&nbsp;<span class='glyphicon glyphicon-remove-sign' style='color:#ff9933;font-size:14px;'></span>&nbsp;สมาชิกยกเลิก</div>";
 							} else {
 							?>
 								<div>&nbsp;<a href='javascript:void(0)' onclick='openWindow(<?= $c_id;?>)' title='อนุมัติ/ไม่อนุมัติ'><?= $c_er_answer_approve;?></a>&nbsp;</div>
-							<?}?>
+							<?php}?>
 						</td>
 						<td style="text-align:center;">&nbsp;<?php if($c_er_answer==1){echo $c_er_answer_expire;}?>&nbsp;</td>
 						<td style="text-align:left;">&nbsp;
-							<?
+							<?php
 							if($anslen > $anslen2) {
 								echo "<a href=\"javascript:void(0)\" title='".$c_er_answer_text."' style='color:#000000;'>".$c_er_answer_text2."</a>";
 							} else {
@@ -544,7 +544,7 @@ $dbquery->free();
 						<td style="text-align:center;">&nbsp;<?= $c_er_answer_date;?>&nbsp;</td>
 						<td style="text-align:center;">&nbsp;<?= number_format($c_er_download_counter);?>&nbsp;</td>
 					</tr>
-					<?
+					<?php
 					}//while
 					$res->free();
 				} else {
@@ -561,7 +561,7 @@ $dbquery->free();
 	<div class="row" style="margin:0;padding:0;">			  	
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 			<div class="col-lg-9 col-md-9 col-sm-9 col-xs-7" style="font-size:14px;">หน้า :
-				<?
+				<?php
 					$pages = new Paginator;
 					$pages->items_total = $totalRows;
 					$pages->mid_range = 7;
@@ -575,7 +575,7 @@ $dbquery->free();
 			</div>
 			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-5 text-right">
 				<form name="form3" method="post" action="members_approve.php?sd=<?= $sd;?>&sh_order=<?= $sh_order;?>&Page=1" role="form">
-					<select name="Per_Page" id="Per_Page" style="width:130px;border-radius:5px;border:1px solid #<?echo __EC_BGSHOW__;?>;padding:5px;" onchange="document.form3.submit()">
+					<select name="Per_Page" id="Per_Page" style="width:130px;border-radius:5px;border:1px solid #<?php echo __EC_BGSHOW__;?>;padding:5px;" onchange="document.form3.submit()">
 					<option value="18" <?php if($Per_Page=='18'){echo "selected";}?>>18 รายการ/หน้า</option>
 					<option value="30"<?php if($Per_Page=='30'){echo "selected";}?>>30 รายการ/หน้า</option>
 					<option value="60"<?php if($Per_Page=='60'){echo "selected";}?>>60 รายการ/หน้า</option>
@@ -586,7 +586,7 @@ $dbquery->free();
 		</div>
 
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-			<div align="center" style="padding-bottom:<?php if($Per_Page=='18'){echo "10px";}else{echo "80px";}?>;"><? require_once "./footer.php"; ?></div>
+			<div align="center" style="padding-bottom:<?php if($Per_Page=='18'){echo "10px";}else{echo "80px";}?>;"><?php require_once "./footer.php"; ?></div>
 	    </div>
 	</div><!-- /.row -->
 
@@ -594,7 +594,7 @@ $dbquery->free();
 <div id="ersshow"></div>
 </body>
 </html>
-<? include("../include/close_db.php"); ?>
+<?php include("../include/close_db.php"); ?>
 <script>
 function openWindow(idp) {
 	var url='mbapprove.php?req_id='+idp;

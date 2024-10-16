@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 Header("Content-Type: text/html; charset=UTF-8");
 require_once "config.php";
@@ -21,7 +21,7 @@ if ( !isset($_SESSION["admin"]) || !isset($_SESSION["userlevel"]) || ($_SESSION[
 	//window.close();
 	parent.location.href = "login.php";
 	</script>
-	<?
+	<?php
 	exit();
 }
 

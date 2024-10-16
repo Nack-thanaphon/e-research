@@ -33,7 +33,7 @@ if($chk_edit=="1")
 				alert("ชื่อล็อกอิน : <?= $username;?> มีอยู่ในระบบ ไม่สามารถใช้ซ้ำกันได้");
 				window.history.back();
 			</script>-->
-			<?
+			<?php
 			/*die();
 		}
 	}*/
@@ -160,7 +160,7 @@ if(isset($c_id)){
 <body role="document" style="background: url('../images/<?php if(defined('__EC_PICHOME__')){echo __EC_PICHOME__;}?>') no-repeat;background-attachment:fixed; background-size: 60% auto;height:auto;width:auto;background-position: center;">
 
 <div class="container-fluid" style="margin:0;padding:0;">
-	<? require_once "../headerpb.php"; ?>
+	<?php require_once "../headerpb.php"; ?>
 </div>
 <div class="container" style="width:100vw; height:100vh;-moz-opacity: 0.97;-khtml-opacity: 0.97;opacity: 0.97; background-color: #ffffff;">
 	
@@ -188,9 +188,9 @@ if(isset($c_id)){
 						<input name="title_v" type="radio" value="4" <?php if($c_title_v == "4"){echo "checked";}?> onclick="chkother('4')">&nbsp;อื่นๆ
 						<?php if($c_title_v == "4"){?>
 							<input type="text" name="title_other" id="title_other" maxlength="30" class="form-control" value="<?= $c_title;?>" placeholder="คำนำหน้าชื่อ">
-						<?} else {?>
+						<?php} else {?>
 							<input type="text" name="title_other" id="title_other" maxlength="30" class="form-control" value="<?= $c_title;?>" style="display:none;" placeholder="คำนำหน้าชื่อ">
-						<?}?>
+						<?php}?>
 					</div>
 
 					<div class="col-xs-5 col-sm-3" style="text-align:right;padding: 3px 5px 3px 0px;"><font color="#FF0000">*</font>&nbsp;ชื่อจริง&nbsp;</div>
@@ -225,9 +225,9 @@ if(isset($c_id)){
 						</select>
 						<?php if($c_institution_type == "7"){?>
 							<input type="text" name="institution_other" id="institution_other" maxlength="255" class="form-control" value="<?= $c_institution_other;?>" placeholder="อื่นๆระบุ">
-						<?} else {?>
+						<?php} else {?>
 							<input type="text" name="institution_other" id="institution_other" maxlength="255" class="form-control" value="<?= $c_institution_other;?>" style="display:none;" placeholder="อื่นๆระบุ">
-						<?}?>
+						<?php}?>
 					</div>
 
 					<div class="col-xs-5 col-sm-3" style="text-align:right;padding: 3px 5px 3px 0px;"><font color="#FF0000">*</font>&nbsp;โทรศัพท์&nbsp;</div>
@@ -240,13 +240,13 @@ if(isset($c_id)){
 					<div class="col-xs-7 col-sm-9" style="padding: 3px 5px 3px 0px;"><textarea name="address" id="address" rows="3" class="form-control" style="border-radius:5px;border:1px solid #ccc;" maxlength="500"><?= $c_address;?></textarea></div>
 					
 					<!--<div class="col-xs-5 col-sm-3" style="text-align:right;padding: 3px 5px 3px 0px;"><font color="#FF0000">*</font>&nbsp;ชื่อล็อกอิน&nbsp;</div>
-					<div class="col-xs-7 col-sm-9" style="padding: 3px 5px 3px 0px;"><input name="username" type="text" id="username"  value="<?//=$c_username;?>" maxlength="30" class="form-control" placeholder="Username"><font color="#FF0000">*ตัวอักษรภาษาอังกฤษและ ตัวเลข ไม่เกิน 30 ตัวอักษร</font></div>-->
+					<div class="col-xs-7 col-sm-9" style="padding: 3px 5px 3px 0px;"><input name="username" type="text" id="username"  value="<?php//=$c_username;?>" maxlength="30" class="form-control" placeholder="Username"><font color="#FF0000">*ตัวอักษรภาษาอังกฤษและ ตัวเลข ไม่เกิน 30 ตัวอักษร</font></div>-->
 
 					<div class="col-xs-12 col-sm-12">&nbsp;</div>
 					<div class="col-xs-12 col-sm-12" style="text-align:center;padding: 3px 5px 3px 0px;">
 						<input name="Submit" type="submit" value="ส่งข้อมูล" class="btn btn-info" style="width:100px;">
 						<input type="hidden" name="chk_edit" value="1"> 
-						<!--<input type="hidden" name="o_name" value="<?//echo $c_username;?>">-->
+						<!--<input type="hidden" name="o_name" value="<?php//echo $c_username;?>">-->
 						<!--<input name="&nbsp;Reset&nbsp;" type="reset" value="Reset" class="btn btn-warning">-->
 					</div>
 					<div class="col-xs-12 col-sm-12">&nbsp;</div>
@@ -258,14 +258,14 @@ if(isset($c_id)){
 		</div><!-- /.col-lg-2 col-md-4 col-sm-6 col-xs-12 col-lg-offset-5 col-md-offset-4 col-sm-offset-3 text-center -->
 
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-			<div align="center"><? require_once("../admin/footer.php") ?></div>
+			<div align="center"><?php require_once("../admin/footer.php") ?></div>
 	    </div>
 
 	</div><!-- /.row -->
 </div>
 </body>
 </html>
-<?
+<?php
 
 include("../include/close_db.php"); 
 

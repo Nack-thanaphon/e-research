@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 Header("Content-Type: text/html; charset=UTF-8");
 require_once "../include/config.php";
@@ -333,7 +333,7 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 <script src="../js/main.js"></script>
 
 <div class="container-fluid" style="margin:0;padding:0;">
-	<? require_once "./header.php"; ?>
+	<?php require_once "./header.php"; ?>
 </div>
 <div class="container">
 	<div class="row">
@@ -359,7 +359,7 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">ภาควิชา/ฝ่าย&nbsp;:&nbsp;</div>
 				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-					<?
+					<?php
 					$sql_d = "select * from `ers_section` where 1 ";
 					$dbquery_d = $mysqli->query($link,$sql_d);
 					$nRows_d = $dbquery_d->num_rows;
@@ -367,17 +367,17 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 					?>
 						<select name="s_section_id" id="s_section_id" style="width:200px;border-radius:5px;border:1px solid #cccccc;padding:3px;">
 							<option value="0">เลือกภาควิชา/ฝ่าย</option>
-							<? while ($row_d = $dbquery_d->fetch_assoc()) { ?>
-								<option value="<? echo $row_d['id']; ?>" <? if($c_section_id==$row_d['id']) echo "selected"?> >&nbsp;&nbsp;- <? echo $row_d['es_name']; ?></option>
-							<? } //while ?>
+							<?php while ($row_d = $dbquery_d->fetch_assoc()) { ?>
+								<option value="<?php echo $row_d['id']; ?>" <?php if($c_section_id==$row_d['id']) echo "selected"?> >&nbsp;&nbsp;- <?php echo $row_d['es_name']; ?></option>
+							<?php } //while ?>
 						</select>
-					<?}?>
+					<?php}?>
 				</div>
 			  </div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">ส่วนงาน&nbsp;:&nbsp;</div>
 				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-					<?
+					<?php
 					$sql_d = "select * from `ers_faculty` where 1 ";
 					$dbquery_d = $mysqli->query($link,$sql_d);
 					$nRows_d = $dbquery_d->num_rows;
@@ -385,23 +385,23 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 					?>
 						<select name="s_faculty_id" id="s_faculty_id" style="width:200px;border-radius:5px;border:1px solid #cccccc;padding:3px;">
 							<option value="0">เลือกส่วนงาน</option>
-							<? while ($row_d = $dbquery_d->fetch_assoc()) { ?>
-								<option value="<? echo $row_d['id']; ?>" <? if($c_faculty_id==$row_d['id']) echo "selected"?> >&nbsp;&nbsp;- <? echo $row_d['ef_name']; ?></option>
-							<? } //while ?>
+							<?php while ($row_d = $dbquery_d->fetch_assoc()) { ?>
+								<option value="<?php echo $row_d['id']; ?>" <?php if($c_faculty_id==$row_d['id']) echo "selected"?> >&nbsp;&nbsp;- <?php echo $row_d['ef_name']; ?></option>
+							<?php } //while ?>
 						</select>
-					<?}?>
+					<?php}?>
 				</div>
 			  </div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">รายละเอียดผลงาน&nbsp;:&nbsp;</div>
-				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><textarea name="s_ed_detail" id="s_ed_detail" rows="5" class="form-control input_width3" style="border-radius:5px;border:1px solid #ccc;"><? echo $c_ed_detail; ?></textarea></div>
+				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><textarea name="s_ed_detail" id="s_ed_detail" rows="5" class="form-control input_width3" style="border-radius:5px;border:1px solid #ccc;"><?php echo $c_ed_detail; ?></textarea></div>
 			  </div>			 
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">ปีงบประมาณ&nbsp;:&nbsp;</div>
 				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
 					<select name="s_ed_year" id="s_ed_year" style="width:70px;border-radius:5px;border:1px solid #cccccc;">
 					<option value="0">ปี</option>
-					<?
+					<?php
 					$start_y=(date("Y")-40); 
 					$end_y=(date("Y")+2);
 					for($yy=$end_y; $yy>=$start_y; $yy--){
@@ -411,14 +411,14 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 						<option value="<?= $yy;?>" <?= $selected_y;?>>
 					      <?= $yy+543;?>
 						</option>
-					<?}?>
+					<?php}?>
 				  </select>
 				</div>
 			  </div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">ประเภทของเงินอุดหนุนงานวิจัย&nbsp;:&nbsp;</div>
 				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-					<?
+					<?php
 					$sql_d = "select * from `ers_research_type` where 1 ";
 					$dbquery_d = $mysqli->query($link,$sql_d);
 					$nRows_d = $dbquery_d->num_rows;
@@ -426,11 +426,11 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 					?>
 						<select name="s_research_type_id" id="s_research_type_id" style="width:200px;border-radius:5px;border:1px solid #cccccc;padding:3px;">
 							<option value="0">เลือกประเภท</option>
-							<? while ($row_d = $dbquery_d->fetch_assoc()) { ?>
-								<option value="<? echo $row_d['id']; ?>" <? if($c_research_type_id==$row_d['id']) echo "selected"?> >&nbsp;&nbsp;- <? echo $row_d['et_name']; ?></option>
-							<? } //while ?>
+							<?php while ($row_d = $dbquery_d->fetch_assoc()) { ?>
+								<option value="<?php echo $row_d['id']; ?>" <?php if($c_research_type_id==$row_d['id']) echo "selected"?> >&nbsp;&nbsp;- <?php echo $row_d['et_name']; ?></option>
+							<?php } //while ?>
 						</select>
-					<?}?>
+					<?php}?>
 				</div>
 			  </div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
@@ -445,16 +445,16 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 					<?php if($c_edf_link1==1){?>
 						<input type="text" name="s_edf_filename1" id="s_edf_filename1" class="form-control input_width3"  value="<?= $c_edf_filename1;?>" placeholder="ระบุที่อยู่ไฟล์เอกสาร">
 						<input name="file1" type="file" id="file1" style="margin-top:3px;max-width:250px;display:none;" accept="application/pdf">
-					<?} else {?>
+					<?php} else {?>
 						<input type="text" name="s_edf_filename1" id="s_edf_filename1" class="form-control input_width3"  value="<?= $c_edf_filename1;?>" readonly="true" placeholder="ระบุที่อยู่ไฟล์เอกสาร" style="color:#999999;display:none;">
-					<?
+					<?php
 						if($c_edf_filename1!=""){ 
 							echo "<div id=\"view1\"><a href=\"../files/".$c_edf_filename1."\" target=\"_blank\"><span id=\"dfile1\">".$c_edf_filename1."</span></a>&nbsp;";
 							echo "<input name=\"view1\" type=\"button\" onclick=\"javascript:confirmDelete('dfile1','".$c_edf_id1."','".$c_edf_filename1."','1','view1','s_edf_filename1')\" value=\" ลบไฟล์นี้ \" style=\"border-radius:5px;height:22px;color:red;\"></div>";
 						}
 					?>
 						<input name="file1" type="file" id="file1" style="margin-top:3px;max-width:250px;" accept="application/pdf">
-					<?}?>
+					<?php}?>
 				</div>
 			  </div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
@@ -464,16 +464,16 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 					<?php if($c_edf_link2==1){?>
 						<input type="text" name="s_edf_filename2" id="s_edf_filename2" class="form-control input_width3"  value="<?= $c_edf_filename2;?>" placeholder="ระบุที่อยู่ไฟล์เอกสาร">
 						<input name="file2" type="file" id="file2" style="margin-top:3px;max-width:250px;display:none;" accept="application/pdf">
-					<?} else {?>
+					<?php} else {?>
 						<input type="text" name="s_edf_filename2" id="s_edf_filename2" class="form-control input_width3"  value="<?= $c_edf_filename2;?>" readonly="true" placeholder="ระบุที่อยู่ไฟล์เอกสาร" style="color:#999999;display:none;">
-					<?
+					<?php
 						if($c_edf_filename2!=""){ 
 							echo "<div id=\"view2\"><a href=\"../files/".$c_edf_filename2."\" target=\"_blank\"><span id=\"dfile2\">".$c_edf_filename2."</span></a>&nbsp;";
 							echo "<input name=\"view2\" type=\"button\" onclick=\"javascript:confirmDelete('dfile2','".$c_edf_id2."','".$c_edf_filename2."','1','view2','s_edf_filename2')\" value=\" ลบไฟล์นี้ \" style=\"border-radius:5px;height:22px;color:red;\"></div>";
 						}
 					?>
 						<input name="file2" type="file" id="file2" style="margin-top:3px;max-width:250px;"  accept="application/pdf">
-					<?}?>
+					<?php}?>
 				</div>
 			  </div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
@@ -483,16 +483,16 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 					<?php if($c_edf_link3==1){?>
 						<input type="text" name="s_edf_filename3" id="s_edf_filename3" class="form-control input_width3"  value="<?= $c_edf_filename3;?>" placeholder="ระบุที่อยู่ไฟล์เอกสาร">
 						<input name="file3" type="file" id="file3" style="margin-top:3px;max-width:250px;display:none;" accept="application/pdf">
-					<?} else {?>
+					<?php} else {?>
 						<input type="text" name="s_edf_filename3" id="s_edf_filename3" class="form-control input_width3"  value="<?= $c_edf_filename3;?>" readonly="true" placeholder="ระบุที่อยู่ไฟล์เอกสาร" style="color:#999999;display:none;">
-					<?
+					<?php
 						if($c_edf_filename3!=""){ 
 							echo "<div id=\"view3\"><a href=\"../files/".$c_edf_filename3."\" target=\"_blank\"><span id=\"dfile3\">".$c_edf_filename3."</span></a>&nbsp;";
 							echo "<input name=\"view3\" type=\"button\" onclick=\"javascript:confirmDelete('dfile3','".$c_edf_id3."','".$c_edf_filename3."','1','view3','s_edf_filename3')\" value=\" ลบไฟล์นี้ \" style=\"border-radius:5px;height:22px;color:red;\"></div>";
 						}
 					?>
 						<input name="file3" type="file" id="file3" style="margin-top:3px;max-width:250px;" accept="application/pdf">
-					<?}?>
+					<?php}?>
 				</div>
 			  </div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
@@ -502,16 +502,16 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 					<?php if($c_edf_link4==1){?>
 						<input type="text" name="s_edf_filename4" id="s_edf_filename4" class="form-control input_width3"  value="<?= $c_edf_filename4;?>" placeholder="ระบุที่อยู่ไฟล์เอกสาร">
 						<input name="file4" type="file" id="file4" style="margin-top:3px;max-width:250px;display:none;" accept="application/pdf">
-					<?} else {?>
+					<?php} else {?>
 						<input type="text" name="s_edf_filename4" id="s_edf_filename4" class="form-control input_width3"  value="<?= $c_edf_filename4;?>" readonly="true" placeholder="ระบุที่อยู่ไฟล์เอกสาร" style="color:#999999;display:none;">
-					<?
+					<?php
 						if($c_edf_filename4!=""){ 
 							echo "<div id=\"view4\"><a href=\"../files/".$c_edf_filename4."\" target=\"_blank\"><span id=\"dfile4\">".$c_edf_filename4."</span></a>&nbsp;";
 							echo "<input name=\"view4\" type=\"button\" onclick=\"javascript:confirmDelete('dfile4','".$c_edf_id4."','".$c_edf_filename4."','1','view4','s_edf_filename4')\" value=\" ลบไฟล์นี้ \" style=\"border-radius:5px;height:22px;color:red;\"></div>";
 						}
 					?>
 						<input name="file4" type="file" id="file4" style="margin-top:3px;max-width:250px;" accept="application/pdf">
-					<?}?>
+					<?php}?>
 				</div>
 			  </div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
@@ -521,19 +521,19 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 					<?php if($c_edf_link5==1){?>
 						<input type="text" name="s_edf_filename5" id="s_edf_filename5" class="form-control input_width3"  value="<?= $c_edf_filename5;?>" placeholder="ระบุที่อยู่ไฟล์เอกสาร">
 						<input name="file5" type="file" id="file5" style="margin-top:3px;max-width:250px;display:none;" accept="application/pdf">
-					<?} else {?>
+					<?php} else {?>
 						<input type="text" name="s_edf_filename5" id="s_edf_filename5" class="form-control input_width3"  value="<?= $c_edf_filename5;?>" readonly="true" placeholder="ระบุที่อยู่ไฟล์เอกสาร" style="color:#999999;display:none;">
-					<?
+					<?php
 						if($c_edf_filename5!=""){ 
 							echo "<div id=\"view5\"><a href=\"../files/".$c_edf_filename5."\" target=\"_blank\"><span id=\"dfile5\">".$c_edf_filename5."</span></a>&nbsp;";
 							echo "<input name=\"view5\" type=\"button\" onclick=\"javascript:confirmDelete('dfile5','".$c_edf_id5."','".$c_edf_filename5."','1','view5','s_edf_filename5')\" value=\" ลบไฟล์นี้ \" style=\"border-radius:5px;height:22px;color:red;\"></div>";
 						}
 					?>
 						<input name="file5" type="file" id="file5" style="margin-top:3px;max-width:250px;" accept="application/pdf">
-					<?}?>
+					<?php}?>
 				</div>
 			  </div>
-			   <?
+			   <?php
 			  if(($num_rows_files > 5) && isset($dbquery_pdf)){
 					$item = 6;
 					While($row_pdf = $dbquery_pdf->fetch_assoc()){
@@ -545,14 +545,14 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">เอกสาร <?= $item;?>&nbsp;:&nbsp;</div>
 							<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-							<?
+							<?php
 							echo "<div id=\"view$item\"><a href=\"../files/".$c_edf_filename."\" target=\"_blank\"><span id=\"dfile$item\">".$c_edf_filename."</span></a>&nbsp;";
 							echo "<input name=\"view$item\" type=\"button\" onclick=\"javascript:confirmDelete('dfile$item','".$c_edf_id."','".$c_edf_filename."','1','view$item','s_edf_filename$item')\" value=\" ลบไฟล์นี้ \" style=\"border-radius:5px;height:22px;color:red;\"></div>";
 							echo "<input name=\"file$item\" type=\"file\" id=\"file$item\" style=\"margin-top:3px;max-width:250px;\" accept=\"application/pdf\">";
 							?>
 							</div>
 							</div>
-							<?
+							<?php
 						}
 						$item += 1;
 					}
@@ -571,7 +571,7 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">&nbsp;</div>
 
 		      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" style="padding:3px;">
-					<input type="hidden" name="c_id" value="<? if(isset($c_id)){ echo $c_id;}else{ echo '';}?>">
+					<input type="hidden" name="c_id" value="<?php if(isset($c_id)){ echo $c_id;}else{ echo '';}?>">
    					<input type="hidden" name="chk_edit" value="1"> 
 					<input type="submit" name="Submit" value=" บันทึก " class="btn btn-warning" style="width:100px;font-size:18px;">&nbsp;
 			  </div>
@@ -590,7 +590,7 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 		  <hr align="center" width="100%" noshade size="1">
 		  <form name="form2" method="post" action="eresearch.php#top_page" onSubmit="return c_check2();" role="form">
 		   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-				  <?
+				  <?php
 				  if(isset($_POST["c_code_1"]) ){$c_code_1 = $_POST["c_code_1"];	}else{$c_code_1 = "";}
 				  if(trim($c_code_1)!=""){
 					  $_SESSION["u_code_1"] = $c_code_1;
@@ -601,33 +601,33 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 				  <span class="sbreak1">
 				  <select name="f_faculty_id" id="f_faculty_id" style="width:180px;border-radius:5px;height:35px;border:1px solid #ccc;padding:5px; margin-top:3px;">
 					<option value="0">ส่วนงาน</option>
-					<?
+					<?php
 					$sql_d = "select * from `ers_faculty` where 1 ";
 					$dbquery_d = $mysqli->query($link,$sql_d);
 					$nRows_d = $dbquery_d->num_rows;
 					if($nRows_d>0){
 					?>
-						<? while ($row_d = $dbquery_d->fetch_assoc()) { ?>
-							<option value="<? echo $row_d['id']; ?>" <? if($c_search_faculty==$row_d['id']) echo "selected"?> >&nbsp;&nbsp;- <? echo $row_d['ef_name']; ?></option>
-						<? } //while
+						<?php while ($row_d = $dbquery_d->fetch_assoc()) { ?>
+							<option value="<?php echo $row_d['id']; ?>" <?php if($c_search_faculty==$row_d['id']) echo "selected"?> >&nbsp;&nbsp;- <?php echo $row_d['ef_name']; ?></option>
+						<?php } //while
 					}?>
 				  </select>&nbsp;
 				  <select name="f_section_id" id="f_section_id" style="width:150px;border-radius:5px;height:35px;border:1px solid #ccc;padding:5px; margin-top:3px;">
 					<option value="0">ภาควิชา/ฝ่าย</option>
-					<?
+					<?php
 					$sql_d = "select * from `ers_section` where 1 ";
 					$dbquery_d = $mysqli->query($link,$sql_d);
 					$nRows_d = $dbquery_d->num_rows;
 					if($nRows_d>0){
 					?>
-						<? while ($row_d = $dbquery_d->fetch_assoc()) { ?>
-							<option value="<? echo $row_d['id']; ?>" <? if($c_search_section==$row_d['id']) echo "selected"?> >&nbsp;&nbsp;- <? echo $row_d['es_name']; ?></option>
-						<? } //while
+						<?php while ($row_d = $dbquery_d->fetch_assoc()) { ?>
+							<option value="<?php echo $row_d['id']; ?>" <?php if($c_search_section==$row_d['id']) echo "selected"?> >&nbsp;&nbsp;- <?php echo $row_d['es_name']; ?></option>
+						<?php } //while
 					}?>
 				  </select>&nbsp;
 				  <select name="f_ed_year" id="f_ed_year" style="width:110px;border-radius:5px;height:35px;border:1px solid #ccc;padding:5px; margin-top:3px;">
 					<option value="0">ปีงบประมาณ</option>
-					<?
+					<?php
 					$start_y=(date("Y")-40); 
 					$end_y=(date("Y")+2);
 					for($yy=$end_y; $yy>=$start_y; $yy--){
@@ -637,7 +637,7 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 						<option value="<?= $yy;?>" <?= $selected_y;?>>
 						  <?= $yy+543;?>
 						</option>
-					<?}?>
+					<?php}?>
 				  </select>&nbsp;
 				  </span>
 				  <span class="sbreak2">
@@ -645,14 +645,14 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 				  <input type="submit" name="Submit" id="Submit" value="ค้นหา" class="btn btn-success" style="width:70px; margin-top:0;">&nbsp;<input type="button" name="Clear" id="Clear" value="ยกเลิก" class="btn btn-info" style="width:70px;margin-top:0;" onclick="window.location='eresearch.php?iRegister=1';"></span>
 
 		  </div>
-		  <!--<input type="hidden" name="c_search_section" id="c_search_section" value="<?// if($c_search_section){ echo $c_search_section;}else{ echo '';}?>">
-		  <input type="hidden" name="c_search_faculty" id="c_search_faculty" value="<?// if($c_search_faculty){ echo $c_search_faculty;}else{ echo '';}?>">-->
+		  <!--<input type="hidden" name="c_search_section" id="c_search_section" value="<?php// if($c_search_section){ echo $c_search_section;}else{ echo '';}?>">
+		  <input type="hidden" name="c_search_faculty" id="c_search_faculty" value="<?php// if($c_search_faculty){ echo $c_search_faculty;}else{ echo '';}?>">-->
 		  </form>
 		 
 		  <div class="clearfix"></div>
 		  <br>
 
-		  <?
+		  <?php
 			  if(isset($_GET["sh_order"])){	$sh_order = $_GET["sh_order"];} else {$sh_order=0;}
 			  if(!isset($_GET["Page"])){
 				if($sh_order==1){$sh_order=0;}else{$sh_order=1;}
@@ -671,7 +671,7 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 				}
 			?>
 		  
-		  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" style="background-color:#<?echo __EC_BGSHOW__;?>;color:#<?echo __EC_FONTSHOW__;?>;"><h4>แสดงข้อมูลผลงานวิจัย</h4></div>
+		  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" style="background-color:#<?php echo __EC_BGSHOW__;?>;color:#<?php echo __EC_FONTSHOW__;?>;"><h4>แสดงข้อมูลผลงานวิจัย</h4></div>
 
 		  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 			<div class="table-responsive">
@@ -693,7 +693,7 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
               </thead>
               <tbody>
 		  
-			<? 
+			<?php 
 
 			$sql = "select * From `ers_document` where 1 ";
 			if(isset($_SESSION["u_code_1"]) and !empty($_SESSION["u_code_1"]))
@@ -862,24 +862,24 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 
 					<tr>
 					<td style="text-align:center;width:120px;min-width:120px;">
-						<?
+						<?php
 						echo "<a href='javascript:void(0)' onclick='openWindow($c_id)' style='color:#996600;font-size:16px;' title='เพิ่มนักวิจัย'><span class='glyphicon glyphicon-user'></span>&nbsp;<span style='font-size:14px;'>เพิ่มนักวิจัย</span></a>";
 						?>
 					</td>
 					<td style="text-align:center;width:100px;min-width:100px;">
-						<?
+						<?php
 						echo "<a href='eresearch.php?c_id=$c_id' style='color:green;font-size:16px;' title='แก้ไขผลงานวิจัย'><span class='glyphicon glyphicon-edit'></span>&nbsp;<span style='font-size:14px;'>แก้ไข</span></a>";
 						?>
 					</td>
 					<td  style="text-align:center;width:100px;min-width:100px;">
-						<?
+						<?php
 						echo "<a href='del_data.php?c_id=$c_id&chk_p=7&code_1=$code_1' style='color:red;font-size:16px;' title='ลบผลงานวิจัย'><span class='glyphicon glyphicon-trash'></span>&nbsp;<span style='font-size:14px;'>ลบ</span></a>";
 						?>
 					</td>
 					<td style="text-align:center;padding-left:0;padding-right:0;"><?= $c_id;?>
 					</td>
 					<td style="text-align:left;padding-left:0;padding-right:0;">
-						<?
+						<?php
 						if($thlen > $thlen2) {
 							echo "<a href=\"javascript:void(0)\" title='".$c_ed_name_th."' style=\"color:#000;\">".$c_ed_name_th2."</a>";
 						} else {
@@ -888,7 +888,7 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 						?>
 					</td>
 					<td style="text-align:center;padding-left:0;padding-right:0;">
-						<?
+						<?php
 						if(!empty($c_es_name))
 						{
 							if($eslen > $eslen2) {
@@ -900,7 +900,7 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 						?>
 					</td>
 					<td style="text-align:center;padding-left:0;padding-right:0;">
-						<?
+						<?php
 						if(!empty($c_ef_name))
 						{
 							if($eflen > $eflen2) {
@@ -915,7 +915,7 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 						<?= $c_ed_year;?>
 					</td>
 					<td style="text-align:left;padding-left:0;padding-right:0;min-width:180px;">
-						<?
+						<?php
 						if($ttlen > $ttlen2) {
 							echo "<a href=\"javascript:void(0)\" title='".$c_ed_detail."' style=\"color:#000;\">".$c_ed_detail2."</a>";
 						} else {
@@ -924,7 +924,7 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 						?>
 					</td>
 					<td style="text-align:left;padding-left:0;padding-right:0;min-width:50px;">
-						<?
+						<?php
 							echo "<div style='white-space: nowrap;'>";
 							$link_path = "../files/";
 							if($c_edf_filename1!=""){ 
@@ -965,11 +965,11 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 						?>
 					</td>
 					<td style="text-align:center;padding-left:0;padding-right:0;min-width:30px;">
-						<?echo number_format($c_ed_counter)."\n";?>
+						<?php echo number_format($c_ed_counter)."\n";?>
 					</td>
 					</tr>
 
-				<?
+				<?php
 				}//while
 				$res->free();
 			} //$totalRows 
@@ -984,7 +984,7 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-left:5px;padding-right:5px;">
 			<!--<div><hr align="center" width="100%" noshade size="1"></div>-->
 			<div style="font-size:14px;">หน้า :
-				<?
+				<?php
 					$pages = new Paginator;
 					$pages->items_total = $totalRows;
 					$pages->mid_range = 7;
@@ -999,7 +999,7 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 	    </div>
 
 	    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-			<div align="center"><? require_once("./footer.php") ?></div>
+			<div align="center"><?php require_once("./footer.php") ?></div>
 	    </div>
 
 	</div><!-- /.row -->
@@ -1008,7 +1008,7 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 
 </body>
 </html>
-<? include("../include/close_db.php"); ?>
+<?php include("../include/close_db.php"); ?>
 <script>
 var sw = screen.width;
 if(sw < 768)

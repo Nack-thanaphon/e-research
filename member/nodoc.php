@@ -298,7 +298,7 @@ if(isset($c_id)){
 
 <div class="container-fluid" style="width:100vw; height:100vh;-moz-opacity: 0.97;-khtml-opacity: 0.97;opacity: 0.97; background-color: #ffffff;">
 
-	<? require_once "../headerpb.php"; ?>
+	<?php require_once "../headerpb.php"; ?>
 
 	<div class="row" style="padding-top:50px;padding-bottom:10px;">
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 palignr" style="padding-top:10px;padding-left:5px;padding-right:10px;">
@@ -330,7 +330,7 @@ if(isset($c_id)){
 				<div class="h1member">&nbsp;:&nbsp;ข้อความร้องขอเอกสารงานวิจัย (งานวิจัยนอกระบบ)&nbsp;:&nbsp;</div>
 			  </div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-				<?
+				<?php
 				if(!empty($c_ed_name_th)){
 					//echo $c_ed_name_th;
 				}
@@ -342,7 +342,7 @@ if(isset($c_id)){
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" >&nbsp;</div>
 		      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
    					<input type="hidden" name="chk_edit" value="1"> 
-					<input type="hidden" name="c_id" value="<? if(isset($c_id)){ echo $c_id;}else{ echo '';}?>">
+					<input type="hidden" name="c_id" value="<?php if(isset($c_id)){ echo $c_id;}else{ echo '';}?>">
 					<input type="submit" name="Submit" value=" ส่งข้อมูล " class="btn btn-warning" style="width:100px;font-size:18px;">&nbsp;
 			  </div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" >&nbsp;</div>			  
@@ -352,10 +352,10 @@ if(isset($c_id)){
 	</div><!-- /.row -->
 	
 	<div class="row bgw">
-		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" style="background-color:#<?echo __EC_BGSHOW__;?>;color:#<?echo __EC_FONTSHOW__;?>;"><h4 class="sub-header">แสดงข้อมูล ข้อความร้องขอเอกสารงานวิจัย (งานวิจัยนอกระบบ)</h4></div>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" style="background-color:#<?php echo __EC_BGSHOW__;?>;color:#<?php echo __EC_FONTSHOW__;?>;"><h4 class="sub-header">แสดงข้อมูล ข้อความร้องขอเอกสารงานวิจัย (งานวิจัยนอกระบบ)</h4></div>
 		 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
 
-			<?
+			<?php
 			  if(isset($_GET["sh_order"])){	$sh_order = $_GET["sh_order"];} else {$sh_order=0;}
 			  if(!isset($_GET["Page"])){
 				if($sh_order==1){$sh_order=0;}else{$sh_order=1;}
@@ -391,7 +391,7 @@ if(isset($c_id)){
 					</tr>
 				</thead>
 				<tbody class="bgw">
-				<?
+				<?php
 			$sql = "select * From `ers_member_request_nodoc` where (`member_id`='".$memberid."') ";
 
 			if(isset($_GET["sd"])){$sd = trim($_GET["sd"]);} else {	$sd = 0;}
@@ -476,36 +476,36 @@ if(isset($c_id)){
 					?>
 					<tr>
 						<td style="text-align:center;width:100px;min-width:100px;">
-							<?
+							<?php
 							if($c_er_answer==0){
 							echo "<a href='nodoc.php?c_id=$c_id&dcid=$doc_id' style='color:green;font-size:16px;' title='แก้ไข'><span class='glyphicon glyphicon-edit'></span>&nbsp;<span style='font-size:14px;'>แก้ไข</span></a>";
 							}
 							?>
 						</td>
 						<td style="text-align:center;width:100px;min-width:100px;">
-							<?
+							<?php
 							if($c_er_answer==0){
 							$dfile =  'dfile'.$jk;
 							?>
 							<a href="javascript:void(0)" style="color:red;font-size:16px;" title="ยกเลิก" onclick="confirmCancel('<?= $dfile;?>','<?= $c_id;?>','<?= $code_1;?>','1')"><span class="glyphicon glyphicon-minus-sign"></span>&nbsp;<span style="font-size:14px;">ยกเลิก</span><span id="<?= $dfile;?>"></span></a>
-							<?}?>
+							<?php}?>
 						</td>
 						<td style="text-align:center;"><?= $c_id;?></td>
 						<td style="text-align:left;">&nbsp;
-							<?
+							<?php
 							echo "<a href=\"javascript:void(0)\" title='' style='color:#000000;'>".$c_er_request_text."</a>";
 							?>&nbsp;
 						</td>
 						<td style="text-align:center;"><?= $c_er_request_date;?></td>
 						<td style="text-align:center;"><?= $c_er_answer_approve;?></td>
 						<td style="text-align:left;">&nbsp;
-							<?
+							<?php
 								echo "<a href=\"javascript:void(0)\" title='' style='color:#000000;'>".$c_er_answert_text."</a>";
 							?>&nbsp;
 						</td>
 						<td style="text-align:center;"><?= $c_er_answer_date;?></td>
 					</tr>
-					<?
+					<?php
 					}//while
 					$res->free();
 				} else {
@@ -522,7 +522,7 @@ if(isset($c_id)){
 	<div class="row bgw">			  	
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-left:5px;padding-right:5px;">
 			<div style="font-size:14px;">หน้า :
-				<?
+				<?php
 					$pages = new Paginator;
 					$pages->items_total = $totalRows;
 					$pages->mid_range = 7;
@@ -537,13 +537,13 @@ if(isset($c_id)){
 	    </div>
 
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-			<div align="center"><? require_once("../admin/footer.php") ?></div>
+			<div align="center"><?php require_once("../admin/footer.php") ?></div>
 	    </div>
 
 	</div><!-- /.row -->
 </div>
 <div id="ersshow"></div>
-<?include("../include/close_db.php");?>
+<?phpinclude("../include/close_db.php");?>
 </body>
 </html>
 <script>

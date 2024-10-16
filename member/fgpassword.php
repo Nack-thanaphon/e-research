@@ -1,4 +1,4 @@
-﻿<?
+﻿<?php
 session_start();
 Header("Content-Type: text/html; charset=UTF-8");
 require_once "../include/config.php";
@@ -23,7 +23,7 @@ if(isset($_POST["fgpw"]) && ($_POST["fgpw"]=="1")) {
 		alert('ข้อมูลไม่ถูกต้อง');
 		window.location="http://scia.chanthaburi.buu.ac.th/e-research/member/fgpassword.php";
 		</script>
-		<?
+		<?php
 		exit();
 	}else
 	{		
@@ -40,7 +40,7 @@ if(isset($_POST["fgpw"]) && ($_POST["fgpw"]=="1")) {
 				alert('ชื่อล็อกอิน หรือ อีเมลนี้ ไม่มีในระบบ');
 				window.location="http://scia.chanthaburi.buu.ac.th/e-research/member/fgpassword.php";
 				</script>
-			<?
+			<?php
 			exit();
 		}else
 		{
@@ -72,7 +72,7 @@ if(isset($_POST["fgpw"]) && ($_POST["fgpw"]=="1")) {
 				alert('ไม่สามารถสร้างรหัสผ่านใหม่ได้ เนื่องจากอีเมลของท่านไม่มีอยู่ในระบบ');
 				window.location="http://scia.chanthaburi.buu.ac.th/e-research/member/login.php";
 				</script>
-				<?
+				<?php
 				exit();
 			}
 				
@@ -134,7 +134,7 @@ if(isset($_POST["fgpw"]) && ($_POST["fgpw"]=="1")) {
 				alert('รีเซ็ตรหัสผ่านใหม่สำเร็จ ตรวจสอบรหัสผ่านใหม่ได้ที่อีเมลของท่าน');
 				window.location="http://scia.chanthaburi.buu.ac.th/e-research/member/login.php";
 				</script>
-				<?
+				<?php
 				exit();
 			} else {
 				echo "<div style='text-align:center;padding-top:80px;font-size:16px;'>ไม่สามารถส่งรหัสผ่านใหม่ไปที่ ".$a_email."</div>";
@@ -166,7 +166,7 @@ include("../include/close_db.php");
 </head>
 <body role="document" style="background: url('../images/<?php if(defined('__EC_PICHOME__')){echo __EC_PICHOME__;}?>') no-repeat;background-attachment:fixed; background-size: 60% auto;height:auto;width:auto;background-position: center;">
 <div class="container-fluid" style="margin:0;padding:0;">
-	<? require_once "../headerpb.php"; ?>
+	<?php require_once "../headerpb.php"; ?>
 </div>
 <div class="container-fluid" style="width:100vw; height:100vh;-moz-opacity: 0.97;-khtml-opacity: 0.97;opacity: 0.97; background-color: #ffffff;">
 

@@ -46,10 +46,10 @@ if (!defined('__EC_NAME__')) {
 
 <!-- cd-top JS -->
 <script src="../js/main.js"></script>
-<?include("../include/config_db.php");?>
+<?phpinclude("../include/config_db.php");?>
 
 <div class="container-fluid" style="margin:0;padding:0;">
-	<? require_once "./header.php"; ?>
+	<?php require_once "./header.php"; ?>
 </div>
 <div class="container">
 
@@ -61,9 +61,9 @@ if (!defined('__EC_NAME__')) {
 		</div><!-- /.col-sm-12 col-xs-12 -->
 	</div><!-- /.row -->
 
-	<? require_once("footer.php") ?>
+	<?php require_once("footer.php") ?>
 
 </div>
-<?include("../include/close_db.php");?>
+<?phpinclude("../include/close_db.php");?>
 </body>
 </html>

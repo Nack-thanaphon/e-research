@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 Header("Content-Type: text/html; charset=UTF-8");
 require_once "../include/config.php";
@@ -19,7 +19,7 @@ if ( !isset($_SESSION["admin"]) || !isset($_SESSION["userlevel"]) || ($_SESSION[
     }
 	window.close();
 	</script>
-	<?
+	<?php
 	exit();
  }
 
@@ -64,7 +64,7 @@ if($chk_edit=="1")
 		}
 		window.close();
 		</script>
-	<?
+	<?php
 	}
 	exit();
 }
@@ -175,7 +175,7 @@ $mysqli->query($link,"update `ers_member_request_nodoc` set `er_request_read`='1
 
 	<div class="row  bgw2">
 		
-		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" style="margin-bottom:30px;background-color:#<?echo __EC_BGSHOW__;?>;color:#<?echo __EC_FONTSHOW__;?>;font-weight: bold;"><h4><?php if(defined('__EC_NAME__')){echo "การตอบกลับ การร้องขอเอกสารผลงานวิจัย";} else echo "ระบบคลังข้อมูลงานวิจัย";?></h4></div>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" style="margin-bottom:30px;background-color:#<?php echo __EC_BGSHOW__;?>;color:#<?php echo __EC_FONTSHOW__;?>;font-weight: bold;"><h4><?php if(defined('__EC_NAME__')){echo "การตอบกลับ การร้องขอเอกสารผลงานวิจัย";} else echo "ระบบคลังข้อมูลงานวิจัย";?></h4></div>
 
 		<div style="padding-top:20px;">
 
@@ -183,11 +183,11 @@ $mysqli->query($link,"update `ers_member_request_nodoc` set `er_request_read`='1
 
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right" style="">ชือสมาชิก&nbsp;:&nbsp;</div>
-				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><?echo $c_name;?></div>
+				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><?php echo $c_name;?></div>
 			  </div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">ชือ login&nbsp;:&nbsp;</div>
-				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><?echo $c_username;?></div>
+				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><?php echo $c_username;?></div>
 			  </div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">หน่วยงานที่สังกัด&nbsp;:&nbsp;</div>
@@ -197,7 +197,7 @@ $mysqli->query($link,"update `ers_member_request_nodoc` set `er_request_read`='1
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">โทรศัพท์&nbsp;:&nbsp;</div>
 				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><a href='tel:<?= $c_phone;?>' target="_blank" title='<?= $c_phone;?>'><?= $c_phone;?></a></div>
 			  </div>
-			  <?
+			  <?php
 			    $subject_text = "ผลการร้องขอเอกสารผลงานวิจัย ".__EC_NAME__;
 			    $encodedSubject = htmlspecialchars($subject_text);
 			    $body_text = "สวัสดีคุณ ".$c_name2;
@@ -216,7 +216,7 @@ $mysqli->query($link,"update `ers_member_request_nodoc` set `er_request_read`='1
 			  </div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">ข้อความร้องขอ&nbsp;:&nbsp;</div>
-				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><?echo $c_er_request_text;?></div>
+				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><?php echo $c_er_request_text;?></div>
 			  </div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">ข้อความตอบกลับ&nbsp;:&nbsp;</div>
@@ -228,7 +228,7 @@ $mysqli->query($link,"update `ers_member_request_nodoc` set `er_request_read`='1
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">&nbsp;</div>
 
 		      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-					<input type="hidden" name="req_id" value="<? if(isset($req_id)){ echo $req_id;}else{ echo '';}?>">
+					<input type="hidden" name="req_id" value="<?php if(isset($req_id)){ echo $req_id;}else{ echo '';}?>">
    					<input type="hidden" name="chk_edit" value="1"> 
 					<input type="submit" name="Submit" value=" บันทึกการตอบกลับ " class="btn btn-warning" style="width:150px;font-size:16px;">&nbsp;
 			  </div>
@@ -245,7 +245,7 @@ $mysqli->query($link,"update `ers_member_request_nodoc` set `er_request_read`='1
 
 </body>
 </html>
-<? include("../include/close_db.php"); ?>
+<?php include("../include/close_db.php"); ?>
 <script>
 document.getElementById('s_er_answer_text').focus();
 </script>

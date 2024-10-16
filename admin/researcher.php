@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 Header("Content-Type: text/html; charset=UTF-8");
 require_once "../include/config.php";
@@ -83,10 +83,10 @@ if($chk_edit=="1")
 		include("../include/close_db.php");*/
 		?>
 		<!--<Script language="javascript">
-			/*alert("ชื่อ นามสกุล : <?//=$s_firstname_th.' '.$s_lastname_th;?> มีอยู่ในระบบ ไม่สามารถบันทึกซ้ำได้");
+			/*alert("ชื่อ นามสกุล : <?php//=$s_firstname_th.' '.$s_lastname_th;?> มีอยู่ในระบบ ไม่สามารถบันทึกซ้ำได้");
 			window.location="researcher.php?iRegister=1";*/
 		</script>-->
-		<?
+		<?php
 		//die();
 	//}
 	$s_title_en_v = $_POST["s_title_en_v"];
@@ -383,7 +383,7 @@ function confirmDelete(span_id,id_order,filename,content_id,div_id) {
 <script src="../js/main.js"></script>
 
 <div class="container-fluid" style="margin:0;padding:0;">
-	<? require_once "./header.php"; ?>
+	<?php require_once "./header.php"; ?>
 </div>
 <div class="container">
 	<div class="row">
@@ -410,9 +410,9 @@ function confirmDelete(span_id,id_order,filename,content_id,div_id) {
 						<input name="s_title_th_v" type="radio" value="4" <?php if($c_title_th_v == "4"){echo "checked";}?> onclick="chkother('4')">&nbsp;อื่นๆ
 						<?php if($c_title_th_v == "4"){?>
 							<input type="text" name="s_title_th_other" id="s_title_th_other" maxlength="30" class="form-control input_width2"  value="<?= $c_title_th;?>" placeholder="คำนำหน้าชื่อ(ภาษาไทย)">
-						<?} else {?>
+						<?php} else {?>
 							<input type="text" name="s_title_th_other" id="s_title_th_other" maxlength="30" class="form-control input_width2"  value="<?= $c_title_th;?>" style="display:none;" placeholder="คำนำหน้าชื่อ(ภาษาไทย)">
-						<?}?>
+						<?php}?>
 					</div>
 				  </div>
 				  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
@@ -432,9 +432,9 @@ function confirmDelete(span_id,id_order,filename,content_id,div_id) {
 						<input name="s_title_en_v" type="radio" value="4" <?php if($c_title_en_v == "4"){echo "checked";}?> onclick="chkothereng('4')">&nbsp;อื่นๆ
 						<?php if($c_title_en_v == "4"){?>
 							<input type="text" name="s_title_en_other" id="s_title_en_other" maxlength="30" class="form-control input_width2"  value="<?= $c_title_en;?>" placeholder="คำนำหน้าชื่อ(อังกฤษ)">
-						<?} else {?>
+						<?php} else {?>
 							<input type="text" name="s_title_en_other" id="s_title_en_other" maxlength="30" class="form-control input_width2"  value="<?= $c_title_en;?>" style="display:none;" placeholder="คำนำหน้าชื่อ(อังกฤษ)">
-						<?}?>
+						<?php}?>
 					</div>
 				  </div>
 				  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
@@ -452,7 +452,7 @@ function confirmDelete(span_id,id_order,filename,content_id,div_id) {
 				  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">สถานภาพของนักวิจัย&nbsp;:&nbsp;</div>
 					<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-						<?
+						<?php
 						$sql_d = "select * from `ers_researcher_position` where 1 ";
 						$dbquery_d = $mysqli->query($link,$sql_d);
 						$nRows_d = $dbquery_d->num_rows;
@@ -460,7 +460,7 @@ function confirmDelete(span_id,id_order,filename,content_id,div_id) {
 						?>
 							<select name="s_researcher_position_id" id="s_researcher_position_id" style="width:200px;border-radius:5px;border:1px solid #cccccc;padding:3px;">
 								<option value="0">เลือกสถานภาพของนักวิจัย</option>
-								<? while ($row_d = $dbquery_d->fetch_assoc()) {
+								<?php while ($row_d = $dbquery_d->fetch_assoc()) {
 										$c_status_name = "";
 										if($row_d['et_status']==1){
 											$c_status_name = "นักวิจัยภายใน : ".$row_d['et_name'];
@@ -469,16 +469,16 @@ function confirmDelete(span_id,id_order,filename,content_id,div_id) {
 											$c_status_name = "นักวิจัยภายนอก : ".$row_d['et_name'];
 										}
 								?>
-									<option value="<? echo $row_d['id']; ?>" <? if($c_researcher_position_id==$row_d['id']) echo "selected"?> >&nbsp;&nbsp;- <? echo $c_status_name; ?></option>
-								<? } //while ?>
+									<option value="<?php echo $row_d['id']; ?>" <?php if($c_researcher_position_id==$row_d['id']) echo "selected"?> >&nbsp;&nbsp;- <?php echo $c_status_name; ?></option>
+								<?php } //while ?>
 							</select>
-						<?}?>
+						<?php}?>
 					</div>
 				  </div>
 				  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">ภาควิชา/ฝ่าย&nbsp;:&nbsp;</div>
 					<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-						<?
+						<?php
 						$sql_d = "select * from `ers_section` where 1 ";
 						$dbquery_d = $mysqli->query($link,$sql_d);
 						$nRows_d = $dbquery_d->num_rows;
@@ -486,17 +486,17 @@ function confirmDelete(span_id,id_order,filename,content_id,div_id) {
 						?>
 							<select name="s_section_id" id="s_section_id" style="width:200px;border-radius:5px;border:1px solid #cccccc;padding:3px;">
 								<option value="0">เลือกภาควิชา/ฝ่าย</option>
-								<? while ($row_d = $dbquery_d->fetch_assoc()) { ?>
-									<option value="<? echo $row_d['id']; ?>" <? if($c_section_id==$row_d['id']) echo "selected"?> >&nbsp;&nbsp;- <? echo $row_d['es_name']; ?></option>
-								<? } //while ?>
+								<?php while ($row_d = $dbquery_d->fetch_assoc()) { ?>
+									<option value="<?php echo $row_d['id']; ?>" <?php if($c_section_id==$row_d['id']) echo "selected"?> >&nbsp;&nbsp;- <?php echo $row_d['es_name']; ?></option>
+								<?php } //while ?>
 							</select>
-						<?}?>
+						<?php}?>
 					</div>
 				  </div>
 				  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">ส่วนงาน&nbsp;:&nbsp;</div>
 					<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-						<?
+						<?php
 						$sql_d = "select * from `ers_faculty` where 1 ";
 						$dbquery_d = $mysqli->query($link,$sql_d);
 						$nRows_d = $dbquery_d->num_rows;
@@ -504,17 +504,17 @@ function confirmDelete(span_id,id_order,filename,content_id,div_id) {
 						?>
 							<select name="s_faculty_id" id="s_faculty_id" style="width:200px;border-radius:5px;border:1px solid #cccccc;padding:3px;">
 								<option value="0">เลือกส่วนงาน</option>
-								<? while ($row_d = $dbquery_d->fetch_assoc()) { ?>
-									<option value="<? echo $row_d['id']; ?>" <? if($c_faculty_id==$row_d['id']) echo "selected"?> >&nbsp;&nbsp;- <? echo $row_d['ef_name']; ?></option>
-								<? } //while ?>
+								<?php while ($row_d = $dbquery_d->fetch_assoc()) { ?>
+									<option value="<?php echo $row_d['id']; ?>" <?php if($c_faculty_id==$row_d['id']) echo "selected"?> >&nbsp;&nbsp;- <?php echo $row_d['ef_name']; ?></option>
+								<?php } //while ?>
 							</select>
-						<?}?>
+						<?php}?>
 					</div>
 				  </div>
 				  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">ตำแหน่งทางวิชาการ&nbsp;:&nbsp;</div>
 					<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-						<?
+						<?php
 						$sql_d = "select * from `ers_academic_position` where 1 ";
 						$dbquery_d = $mysqli->query($link,$sql_d);
 						$nRows_d = $dbquery_d->num_rows;
@@ -522,11 +522,11 @@ function confirmDelete(span_id,id_order,filename,content_id,div_id) {
 						?>
 							<select name="s_academic_position_id" id="s_academic_position_id" style="width:200px;border-radius:5px;border:1px solid #cccccc;padding:3px;">
 								<option value="0">เลือกตำแหน่งทางวิชาการ</option>
-								<? while ($row_d = $dbquery_d->fetch_assoc()) { ?>
-									<option value="<? echo $row_d['id']; ?>" <? if($c_academic_position_id==$row_d['id']) echo "selected"?> >&nbsp;&nbsp;- <? echo $row_d['ea_name']; ?></option>
-								<? } //while ?>
+								<?php while ($row_d = $dbquery_d->fetch_assoc()) { ?>
+									<option value="<?php echo $row_d['id']; ?>" <?php if($c_academic_position_id==$row_d['id']) echo "selected"?> >&nbsp;&nbsp;- <?php echo $row_d['ea_name']; ?></option>
+								<?php } //while ?>
 							</select>
-						<?}?>
+						<?php}?>
 					</div>
 				  </div>
 				  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
@@ -555,11 +555,11 @@ function confirmDelete(span_id,id_order,filename,content_id,div_id) {
 				  </div>
 				  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">ประวัติการศึกษา&nbsp;:&nbsp;</div>
-					<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><textarea name="s_educationrecord" id="s_educationrecord" cols="60" rows="5" class="form-control" style="border-radius:5px;border:1px solid #ccc;"><? echo $c_educationrecord; ?></textarea></div>
+					<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><textarea name="s_educationrecord" id="s_educationrecord" cols="60" rows="5" class="form-control" style="border-radius:5px;border:1px solid #ccc;"><?php echo $c_educationrecord; ?></textarea></div>
 				  </div>
 				  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">ประวัติการทำงาน&nbsp;:&nbsp;</div>
-					<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><textarea name="s_workhistory" id="s_workhistory" cols="60" rows="5" class="form-control" style="border-radius:5px;border:1px solid #ccc;"><? echo $c_workhistory; ?></textarea></div>
+					<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><textarea name="s_workhistory" id="s_workhistory" cols="60" rows="5" class="form-control" style="border-radius:5px;border:1px solid #ccc;"><?php echo $c_workhistory; ?></textarea></div>
 				  </div>
 				  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">เชี่ยวชาญในสาขาวิชา&nbsp;:&nbsp;</div>
@@ -578,7 +578,7 @@ function confirmDelete(span_id,id_order,filename,content_id,div_id) {
 				<!--<div>&nbsp;:&nbsp;รูป(180x240 px)&nbsp;:&nbsp;</div>-->
 			  </div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-					<?
+					<?php
 						if(!empty($c_photopath)){
 							$images = "../photo/".$c_photopath;
 							echo "<span id=\"dfile1\"><div id=\"img1\"><div><img src=\"$images\" id=\"photoImage1\" class=\"img-thumbnail-noborder\"></div>";
@@ -595,7 +595,7 @@ function confirmDelete(span_id,id_order,filename,content_id,div_id) {
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">&nbsp;</div>
 
 		      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-					<input type="hidden" name="c_id" value="<? if(isset($c_id)){ echo $c_id;}else{ echo '';}?>">
+					<input type="hidden" name="c_id" value="<?php if(isset($c_id)){ echo $c_id;}else{ echo '';}?>">
    					<input type="hidden" name="chk_edit" value="1"> 
 					<input type="submit" name="Submit" value=" บันทึก " class="btn btn-warning" style="width:100px;font-size:18px;">&nbsp;
 			  </div>
@@ -617,32 +617,32 @@ function confirmDelete(span_id,id_order,filename,content_id,div_id) {
 				<span class="sbreak1">
 				  <select name="f_section_id" id="f_section_id" style="width:155px;border-radius:5px;height:35px;border:1px solid #ccc;padding:5px; margin-top:3px;">
 					<option value="0">ภาควิชา/ฝ่าย</option>
-					<?
+					<?php
 					$sql_d = "select * from `ers_section` where 1 ";
 					$dbquery_d = $mysqli->query($link,$sql_d);
 					$nRows_d = $dbquery_d->num_rows;
 					if($nRows_d>0){
 					?>
-						<? while ($row_d = $dbquery_d->fetch_assoc()) { ?>
-							<option value="<? echo $row_d['id']; ?>" <? if($c_search_section==$row_d['id']) echo "selected"?> >&nbsp;&nbsp;- <? echo $row_d['es_name']; ?></option>
-						<? } //while
+						<?php while ($row_d = $dbquery_d->fetch_assoc()) { ?>
+							<option value="<?php echo $row_d['id']; ?>" <?php if($c_search_section==$row_d['id']) echo "selected"?> >&nbsp;&nbsp;- <?php echo $row_d['es_name']; ?></option>
+						<?php } //while
 					}?>
 				  </select>&nbsp;
 				  <select name="f_faculty_id" id="f_faculty_id" style="width:110px;border-radius:5px;height:35px;border:1px solid #ccc;padding:5px; margin-top:3px;">
 					<option value="0">ส่วนงาน</option>
-					<?
+					<?php
 					$sql_d = "select * from `ers_faculty` where 1 ";
 					$dbquery_d = $mysqli->query($link,$sql_d);
 					$nRows_d = $dbquery_d->num_rows;
 					if($nRows_d>0){
 					?>
-						<? while ($row_d = $dbquery_d->fetch_assoc()) { ?>
-							<option value="<? echo $row_d['id']; ?>" <? if($c_search_faculty==$row_d['id']) echo "selected"?> >&nbsp;&nbsp;- <? echo $row_d['ef_name']; ?></option>
-						<? } //while
+						<?php while ($row_d = $dbquery_d->fetch_assoc()) { ?>
+							<option value="<?php echo $row_d['id']; ?>" <?php if($c_search_faculty==$row_d['id']) echo "selected"?> >&nbsp;&nbsp;- <?php echo $row_d['ef_name']; ?></option>
+						<?php } //while
 					}?>
 				  </select>&nbsp;
 				 
-				  <?
+				  <?php
 				  if(isset($_POST["c_code_1"]) ){$c_code_1 = $_POST["c_code_1"];	}else{$c_code_1 = "";}
 				  if(trim($c_code_1)!=""){
 					  $_SESSION["u_code_1"] = $c_code_1;
@@ -659,7 +659,7 @@ function confirmDelete(span_id,id_order,filename,content_id,div_id) {
 		  <div class="clearfix"></div>
 		  <br>
 
-		  <?
+		  <?php
 			  if(isset($_GET["sh_order"])){	$sh_order = $_GET["sh_order"];} else {$sh_order=0;}
 			  if(!isset($_GET["Page"])){
 				if($sh_order==1){$sh_order=0;}else{$sh_order=1;}
@@ -679,7 +679,7 @@ function confirmDelete(span_id,id_order,filename,content_id,div_id) {
 				}
 			?>
 		  
-		  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" style="background-color:#<?echo __EC_BGSHOW__;?>;color:#<?echo __EC_FONTSHOW__;?>;border-radius: 5px 5px 0px 0px;"><h4>แสดงข้อมูลชื่อนักวิจัย</h4><a name="top_page"></a></div>
+		  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" style="background-color:#<?php echo __EC_BGSHOW__;?>;color:#<?php echo __EC_FONTSHOW__;?>;border-radius: 5px 5px 0px 0px;"><h4>แสดงข้อมูลชื่อนักวิจัย</h4><a name="top_page"></a></div>
 			
 		  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 			<div class="table-responsive">
@@ -692,7 +692,7 @@ function confirmDelete(span_id,id_order,filename,content_id,div_id) {
                   <th><a href="researcher.php?sd=2&sh_order=<?= $sh_order;?>#top_page" target="_parent">ชื่อ-นามสกุล <?= $a2sort;?></a></th>
 				  <th><a href="researcher.php?sd=3&sh_order=<?= $sh_order;?>#top_page" target="_parent">โทรศัพท์ที่ทำงาน <?= $a3sort;?></a></th>
 				  <th><a href="researcher.php?sd=4&sh_order=<?= $sh_order;?>#top_page" target="_parent">โทรศัพท์มือถือ <?= $a4sort;?></a></th>
-				  <!--<th><a href="researcher.php?sd=5&sh_order=<?//=$sh_order;?>#top_page" target="_parent">อีเมล <?//=$a5sort;?></a></th>-->
+				  <!--<th><a href="researcher.php?sd=5&sh_order=<?php//=$sh_order;?>#top_page" target="_parent">อีเมล <?php//=$a5sort;?></a></th>-->
 				  <th><a href="researcher.php?sd=6&sh_order=<?= $sh_order;?>#top_page" target="_parent">ภาควิชา/ฝ่าย <?= $a6sort;?></a></th>
 				  <th><a href="researcher.php?sd=7&sh_order=<?= $sh_order;?>#top_page" target="_parent">ส่วนงาน <?= $a7sort;?></a></th>
 				  <th><a href="researcher.php?sd=8&sh_order=<?= $sh_order;?>#top_page" target="_parent">สถานภาพ <?= $a8sort;?></a></th>
@@ -700,7 +700,7 @@ function confirmDelete(span_id,id_order,filename,content_id,div_id) {
               </thead>
               <tbody>
 
-			 <? 
+			 <?php 
 
 			$sql = "select * From `ers_researcher` where 1 ";
 			if(isset($_SESSION["u_code_1"]))
@@ -821,12 +821,12 @@ function confirmDelete(span_id,id_order,filename,content_id,div_id) {
 
 				<tr style="background-color:<?= $bcolor;?>">
 				<td style="text-align:center;width:100px;min-width:100px;">
-				<?
+				<?php
 				echo "<a href='researcher.php?c_id=$c_id' style='color:green;font-size:16px;' title='แก้ไข'><span class='glyphicon glyphicon-edit'></span>&nbsp;<span style='font-size:14px;'>แก้ไข</span></a>";
 				?>
 				</td>
 				<td style="text-align:center;width:100px;min-width:100px;">
-				<?
+				<?php
 				echo "<a href='del_data.php?c_id=$c_id&chk_p=6&code_1=$code_1' style='color:red;font-size:16px;' title='ลบ'><span class='glyphicon glyphicon-trash'></span>&nbsp;<span style='font-size:14px;'>ลบ</span></a>";
 				?>
 				</td>
@@ -834,13 +834,13 @@ function confirmDelete(span_id,id_order,filename,content_id,div_id) {
 				<td><?= $c_name;?></td>
 				<td><?= $c_phone;?></td>
 				<td><?= $c_mobile;?></td>
-				<!--<td><?//=$c_email;?></td>-->
+				<!--<td><?php//=$c_email;?></td>-->
 				<td><?= $c_section_name;?></td>
 				<td><?= $c_faculty_name;?></td>
 				<td><?= $c_status_name;?></td>
 				</tr>
 
-				<?
+				<?php
 				}//while
 			} //$totalRows 
 			?>
@@ -854,7 +854,7 @@ function confirmDelete(span_id,id_order,filename,content_id,div_id) {
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-left:5px;padding-right:5px;">
 			<!--<div><hr align="center" width="100%" noshade size="1"></div>-->
 			<div style="font-size:14px;">หน้า :
-				<?
+				<?php
 					$pages = new Paginator;
 					$pages->items_total = $totalRows;
 					$pages->mid_range = 7;
@@ -869,7 +869,7 @@ function confirmDelete(span_id,id_order,filename,content_id,div_id) {
 	    </div>
 
 	    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-			<div align="center"><? require_once("./footer.php") ?></div>
+			<div align="center"><?php require_once("./footer.php") ?></div>
 	    </div>
 
 	</div><!-- /.row -->
@@ -878,7 +878,7 @@ function confirmDelete(span_id,id_order,filename,content_id,div_id) {
 
 </body>
 </html>
-<? include("../include/close_db.php"); ?>
+<?php include("../include/close_db.php"); ?>
 <script>
 var sw = screen.width;
 if(sw < 768)

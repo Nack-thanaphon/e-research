@@ -42,7 +42,7 @@ if(isset($_POST['u_name']) && isset($_POST['u_password']))
 		alert("'ชื่อล็อกอิน หรือ รหัสผ่าน' ไม่ถูกต้อง");
 		window.location="index.php?dcid=<?= $dcid;?>";
 	</script>
-	<?
+	<?php
 	include("../include/close_db.php");
 	die();exit();
   }
@@ -91,7 +91,7 @@ if (isset($_SESSION["username"]) && isset($_SESSION["membername"]) && isset($_SE
 <body role="document" style="background: url('../images/<?php if(defined('__EC_PICHOME__')){echo __EC_PICHOME__;}?>') no-repeat;background-attachment:fixed; background-size: 60% auto;height:auto;width:auto;background-position: center;">
 
 <div class="container-fluid" style="margin:0;padding:0;">
-	<? require_once "../headerpb.php"; ?>
+	<?php require_once "../headerpb.php"; ?>
 </div>
 <div class="container" style="width:100vw; height:100vh;-moz-opacity: 0.95;-khtml-opacity: 0.95;opacity: 0.95; background-color: #ffffff;" style="margin:0;padding:0;">
 	
@@ -117,7 +117,7 @@ if (isset($_SESSION["username"]) && isset($_SESSION["membername"]) && isset($_SE
 							<p style="text-align:right;width:100%">
 								<a href="fgpassword.php">ลืมรหัสผ่าน</a>
 							</p>
-							<input type="hidden" name="dcid" value="<? if(isset($dcid)){ echo $dcid;}else{ echo '';}?>">
+							<input type="hidden" name="dcid" value="<?php if(isset($dcid)){ echo $dcid;}else{ echo '';}?>">
 							<button class="btn btn-success" type="submit" style="display:block;width:100%;"> เข้าระบบ </button>
 						</form>
 						<div style="margin-top:10px;">
@@ -132,7 +132,7 @@ if (isset($_SESSION["username"]) && isset($_SESSION["membername"]) && isset($_SE
 </div>
 </body>
 </html>
-<?
+<?php
 } //end else
 
 include("../include/close_db.php"); 

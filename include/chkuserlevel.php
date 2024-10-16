@@ -1,4 +1,4 @@
-<?
+<?php
 if ($_SESSION["userlevel"] >= "2" )
 {
 	?>
@@ -6,7 +6,7 @@ if ($_SESSION["userlevel"] >= "2" )
 		alert('ไม่สามารถใช้งานในส่วนนี้ได้ กรุณาติดต่อผู้ดูแลระบบ');
 		/*window.location="index.php";*/
 	</script>
-	<?
+	<?php
 	if(isset($_SERVER['HTTP_REFERER'])){
 		$url = $_SERVER['HTTP_REFERER'];
 		//if(defined("_web_path")){ $url=_web_path.$url;}

@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 Header("Content-Type: text/html; charset=UTF-8");
 require_once "../include/config.php";
@@ -19,7 +19,7 @@ if(($_SESSION["admin"] != "admin") and ($_GET["c_id"]=="1")){
 		alert('ไม่สามารถแก้ไข "admin" ได้ กรุณาติดต่อผู้ดูแลระบบ');
 		//window.location="index.php";
 	</script>
-	<?
+	<?php
 	echo "<Script language=\"javascript\">window.location=\"index.php\"</script>";
 	exit();
 }
@@ -37,7 +37,7 @@ if($_SESSION["admin"] != "admin"){
 			alert('ไม่สามารถแก้ไขข้อมูลได้ กรุณาติดต่อผู้ดูแลระบบ');
 			//window.location="index.php";
 		</script>
-		<?
+		<?php
 		echo "<Script language=\"javascript\">window.location=\"index.php\"</script>";
 		exit();
 		}
@@ -73,7 +73,7 @@ if(($chk_edit=="1") and (trim($_POST["s_password"]) != "")){
 				alert("User name : <?= $u_name;?> มีอยู่ในระบบแล้ว ไม่สามารถแก้ไขได้");
 				window.location="users.php";
 			</script>
-			<?
+			<?php
 			die();
 		}
 		if($admin != 'admin'){
@@ -102,7 +102,7 @@ if(($chk_edit=="1") and (trim($_POST["s_password"]) != "")){
 		alert('แก้ไขข้อมูลสำเร็จ');
 		//window.location="index.php";
 	</script>
-	<?
+	<?php
 	if($userlevel=='1'){
 		echo "<meta http-equiv='refresh' content='0;URL=users.php?iRegister=1'>";
 	} else {
@@ -189,7 +189,7 @@ function check(){
 <script src="../js/main.js"></script>
 
 <div class="container-fluid" style="margin:0;padding:0;">
-	<? require_once "./header.php"; ?>
+	<?php require_once "./header.php"; ?>
 </div>
 <div class="container">
 	<div class="row">
@@ -206,13 +206,13 @@ function check(){
 			<div class="col-sm-8 col-xs-8" style="margin:0;padding:0;padding:3px;">
 			<?php if($admin == 'admin'){?>
 				<?php if($c_name != 'admin'){?>
-				<input type="text" name="u_name" id="u_name" maxlength="30" class="form-control input_width" autocomplete="off" value="<? echo $c_name; ?>">
-				<?} else { echo $c_name;?>
-				<input type="hidden" name="u_name" id="u_name" value="<?echo $c_name;?>">
-				<?}?>
-			<?} else { echo $c_name;?>
-				<input type="hidden" name="u_name" id="u_name" value="<?echo $c_name;?>">
-			<?}?>
+				<input type="text" name="u_name" id="u_name" maxlength="30" class="form-control input_width" autocomplete="off" value="<?php echo $c_name; ?>">
+				<?php} else { echo $c_name;?>
+				<input type="hidden" name="u_name" id="u_name" value="<?php echo $c_name;?>">
+				<?php}?>
+			<?php} else { echo $c_name;?>
+				<input type="hidden" name="u_name" id="u_name" value="<?php echo $c_name;?>">
+			<?php}?>
 			</div>
 
 			<div class="col-sm-4 col-xs-4 text-right" style="margin:0;padding:0;padding:3px;">รหัสผ่าน&nbsp;:&nbsp;</div>
@@ -222,27 +222,27 @@ function check(){
 			<div class="col-sm-8 col-xs-8" style="margin:0;padding:0;padding:3px;"><input type="password" name="c_password" id="c_password" maxlength="70" class="form-control input_width"></div>
 
 			<div class="col-sm-4 col-xs-4 text-right" style="margin:0;padding:0;padding:3px;">ชื่อ&nbsp;:&nbsp;</div>
-			<div class="col-sm-8 col-xs-8" style="margin:0;padding:0;padding:3px;"><input type="text" name="s_firstname" id="s_firstname" maxlength="120" value="<? echo $c_firstname;?>" class="form-control input_width"></div>
+			<div class="col-sm-8 col-xs-8" style="margin:0;padding:0;padding:3px;"><input type="text" name="s_firstname" id="s_firstname" maxlength="120" value="<?php echo $c_firstname;?>" class="form-control input_width"></div>
 
 			<div class="col-sm-4 col-xs-4 text-right" style="margin:0;padding:0;padding:3px;">นามสกุล&nbsp;:&nbsp;</div>
-			<div class="col-sm-8 col-xs-8" style="margin:0;padding:0;padding:3px;"><input type="text" name="s_lastname" id="s_lastname" maxlength="120" value="<? echo $c_lastname; ?>" class="form-control input_width"></div>
+			<div class="col-sm-8 col-xs-8" style="margin:0;padding:0;padding:3px;"><input type="text" name="s_lastname" id="s_lastname" maxlength="120" value="<?php echo $c_lastname; ?>" class="form-control input_width"></div>
 
 			<div class="col-sm-4 col-xs-4 text-right" style="margin:0;padding:0;padding:3px;">หน่วยงาน&nbsp;:&nbsp;</div>
-			<div class="col-sm-8 col-xs-8" style="margin:0;padding:0;padding:3px;"><input type="text" name="s_company" id="s_company" maxlength="120" value="<? echo $c_company; ?>" class="form-control input_width"></div>
+			<div class="col-sm-8 col-xs-8" style="margin:0;padding:0;padding:3px;"><input type="text" name="s_company" id="s_company" maxlength="120" value="<?php echo $c_company; ?>" class="form-control input_width"></div>
 
 			<div class="col-sm-4 col-xs-4 text-right" style="margin:0;padding:0;padding:3px;">เบอร์โทร&nbsp;:&nbsp;</div>
-			<div class="col-sm-8 col-xs-8" style="margin:0;padding:0;padding:3px;"><input type="text" name="s_phone" id="s_phone" maxlength="50" value="<? echo $c_phone; ?>" class="form-control input_width"></div>
+			<div class="col-sm-8 col-xs-8" style="margin:0;padding:0;padding:3px;"><input type="text" name="s_phone" id="s_phone" maxlength="50" value="<?php echo $c_phone; ?>" class="form-control input_width"></div>
 
 			<div class="col-sm-4 col-xs-4 text-right" style="margin:0;padding:0;padding:3px;">ที่อยู่ 1&nbsp;:&nbsp;</div>
-			<div class="col-sm-8 col-xs-8" style="margin:0;padding:0;padding:3px;"><input type="text" name="s_address1" id="s_address1" maxlength="255" value="<? echo $c_address1; ?>" class="form-control input_width"></div>
+			<div class="col-sm-8 col-xs-8" style="margin:0;padding:0;padding:3px;"><input type="text" name="s_address1" id="s_address1" maxlength="255" value="<?php echo $c_address1; ?>" class="form-control input_width"></div>
 
 			<div class="col-sm-4 col-xs-4 text-right" style="margin:0;padding:0;padding:3px;">ที่อยู่ 2&nbsp;:&nbsp;</div>
-			<div class="col-sm-8 col-xs-8" style="margin:0;padding:0;padding:3px;"><input type="text" name="s_address2" id="s_address2" maxlength="255" value="<? echo $c_address2; ?>" class="form-control input_width"></div>	
+			<div class="col-sm-8 col-xs-8" style="margin:0;padding:0;padding:3px;"><input type="text" name="s_address2" id="s_address2" maxlength="255" value="<?php echo $c_address2; ?>" class="form-control input_width"></div>	
 
 			<div class="col-sm-12 col-xs-12" style="padding:3px;text-align:center;">
-				<input type="hidden" name="code_id" value="<?echo $code_id;?>">
-				<input type="hidden" name="code_1" value="<?echo $code_1;?>">
-				<input type="hidden" name="o_name" value="<?echo $c_name;?>">
+				<input type="hidden" name="code_id" value="<?php echo $code_id;?>">
+				<input type="hidden" name="code_1" value="<?php echo $code_1;?>">
+				<input type="hidden" name="o_name" value="<?php echo $c_name;?>">
 				<input type="hidden" name="chk_edit" value="1"> 
 				<input name="s_level" type="hidden" value="1">
 				<input type="submit" name="Submit" value=" บันทึก " class="btn btn-warning" style="width:100px;font-size:18px;">&nbsp;
@@ -254,7 +254,7 @@ function check(){
 	</div>
 	<div class="row">
 		<div class="col-sm-12">
-			<div align="center"><? require_once("./footer.php") ?></div>
+			<div align="center"><?php require_once("./footer.php") ?></div>
 		 </div>
 	</div><!-- /.row -->
 
@@ -262,7 +262,7 @@ function check(){
 
 </body>
 </html>
-<?
+<?php
 }
 include("../include/close_db.php"); 
 ?>

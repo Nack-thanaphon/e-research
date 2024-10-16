@@ -1,4 +1,4 @@
-<? 
+<?php 
 session_start();
 Header("Content-Type: text/html; charset=UTF-8");
 require_once "../include/config.php";
@@ -21,7 +21,7 @@ if (!isset($_SESSION["username"]) || !isset($_SESSION["membername"]) || !isset($
 	//window.close();
 	parent.location.href = "login.php";
 	</script>
-	<?
+	<?php
 	exit();
 }
 
@@ -128,23 +128,23 @@ $mysqli->query($link,"update `ers_member_request` set `er_answer_read`='1',`er_a
 <div class="container bgw1">
 	<div class="row bgw2">
 
-	   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" style="margin-bottom:30px;background-color:#<?echo __EC_BGSHOW__;?>;color:#<?echo __EC_FONTSHOW__;?>;font-weight: bold;"><h4><?php if(defined('__EC_NAME__')){echo "การอนุมัติ การร้องขอเอกสารผลงานวิจัย";} else echo "ระบบคลังข้อมูลงานวิจัย";?></h4></div>
+	   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" style="margin-bottom:30px;background-color:#<?php echo __EC_BGSHOW__;?>;color:#<?php echo __EC_FONTSHOW__;?>;font-weight: bold;"><h4><?php if(defined('__EC_NAME__')){echo "การอนุมัติ การร้องขอเอกสารผลงานวิจัย";} else echo "ระบบคลังข้อมูลงานวิจัย";?></h4></div>
 
 	  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right" style="">ชือสมาชิก&nbsp;:&nbsp;</div>
-		<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><?echo $c_name;?></div>
+		<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><?php echo $c_name;?></div>
 	  </div>
 	  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">ชือ login&nbsp;:&nbsp;</div>
-		<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><?echo $c_username;?></div>
+		<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><?php echo $c_username;?></div>
 	  </div>
 	  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">ผลงานวิจัย&nbsp;:&nbsp;</div>
-		<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><?echo $c_ed_name_th;?></div>
+		<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><?php echo $c_ed_name_th;?></div>
 	  </div>
 	  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">ข้อความร้องขอ&nbsp;:&nbsp;</div>
-		<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><?echo $c_er_request_text;?></div>
+		<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"><?php echo $c_er_request_text;?></div>
 	  </div>
 	  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
 		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">ข้อความตอบกลับ&nbsp;:&nbsp;</div>
@@ -154,7 +154,7 @@ $mysqli->query($link,"update `ers_member_request` set `er_answer_read`='1',`er_a
 		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right">วันที่หมดอายุ&nbsp;:&nbsp;</div>
 		<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" style="margin:0;padding:0;"><?= $c_er_answer_expire;?></div>
 	  </div>
-	  <?
+	  <?php
 		$sql = "select * from `ers_member_files` where (`request_id`='".$c_id."') and (`emf_approve`='1') order by `id`ASC";
 		$dbquery = $mysqli->query($link,$sql);
 		$num_rows = $dbquery->num_rows;
@@ -183,17 +183,17 @@ $mysqli->query($link,"update `ers_member_request` set `er_answer_read`='1',`er_a
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
 							<hr align="center" width="95%" noshade size="1" color="#cccccc">
 						</div>
-						<?}?>
+						<?php}?>
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right" style="font-weight: bold;white-space: nowrap;">เอกสาร <?= $item;?>&nbsp;:&nbsp;</div>
 							<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-								<?
+								<?php
 									echo "<div id=\"view$item\"><span class='glyphicon glyphicon-file' style='color:#000000'></span>&nbsp;".$c_edf_filename."<br><a href='../include/filedownloadmb.php?m=".$c_document_files_id."&r=".$c_id."' target='_blank' style='white-space: nowrap;'><span class='glyphicon glyphicon-download-alt'></span>&nbsp;ดาวน์โหลด</a>&nbsp;&nbsp;</div>";
 									//echo "<div id=\"view$item\"><span class='glyphicon glyphicon-file' style='color:#000000'></span>&nbsp;".$c_edf_filename."<br><a href='../include/filedownloadmb.php?fn=".$c_edf_filename."&m=".$c_document_files_id."&t=1&s=".$c_edf_link."' target='_blank' style='white-space: nowrap;'><span class='glyphicon glyphicon-folder-open'></span>&nbsp;&nbsp;เปิดอ่าน</a>&nbsp;&nbsp;<a href='../include/filedownloadmb.php?fn=".$c_edf_filename."&m=".$c_document_files_id."&s=".$c_edf_link."' target='_blank' style='white-space: nowrap;'><span class='glyphicon glyphicon-download-alt'></span>&nbsp;ดาวน์โหลด</a>&nbsp;&nbsp;</div>";
 								?>
 							</div>
 						</div>
-					<?
+					<?php
 					}
 				}
 			}//while
@@ -208,4 +208,4 @@ $mysqli->query($link,"update `ers_member_request` set `er_answer_read`='1',`er_a
 
 </body>
 </html>
-<?include("../include/close_db.php");?>
+<?phpinclude("../include/close_db.php");?>

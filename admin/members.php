@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 Header("Content-Type: text/html; charset=UTF-8");
 require_once "../include/config.php";
@@ -129,13 +129,13 @@ include("../include/config_db.php");
 <script src="../js/main.js"></script>
 
 <div class="container-fluid">
-	<? require_once "header.php"; ?>
+	<?php require_once "header.php"; ?>
 	<div class="row" style="padding-top:50px;padding-bottom:10px;">			  
 		<div id="hSelect" class="hSelect">
 
 			<form name="form2" method="post" action="members.php" onSubmit="return c_check2();" role="form">
 			    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-					  <?
+					  <?php
 					  if(isset($_POST["c_code_1"]) ){$c_code_1 = $_POST["c_code_1"];	}else{$c_code_1 = "";}
 					  if(trim($c_code_1)!=""){
 						  $_SESSION["u_code_1"] = $c_code_1;
@@ -164,10 +164,10 @@ include("../include/config_db.php");
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" style="background-color:#<?echo __EC_BGSHOW__;?>;color:#<?echo __EC_FONTSHOW__;?>;"><h4 class="sub-header">สมาชิกที่ลงทะเบียน</h4></div>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" style="background-color:#<?php echo __EC_BGSHOW__;?>;color:#<?php echo __EC_FONTSHOW__;?>;"><h4 class="sub-header">สมาชิกที่ลงทะเบียน</h4></div>
 		 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
 
-			<?
+			<?php
 			  if(isset($_GET["sh_order"])){	$sh_order = $_GET["sh_order"];} else {$sh_order=0;}
 			  if(!isset($_GET["Page"])){
 				if($sh_order==1){$sh_order=0;}else{$sh_order=1;}
@@ -204,7 +204,7 @@ include("../include/config_db.php");
 					</tr>
 				</thead>
 				<tbody class="bgw">
-				<?
+				<?php
 				$sql = "select * From `ers_member` where 1 ";
 				if(isset($_SESSION["u_code_1"]) and !empty($_SESSION["u_code_1"]))
 				{
@@ -315,12 +315,12 @@ include("../include/config_db.php");
 					?>
 					<tr>
 						<td style="text-align:center;min-width:130px;">
-						<?
+						<?php
 						echo "<a href='javascript:void(0)' onclick='openWindow($c_id)' style='color:green;font-size:16px;' title='แก้ไขรหัสผ่าน'><span class='glyphicon glyphicon-edit'></span>&nbsp;<span style='font-size:14px;'>เปลี่ยนรหัสผ่าน</span></a>";
 						?>
 						</td>
 						<td style="text-align:center;min-width:100px;">
-						<?
+						<?php
 						echo "<a href='javascript:void(0)' style='color:red;font-size:16px;' title='ลบ' onclick=\"javascript:confirmDelete('dfile$jk','".$c_id."','".$code_1."','1');\"><span class='glyphicon glyphicon-trash'></span>&nbsp;<span style='font-size:14px;'>ลบ</span></a><span id='dfile$jk'></span>";
 						?>
 						</td>
@@ -332,7 +332,7 @@ include("../include/config_db.php");
 						<td style="text-align:center;padding-left:0;padding-right:0;white-space: nowrap;">&nbsp;<a href='tel:<?= $c_phone;?>' target="_blank" title='<?= $c_phone;?>'><?= $c_phone;?></a>&nbsp;</td>
 						<td style="text-align:center;padding-left:0;padding-right:0;white-space: nowrap;">&nbsp;<a href='mailto:<?= $c_email;?>' target='_blank' title="<?= $c_email;?>"><?= $c_email;?></a>&nbsp;</td>
 						<td style="text-align:left;"><div style="margin-left:5px;margin-right:5px;"><?= $c_address;?></span>
-							<?
+							<?php
 							//if($adrlen > $adrlen2) {
 							//	echo "<a href=\"javascript:void(0)\" title='".$c_address."' style='color:#000000;'>".$c_address2."</a>";
 							//} else {
@@ -341,7 +341,7 @@ include("../include/config_db.php");
 							?>
 						</td>
 					</tr>
-					<?
+					<?php
 					}//while
 					$res->free();
 				} else {
@@ -358,7 +358,7 @@ include("../include/config_db.php");
 	<div class="row" style="margin:0;padding:0;">			  	
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 			<div class="col-lg-9 col-md-9 col-sm-9 col-xs-7" style="font-size:14px;">หน้า :
-				<?
+				<?php
 					$pages = new Paginator;
 					$pages->items_total = $totalRows;
 					$pages->mid_range = 7;
@@ -372,19 +372,19 @@ include("../include/config_db.php");
 			</div>
 			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-5 text-right">
 				<form name="form3" method="post" action="members.php?sd=<?= $sd;?>&sh_order=<?= $sh_order;?>&Page=1" role="form">
-					<select name="Per_Page" id="Per_Page" style="width:130px;border-radius:5px;border:1px solid #<?echo __EC_BGSHOW__;?>;padding:5px;" onchange="document.form3.submit()">
+					<select name="Per_Page" id="Per_Page" style="width:130px;border-radius:5px;border:1px solid #<?php echo __EC_BGSHOW__;?>;padding:5px;" onchange="document.form3.submit()">
 					<option value="18" <?php if($Per_Page=='18'){echo "selected";}?>>18 รายการ/หน้า</option>
 					<option value="30"<?php if($Per_Page=='30'){echo "selected";}?>>30 รายการ/หน้า</option>
 					<option value="60"<?php if($Per_Page=='60'){echo "selected";}?>>60 รายการ/หน้า</option>
 					<option value="90"<?php if($Per_Page=='90'){echo "selected";}?>>90 รายการ/หน้า</option>
 					</select>
-					<input type="hidden" name="f_institution_id" id="f_institution_id" value="<? if($c_search_institution){ echo $c_search_institution;}else{ echo '';}?>">
+					<input type="hidden" name="f_institution_id" id="f_institution_id" value="<?php if($c_search_institution){ echo $c_search_institution;}else{ echo '';}?>">
 				</form>
 			</div>
 		</div>
 
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-			<div align="center" style="padding-bottom:<?php if($Per_Page=='18'){echo "10px";}else{echo "80px";}?>;"><? require_once "./footer.php"; ?></div>
+			<div align="center" style="padding-bottom:<?php if($Per_Page=='18'){echo "10px";}else{echo "80px";}?>;"><?php require_once "./footer.php"; ?></div>
 	    </div>
 	</div><!-- /.row -->
 
@@ -392,7 +392,7 @@ include("../include/config_db.php");
 <div id="ersshow"></div>
 </body>
 </html>
-<? include("../include/close_db.php"); ?>
+<?php include("../include/close_db.php"); ?>
 <script>
 function openWindow(idp) {
 	var url='changepwmb.php?mb_id='+idp;
