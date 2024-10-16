@@ -53,20 +53,20 @@ if($chk_edit=="1")
 	$s_ratio = $_POST["s_ratio"];
 	
 	$sql = "select * from `ers_document_researcher` where (`id`='".$c_id."')";
-	$dbquery = $mysqli->query($sql) or die("Can't send query !!");
+	$dbquery = $mysqli->query($link,$sql) or die("Can't send query !!");
 	$num_rows = $dbquery->num_rows;
 	$dbquery->close();
 	if($num_rows > 0) {
 		$sql = "update `ers_document_researcher` set `researcher_id`='$s_researcher_id',`project_position_id`='$s_project_position_id',`ratio`='$s_ratio',`update_date`=now(),`update_user`='$admin' where (`id`='".$c_id."')";
-		$dbquery = $mysqli->query($sql) or die("ไม่สามารถบันทึกข้อมูลได้ !A");
+		$dbquery = $mysqli->query($link,$sql) or die("ไม่สามารถบันทึกข้อมูลได้ !A");
 	}else {
 		if($s_researcher_id > 0){
 			$sql = "insert into `ers_document_researcher` (`document_id`,`researcher_id`,`project_position_id`,`ratio`,`update_date`,`update_user`) values ('$doc_id','$s_researcher_id','$s_project_position_id','$s_ratio',now(),'$admin')";
-			$dbquery = $mysqli->query($sql) or die("ไม่สามารถบันทึกข้อมูลได้ !B");
+			$dbquery = $mysqli->query($link,$sql) or die("ไม่สามารถบันทึกข้อมูลได้ !B");
 		}
 	}
 	$sql = "update `ers_researcher` set `ec_latest_research`=now() where (`id`='".$s_researcher_id."')";
-	$dbquery = $mysqli->query($sql);
+	$dbquery = $mysqli->query($link,$sql);
 	$c_id = "";
 }
 
@@ -74,7 +74,7 @@ $c_ed_name_th = '';
 if(isset($doc_id)){
 	if($doc_id!=''){
 		$sql = "select * from `ers_document` where (`id`='$doc_id')";
-		$dbquery = $mysqli->query($sql) or die("Can't send query!");
+		$dbquery = $mysqli->query($link,$sql) or die("Can't send query!");
 		$tRows = $dbquery->num_rows;
 		if($tRows>0){
 			$row = $dbquery->fetch_assoc();
@@ -91,7 +91,7 @@ $c_ratio = "";
 if(isset($c_id)){
 	if($c_id!=''){
 		$sql = "select * from `ers_document_researcher` where (`id`='$c_id')";
-		$dbquery = $mysqli->query($sql) or die("Can't send query!");
+		$dbquery = $mysqli->query($link,$sql) or die("Can't send query!");
 		$tRows = $dbquery->num_rows;
 		if($tRows>0){
 			$row = $dbquery->fetch_assoc();
@@ -159,7 +159,7 @@ function confirmDelete(span_id,id_order,filename,content_id) {
 				<div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
 					<?
 					$sql_d = "select * from `ers_researcher` where 1 order by ec_firstname_th ASC ,ec_lastname_th ASC";
-					$dbquery_d = $mysqli->query($sql_d);
+					$dbquery_d = $mysqli->query($link,$sql_d);
 					$nRows_d = $dbquery_d->num_rows;
 					if($nRows_d>0){
 					?>
@@ -189,7 +189,7 @@ function confirmDelete(span_id,id_order,filename,content_id) {
 				<div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
 					<?
 					$sql_d = "select * from `ers_project_position` where 1 ";
-					$dbquery_d = $mysqli->query($sql_d);
+					$dbquery_d = $mysqli->query($link,$sql_d);
 					$nRows_d = $dbquery_d->num_rows;
 					if($nRows_d>0){
 					?>
@@ -249,7 +249,7 @@ function confirmDelete(span_id,id_order,filename,content_id) {
 			$sql = "select * From `ers_document_researcher` where  (`document_id`='$doc_id') ";
 			$sql .= "Order by `id` DESC";
 
-			$res = $mysqli->query($sql);
+			$res = $mysqli->query($link,$sql);
 			$totalRows = $res->num_rows;
 
 			if($totalRows!="0")
@@ -264,7 +264,7 @@ function confirmDelete(span_id,id_order,filename,content_id) {
 					$c_ratio = $result["ratio"];
 
 					$sql_d = "select * from `ers_researcher` where `id`='".$c_researcher_id."' ";
-					$dbquery_d = $mysqli->query($sql_d);
+					$dbquery_d = $mysqli->query($link,$sql_d);
 					$nRows_d = $dbquery_d->num_rows;
 					$c_name = "";
 					if($nRows_d>0){
@@ -278,7 +278,7 @@ function confirmDelete(span_id,id_order,filename,content_id) {
 						}
 					}
 					$sql_d = "select * from `ers_project_position` where `id`='".$c_project_position_id."' ";
-					$dbquery_d = $mysqli->query($sql_d);
+					$dbquery_d = $mysqli->query($link,$sql_d);
 					$nRows_d = $dbquery_d->num_rows;
 					$c_position_name = "";
 					if($nRows_d>0){

@@ -51,12 +51,12 @@ if($chk_edit=="1")
 
 	$s_approve = 0;	
 	$sql = "select * from `ers_document_files` where (`document_id`='".$c_document_id."') order by `id`ASC";
-	$dbquery = $mysqli->query($sql);
+	$dbquery = $mysqli->query($link,$sql);
 	$num_rows = $dbquery->num_rows;
 	$dbquery->close();
 	if($num_rows>0){
 		$sql = "select * from `ers_member_request` where (`id`='".$req_id."')";
-		$dbquery = $mysqli->query($sql) or die("Can't send query !!");
+		$dbquery = $mysqli->query($link,$sql) or die("Can't send query !!");
 		$num_rows_d = $dbquery->num_rows;
 		if($num_rows_d > 0) {
 			$row = $dbquery->fetch_assoc();
@@ -69,19 +69,19 @@ if($chk_edit=="1")
 					$s_link = $_POST['s_link'.$i];
 					$s_file_id = $_POST['s_file_id'.$i];
 					$sql = "select * from `ers_member_files` where (`request_id`='".$req_id."') and (`emf_item`='$i')";
-					$dbquery = $mysqli->query($sql);
+					$dbquery = $mysqli->query($link,$sql);
 					$num_rows_d = $dbquery->num_rows;
 					$dbquery->free();
 					if($num_rows_d > 0) {
 						$sql_file = "update `ers_member_files` set `document_files_id`='$s_file_id',`emf_filename`='$s_path_file',`emf_link`='$s_link',`emf_approve`='1',`emf_expire_date`='$s_date' where (`request_id`='".$req_id."') and (`emf_item`='$i')";
-						$dbquery = $mysqli->query($sql_file);
+						$dbquery = $mysqli->query($link,$sql_file);
 					} else {
 						$sql_file="INSERT INTO `ers_member_files` (`request_id`,`emf_item`,`member_id`,`document_files_id`,`emf_filename`,`emf_link`,`emf_approve`,`emf_expire_date`,`update_date`,`update_user`) VALUES ('$req_id','$i','$c_member_id','$s_file_id','$s_path_file','$s_link','1','$s_date',now(),'$admin')";
-						$dbquery = $mysqli->query($sql_file);
+						$dbquery = $mysqli->query($link,$sql_file);
 					}
 				} else {
 					$sql_file = "update `ers_member_files` set `emf_approve`='0',`emf_expire_date`='$s_date' where (`request_id`='".$req_id."') and (`emf_item`='$i')";
-					$dbquery = $mysqli->query($sql_file);
+					$dbquery = $mysqli->query($link,$sql_file);
 				}
 			}//for
 		}
@@ -93,7 +93,7 @@ if($chk_edit=="1")
 			}
 		}
 		$sql = "update `ers_member_request` set `er_answer`='$s_approve',`er_answer_expire`='$s_date',`er_answer_text`='$s_er_answer_text',`er_answer_date`=now(),`er_answer_name`='$admin',`update_date`=now(),`update_user`='$admin' where (`id`='".$req_id."')";
-		$dbquery = $mysqli->query($sql);
+		$dbquery = $mysqli->query($link,$sql);
 
 		include("../include/close_db.php");
 		?>
@@ -137,7 +137,7 @@ $c_institution_name = "";
 if(isset($req_id)){
 	if(!empty($req_id)){
 		$sql = "select * from `ers_member_request` where (`id`='$req_id')";
-		$dbquery = $mysqli->query($sql) or die("Can't send query!");
+		$dbquery = $mysqli->query($link,$sql) or die("Can't send query!");
 		$tRows = $dbquery->num_rows;
 		if($tRows>0){
 			$row = $dbquery->fetch_assoc();
@@ -173,14 +173,14 @@ if(isset($req_id)){
 			}
 			$c_er_answer_name = $row["er_answer_name"];
 			$sql_d = "select * from `ers_document` where `id`='".$c_document_id."' ";
-			$dbquery_d = $mysqli->query($sql_d);
+			$dbquery_d = $mysqli->query($link,$sql_d);
 			$nRows_d = $dbquery_d->num_rows;
 			if($nRows_d>0){
 				$result_d = $dbquery_d->fetch_assoc();
 				$c_ed_name_th = $result_d["ed_name_th"];
 			}
 			$sql_d = "select * from `ers_member` where `id`='".$c_member_id."' ";
-			$dbquery_d = $mysqli->query($sql_d);
+			$dbquery_d = $mysqli->query($link,$sql_d);
 			$nRows_d = $dbquery_d->num_rows;
 			if($nRows_d>0){
 				$result_d = $dbquery_d->fetch_assoc();
@@ -210,7 +210,7 @@ if(isset($req_id)){
 		} 
 	}
 } 
-$mysqli->query("update `ers_member_request` set `er_request_read`='1',`er_request_counter`=`er_request_counter`+1 where `id` ='".$req_id."'");
+$mysqli->query($link,"update `ers_member_request` set `er_request_read`='1',`er_request_counter`=`er_request_counter`+1 where `id` ='".$req_id."'");
 //echo $c_title_th_v." AAAAAA<br>";
 ?>
 <!DOCTYPE html>
@@ -360,7 +360,7 @@ $mysqli->query("update `ers_member_request` set `er_request_read`='1',`er_reques
 			  </div>
 			  <?
 				$sql = "select * from `ers_document_files` where (`document_id`='".$c_document_id."') order by `id`ASC";
-				$dbquery = $mysqli->query($sql);
+				$dbquery = $mysqli->query($link,$sql);
 				$num_rows = $dbquery->num_rows;
 				if($num_rows>0)
 				{
@@ -373,7 +373,7 @@ $mysqli->query("update `ers_member_request` set `er_request_read`='1',`er_reques
 						$c_edf_counter_read = $row_df["edf_counter_open_member"];
 						$c_edf_counter_download =$row_df["edf_counter_download_member"];
 						$sql_d = "select * from `ers_member_files` where (`request_id`='".$req_id."') and (`emf_item`='".$item."')";
-						$dbquery_d = $mysqli->query($sql_d);
+						$dbquery_d = $mysqli->query($link,$sql_d);
 						$num_rows_d = $dbquery_d->num_rows;
 						$c_chk_approve = 0;
 						if($num_rows_d > 0) {

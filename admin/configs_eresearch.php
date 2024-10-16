@@ -57,16 +57,16 @@ if($chk_edit=="1")
 	$c_ec_copyright = trim($_POST["s_ec_copyright"]);
 
 	$sql = "select `id` from `ers_configs` where (`id`='".$c_id."')";
-	$dbquery = $mysqli->query($sql) or die("Can't send query !3");
+	$dbquery = $mysqli->query($link,$sql) or die("Can't send query !3");
 	$num_rows = $dbquery->num_rows;
 	if($num_rows > 0) {
 		if(!empty($c_ec_name)){
 			$sql = "update `ers_configs` set `ec_name`='$c_ec_name',`ec_bgshow`='$c_ec_bgshow',`ec_fontshow`='$c_ec_fontshow',`ec_copyright`='$c_ec_copyright',`update_date`=now(),`update_user`='$admin' where (`id`='".$c_id."')";
-			$dbquery = $mysqli->query($sql) or die("ไม่สามารถบันทึกข้อมูลได้ !A");
+			$dbquery = $mysqli->query($link,$sql) or die("ไม่สามารถบันทึกข้อมูลได้ !A");
 		}
 	} else {
 		$sql = "insert into `ers_configs` (`id`,`ec_name`,`ec_bgshow`,`ec_fontshow`,`ec_copyright`,`update_date`,`update_user`) values ('$c_id','$c_ec_name','$c_ec_bgshow','$c_ec_fontshow','$c_ec_copyright',now(),'$admin')";
-		$dbquery = $mysqli->query($sql) or die("ไม่สามารถบันทึกข้อมูลได้ !B");
+		$dbquery = $mysqli->query($link,$sql) or die("ไม่สามารถบันทึกข้อมูลได้ !B");
 	}
 
 	$passw3 = random_password(7);
@@ -141,7 +141,7 @@ if($chk_edit=="1")
 			@chmod($new_file,0744);
 		}
 		$sql = "update `ers_configs` set `ec_favicon`='$filename3$passw3$now3$filenewcon3',`update_date`=now(),`update_user`='$admin' where (`id`='$c_id')";
-		$dbquery = $mysqli->query($sql) or die("Can't send query !1");
+		$dbquery = $mysqli->query($link,$sql) or die("Can't send query !1");
 	}
 
 	$passw4 = random_password(7);
@@ -166,7 +166,7 @@ if($chk_edit=="1")
 		@chmod($new_file,0744);
 
 		$sql = "update `ers_configs` set `ec_favicon_ico`='$filename4$passw4$now4$filenewcon4',`update_date`=now(),`update_user`='$admin' where (`id`='$c_id')";
-		$dbquery = $mysqli->query($sql) or die("Can't send query !2");
+		$dbquery = $mysqli->query($link,$sql) or die("Can't send query !2");
 	}
 
 	$passw1 = random_password(7);
@@ -241,7 +241,7 @@ if($chk_edit=="1")
 			@chmod($new_file,0744);
 		}
 		$sql = "update `ers_configs` set `ec_logo`='$filename1$passw1$now1$filenewcon1',`update_date`=now(),`update_user`='$admin' where (`id`='$c_id')";
-		$dbquery = $mysqli->query($sql) or die("Can't send query !3");
+		$dbquery = $mysqli->query($link,$sql) or die("Can't send query !3");
 	}
 
 	$passw2 = random_password(7);
@@ -317,7 +317,7 @@ if($chk_edit=="1")
 		}
 
 		$sql = "update `ers_configs` set `ec_pichome`='$filename2$passw2$now2$filenewcon2',`update_date`=now(),`update_user`='$admin' where (`id`='$c_id')";
-		$dbquery = $mysqli->query($sql) or die("Can't send query !4");
+		$dbquery = $mysqli->query($link,$sql) or die("Can't send query !4");
 
 	}
 
@@ -346,7 +346,7 @@ if($chk_edit=="1")
 			   //echo "<br>Copy/Upload Complete<br>";
 			   $sql_file = "update `ers_configs` set `ec_manual_admin`='$name',`update_date`=now(),`update_user`='$admin' where (`id`='$c_id')";
 			   //echo '<br> sql_file = '.$sql_file;
-			   $dbquery = $mysqli->query($sql_file);
+			   $dbquery = $mysqli->query($link,$sql_file);
 		}
 	}
 	if($_FILES["file_at2"]["name"] != "")
@@ -373,7 +373,7 @@ if($chk_edit=="1")
 			   //echo "<br>Copy/Upload Complete<br>";
 			   $sql_file = "update `ers_configs` set `ec_manual_member`='$name',`update_date`=now(),`update_user`='$admin' where (`id`='$c_id')";
 			   //echo '<br> sql_file = '.$sql_file;
-			   $dbquery = $mysqli->query($sql_file);
+			   $dbquery = $mysqli->query($link,$sql_file);
 		}
 	}
 	/*
@@ -401,7 +401,7 @@ if($chk_edit=="1")
 			   //echo "<br>Copy/Upload Complete<br>";
 			   $sql_file = "update `ers_configs` set `ec_manual_guest`='$name',`update_date`=now(),`update_user`='$admin' where (`id`='$c_id')";
 			   //echo '<br> sql_file = '.$sql_file;
-			   $dbquery = $mysqli->query($sql_file);
+			   $dbquery = $mysqli->query($link,$sql_file);
 		}
 	}*/
 	echo "<meta http-equiv='refresh' content='0;URL=configs_eresearch.php'>";
@@ -422,7 +422,7 @@ $c_ec_fontshow = '';
 $c_ec_copyright = '';
 
 $sql = "select * from `ers_configs` where (`id`='".$c_id."')";
-$dbquery = $mysqli->query($sql) or die("Can't send query!");
+$dbquery = $mysqli->query($link,$sql) or die("Can't send query!");
 $tRows = $dbquery->num_rows;
 if($tRows>0){
 	$row = $dbquery->fetch_assoc();

@@ -60,7 +60,7 @@ if(($chk_edit=="1") and (trim($_POST["s_password"]) != "")){
 
 	if($o_name != $u_name) {
 		$sql = "select `user_name` from `ers_admin` where (`user_name`='$u_name') ";
-		$dbquery = $mysqli->query($sql) or die("Can't send query !!");
+		$dbquery = $mysqli->query($link,$sql) or die("Can't send query !!");
 		$num_rows = $dbquery->num_rows;
 		$dbquery->close();
 		if($num_rows > 0) {
@@ -91,7 +91,7 @@ if(($chk_edit=="1") and (trim($_POST["s_password"]) != "")){
 	$s_address2 = $_POST["s_address2"];
 	$s_phone = $_POST["s_phone"];
 	$sql = "update `ers_admin` set `user_name`='$u_name',`user_password`='$pass',`user_level`='$s_level',`user_firstname`='$s_firstname',`user_lastname`='$s_lastname',`user_company`='$s_company',`user_address1`='$s_address1',`user_address2`='$s_address2',`user_phone`='$s_phone',`udate`='$now' where (`id`='$code_id')";
-	$dbquery = $mysqli->query($sql) or die("Can't send query !");
+	$dbquery = $mysqli->query($link,$sql) or die("Can't send query !");
 	 
 	echo "<br>";
 	//echo "<h3><p align=\"center\"><font color='#0000BB'>แก้ไขข้อมูลเรียบร้อยแล้ว</font></p></h3><br>";
@@ -112,7 +112,7 @@ if(($chk_edit=="1") and (trim($_POST["s_password"]) != "")){
 	
 } else {
 	$sql = "select * from `ers_admin` where (`id`='$code_id')";
-	$dbquery = $mysqli->query($sql) or die("Can't send query!");
+	$dbquery = $mysqli->query($link,$sql) or die("Can't send query!");
 	$num_rows = $dbquery->num_rows;
 	if($num_rows > 0){
 		$row = $dbquery->fetch_assoc();

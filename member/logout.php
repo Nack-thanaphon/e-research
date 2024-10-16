@@ -12,7 +12,7 @@ if ( isset($_SESSION["username"]) && isset($_SESSION["membername"]) && isset($_S
 	$u_ip = $_SERVER["REMOTE_ADDR"];
 	//$now = date("Y-m-d H:i:s",time());
 	$query_m = "insert into `ers_session`  (`id`,`user_name`,`ip_address`,`log_time`,`log_status`,`user_type`) values ('','$username','$u_ip',now(),'o','1') ";
-	$result_d = $mysqli->query($query_m);
+	$result_d = $mysqli->query($link,$query_m);
 	include("../include/close_db.php");
 }
 

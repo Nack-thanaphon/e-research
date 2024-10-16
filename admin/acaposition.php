@@ -41,7 +41,7 @@ if($chk_edit=="1")
 	$s_ea_name = $_POST["s_ea_name"];
 
 	$sql = "select `ea_name` from `ers_academic_position` where (`ea_name`='$s_ea_name') ";
-	$dbquery = $mysqli->query($sql) or die("Can't send query !!");
+	$dbquery = $mysqli->query($link,$sql) or die("Can't send query !!");
 	$num_rows = $dbquery->num_rows;
 	$dbquery->close();
 	if($num_rows > 0) {
@@ -56,16 +56,16 @@ if($chk_edit=="1")
 	}
 
 	$sql = "select * from `ers_academic_position` where (`id`='".$c_id."')";
-	$dbquery = $mysqli->query($sql) or die("Can't send query !!");
+	$dbquery = $mysqli->query($link,$sql) or die("Can't send query !!");
 	$num_rows = $dbquery->num_rows;
 	$dbquery->close();
 	if($num_rows > 0) {
 		$sql = "update `ers_academic_position` set `ea_name`='$s_ea_name',`update_date`=now(),`update_user`='$admin' where (`id`='".$c_id."')";
-		$dbquery = $mysqli->query($sql) or die("ไม่สามารถบันทึกข้อมูลได้ !1");
+		$dbquery = $mysqli->query($link,$sql) or die("ไม่สามารถบันทึกข้อมูลได้ !1");
 	}else {
 		if($s_ea_name != ''){
 			$sql = "insert into `ers_academic_position` (`ea_name`,`update_date`,`update_user`) values ('$s_ea_name',now(),'$admin')";
-			$dbquery = $mysqli->query($sql) or die("ไม่สามารถบันทึกข้อมูลได้ !2");
+			$dbquery = $mysqli->query($link,$sql) or die("ไม่สามารถบันทึกข้อมูลได้ !2");
 		}
 	}
 	$c_id = "";
@@ -76,7 +76,7 @@ $c_ea_name = '';
 if(isset($c_id)){
 	if($c_id!=''){
 		$sql = "select * from `ers_academic_position` where (`id`='$c_id')";
-		$dbquery = $mysqli->query($sql) or die("Can't send query!");
+		$dbquery = $mysqli->query($link,$sql) or die("Can't send query!");
 		$tRows = $dbquery->num_rows;
 		if($tRows>0){
 			$row = $dbquery->fetch_assoc();
@@ -229,7 +229,7 @@ function c_check2(){
 				default : $sql .= "Order by `id` ";
 			}
 			if($sh_order==1){$sql .= "DESC ";} else {$sql .= "ASC ";}
-			$res = $mysqli->query($sql);
+			$res = $mysqli->query($link,$sql);
 			$totalRows = $res->num_rows;
 
 			$Per_Page = 20;
@@ -250,7 +250,7 @@ function c_check2(){
 			if(!($Page_Start)){ $Page_Start = 0;}
 
 			$sql .= " LIMIT $Page_Start,$Per_Page";
-			$res = $mysqli->query($sql);
+			$res = $mysqli->query($link,$sql);
 
 			if($totalRows!="0"){
 

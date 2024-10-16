@@ -28,7 +28,7 @@ if(isset($_POST["fgpw"]) && ($_POST["fgpw"]=="1")) {
 	}else
 	{		
 		$sql = "select `id`,`em_username`,`em_email` from `ers_member` where (`em_username`='$c_uid') or (`em_email`='$c_uid') ";
-		$dbquery = $mysqli->query($sql);
+		$dbquery = $mysqli->query($link,$sql);
 		$num_rows = $dbquery->num_rows;
 		if($num_rows <= 0)
 		{
@@ -79,7 +79,7 @@ if(isset($_POST["fgpw"]) && ($_POST["fgpw"]=="1")) {
 			$a_new_password = random_password(8);
 			$a_password = md5($a_new_password.SECRET_KEY);
 			$sql_u = "update `ers_member` set `em_password`='$a_password',`update_date`=now() where (`em_username` = '$a_uid') ";
-			$dbquery_u = $mysqli->query($sql_u);
+			$dbquery_u = $mysqli->query($link,$sql_u);
 
 			$subject = "รหัสผ่านใหม่สมาชิก E-Research";
 			$message = "
