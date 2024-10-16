@@ -13,7 +13,7 @@ if ( !isset($_SESSION["admin"]) || !isset($_SESSION["userlevel"]) || ($_SESSION[
 	{
 		switch ($contentid) {
 			case '1': $sql = "select * from `ers_document_files` where (`id`='".$cid."') LIMIT 1";
-				$dbquery = $mysqli->query($link,$sql);
+				$dbquery = $mysqli->query($sql);
 				$nRows = $dbquery->num_rows;
 				if($nRows>0){
 					$row = $dbquery->fetch_assoc();
@@ -27,7 +27,7 @@ if ( !isset($_SESSION["admin"]) || !isset($_SESSION["userlevel"]) || ($_SESSION[
 						unlink($file_del_icon);
 					}
 					$sql = "delete from `ers_document_files` where (`id`='".$cid."') LIMIT 1";
-					$dbquery = $mysqli->query($link,$sql);
+					$dbquery = $mysqli->query($sql);
 				}
 				break;			
 		}
@@ -35,7 +35,7 @@ if ( !isset($_SESSION["admin"]) || !isset($_SESSION["userlevel"]) || ($_SESSION[
 		$s_description = "Table : ers_document_files ,ID : ".$cid." ,Document : ".$p_path;
 		$u_ip = $_SERVER["REMOTE_ADDR"];
 		$query_m = "insert into `ers_delete` (`user_name`,`ip_address`,`del_time`,`description`) values ('$admin','$u_ip',now(),'$s_description') ";
-		$result_d = $mysqli->query($link,$query_m);
+		$result_d = $mysqli->query($query_m);
 	}
 	include("../include/close_db.php");
 }

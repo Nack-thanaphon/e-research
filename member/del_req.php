@@ -13,16 +13,16 @@ if (!isset($_SESSION["username"]) || !isset($_SESSION["membername"]) || !isset($
 	{
 		switch ($contentid) {
 			case '1': $sql = "delete from `ers_member_request` where (`id`='".$cid."') LIMIT 1";
-					$dbquery = $mysqli->query($link,$sql);
+					$dbquery = $mysqli->query($sql);
 					$sql = "delete from `ers_member_files` where (`request_id`='".$cid."')";
-					$dbquery = $mysqli->query($link,$sql);
+					$dbquery = $mysqli->query($sql);
 				break;			
 		}
 		$admin = $_SESSION["username"];
 		$s_description = "Table : ers_member_request ,ID : ".$cid." ,Document : ".$p_path;
 		$u_ip = $_SERVER["REMOTE_ADDR"];
 		$query_m = "insert into `ers_delete` (`user_name`,`ip_address`,`del_time`,`description`) values ('$admin','$u_ip',now(),'$s_description') ";
-		$result_d = $mysqli->query($link,$query_m);
+		$result_d = $mysqli->query($query_m);
 	}
 	include("../include/close_db.php");
 }

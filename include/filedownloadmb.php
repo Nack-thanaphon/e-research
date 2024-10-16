@@ -42,7 +42,7 @@ if(isset($_GET["r"])){
 //$quoted = sprintf('"%s"', addcslashes(basename($filename_upload), '"\\'));
 include("config_db.php"); 
 $sql = "select * from `ers_document_files` where (`id`='".$code_id."') ";
-$dbquery = $mysqli->query($link,$sql);
+$dbquery = $mysqli->query($sql);
 $num_rows = $dbquery->num_rows;
 if($num_rows>0){
 	$row = $dbquery->fetch_assoc();
@@ -57,25 +57,25 @@ if($num_rows>0){
 	}
 }
 $sql = "select * from `ers_member_files` where (`member_id`='".$_SESSION["memberid"]."') and (`document_files_id`='".$code_id."') and (`emf_approve`='1') ";
-$dbquery = $mysqli->query($link,$sql);
+$dbquery = $mysqli->query($sql);
 $num_rows = $dbquery->num_rows;
 if($num_rows>0)
 {
 	if(isset($_GET['t']) and ($_GET['t']=='1')){ //open
 		if($lp=='1'){
 			if(isset($code_id)){
-				$mysqli->query($link,"update `ers_document_files` set `edf_counter_open_member`=`edf_counter_open_member`+1 where `id` ='".$code_id."'");
-				$mysqli->query($link,"update `ers_member_files` set `emf_counter_open`=`emf_counter_open`+1 where  (`member_id`='".$_SESSION["memberid"]."') and (`document_files_id`='".$code_id."') and (`request_id`='".$cr."')");
-				$mysqli->query($link,"update `ers_member_request` set `er_open_counter`=`er_open_counter`+1 where `id` ='".$cr."'");
+				$mysqli->query("update `ers_document_files` set `edf_counter_open_member`=`edf_counter_open_member`+1 where `id` ='".$code_id."'");
+				$mysqli->query("update `ers_member_files` set `emf_counter_open`=`emf_counter_open`+1 where  (`member_id`='".$_SESSION["memberid"]."') and (`document_files_id`='".$code_id."') and (`request_id`='".$cr."')");
+				$mysqli->query("update `ers_member_request` set `er_open_counter`=`er_open_counter`+1 where `id` ='".$cr."'");
 			}
 			echo "<meta http-equiv='refresh' content='0;URL=".$filename_path."'>"; 
 			//file_put_contents("$filename_path", fopen("$filename_path", 'r'));
 		} else {
 			if (file_exists($filename_upload)) {
 				if(isset($code_id)){
-					$mysqli->query($link,"update `ers_document_files` set `edf_counter_open_member`=`edf_counter_open_member`+1 where `id` ='".$code_id."'");
-					$mysqli->query($link,"update `ers_member_files` set `emf_counter_open`=`emf_counter_open`+1 where  (`member_id`='".$_SESSION["memberid"]."') and (`document_files_id`='".$code_id."') and (`request_id`='".$cr."')");
-					$mysqli->query($link,"update `ers_member_request` set `er_open_counter`=`er_open_counter`+1 where `id` ='".$cr."'");
+					$mysqli->query("update `ers_document_files` set `edf_counter_open_member`=`edf_counter_open_member`+1 where `id` ='".$code_id."'");
+					$mysqli->query("update `ers_member_files` set `emf_counter_open`=`emf_counter_open`+1 where  (`member_id`='".$_SESSION["memberid"]."') and (`document_files_id`='".$code_id."') and (`request_id`='".$cr."')");
+					$mysqli->query("update `ers_member_request` set `er_open_counter`=`er_open_counter`+1 where `id` ='".$cr."'");
 				}
 				echo "<meta http-equiv='refresh' content='0;URL=".$filename_path."'>"; 
 				//file_put_contents("$filename_path", fopen("$filename_path", 'r'));
@@ -88,9 +88,9 @@ if($num_rows>0)
 	} else { //download
 		if($lp=='1'){
 			if(isset($code_id)){
-				$mysqli->query($link,"update `ers_document_files` set `edf_counter_download_member`=`edf_counter_download_member`+1 where `id` ='".$code_id."'");
-				$mysqli->query($link,"update `ers_member_files` set `emf_counter_download`=`emf_counter_download`+1 where  (`member_id`='".$_SESSION["memberid"]."') and (`document_files_id`='".$code_id."') and (`request_id`='".$cr."')");
-				$mysqli->query($link,"update `ers_member_request` set `er_download_counter`=`er_download_counter`+1 where `id` ='".$cr."'");
+				$mysqli->query("update `ers_document_files` set `edf_counter_download_member`=`edf_counter_download_member`+1 where `id` ='".$code_id."'");
+				$mysqli->query("update `ers_member_files` set `emf_counter_download`=`emf_counter_download`+1 where  (`member_id`='".$_SESSION["memberid"]."') and (`document_files_id`='".$code_id."') and (`request_id`='".$cr."')");
+				$mysqli->query("update `ers_member_request` set `er_download_counter`=`er_download_counter`+1 where `id` ='".$cr."'");
 			}
 			echo "<meta http-equiv='refresh' content='0;URL=".$filename_path."'>"; 
 			//file_put_contents("$filename_path", fopen("$filename_path", 'r'));
@@ -98,9 +98,9 @@ if($num_rows>0)
 			$size   = filesize($filename_upload);
 			if (file_exists($filename_upload)) {
 				if(isset($code_id)){
-					$mysqli->query($link,"update `ers_document_files` set `edf_counter_download_member`=`edf_counter_download_member`+1 where `id` ='".$code_id."'");
-					$mysqli->query($link,"update `ers_member_files` set `emf_counter_download`=`emf_counter_download`+1 where  (`member_id`='".$_SESSION["memberid"]."') and (`document_files_id`='".$code_id."') and (`request_id`='".$cr."')");
-					$mysqli->query($link,"update `ers_member_request` set `er_download_counter`=`er_download_counter`+1 where `id` ='".$cr."'");
+					$mysqli->query("update `ers_document_files` set `edf_counter_download_member`=`edf_counter_download_member`+1 where `id` ='".$code_id."'");
+					$mysqli->query("update `ers_member_files` set `emf_counter_download`=`emf_counter_download`+1 where  (`member_id`='".$_SESSION["memberid"]."') and (`document_files_id`='".$code_id."') and (`request_id`='".$cr."')");
+					$mysqli->query("update `ers_member_request` set `er_download_counter`=`er_download_counter`+1 where `id` ='".$cr."'");
 				}
 				header( "Content-type: application/octet-stream" );
 				header( "Content-Disposition: attachment; filename={$file}" );

@@ -89,11 +89,11 @@ if($chk_del==1){
 					break;
 	}
 
-	$dbquery = $mysqli->query($link,$sql) or die("Can't send query !");
+	$dbquery = $mysqli->query($sql) or die("Can't send query !");
 
 	switch ($chk_p) {
 		case 7: $sql = "select * from `ers_document_files` where (`document_id`='".$c_id."') LIMIT 1";
-					$dbquery = $mysqli->query($link,$sql);
+					$dbquery = $mysqli->query($sql);
 					$num_rows = $dbquery->num_rows;
 					if($num_rows>0)
 					{
@@ -109,11 +109,11 @@ if($chk_del==1){
 						}//while
 					}
 					$sql = "delete from `ers_document_files` where (`document_id`='".$c_id."')";
-					$dbquery = $mysqli->query($link,$sql);
+					$dbquery = $mysqli->query($sql);
 					$sql = "delete from `ers_document_researcher` where (`document_id`='".$c_id."')";
-					$dbquery = $mysqli->query($link,$sql);
+					$dbquery = $mysqli->query($sql);
 					$sql = "delete from `ers_member_request` where (`document_id`='".$c_id."')";
-					$dbquery = $mysqli->query($link,$sql);
+					$dbquery = $mysqli->query($sql);
 					break;
 	}
 
@@ -123,7 +123,7 @@ if($chk_del==1){
 	$s_description = "Table : ".$f_name.",".$s_description;
 	$u_ip = $_SERVER["REMOTE_ADDR"];
 	$query_m = "insert into `ers_delete` (`user_name`,`ip_address`,`del_time`,`description`) values ('$admin','$u_ip',now(),'$s_description') ";
-	$result_d = $mysqli->query($link,$query_m);
+	$result_d = $mysqli->query($query_m);
 
 	include("../include/close_db.php");
 

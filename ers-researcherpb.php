@@ -341,7 +341,7 @@ include("./include/config_db.php");
 						<option value="0">ส่วนงาน</option>
 						<?
 						$sql_d = "select * from `ers_faculty` where 1 ";
-						$dbquery_d = $mysqli->query($link,$sql_d);
+						$dbquery_d = $mysqli->query($sql_d);
 						$nRows_d = $dbquery_d->num_rows;
 						if($nRows_d>0){
 						?>
@@ -354,7 +354,7 @@ include("./include/config_db.php");
 						<option value="0">ภาควิชา/ฝ่าย</option>
 						<?
 						$sql_d = "select * from `ers_section` where 1 ";
-						$dbquery_d = $mysqli->query($link,$sql_d);
+						$dbquery_d = $mysqli->query($sql_d);
 						$nRows_d = $dbquery_d->num_rows;
 						if($nRows_d>0){
 						?>
@@ -367,7 +367,7 @@ include("./include/config_db.php");
 						<option value="0">สถานภาพ</option>
 						<?
 						$sql_d = "select * from `ers_researcher_position` where 1 ";
-						$dbquery_d = $mysqli->query($link,$sql_d);
+						$dbquery_d = $mysqli->query($sql_d);
 						$nRows_d = $dbquery_d->num_rows;
 						if($nRows_d>0){
 						?>
@@ -477,7 +477,7 @@ include("./include/config_db.php");
 				if($sh_order==1){$sql .= "DESC ";} else {$sql .= "ASC ";}
 				$ch = array("0","2","3","4","5","6","7");
 				if(in_array($sd,$ch)){$sql .= ",`id` Desc ";}
-				$res = $mysqli->query($link,$sql);
+				$res = $mysqli->query($sql);
 				$totalRows = $res->num_rows;
 
 				if(isset($_POST["Per_Page"])) {
@@ -501,7 +501,7 @@ include("./include/config_db.php");
 				if(!($Page_Start)){ $Page_Start = 0;}
 
 				$sql .= " LIMIT $Page_Start,$Per_Page";
-				$res = $mysqli->query($link,$sql);
+				$res = $mysqli->query($sql);
 
 				if($totalRows!="0"){
 
@@ -532,7 +532,7 @@ include("./include/config_db.php");
 						$c_faculty_id = $result["faculty_id"];
 						$c_researcher_position_id = $result["researcher_position_id"];
 						$sql_d = "select * From `ers_researcher_position` where (`id`='".$c_researcher_position_id."')";
-						$dbquery_d = $mysqli->query($link,$sql_d);
+						$dbquery_d = $mysqli->query($sql_d);
 						$nRows_d = $dbquery_d->num_rows;
 						$s_status_name = "";
 						$c_status = 0;
@@ -552,7 +552,7 @@ include("./include/config_db.php");
 						$c_ec_counter = $result["ec_counter"];
 
 						$sql_d = "select * from `ers_section` where `id`='".$c_section_id."' ";
-						$dbquery_d = $mysqli->query($link,$sql_d);
+						$dbquery_d = $mysqli->query($sql_d);
 						$nRows_d = $dbquery_d->num_rows;
 						$c_es_name = "";
 						if($nRows_d>0){
@@ -560,7 +560,7 @@ include("./include/config_db.php");
 							$c_es_name = $result_d["es_name"];
 						}
 						$sql_d = "select * from `ers_faculty` where `id`='".$c_faculty_id."' ";
-						$dbquery_d = $mysqli->query($link,$sql_d);
+						$dbquery_d = $mysqli->query($sql_d);
 						$nRows_d = $dbquery_d->num_rows;
 						$c_ef_name = "";
 						if($nRows_d>0){

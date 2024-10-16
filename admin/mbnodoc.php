@@ -52,7 +52,7 @@ if($chk_edit=="1")
 	if(!empty($s_er_answer_text)){
 		$s_approve = 1;
 		$sql = "update `ers_member_request_nodoc` set `er_answer`='$s_approve',`er_answer_expire`='$s_date',`er_answer_text`='$s_er_answer_text',`er_answer_date`=now(),`er_answer_name`='$admin',`update_date`=now(),`update_user`='$admin' where (`id`='".$req_id."')";
-		$dbquery = $mysqli->query($link,$sql);
+		$dbquery = $mysqli->query($sql);
 
 		include("../include/close_db.php");
 		?>
@@ -94,7 +94,7 @@ $c_institution_name = "";
 if(isset($req_id)){
 	if(!empty($req_id)){
 		$sql = "select * from `ers_member_request_nodoc` where (`id`='$req_id')";
-		$dbquery = $mysqli->query($link,$sql) or die("Can't send query!");
+		$dbquery = $mysqli->query($sql) or die("Can't send query!");
 		$tRows = $dbquery->num_rows;
 		if($tRows>0){
 			$row = $dbquery->fetch_assoc();
@@ -113,7 +113,7 @@ if(isset($req_id)){
 			$c_er_answer_name = $row["er_answer_name"];
 			
 			$sql_d = "select * from `ers_member` where `id`='".$c_member_id."' ";
-			$dbquery_d = $mysqli->query($link,$sql_d);
+			$dbquery_d = $mysqli->query($sql_d);
 			$nRows_d = $dbquery_d->num_rows;
 			if($nRows_d>0){
 				$result_d = $dbquery_d->fetch_assoc();
@@ -143,7 +143,7 @@ if(isset($req_id)){
 		} 
 	}
 } 
-$mysqli->query($link,"update `ers_member_request_nodoc` set `er_request_read`='1',`er_request_counter`=`er_request_counter`+1 where `id` ='".$req_id."'");
+$mysqli->query("update `ers_member_request_nodoc` set `er_request_read`='1',`er_request_counter`=`er_request_counter`+1 where `id` ='".$req_id."'");
 //echo $c_title_th_v." AAAAAA<br>";
 ?>
 <!DOCTYPE html>

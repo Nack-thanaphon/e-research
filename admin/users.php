@@ -38,7 +38,7 @@ if($chk_add=="1"){
 			echo "ERROR  empty value <p><a href='users.php'>Back to Main</a></p>"; die;
 		}
 		$sql = "select `user_name` from `ers_admin` where (`user_name`='$u_name') ";
-		$dbquery = $mysqli->query($link,$sql) or die("Can't send query !!");
+		$dbquery = $mysqli->query($sql) or die("Can't send query !!");
 		$num_rows = $dbquery->num_rows;
 		$dbquery->close();
 		if($num_rows > 0) {
@@ -67,7 +67,7 @@ if($chk_add=="1"){
 			$u_phone = $_POST["u_phone"];
 
 			$sql = "insert into `ers_admin` (`id`,`user_name`,`user_password`,`user_level`,`user_firstname`,`user_lastname`,`user_company`,`user_address1`,`user_address2`,`user_phone`,`udate`,`user_update`) values ('','$u_name','$pass','$u_level','$u_firstname','$u_lastname','$u_company','$u_address1','$u_address2','$u_phone','$now','$admin')";
-			$dbquery = $mysqli->query($link,$sql) or die("Can't send query !");
+			$dbquery = $mysqli->query($sql) or die("Can't send query !");
 			$chk_add=0;
 		}
 	}
@@ -242,7 +242,7 @@ function check(){
 				if(!($Page_Start)){ $Page_Start = 0;}
 
 				$sql .= " LIMIT $Page_Start,$Per_Page";
-				$res = $mysqli->query($link,$sql);
+				$res = $mysqli->query($sql);
 
 				if($totalRows!="0"){
 

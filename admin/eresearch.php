@@ -78,16 +78,16 @@ if($chk_edit=="1")
 	$s_ed_capital = $_POST["s_ed_capital"];
 
 	$sql = "select * from `ers_document` where (`id`='".$c_id."')";
-	$dbquery = $mysqli->query($link,$sql) or die("Can't send query !!");
+	$dbquery = $mysqli->query($sql) or die("Can't send query !!");
 	$num_rows = $dbquery->num_rows;
 	$dbquery->free();
 	if($num_rows > 0) {
 		$sql = "update `ers_document` set `ed_name_th`='$s_ed_name_th',`ed_name_en`='$s_ed_name_en',`campus_id`='$s_campus_id',`faculty_id`='$s_faculty_id',`section_id`='$s_section_id',`ed_detail`='$s_ed_detail',`ed_year`='$s_ed_year',`research_type_id`='$s_research_type_id',`ed_capital`='$s_ed_capital',`update_date`=now(),`update_user`='$admin' where (`id`='".$c_id."')";
-		$dbquery = $mysqli->query($link,$sql) or die("ไม่สามารถบันทึกข้อมูลได้ !1");
+		$dbquery = $mysqli->query($sql) or die("ไม่สามารถบันทึกข้อมูลได้ !1");
 	}else {
 		if(!empty($s_ed_name_th)){
 			$sql = "insert into `ers_document` (`ed_name_th`,`ed_name_en`,`campus_id`,`faculty_id`,`section_id`,`ed_detail`,`ed_year`,`research_type_id`,`ed_capital`,`insert_date`,`update_date`,`update_user`) values ('$s_ed_name_th','$s_ed_name_en','$s_campus_id','$s_faculty_id','$s_section_id','$s_ed_detail','$s_ed_year','$s_research_type_id','$s_ed_capital',now(),now(),'$admin')";
-			$dbquery = $mysqli->query($link,$sql) or die("ไม่สามารถบันทึกข้อมูลได้ !2");
+			$dbquery = $mysqli->query($sql) or die("ไม่สามารถบันทึกข้อมูลได้ !2");
 			$c_id = $mysqli->insert_id;
 		}
 	}
@@ -98,7 +98,7 @@ if($chk_edit=="1")
 				$s_edf_filename2 = urldecode( $s_edf_filename);
 				if(!empty($s_edf_filename)){
 					   $sql = "select * from `ers_document_files` where (`document_id`='".$c_id."') and (`edf_item`='".$i."')";
-					   $dbquery = $mysqli->query($link,$sql) ;
+					   $dbquery = $mysqli->query($sql) ;
 					   $num_rows = $dbquery->num_rows;
 					   if($num_rows > 0) {
 						   $sql_file = "update `ers_document_files` set `edf_filename`='$s_edf_filename2',`edf_link`='1',`update_date`=now(),`update_user`='$admin' where (`document_id`='".$c_id."') and (`edf_item`='".$i."')";
@@ -106,10 +106,10 @@ if($chk_edit=="1")
 							$sql_file="INSERT INTO `ers_document_files` (`document_id`,`edf_item`,`edf_filename`,`edf_link`,`update_date`,`update_user`) VALUES ('$c_id','$i','$s_edf_filename2','1',now(),'$admin')";
 					   }
 					   //echo '<br> sql_file = '.$sql_file;
-					   $dbquery = $mysqli->query($link,$sql_file);
+					   $dbquery = $mysqli->query($sql_file);
 				} else {
 					$sql_file = "update `ers_document_files` set `edf_filename`='',`edf_link`='0',`update_date`=now(),`update_user`='$admin' where (`document_id`='".$c_id."') and (`edf_item`='".$i."')";
-					 $dbquery = $mysqli->query($link,$sql_file);
+					 $dbquery = $mysqli->query($sql_file);
 				}
 			} else {
 				if($_FILES["file$i"]["name"] != "")
@@ -135,7 +135,7 @@ if($chk_edit=="1")
 						
 						   //echo "<br>Copy/Upload Complete<br>";
 						   $sql = "select * from `ers_document_files` where (`document_id`='".$c_id."') and (`edf_item`='".$i."')";
-						   $dbquery = $mysqli->query($link,$sql) ;
+						   $dbquery = $mysqli->query($sql) ;
 						   $num_rows = $dbquery->num_rows;
 						   if($num_rows > 0) {
 							   $sql_file = "update `ers_document_files` set `edf_filename`='$name',`edf_link`='0',`update_date`=now(),`update_user`='$admin' where (`document_id`='".$c_id."') and (`edf_item`='".$i."')";
@@ -145,13 +145,13 @@ if($chk_edit=="1")
 						   //echo '<br> sql_file = '.$sql_file;
 						   //include("../include/close_db.php");
 						   //exit();
-						   $dbquery = $mysqli->query($link,$sql_file);
+						   $dbquery = $mysqli->query($sql_file);
 					}
 				}
 			}
 		}//for
 		$sql = "select * from `ers_document_files` where (`document_id`='".$c_id."') order by `id`ASC";
-		$dbquery_pdf = $mysqli->query($link,$sql);
+		$dbquery_pdf = $mysqli->query($sql);
 		$num_rows_files_pdf = $dbquery_pdf->num_rows;
 		$dbquery_pdf->free();
 		$num_rows_files_pdf += 1; 
@@ -170,14 +170,14 @@ if($chk_edit=="1")
 			$j = $i + $num_rows_files_pdf;
 			if(move_uploaded_file($_FILES['pdf_files']['tmp_name'][$i],"../files/".$filename_upload)){
 			   $sql = "select * from `ers_document_files` where (`document_id`='".$c_id."') and (`edf_item`='".$j."')";
-			   $dbquery = $mysqli->query($link,$sql) ;
+			   $dbquery = $mysqli->query($sql) ;
 			   $num_rows = $dbquery->num_rows;
 			   if($num_rows > 0) {
 				   $sql_file = "update `ers_document_files` set `edf_filename`='$name',`edf_link`='0',`update_date`=now(),`update_user`='$admin' where (`document_id`='".$c_id."') and (`edf_item`='".$j."')";
 			   } else {
 					$sql_file="INSERT INTO `ers_document_files` (`document_id`,`edf_item`,`edf_filename`,`edf_link`,`update_date`,`update_user`) VALUES ('$c_id','$j','$name','0',now(),'$admin')";
 			   }
-			   $dbquery = $mysqli->query($link,$sql_file);
+			   $dbquery = $mysqli->query($sql_file);
 			}
 		}//for
 	}
@@ -204,7 +204,7 @@ $num_rows_files = 0;
 if(isset($c_id)){
 	if($c_id!=''){
 		$sql = "select * from `ers_document` where (`id`='".$c_id."')";
-		$dbquery = $mysqli->query($link,$sql);
+		$dbquery = $mysqli->query($sql);
 		$tRows = $dbquery->num_rows;
 		if($tRows>0){
 			$row = $dbquery->fetch_assoc();
@@ -221,7 +221,7 @@ if(isset($c_id)){
 		}
 		$dbquery->free();
 		$sql = "select * from `ers_document_files` where (`document_id`='".$c_id."') order by `id`ASC";
-		$dbquery_pdf = $mysqli->query($link,$sql);
+		$dbquery_pdf = $mysqli->query($sql);
 		$num_rows_files = $dbquery_pdf->num_rows;
 		if($num_rows_files>0)
 		{
@@ -361,7 +361,7 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
 					<?
 					$sql_d = "select * from `ers_section` where 1 ";
-					$dbquery_d = $mysqli->query($link,$sql_d);
+					$dbquery_d = $mysqli->query($sql_d);
 					$nRows_d = $dbquery_d->num_rows;
 					if($nRows_d>0){
 					?>
@@ -379,7 +379,7 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
 					<?
 					$sql_d = "select * from `ers_faculty` where 1 ";
-					$dbquery_d = $mysqli->query($link,$sql_d);
+					$dbquery_d = $mysqli->query($sql_d);
 					$nRows_d = $dbquery_d->num_rows;
 					if($nRows_d>0){
 					?>
@@ -420,7 +420,7 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
 					<?
 					$sql_d = "select * from `ers_research_type` where 1 ";
-					$dbquery_d = $mysqli->query($link,$sql_d);
+					$dbquery_d = $mysqli->query($sql_d);
 					$nRows_d = $dbquery_d->num_rows;
 					if($nRows_d>0){
 					?>
@@ -603,7 +603,7 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 					<option value="0">ส่วนงาน</option>
 					<?
 					$sql_d = "select * from `ers_faculty` where 1 ";
-					$dbquery_d = $mysqli->query($link,$sql_d);
+					$dbquery_d = $mysqli->query($sql_d);
 					$nRows_d = $dbquery_d->num_rows;
 					if($nRows_d>0){
 					?>
@@ -616,7 +616,7 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 					<option value="0">ภาควิชา/ฝ่าย</option>
 					<?
 					$sql_d = "select * from `ers_section` where 1 ";
-					$dbquery_d = $mysqli->query($link,$sql_d);
+					$dbquery_d = $mysqli->query($sql_d);
 					$nRows_d = $dbquery_d->num_rows;
 					if($nRows_d>0){
 					?>
@@ -726,7 +726,7 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 			if($sh_order==1){$sql .= "DESC ";} else {$sql .= "ASC ";}
 			$ch = array("2","3","4","5","6");
 			if(in_array($sd,$ch)){$sql .= ",`id` Desc ";}
-			$res = $mysqli->query($link,$sql);
+			$res = $mysqli->query($sql);
 			$totalRows = $res->num_rows;
 
 			$Per_Page = 20;
@@ -747,7 +747,7 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 			if(!($Page_Start)){ $Page_Start = 0;}
 
 			$sql .= " LIMIT $Page_Start,$Per_Page";
-			$res = $mysqli->query($link,$sql);
+			$res = $mysqli->query($sql);
 
 			if($totalRows!="0"){
 
@@ -788,7 +788,7 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 					$c_ed_counter = $result["ed_counter"];
 
 					$sql_d = "select * from `ers_section` where `id`='".$c_section_id."' ";
-					$dbquery_d = $mysqli->query($link,$sql_d);
+					$dbquery_d = $mysqli->query($sql_d);
 					$nRows_d = $dbquery_d->num_rows;
 					$c_es_name = "";
 					if($nRows_d>0){
@@ -802,7 +802,7 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 						}
 					}
 					$sql_d = "select * from `ers_faculty` where `id`='".$c_faculty_id."' ";
-					$dbquery_d = $mysqli->query($link,$sql_d);
+					$dbquery_d = $mysqli->query($sql_d);
 					$nRows_d = $dbquery_d->num_rows;
 					$c_ef_name = "";
 					if($nRows_d>0){
@@ -822,7 +822,7 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 					$c_edf_id4 = 0;$c_edf_filename4 = '';$c_edf_counter4 = 0;$c_edf_link4 = 0;
 					$c_edf_id5 = 0;$c_edf_filename5 = '';$c_edf_counter5 = 0;$c_edf_link5 = 0;
 					$sql = "select * from `ers_document_files` where (`document_id`='".$c_id."') order by `id`ASC";
-					$dbquery = $mysqli->query($link,$sql);
+					$dbquery = $mysqli->query($sql);
 					$num_rows = $dbquery->num_rows;
 					if($num_rows>0)
 					{

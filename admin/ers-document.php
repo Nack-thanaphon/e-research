@@ -258,7 +258,7 @@ include("../include/config_db.php");
 						<option value="0">ส่วนงาน</option>
 						<?
 						$sql_d = "select * from `ers_faculty` where 1 ";
-						$dbquery_d = $mysqli->query($link,$sql_d);
+						$dbquery_d = $mysqli->query($sql_d);
 						$nRows_d = $dbquery_d->num_rows;
 						if($nRows_d>0){
 						?>
@@ -271,7 +271,7 @@ include("../include/config_db.php");
 						<option value="0">ภาควิชา/ฝ่าย</option>
 						<?
 						$sql_d = "select * from `ers_section` where 1 ";
-						$dbquery_d = $mysqli->query($link,$sql_d);
+						$dbquery_d = $mysqli->query($sql_d);
 						$nRows_d = $dbquery_d->num_rows;
 						if($nRows_d>0){
 						?>
@@ -400,7 +400,7 @@ include("../include/config_db.php");
 				if($sh_order==1){$sql .= "DESC ";} else {$sql .= "ASC ";}
 				$ch = array("2","3","4","5","6","7");
 				if(in_array($sd,$ch)){$sql .= ",`id` Desc ";}
-				$res = $mysqli->query($link,$sql);
+				$res = $mysqli->query($sql);
 				$totalRows = $res->num_rows;
 
 				if(isset($_POST["Per_Page"])) {
@@ -424,7 +424,7 @@ include("../include/config_db.php");
 				if(!($Page_Start)){ $Page_Start = 0;}
 
 				$sql .= " LIMIT $Page_Start,$Per_Page";
-				$res = $mysqli->query($link,$sql);
+				$res = $mysqli->query($sql);
 
 				if($totalRows!="0"){
 
@@ -464,7 +464,7 @@ include("../include/config_db.php");
 						$c_ed_counter = $result["ed_counter"];
 
 						$sql_d = "select * from `ers_section` where `id`='".$c_section_id."' ";
-						$dbquery_d = $mysqli->query($link,$sql_d);
+						$dbquery_d = $mysqli->query($sql_d);
 						$nRows_d = $dbquery_d->num_rows;
 						$c_es_name = "";
 						if($nRows_d>0){
@@ -478,7 +478,7 @@ include("../include/config_db.php");
 							}
 						}
 						$sql_d = "select * from `ers_faculty` where `id`='".$c_faculty_id."' ";
-						$dbquery_d = $mysqli->query($link,$sql_d);
+						$dbquery_d = $mysqli->query($sql_d);
 						$nRows_d = $dbquery_d->num_rows;
 						$c_ef_name = "";
 						if($nRows_d>0){
@@ -498,7 +498,7 @@ include("../include/config_db.php");
 						$c_edf_id4 = 0;$c_edf_filename4 = '';$c_edf_counter4 = 0;$c_edf_link4 = 0;
 						$c_edf_id5 = 0;$c_edf_filename5 = '';$c_edf_counter5 = 0;$c_edf_link5 = 0;
 						$sql = "select * from `ers_document_files` where (`document_id`='".$c_id."') order by `id`ASC";
-						$dbquery = $mysqli->query($link,$sql);
+						$dbquery = $mysqli->query($sql);
 						$num_rows = $dbquery->num_rows;
 						if($num_rows>0)
 						{

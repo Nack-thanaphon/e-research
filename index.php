@@ -437,7 +437,7 @@ include("./include/config_db.php");
 									<option value="0">ส่วนงาน</option>
 									<?php
 									$sql_d = "select * from `ers_faculty` where 1 ";
-									$dbquery_d = $mysqli->query($link,$sql_d);
+									$dbquery_d = $mysqli->query($sql_d);
 									$nRows_d = $dbquery_d->num_rows;
 									if ($nRows_d > 0) {
 									?>
@@ -450,7 +450,7 @@ include("./include/config_db.php");
 									<option value="0">ภาควิชา/ฝ่าย</option>
 									<?php
 									$sql_d = "select * from `ers_section` where 1 ";
-									$dbquery_d = $mysqli->query($link,$sql_d);
+									$dbquery_d = $mysqli->query($sql_d);
 									$nRows_d = $dbquery_d->num_rows;
 									if ($nRows_d > 0) {
 									?>
@@ -636,7 +636,7 @@ include("./include/config_db.php");
 							if (in_array($sd, $ch)) {
 								$sql .= ",`id` Desc ";
 							}
-							$res = $mysqli->query($link,$sql);
+							$res = $mysqli->query($sql);
 							$totalRows = $res->num_rows;
 
 							if (isset($_POST["Per_Page"])) {
@@ -666,7 +666,7 @@ include("./include/config_db.php");
 							}
 
 							$sql .= " LIMIT $Page_Start,$Per_Page";
-							$res = $mysqli->query($link,$sql);
+							$res = $mysqli->query($sql);
 
 							if ($totalRows != "0") {
 
@@ -707,7 +707,7 @@ include("./include/config_db.php");
 									$c_ed_counter = $result["ed_counter"];
 
 									$sql_d = "select * from `ers_section` where `id`='" . $c_section_id . "' ";
-									$dbquery_d = $mysqli->query($link,$sql_d);
+									$dbquery_d = $mysqli->query($sql_d);
 									$nRows_d = $dbquery_d->num_rows;
 									$c_es_name = "";
 									if ($nRows_d > 0) {
@@ -721,7 +721,7 @@ include("./include/config_db.php");
 										}
 									}
 									$sql_d = "select * from `ers_faculty` where `id`='" . $c_faculty_id . "' ";
-									$dbquery_d = $mysqli->query($link,$sql_d);
+									$dbquery_d = $mysqli->query($sql_d);
 									$nRows_d = $dbquery_d->num_rows;
 									$c_ef_name = "";
 									if ($nRows_d > 0) {

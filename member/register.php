@@ -61,7 +61,7 @@ if(isset($_POST['username']) && isset($_POST['u_password']))
 
 
 	$sql = "select `em_username` from `ers_member` where (`em_username`='$username') ";
-	$dbquery = $mysqli->query($link,$sql) or die("Can't send query !!");
+	$dbquery = $mysqli->query($sql) or die("Can't send query !!");
 	$num_rows = $dbquery->num_rows;
 	$dbquery->close();
 	if($num_rows > 0) {
@@ -97,17 +97,17 @@ if(isset($_POST['username']) && isset($_POST['u_password']))
 	$s_ip = $_SERVER["REMOTE_ADDR"];
 
 	$sql = "select `em_username` from `ers_member` where (`em_username`='".$username."')";
-	$dbquery = $mysqli->query($link,$sql) or die("Can't send query !!");
+	$dbquery = $mysqli->query($sql) or die("Can't send query !!");
 	$num_rows = $dbquery->num_rows;
 	$dbquery->free();
 	if($num_rows <= 0) {
 		if($username != ''){
 			$sql = "insert into `ers_member` (`em_username`,`em_password`,`em_title`,`em_firstname`,`em_lastname`,`em_gender`,`em_institution`,`em_institution_type`,`em_institution_other`,`em_email`,`em_phone`,`em_address`,`em_news_mail`,`SID`,`em_active`,`em_ip`,`em_reg_date`) values ('$username','$pass5','$s_title','$s_firstname','$s_lastname','$s_gender','$s_institution','$s_institution_type','$s_institution_other','$s_email','$s_phone','$s_address','$s_news_mail','".session_id()."','$s_active','$s_ip',now())";
-			$dbquery = $mysqli->query($link,$sql) or die("ไม่สามารถบันทึกข้อมูลได้ !2");
+			$dbquery = $mysqli->query($sql) or die("ไม่สามารถบันทึกข้อมูลได้ !2");
 		}
 	}  
 	$query_m = "select * from `ers_member` where `em_username`='".$username."' and `em_password`='".$pass5."' ";
-	$result_m = $mysqli->query($link,$query_m);
+	$result_m = $mysqli->query($query_m);
 	$num_rows = $result_m->num_rows;
 	if ($num_rows > 0 )
 	{
@@ -118,7 +118,7 @@ if(isset($_POST['username']) && isset($_POST['u_password']))
 		$_SESSION["memberpass"] = $u_password;
 		$result_m->free();
 		$query_m = "insert into `ers_session`  (`id`,`user_name`,`ip_address`,`log_time`,`log_status`,`user_type`) values ('','$username','$s_ip',now(),'i','1') ";
-		$result_d = $mysqli->query($link,$query_m);
+		$result_d = $mysqli->query($query_m);
 		include("../include/close_db.php");
 		echo "<meta http-equiv='refresh' content='0;URL=index.php?dcid=$dcid'>";
 	} else {
