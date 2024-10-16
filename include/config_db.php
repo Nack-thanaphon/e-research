@@ -1,5 +1,5 @@
 <?php
-$hostname = "localhost";   
+$hostname = "localhost";
 $user = 'aree';
 $passwd = 'Ak@072039';
 $dbname = "buu_chanthaburi";
@@ -8,7 +8,7 @@ $dbname = "buu_chanthaburi";
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
 $mysqli = new mysqli($hostname, $user, $passwd, $dbname);
-$mysqli->set_charset('utf8');
+$link = $mysqli->set_charset('utf8');
 
 $sql = "SELECT * FROM `ers_configs` WHERE `id` = ?";
 $stmt = $mysqli->prepare($sql);
@@ -36,4 +36,3 @@ if ($tRows > 0) {
 $result->free();
 $stmt->close();
 $mysqli->close();
-?>

@@ -428,7 +428,7 @@ include("./include/config_db.php");
 						?>
 						<div class="spcsearch">
 							<span class="sbreak2">
-								<input type="text" name="c_code_1" id="c_code_1" class="searchbox-control" maxlength="50" placeholder="ข้อความที่ต้องการค้นหา" value="<?=  $_SESSION["u_code_1"]; ?>">&nbsp;
+								<input type="text" name="c_code_1" id="c_code_1" class="searchbox-control" maxlength="50" placeholder="ข้อความที่ต้องการค้นหา" value="<?= $_SESSION["u_code_1"]; ?>">&nbsp;
 								<input type="submit" name="Submit" id="Submit" value="ค้นหา" class="btn btn-success" style="width:70px; margin-top:0;">&nbsp;<input type="button" name="Clear" id="Clear" value="ยกเลิก" class="btn btn-info" style="width:70px;margin-top:0;padding-right:10px;margin-right:5px;" onclick="window.location='index.php?iRegister=1';"></span>
 						</div>
 						<div>
@@ -437,7 +437,7 @@ include("./include/config_db.php");
 									<option value="0">ส่วนงาน</option>
 									<?php
 									$sql_d = "select * from `ers_faculty` where 1 ";
-									$dbquery_d = $mysqli->query($sql_d);
+									$dbquery_d = $mysqli->query($link,$sql_d);
 									$nRows_d = $dbquery_d->num_rows;
 									if ($nRows_d > 0) {
 									?>
@@ -450,7 +450,7 @@ include("./include/config_db.php");
 									<option value="0">ภาควิชา/ฝ่าย</option>
 									<?php
 									$sql_d = "select * from `ers_section` where 1 ";
-									$dbquery_d = $mysqli->query($sql_d);
+									$dbquery_d = $mysqli->query($link,$sql_d);
 									$nRows_d = $dbquery_d->num_rows;
 									if ($nRows_d > 0) {
 									?>
@@ -468,8 +468,8 @@ include("./include/config_db.php");
 										if ($c_search_year == $yy) $selected_y = "selected='selected'";
 										else  $selected_y = "";
 									?>
-										<option value="<?=  $yy; ?>" <?=  $selected_y; ?>>
-											<?=  $yy + 543; ?>
+										<option value="<?= $yy; ?>" <?= $selected_y; ?>>
+											<?= $yy + 543; ?>
 										</option>
 									<?php   } ?>
 								</select>&nbsp;
@@ -546,10 +546,10 @@ include("./include/config_db.php");
 															} ?>') repeat-y; background-attachment:fixed; background-size:contain;height:100%;width:100%;">
 						<thead>
 							<tr id="ontop1" style="background-color: #e5e5e5;">
-								<th style="vertical-align:middle;text-align:center;" id="ontop3">&nbsp;<a href="index.php?sd=2&sh_order=<?=  $sh_order; ?>" target="_parent" style="white-space: nowrap;">ชื่อผลงานวิจัย <?=  $a2sort; ?></a>&nbsp;</th>
-								<th style="vertical-align:middle;text-align:center;" id="ontop4">&nbsp;<a href="index.php?sd=4&sh_order=<?=  $sh_order; ?>" target="_parent" style="white-space: nowrap;">ภาควิชา/ฝ่าย <?=  $a4sort; ?></a>&nbsp;</th>
-								<th style="vertical-align:middle;text-align:center;" id="ontop5">&nbsp;<a href="index.php?sd=5&sh_order=<?=  $sh_order; ?>" target="_parent" style="white-space: nowrap;">ส่วนงาน <?=  $a5sort; ?></a>&nbsp;</th>
-								<th style="vertical-align:middle;text-align:center;" id="ontop6">&nbsp;<a href="index.php?sd=6&sh_order=<?=  $sh_order; ?>" target="_parent" style="white-space: nowrap;">ปีงบประมาณ <?=  $a6sort; ?></a>&nbsp;</th>
+								<th style="vertical-align:middle;text-align:center;" id="ontop3">&nbsp;<a href="index.php?sd=2&sh_order=<?= $sh_order; ?>" target="_parent" style="white-space: nowrap;">ชื่อผลงานวิจัย <?= $a2sort; ?></a>&nbsp;</th>
+								<th style="vertical-align:middle;text-align:center;" id="ontop4">&nbsp;<a href="index.php?sd=4&sh_order=<?= $sh_order; ?>" target="_parent" style="white-space: nowrap;">ภาควิชา/ฝ่าย <?= $a4sort; ?></a>&nbsp;</th>
+								<th style="vertical-align:middle;text-align:center;" id="ontop5">&nbsp;<a href="index.php?sd=5&sh_order=<?= $sh_order; ?>" target="_parent" style="white-space: nowrap;">ส่วนงาน <?= $a5sort; ?></a>&nbsp;</th>
+								<th style="vertical-align:middle;text-align:center;" id="ontop6">&nbsp;<a href="index.php?sd=6&sh_order=<?= $sh_order; ?>" target="_parent" style="white-space: nowrap;">ปีงบประมาณ <?= $a6sort; ?></a>&nbsp;</th>
 								<th style="vertical-align:middle;text-align:center;" id="ontop7">&nbsp;รายละเอียด&nbsp;</th>
 								<?php
 								//if(isset($_SESSION["memberid"]))
@@ -636,7 +636,7 @@ include("./include/config_db.php");
 							if (in_array($sd, $ch)) {
 								$sql .= ",`id` Desc ";
 							}
-							$res = $mysqli->query($sql);
+							$res = $mysqli->query($link,$sql);
 							$totalRows = $res->num_rows;
 
 							if (isset($_POST["Per_Page"])) {
@@ -666,7 +666,7 @@ include("./include/config_db.php");
 							}
 
 							$sql .= " LIMIT $Page_Start,$Per_Page";
-							$res = $mysqli->query($sql);
+							$res = $mysqli->query($link,$sql);
 
 							if ($totalRows != "0") {
 
@@ -707,7 +707,7 @@ include("./include/config_db.php");
 									$c_ed_counter = $result["ed_counter"];
 
 									$sql_d = "select * from `ers_section` where `id`='" . $c_section_id . "' ";
-									$dbquery_d = $mysqli->query($sql_d);
+									$dbquery_d = $mysqli->query($link,$sql_d);
 									$nRows_d = $dbquery_d->num_rows;
 									$c_es_name = "";
 									if ($nRows_d > 0) {
@@ -721,7 +721,7 @@ include("./include/config_db.php");
 										}
 									}
 									$sql_d = "select * from `ers_faculty` where `id`='" . $c_faculty_id . "' ";
-									$dbquery_d = $mysqli->query($sql_d);
+									$dbquery_d = $mysqli->query($link,$sql_d);
 									$nRows_d = $dbquery_d->num_rows;
 									$c_ef_name = "";
 									if ($nRows_d > 0) {
@@ -774,7 +774,7 @@ include("./include/config_db.php");
 											?>&nbsp;
 										</td>
 										<td style="text-align:center;padding-left:5px;padding-right:5px;min-width:80px;">
-											<?=  $c_ed_year; ?>
+											<?= $c_ed_year; ?>
 										</td>
 										<td style="text-align:left;padding-left:5px;padding-right:5px;min-width:180px;">&nbsp;
 											<?php
@@ -824,16 +824,16 @@ include("./include/config_db.php");
 				</div>
 
 				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-5 text-right">
-					<form name="form3" method="post" action="index.php?sd=<?=  $sd; ?>&sh_order=<?=  $sh_order; ?>&Page=1" role="form">
-						<select name="Per_Page" id="Per_Page" style="width:130px;border-radius:5px;border:1px solid #<?=  __EC_BGSHOW__; ?>;padding:5px;" onchange="document.form3.submit()">
-							<option value="18" <?=  ($Per_Page == '18') ? "selected" : ""; ?>>18 รายการ/หน้า</option>
-							<option value="30" <?=  ($Per_Page == '30') ? "selected" : ""; ?>>30 รายการ/หน้า</option>
-							<option value="60" <?=  ($Per_Page == '60') ? "selected" : ""; ?>>60 รายการ/หน้า</option>
-							<option value="90" <?=  ($Per_Page == '90') ? "selected" : ""; ?>>90 รายการ/หน้า</option>
+					<form name="form3" method="post" action="index.php?sd=<?= $sd; ?>&sh_order=<?= $sh_order; ?>&Page=1" role="form">
+						<select name="Per_Page" id="Per_Page" style="width:130px;border-radius:5px;border:1px solid #<?= __EC_BGSHOW__; ?>;padding:5px;" onchange="document.form3.submit()">
+							<option value="18" <?= ($Per_Page == '18') ? "selected" : ""; ?>>18 รายการ/หน้า</option>
+							<option value="30" <?= ($Per_Page == '30') ? "selected" : ""; ?>>30 รายการ/หน้า</option>
+							<option value="60" <?= ($Per_Page == '60') ? "selected" : ""; ?>>60 รายการ/หน้า</option>
+							<option value="90" <?= ($Per_Page == '90') ? "selected" : ""; ?>>90 รายการ/หน้า</option>
 						</select>
-						<input type="hidden" name="f_section_id" id="f_section_id" value="<?=  $c_search_section ?: ''; ?>">
-						<input type="hidden" name="f_faculty_id" id="f_faculty_id" value="<?=  $c_search_faculty ?: ''; ?>">
-						<input type="hidden" name="f_ed_year" id="f_ed_year" value="<?=  $c_search_year ?: ''; ?>">
+						<input type="hidden" name="f_section_id" id="f_section_id" value="<?= $c_search_section ?: ''; ?>">
+						<input type="hidden" name="f_faculty_id" id="f_faculty_id" value="<?= $c_search_faculty ?: ''; ?>">
+						<input type="hidden" name="f_ed_year" id="f_ed_year" value="<?= $c_search_year ?: ''; ?>">
 					</form>
 				</div>
 			</div>

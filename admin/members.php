@@ -241,7 +241,7 @@ include("../include/config_db.php");
 				if($sh_order==1){$sql .= "DESC ";} else {$sql .= "ASC ";}
 				$ch = array("2","3","4","5");
 				if(in_array($sd,$ch)){$sql .= ",`id` Desc ";}
-				$res = $mysqli->query($sql);
+				$res = $mysqli->query($link,$sql);
 				$totalRows = $res->num_rows;
 
 				if(isset($_POST["Per_Page"])) {
@@ -265,7 +265,7 @@ include("../include/config_db.php");
 				if(!($Page_Start)){ $Page_Start = 0;}
 
 				$sql .= " LIMIT $Page_Start,$Per_Page";
-				$res = $mysqli->query($sql);
+				$res = $mysqli->query($link,$sql);
 
 				if($totalRows > 0){
 

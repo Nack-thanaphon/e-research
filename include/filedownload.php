@@ -40,7 +40,7 @@ if(empty($code_id)){
 //$quoted = sprintf('"%s"', addcslashes(basename($filename_upload), '"\\'));
 include("config_db.php"); 
 $sql = "select * from `ers_document_files` where (`id`='".$code_id."') ";
-$dbquery = $mysqli->query($sql);
+$dbquery = $mysqli->query($link,$sql);
 $num_rows = $dbquery->num_rows;
 if($num_rows>0){
 	$row = $dbquery->fetch_assoc();
@@ -56,13 +56,13 @@ if($num_rows>0){
 	if(isset($_GET['t']) and ($_GET['t']=='1')){ //open
 		if($lp=='1'){
 			if(isset($code_id)){
-				$mysqli->query("update `ers_document_files` set `edf_counter_open`=`edf_counter_open`+1 where `id` ='".$code_id."'");
+				$mysqli->query($link,"update `ers_document_files` set `edf_counter_open`=`edf_counter_open`+1 where `id` ='".$code_id."'");
 			}
 			echo "<meta http-equiv='refresh' content='0;URL=".$filename_path."'>"; 
 		} else {
 			if (file_exists($filename_upload)) {
 				if(isset($code_id)){
-					$mysqli->query("update `ers_document_files` set `edf_counter_open`=`edf_counter_open`+1 where `id` ='".$code_id."'");
+					$mysqli->query($link,"update `ers_document_files` set `edf_counter_open`=`edf_counter_open`+1 where `id` ='".$code_id."'");
 				}
 				echo "<meta http-equiv='refresh' content='0;URL=".$filename_path."'>"; 
 			} else {
@@ -76,7 +76,7 @@ if($num_rows>0){
 			if(isset($code_id)){
 				$code_id = $code_id;
 				include("config_db.php"); 
-				$mysqli->query("update `ers_document_files` set `edf_counter_download`=`edf_counter_download`+1 where `id` ='".$code_id."'");
+				$mysqli->query($link,"update `ers_document_files` set `edf_counter_download`=`edf_counter_download`+1 where `id` ='".$code_id."'");
 				include("close_db.php"); 
 			}
 			echo "<meta http-equiv='refresh' content='0;URL=".$filename_path."'>"; 
@@ -84,7 +84,7 @@ if($num_rows>0){
 			$size = filesize($filename_upload);
 			if (file_exists($filename_upload)) {
 				if(isset($code_id)){
-					$mysqli->query("update `ers_document_files` set `edf_counter_download`=`edf_counter_download`+1 where `id` ='".$code_id."'");
+					$mysqli->query($link,"update `ers_document_files` set `edf_counter_download`=`edf_counter_download`+1 where `id` ='".$code_id."'");
 				}
 				header( "Content-type: application/octet-stream" );
 				header( "Content-Disposition: attachment; filename={$file}" );

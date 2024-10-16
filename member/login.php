@@ -23,7 +23,7 @@ if(isset($_POST['u_name']) && isset($_POST['u_password']))
 	echo "ERROR  empty value <p><a href='login.php?dcid=$dcid'>Back to Main</a></p>"; die();
   }
   $query_m = "select * from `ers_member` where `em_username`='".$u_name."' and `em_password`='".$pass5."' ";
-  $result_m = $mysqli->query($query_m);
+  $result_m = $mysqli->query($link,$query_m);
   $num_rows = $result_m->num_rows;
   if ($num_rows > 0 )
   {
@@ -35,7 +35,7 @@ if(isset($_POST['u_name']) && isset($_POST['u_password']))
 	$u_ip = $_SERVER["REMOTE_ADDR"];
 	//$now = date("Y-m-d H:i:s",time());
 	$query_m = "insert into `ers_session`  (`id`,`user_name`,`ip_address`,`log_time`,`log_status`,`user_type`) values ('','$username','$u_ip',now(),'i','1') ";
-	$result_d = $mysqli->query($query_m);
+	$result_d = $mysqli->query($link,$query_m);
   } else {
 	?>
 	<Script language="javascript">

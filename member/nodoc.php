@@ -26,7 +26,7 @@ $c_institution_type = 0;$c_institution_other = '';$c_phone = '';$c_email = '';$c
 if(isset($memberid)){
 	if(!empty($memberid)){
 		$sql = "select * from `ers_member` where (`id`='$memberid')";
-		$dbquery = $mysqli->query($sql);
+		$dbquery = $mysqli->query($link,$sql);
 		$tRows = $dbquery->num_rows;
 		if($tRows>0){
 			$row = $dbquery->fetch_assoc();
@@ -64,16 +64,16 @@ if($chk_edit=="1")
 	$s_er_request_text = $_POST["s_er_request_text"];
 
 	$sql = "select * from `ers_member_request_nodoc` where (`id`='".$c_id."')";
-	$dbquery = $mysqli->query($sql) or die("Can't send query !!");
+	$dbquery = $mysqli->query($link,$sql) or die("Can't send query !!");
 	$num_rows = $dbquery->num_rows;
 	$dbquery->close();
 	if($num_rows > 0) {
 		$sql = "update `ers_member_request_nodoc` set `er_request_text`='$s_er_request_text',`er_request_date`=now(),`er_request_cancel`='0',`update_date`=now(),`update_user`='$username' where (`id`='".$c_id."') and (`er_answer`='0') and (`member_id`='$memberid')";
-		$dbquery = $mysqli->query($sql) or die("ไม่สามารถบันทึกข้อมูลได้ !1");
+		$dbquery = $mysqli->query($link,$sql) or die("ไม่สามารถบันทึกข้อมูลได้ !1");
 	}else {
 		if(!empty($s_er_request_text)){
 			$sql = "insert into `ers_member_request_nodoc` (`member_id`,`document_id`,`er_request_text`,`er_request_date`,`update_date`,`update_user`) values ('$memberid','0','$s_er_request_text',now(),now(),'$username')";
-			$dbquery = $mysqli->query($sql) or die("ไม่สามารถบันทึกข้อมูลได้ !2");
+			$dbquery = $mysqli->query($link,$sql) or die("ไม่สามารถบันทึกข้อมูลได้ !2");
 		}
 	}
 	/*
@@ -137,7 +137,7 @@ $c_er_request_text = '';
 if(isset($c_id)){
 	if($c_id!=''){
 		$sql = "select * from `ers_member_request_nodoc` where (`id`='$c_id')";
-		$dbquery = $mysqli->query($sql) or die("Can't send query!");
+		$dbquery = $mysqli->query($link,$sql) or die("Can't send query!");
 		$tRows = $dbquery->num_rows;
 		if($tRows>0){
 			$row = $dbquery->fetch_assoc();
@@ -409,7 +409,7 @@ if(isset($c_id)){
 			if($sh_order==1){$sql .= "DESC ";} else {$sql .= "ASC ";}
 			$ch = array("2","3","4","5","6","7","8");
 			if(in_array($sd,$ch)){$sql .= ",`id` Desc ";}
-			$res = $mysqli->query($sql);
+			$res = $mysqli->query($link,$sql);
 			$totalRows = $res->num_rows;
 
 			$Per_Page = 20;
@@ -430,7 +430,7 @@ if(isset($c_id)){
 			if(!($Page_Start)){ $Page_Start = 0;}
 
 			$sql .= " LIMIT $Page_Start,$Per_Page";
-			$res = $mysqli->query($sql);
+			$res = $mysqli->query($link,$sql);
 
 			if($totalRows!="0"){
 
