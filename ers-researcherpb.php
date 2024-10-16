@@ -320,7 +320,7 @@ include("./include/config_db.php");
 
 		  <div class="centered-top cctop">
 
-			<form name="form2" method="post" action="ers-researcherpb.php#top_page" onSubmit="return c_check2();" role="form">
+			<form name="form2" method="post" action="/ers-researcherpb.php#top_page" onSubmit="return c_check2();" role="form">
 
 					  <?php
 					  if(isset($_POST["c_code_1"]) ){$c_code_1 = $_POST["c_code_1"];	}else{$c_code_1 = "";}
@@ -333,7 +333,7 @@ include("./include/config_db.php");
 					  <div class="spcsearch">
 					  <span class="sbreak2">
 					  <input type="text" name="c_code_1" id="c_code_1" class="searchbox-control" maxlength="30" placeholder="ข้อความที่ต้องการค้นหา" value="<?= $_SESSION["u_code_1"];?>">&nbsp;
-					  <input type="submit" name="Submit" id="Submit" value="ค้นหา" class="btn btn-success" style="width:70px; margin-top:0;">&nbsp;<input type="button" name="Clear" id="Clear" value="ยกเลิก" class="btn btn-info" style="width:70px;margin-top:0;" onclick="window.location='ers-researcherpb.php?iRegister=1';"></span>
+					  <input type="submit" name="Submit" id="Submit" value="ค้นหา" class="btn btn-success" style="width:70px; margin-top:0;">&nbsp;<input type="button" name="Clear" id="Clear" value="ยกเลิก" class="btn btn-info" style="width:70px;margin-top:0;" onclick="window.location='/ers-researcherpb.php?iRegister=1';"></span>
 					  </div>
 					  <div>
 					  <span class="sbreak1">
@@ -422,12 +422,12 @@ include("./include/config_db.php");
 			<table class="table table-striped table-bordered sticky-header" id="table-1" style="background: url('./images/<?php if(defined('__EC_PICHOME__')){echo __EC_PICHOME__;}?>') repeat-y; background-attachment:fixed; background-size:contain;height:100%;width:100%;">
 				<thead>
 					<tr id="ontop1" style="background-color:#e5e5e5">
-						  <th style="vertical-align:middle;text-align:center;"  id="ontop3">&nbsp;<a href="ers-researcherpb.php?sd=2&sh_order=<?= $sh_order;?>" target="_parent" style="white-space: nowrap;">ชื่อ-นามสกุล(ท.) <?= $a2sort;?></a>&nbsp;</th>
-						  <th style="vertical-align:middle;text-align:center;"  id="ontop4">&nbsp;<a href="ers-researcherpb.php?sd=3&sh_order=<?= $sh_order;?>" target="_parent" style="white-space: nowrap;">ชื่อ-นามสกุล(อ.) <?= $a3sort;?></a>&nbsp;</th>
-						  <th style="vertical-align:middle;text-align:center;" id="ontop5">&nbsp;<a href="ers-researcherpb.php?sd=4&sh_order=<?= $sh_order;?>" target="_parent" style="white-space: nowrap;">ภาควิชา/ฝ่าย <?= $a4sort;?></a>&nbsp;</th>
-						  <th style="vertical-align:middle;text-align:center;" id="ontop6">&nbsp;<a href="ers-researcherpb.php?sd=5&sh_order=<?= $sh_order;?>" target="_parent" style="white-space: nowrap;">ส่วนงาน <?= $a5sort;?></a>&nbsp;</th>
+						  <th style="vertical-align:middle;text-align:center;"  id="ontop3">&nbsp;<a href="/ers-researcherpb.php?sd=2&sh_order=<?= $sh_order;?>" target="_parent" style="white-space: nowrap;">ชื่อ-นามสกุล(ท.) <?= $a2sort;?></a>&nbsp;</th>
+						  <th style="vertical-align:middle;text-align:center;"  id="ontop4">&nbsp;<a href="/ers-researcherpb.php?sd=3&sh_order=<?= $sh_order;?>" target="_parent" style="white-space: nowrap;">ชื่อ-นามสกุล(อ.) <?= $a3sort;?></a>&nbsp;</th>
+						  <th style="vertical-align:middle;text-align:center;" id="ontop5">&nbsp;<a href="/ers-researcherpb.php?sd=4&sh_order=<?= $sh_order;?>" target="_parent" style="white-space: nowrap;">ภาควิชา/ฝ่าย <?= $a4sort;?></a>&nbsp;</th>
+						  <th style="vertical-align:middle;text-align:center;" id="ontop6">&nbsp;<a href="/ers-researcherpb.php?sd=5&sh_order=<?= $sh_order;?>" target="_parent" style="white-space: nowrap;">ส่วนงาน <?= $a5sort;?></a>&nbsp;</th>
 						  <th style="vertical-align:middle;text-align:center;" id="ontop7">&nbsp;ความเชี่ยวชาญในสาขาวิชา&nbsp;</th>
-						  <th style="vertical-align:middle;text-align:center;" id="ontop8">&nbsp;<a href="ers-researcherpb.php?sd=6&sh_order=<?= $sh_order;?>" target="_parent" style="white-space: nowrap;">สถานภาพ <?= $a6sort;?></a>&nbsp;</th>
+						  <th style="vertical-align:middle;text-align:center;" id="ontop8">&nbsp;<a href="/ers-researcherpb.php?sd=6&sh_order=<?= $sh_order;?>" target="_parent" style="white-space: nowrap;">สถานภาพ <?= $a6sort;?></a>&nbsp;</th>
 					</tr>
 				</thead>
 				<tbody class="bgw">
@@ -612,7 +612,7 @@ include("./include/config_db.php");
 				?>
 			</div>
 			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-5 text-right">
-				<form name="form3" method="post" action="ers-researcherpb.php?sd=<?= $sd;?>&sh_order=<?= $sh_order;?>&Page=1" role="form">
+				<form name="form3" method="post" action="/ers-researcherpb.php?sd=<?= $sd;?>&sh_order=<?= $sh_order;?>&Page=1" role="form">
 					<select name="Per_Page" id="Per_Page" style="width:130px;border-radius:5px;border:1px solid #<?php echo __EC_BGSHOW__;?>;padding:5px;" onchange="document.form3.submit()">
 					<option value="18" <?php if($Per_Page=='18'){echo "selected";}?>>18 รายการ/หน้า</option>
 					<option value="30"<?php if($Per_Page=='30'){echo "selected";}?>>30 รายการ/หน้า</option>
