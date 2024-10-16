@@ -38,12 +38,12 @@ if(isset($_POST['u_password']))
 	$s_ip = $_SERVER["REMOTE_ADDR"];
 
 	$sql = "select * from `ers_member` where (`id`='".$c_id."')";
-	$dbquery = $mysqli->query($link,$sql) or die("Can't send query !!");
+	$dbquery = $mysqli->query($sql) or die("Can't send query !!");
 	$num_rows = $dbquery->num_rows;
 	$dbquery->free();
 	if($num_rows > 0) {
 		$sql = "update `ers_member` set `em_password`='$pass5',`em_oldpassword`='$s_oldpassword',`em_ip`='$s_ip',`update_date`=now(),`update_user`='".$_SESSION["username"]."' where (`id`='".$c_id."')";
-		$dbquery = $mysqli->query($link,$sql) or die("ไม่สามารถบันทึกข้อมูลได้ !1");
+		$dbquery = $mysqli->query($sql) or die("ไม่สามารถบันทึกข้อมูลได้ !1");
 	}
 	include("../include/close_db.php");
 
@@ -64,7 +64,7 @@ $c_name = "";
 if(isset($c_id)){
 	if(!empty($c_id)){
 		$sql = "select * from `ers_member` where (`id`='$c_id')";
-		$dbquery = $mysqli->query($link,$sql) or die("Can't send query!");
+		$dbquery = $mysqli->query($sql) or die("Can't send query!");
 		$tRows = $dbquery->num_rows;
 		if($tRows>0){
 			$row = $dbquery->fetch_assoc();

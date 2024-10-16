@@ -23,7 +23,7 @@ if($chk_edit=="1")
 	/*$o_name = $_POST["o_name"];
 	if($o_name != $username) {
 		$sql = "select `em_username` from `ers_member` where (`em_username`='$username') ";
-		$dbquery = $mysqli->query($link,$sql) or die("Can't send query !!");
+		$dbquery = $mysqli->query($sql) or die("Can't send query !!");
 		$num_rows = $dbquery->num_rows;
 		$dbquery->close();
 		if($num_rows > 0) {
@@ -59,12 +59,12 @@ if($chk_edit=="1")
 	$s_ip = $_SERVER["REMOTE_ADDR"];
 
 	$sql = "select * from `ers_member` where (`id`='".$c_id."')";
-	$dbquery = $mysqli->query($link,$sql) or die("Can't send query !!");
+	$dbquery = $mysqli->query($sql) or die("Can't send query !!");
 	$num_rows = $dbquery->num_rows;
 	$dbquery->free();
 	if($num_rows > 0) {
 		$sql = "update `ers_member` set `em_title`='$s_title',`em_firstname`='$s_firstname',`em_lastname`='$s_lastname',`em_gender`='$s_gender',`em_institution`='$s_institution',`em_institution_type`='$s_institution_type',`em_institution_other`='$s_institution_other',`em_email`='$s_email',`em_phone`='$s_phone',`em_address`='$s_address',`em_ip`='$s_ip',`update_date`=now(),`update_user`='".$_SESSION["username"]."' where (`id`='".$c_id."')";
-		$dbquery = $mysqli->query($link,$sql) or die("ไม่สามารถบันทึกข้อมูลได้ !1");
+		$dbquery = $mysqli->query($sql) or die("ไม่สามารถบันทึกข้อมูลได้ !1");
 	}
 	$_SESSION["membername"] = $s_firstname;
 	include("../include/close_db.php");
@@ -87,7 +87,7 @@ $c_address = '';
 if(isset($c_id)){
 	if(!empty($c_id)){
 		$sql = "select * from `ers_member` where (`id`='$c_id')";
-		$dbquery = $mysqli->query($link,$sql) or die("Can't send query!");
+		$dbquery = $mysqli->query($sql) or die("Can't send query!");
 		$tRows = $dbquery->num_rows;
 		if($tRows>0){
 			$row = $dbquery->fetch_assoc();

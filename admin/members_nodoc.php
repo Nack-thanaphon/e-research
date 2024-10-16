@@ -56,7 +56,7 @@ if(isset($_SESSION["u_code_1"]) and !empty($_SESSION["u_code_1"]))
 	  }
 	  $sql .= ") ";
 }
-$dbquery = $mysqli->query($link,$sql) or die("Can't send query!");
+$dbquery = $mysqli->query($sql) or die("Can't send query!");
 $tRows_y = $dbquery->num_rows;
 $sql = "select m.*,d.*,m.id as req_id FROM `ers_member_request_nodoc` m JOIN `ers_member` d ON m.member_id=d.id where (`er_request_cancel`='0') and (`er_answer`='0') and (d.id > '0') ";
 if(isset($_SESSION["u_code_1"]) and !empty($_SESSION["u_code_1"]))
@@ -77,7 +77,7 @@ if(isset($_SESSION["u_code_1"]) and !empty($_SESSION["u_code_1"]))
 	  }
 	  $sql .= ") ";
 }
-$dbquery = $mysqli->query($link,$sql) or die("Can't send query!");
+$dbquery = $mysqli->query($sql) or die("Can't send query!");
 $tRows_w = $dbquery->num_rows;
 $sql = "select m.*,d.*,m.id as req_id FROM `ers_member_request_nodoc` m JOIN `ers_member` d ON m.member_id=d.id where (`er_request_cancel`='1')  and (d.id > '0') ";
 if(isset($_SESSION["u_code_1"]) and !empty($_SESSION["u_code_1"]))
@@ -98,7 +98,7 @@ if(isset($_SESSION["u_code_1"]) and !empty($_SESSION["u_code_1"]))
 	  }
 	  $sql .= ") ";
 }
-$dbquery = $mysqli->query($link,$sql) or die("Can't send query!");
+$dbquery = $mysqli->query($sql) or die("Can't send query!");
 $tRows_c = $dbquery->num_rows;
 $dbquery->free();
 ?>
@@ -304,7 +304,7 @@ $dbquery->free();
 				if($sh_order==1){$sql .= "DESC ";} else {$sql .= "ASC ";}
 				$ch = array("2","3","4","5");
 				if(in_array($sd,$ch)){$sql .= ",req_id Desc ";}
-				$res = $mysqli->query($link,$sql);
+				$res = $mysqli->query($sql);
 				$totalRows = $res->num_rows;
 
 				if(isset($_POST["Per_Page"])) {
@@ -328,7 +328,7 @@ $dbquery->free();
 				if(!($Page_Start)){ $Page_Start = 0;}
 
 				$sql .= " LIMIT $Page_Start,$Per_Page";
-				$res = $mysqli->query($link,$sql);
+				$res = $mysqli->query($sql);
 
 				if($totalRows > 0){
 

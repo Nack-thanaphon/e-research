@@ -19,7 +19,7 @@ if(isset($_POST['u_name']) && isset($_POST['u_password']))
 	echo "ERROR  empty value <p><a href='login.php'>Back to Main</a></p>"; die();
   }
   $query_m = "select * from `ers_admin` where `user_name`='".$u_name."' and `user_password`='".$pass5."' ";
-  $result_m = $mysqli->query($link,$query_m);
+  $result_m = $mysqli->query($query_m);
   $num_rows = $result_m->num_rows;
   if ($num_rows > 0 )
   {
@@ -44,7 +44,7 @@ if(isset($_POST['u_name']) && isset($_POST['u_password']))
 	$u_ip = $_SERVER["REMOTE_ADDR"];
 	//$now = date("Y-m-d H:i:s",time());
 	$query_m = "insert into `ers_session` (`id`,`user_name`,`ip_address`,`log_time`,`log_status`) values ('','$admin','$u_ip',now(),'i') ";
-	$result_d = $mysqli->query($link,$query_m);
+	$result_d = $mysqli->query($query_m);
   } else {
 	?>
 	<Script language="javascript">

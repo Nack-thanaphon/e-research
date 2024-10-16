@@ -13,14 +13,14 @@ if ( !isset($_SESSION["admin"]) || !isset($_SESSION["userlevel"]) || ($_SESSION[
 	{
 		switch ($contentid) {
 			case '1': $sql = "delete from `ers_member_request_nodoc` where (`id`='".$cid."') LIMIT 1";
-					$dbquery = $mysqli->query($link,$sql);
+					$dbquery = $mysqli->query($sql);
 				break;			
 		}
 		$admin = $_SESSION["username"];
 		$s_description = "Table : ers_member_request_nodoc ,ID : ".$cid." ,Document : ".$p_path;
 		$u_ip = $_SERVER["REMOTE_ADDR"];
 		$query_m = "insert into `ers_delete` (`user_name`,`ip_address`,`del_time`,`description`) values ('$admin','$u_ip',now(),'$s_description') ";
-		$result_d = $mysqli->query($link,$query_m);
+		$result_d = $mysqli->query($query_m);
 	}
 	include("../include/close_db.php");
 }

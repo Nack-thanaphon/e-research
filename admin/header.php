@@ -1,9 +1,9 @@
 <?php
 $sql = "select m.*,d.id from `ers_member_request` m JOIN `ers_member` d ON m.member_id=d.id where (`er_request_cancel`='0') and (`er_answer`='0') and (`document_id`>'0') and (d.id > '0')";
-$dbquery = $mysqli->query($link,$sql) or die("Can't send query!");
+$dbquery = $mysqli->query($sql) or die("Can't send query!");
 $tRows_n = $dbquery->num_rows;
 $sql = "select m.*,d.id from `ers_member_request_nodoc` m JOIN `ers_member` d ON m.member_id=d.id where (`er_request_cancel`='0') and (`er_answer`='0') and (d.id > '0')";
-$dbquery = $mysqli->query($link,$sql) or die("Can't send query!");
+$dbquery = $mysqli->query($sql) or die("Can't send query!");
 $tRows_nodoc = $dbquery->num_rows;
 $tRows_n2 = $tRows_n;
 if($tRows_nodoc > 0){
@@ -80,7 +80,7 @@ if($tRows_nodoc > 0){
 						<?php
 						if($admin != 'admin'){
 							$sql = "select id,user_name from ers_admin where (user_name='".$admin."') ";
-							$dbquery_admin = $mysqli->query($link,$sql);
+							$dbquery_admin = $mysqli->query($sql);
 							$num_rows_admin = $dbquery_admin->num_rows;
 							$code_admin = $admin;
 							if($num_rows_admin > 0) {

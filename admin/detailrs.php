@@ -34,7 +34,7 @@ require_once "../include/convars.php";
 require_once("../include/config_db.php");
 
 $sql = "select * from `ers_researcher` where (`id`='".$c_researcher_id."') ";
-$dbquery = $mysqli->query($link,$sql) or die("Can't send query!");
+$dbquery = $mysqli->query($sql) or die("Can't send query!");
 $tRows = $dbquery->num_rows;
 if($tRows > 0){
 	$row = $dbquery->fetch_assoc();
@@ -68,7 +68,7 @@ if($tRows > 0){
 	$c_ec_photopath = $row["ec_photopath"];
 	
 	$sql_d = "select * from `ers_section` where `id`='".$c_section_id."' ";
-	$dbquery_d = $mysqli->query($link,$sql_d);
+	$dbquery_d = $mysqli->query($sql_d);
 	$nRows_d = $dbquery_d->num_rows;
 	$c_es_name = "";
 	if($nRows_d>0){
@@ -76,7 +76,7 @@ if($tRows > 0){
 		$c_es_name = $result_d["es_name"];
 	}
 	$sql_d = "select * from `ers_faculty` where `id`='".$c_faculty_id."' ";
-	$dbquery_d = $mysqli->query($link,$sql_d);
+	$dbquery_d = $mysqli->query($sql_d);
 	$nRows_d = $dbquery_d->num_rows;
 	$c_ef_name = "";
 	if($nRows_d>0){
@@ -84,7 +84,7 @@ if($tRows > 0){
 		$c_ef_name = $result_d["ef_name"];
 	}	
 	$sql_d = "select * from `ers_academic_position` where `id`='".$c_academic_position_id."' ";
-	$dbquery_d = $mysqli->query($link,$sql_d);
+	$dbquery_d = $mysqli->query($sql_d);
 	$nRows_d = $dbquery_d->num_rows;
 	$c_ea_name = "";
 	if($nRows_d>0){
@@ -92,7 +92,7 @@ if($tRows > 0){
 		$c_ea_name = $result_d["ea_name"];
 	}	
 } else {include("../include/close_db.php"); echo "<div style='text-align:center;padding-top:50px;color:#ff0000;font-size:16px;'><strong>...ไม่พบข้อมูล...</strong></div>"; die();}
-//$mysqli->query($link,"update `ers_researcher` set `ec_counter`=`ec_counter`+1 where `id` ='".$c_researcher_id."'");
+//$mysqli->query("update `ers_researcher` set `ec_counter`=`ec_counter`+1 where `id` ='".$c_researcher_id."'");
 
 ?>
 <!DOCTYPE html>
@@ -225,7 +225,7 @@ if($tRows > 0){
 			$sql = "SELECT m . * , d . * FROM ers_document_researcher m JOIN ers_document d ON m.document_id = d.id WHERE (m.researcher_id = $c_researcher_id) ";
 			$sql .= "Order by d.ed_year DESC ";
 
-			$res = $mysqli->query($link,$sql);
+			$res = $mysqli->query($sql);
 			$totalRows = $res->num_rows;
 			?>
 
@@ -266,7 +266,7 @@ if($tRows > 0){
 							$c_ed_capital = $result["ed_capital"];
 							$dbquery->free();
 							$sql_d = "select * from `ers_research_type` where `id`='".$c_research_type_id."' ";
-							$dbquery_d = $mysqli->query($link,$sql_d);
+							$dbquery_d = $mysqli->query($sql_d);
 							$nRows_d = $dbquery_d->num_rows;
 							$c_et_name = "";
 							if($nRows_d>0){
@@ -274,7 +274,7 @@ if($tRows > 0){
 								$c_et_name = $result_d["et_name"];
 							}
 							$sql_d = "select * from `ers_project_position` where `id`='".$c_project_position_id."' ";
-							$dbquery_d = $mysqli->query($link,$sql_d);
+							$dbquery_d = $mysqli->query($sql_d);
 							$nRows_d = $dbquery_d->num_rows;
 							$c_position_name = "";
 							if($nRows_d>0){
@@ -282,7 +282,7 @@ if($tRows > 0){
 								$c_position_name =  $result_d['ep_name'];
 							}
 							$sql_d = "select * from `ers_section` where `id`='".$c_section_id."' ";
-							$dbquery_d = $mysqli->query($link,$sql_d);
+							$dbquery_d = $mysqli->query($sql_d);
 							$nRows_d = $dbquery_d->num_rows;
 							$c_es_name = "";
 							if($nRows_d>0){
@@ -290,7 +290,7 @@ if($tRows > 0){
 								$c_es_name = $result_d["es_name"];
 							}
 							$sql_d = "select * from `ers_faculty` where `id`='".$c_faculty_id."' ";
-							$dbquery_d = $mysqli->query($link,$sql_d);
+							$dbquery_d = $mysqli->query($sql_d);
 							$nRows_d = $dbquery_d->num_rows;
 							$c_ef_name = "";
 							if($nRows_d>0){

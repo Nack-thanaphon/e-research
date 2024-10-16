@@ -76,7 +76,7 @@ if($chk_edit=="1")
 	$s_firstname_th = $_POST["s_firstname_th"];
 	$s_lastname_th = $_POST["s_lastname_th"];
 	/*$sql = "select `ec_firstname_th`,`ec_lastname_th` from `ers_researcher` where (`ec_firstname_th`='$s_firstname_th') and (`ec_lastname_th`='$s_lastname_th') ";
-	$dbquery = $mysqli->query($link,$sql) or die("Can't send query !!");
+	$dbquery = $mysqli->query($sql) or die("Can't send query !!");
 	$num_rows = $dbquery->num_rows;
 	$dbquery->close();
 	if($num_rows > 0) {
@@ -114,7 +114,7 @@ if($chk_edit=="1")
 	$s_experience = $_POST["s_experience"];
 
 	$sql_d = "select * From `ers_researcher_position` where (`id`='".$s_researcher_position_id."')";
-	$dbquery_d = $mysqli->query($link,$sql_d);
+	$dbquery_d = $mysqli->query($sql_d);
 	$nRows_d = $dbquery_d->num_rows;
 	$s_status = 0;
 	if($nRows_d>0){
@@ -193,30 +193,30 @@ if($chk_edit=="1")
 			@chmod($new_file,0744);
 		}
 		$sql = "select * from `ers_researcher` where (`id`='".$c_id."')";
-		$dbquery = $mysqli->query($link,$sql) or die("Can't send query !!");
+		$dbquery = $mysqli->query($sql) or die("Can't send query !!");
 		$num_rows = $dbquery->num_rows;
 		$dbquery->close();
 		if($num_rows > 0) {
 			$sql = "update `ers_researcher` set `ec_title_th`='$s_title_th',`ec_firstname_th`='$s_firstname_th',`ec_lastname_th`='$s_lastname_th',`ec_title_en`='$s_title_en',`ec_firstname_en`='$s_firstname_en',`ec_lastname_en`='$s_lastname_en',`ec_idcard`='$s_idcard',`researcher_position_id`='$s_researcher_position_id',`researcher_position_status`='$s_status',`section_id`='$s_section_id',`faculty_id`='$s_faculty_id',`campus_id`='$s_campus_id',`academic_position_id`='$s_academic_position_id',`ec_phone`='$s_phone',`ec_mobile`='$s_mobile',`ec_fax`='$s_fax',`ec_email`='$s_email',`ec_highest`='$s_highest',`ec_educationrecord`='$s_educationrecord',`ec_workhistory`='$s_workhistory',`ec_specialization`='$s_specialization',`ec_experience`='$s_experience',`ec_photopath`='$filename1$passw1$now1$filenewcon1',`update_date`=now(),`update_user`='$admin' where (`id`='".$c_id."')";
-			$dbquery = $mysqli->query($link,$sql) or die("ไม่สามารถบันทึกข้อมูลได้ !1");
+			$dbquery = $mysqli->query($sql) or die("ไม่สามารถบันทึกข้อมูลได้ !1");
 		}else {
 			if($s_firstname_th != ''){
 				$sql = "insert into `ers_researcher` (`ec_title_th`,`ec_firstname_th`,`ec_lastname_th`,`ec_title_en`,`ec_firstname_en`,`ec_lastname_en`,`ec_idcard`,`researcher_position_id`,`researcher_position_status`,`section_id`,`faculty_id`,`campus_id`,`academic_position_id`,`ec_phone`,`ec_mobile`,`ec_fax`,`ec_email`,`ec_highest`,`ec_educationrecord`,`ec_workhistory`,`ec_specialization`,`ec_experience`,`ec_photopath`,`update_date`,`update_user`) values ('$s_title_th','$s_firstname_th','$s_lastname_th','$s_title_en','$s_firstname_en','$s_lastname_en','$s_idcard','$s_researcher_position_id','$s_status','$s_section_id','$s_faculty_id','$s_campus_id','$s_academic_position_id','$s_phone','$s_mobile','$s_fax','$s_email','$s_highest','$s_educationrecord','$s_workhistory','$s_specialization','$s_experience','$filename1$passw1$now1$filenewcon1',now(),'$admin')";
-				$dbquery = $mysqli->query($link,$sql) or die("ไม่สามารถบันทึกข้อมูลได้ !2");
+				$dbquery = $mysqli->query($sql) or die("ไม่สามารถบันทึกข้อมูลได้ !2");
 			}
 		}
 	} else {
 		$sql = "select * from `ers_researcher` where (`id`='".$c_id."')";
-		$dbquery = $mysqli->query($link,$sql) or die("Can't send query !!");
+		$dbquery = $mysqli->query($sql) or die("Can't send query !!");
 		$num_rows = $dbquery->num_rows;
 		$dbquery->close();
 		if($num_rows > 0) {
 			$sql = "update `ers_researcher` set `ec_title_th`='$s_title_th',`ec_firstname_th`='$s_firstname_th',`ec_lastname_th`='$s_lastname_th',`ec_title_en`='$s_title_en',`ec_firstname_en`='$s_firstname_en',`ec_lastname_en`='$s_lastname_en',`ec_idcard`='$s_idcard',`researcher_position_id`='$s_researcher_position_id',`researcher_position_status`='$s_status',`section_id`='$s_section_id',`faculty_id`='$s_faculty_id',`campus_id`='$s_campus_id',`academic_position_id`='$s_academic_position_id',`ec_phone`='$s_phone',`ec_mobile`='$s_mobile',`ec_fax`='$s_fax',`ec_email`='$s_email',`ec_highest`='$s_highest',`ec_educationrecord`='$s_educationrecord',`ec_workhistory`='$s_workhistory',`ec_specialization`='$s_specialization',`ec_experience`='$s_experience',`update_date`=now(),`update_user`='$admin' where (`id`='".$c_id."')";
-			$dbquery = $mysqli->query($link,$sql) or die("ไม่สามารถบันทึกข้อมูลได้ !1");
+			$dbquery = $mysqli->query($sql) or die("ไม่สามารถบันทึกข้อมูลได้ !1");
 		}else {
 			if($s_firstname_th != ''){
 				$sql = "insert into `ers_researcher` (`ec_title_th`,`ec_firstname_th`,`ec_lastname_th`,`ec_title_en`,`ec_firstname_en`,`ec_lastname_en`,`ec_idcard`,`researcher_position_id`,`researcher_position_status`,`section_id`,`faculty_id`,`campus_id`,`academic_position_id`,`ec_phone`,`ec_mobile`,`ec_fax`,`ec_email`,`ec_highest`,`ec_educationrecord`,`ec_workhistory`,`ec_specialization`,`ec_experience`,`update_date`,`update_user`) values ('$s_title_th','$s_firstname_th','$s_lastname_th','$s_title_en','$s_firstname_en','$s_lastname_en','$s_idcard','$s_researcher_position_id','$s_status','$s_section_id','$s_faculty_id','$s_campus_id','$s_academic_position_id','$s_phone','$s_mobile','$s_fax','$s_email','$s_highest','$s_educationrecord','$s_workhistory','$s_specialization','$s_experience',now(),'$admin')";
-				$dbquery = $mysqli->query($link,$sql) or die("ไม่สามารถบันทึกข้อมูลได้ !2");
+				$dbquery = $mysqli->query($sql) or die("ไม่สามารถบันทึกข้อมูลได้ !2");
 			}
 		}
 	}
@@ -251,7 +251,7 @@ $c_photopath = '';
 if(isset($c_id)){
 	if($c_id!=''){
 		$sql = "select * from `ers_researcher` where (`id`='$c_id')";
-		$dbquery = $mysqli->query($link,$sql) or die("Can't send query!");
+		$dbquery = $mysqli->query($sql) or die("Can't send query!");
 		$tRows = $dbquery->num_rows;
 		if($tRows>0){
 			$row = $dbquery->fetch_assoc();
@@ -454,7 +454,7 @@ function confirmDelete(span_id,id_order,filename,content_id,div_id) {
 					<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
 						<?php
 						$sql_d = "select * from `ers_researcher_position` where 1 ";
-						$dbquery_d = $mysqli->query($link,$sql_d);
+						$dbquery_d = $mysqli->query($sql_d);
 						$nRows_d = $dbquery_d->num_rows;
 						if($nRows_d>0){
 						?>
@@ -480,7 +480,7 @@ function confirmDelete(span_id,id_order,filename,content_id,div_id) {
 					<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
 						<?php
 						$sql_d = "select * from `ers_section` where 1 ";
-						$dbquery_d = $mysqli->query($link,$sql_d);
+						$dbquery_d = $mysqli->query($sql_d);
 						$nRows_d = $dbquery_d->num_rows;
 						if($nRows_d>0){
 						?>
@@ -498,7 +498,7 @@ function confirmDelete(span_id,id_order,filename,content_id,div_id) {
 					<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
 						<?php
 						$sql_d = "select * from `ers_faculty` where 1 ";
-						$dbquery_d = $mysqli->query($link,$sql_d);
+						$dbquery_d = $mysqli->query($sql_d);
 						$nRows_d = $dbquery_d->num_rows;
 						if($nRows_d>0){
 						?>
@@ -516,7 +516,7 @@ function confirmDelete(span_id,id_order,filename,content_id,div_id) {
 					<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
 						<?php
 						$sql_d = "select * from `ers_academic_position` where 1 ";
-						$dbquery_d = $mysqli->query($link,$sql_d);
+						$dbquery_d = $mysqli->query($sql_d);
 						$nRows_d = $dbquery_d->num_rows;
 						if($nRows_d>0){
 						?>
@@ -619,7 +619,7 @@ function confirmDelete(span_id,id_order,filename,content_id,div_id) {
 					<option value="0">ภาควิชา/ฝ่าย</option>
 					<?php
 					$sql_d = "select * from `ers_section` where 1 ";
-					$dbquery_d = $mysqli->query($link,$sql_d);
+					$dbquery_d = $mysqli->query($sql_d);
 					$nRows_d = $dbquery_d->num_rows;
 					if($nRows_d>0){
 					?>
@@ -632,7 +632,7 @@ function confirmDelete(span_id,id_order,filename,content_id,div_id) {
 					<option value="0">ส่วนงาน</option>
 					<?php
 					$sql_d = "select * from `ers_faculty` where 1 ";
-					$dbquery_d = $mysqli->query($link,$sql_d);
+					$dbquery_d = $mysqli->query($sql_d);
 					$nRows_d = $dbquery_d->num_rows;
 					if($nRows_d>0){
 					?>
@@ -729,7 +729,7 @@ function confirmDelete(span_id,id_order,filename,content_id,div_id) {
 				default : $sql .= "Order by `id` ";
 			}
 			if($sh_order==1){$sql .= "DESC ";} else {$sql .= "ASC ";}
-			$res = $mysqli->query($link,$sql);
+			$res = $mysqli->query($sql);
 			$totalRows = $res->num_rows;
 
 			$Per_Page = 20;
@@ -750,7 +750,7 @@ function confirmDelete(span_id,id_order,filename,content_id,div_id) {
 			if(!($Page_Start)){ $Page_Start = 0;}
 
 			$sql .= " LIMIT $Page_Start,$Per_Page";
-			$res = $mysqli->query($link,$sql);
+			$res = $mysqli->query($sql);
 
 			if($totalRows!="0"){
 
@@ -777,7 +777,7 @@ function confirmDelete(span_id,id_order,filename,content_id,div_id) {
 					$c_faculty_id = $result["faculty_id"];
 					$c_researcher_position_id = $result["researcher_position_id"];
 					$sql_d = "select * From `ers_researcher_position` where (`id`='".$c_researcher_position_id."')";
-					$dbquery_d = $mysqli->query($link,$sql_d);
+					$dbquery_d = $mysqli->query($sql_d);
 					$nRows_d = $dbquery_d->num_rows;
 					$s_status_name = "";
 					$c_status = 0;
@@ -795,7 +795,7 @@ function confirmDelete(span_id,id_order,filename,content_id,div_id) {
 					}
 
 					$sql_d = "select * from `ers_section` where `id`='".$c_section_id."' ";
-					$dbquery_d = $mysqli->query($link,$sql_d);
+					$dbquery_d = $mysqli->query($sql_d);
 					$nRows_d = $dbquery_d->num_rows;
 					$c_section_name = "";
 					if($nRows_d>0){
@@ -803,7 +803,7 @@ function confirmDelete(span_id,id_order,filename,content_id,div_id) {
 						$c_section_name = $result_d["es_name"];
 					}
 					$sql_d = "select * from `ers_faculty` where `id`='".$c_faculty_id."' ";
-					$dbquery_d = $mysqli->query($link,$sql_d);
+					$dbquery_d = $mysqli->query($sql_d);
 					$nRows_d = $dbquery_d->num_rows;
 					$c_faculty_name = "";
 					if($nRows_d>0){

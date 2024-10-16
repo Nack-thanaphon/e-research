@@ -13,7 +13,7 @@ if (!isset($_SESSION["username"]) || !isset($_SESSION["membername"]) || !isset($
 	{
 		switch ($contentid) {
 			case '1': $sql = "update `ers_member_request` set `er_request_cancel`='1',`update_date`=now(),`update_user`='".$_SESSION["username"]."'  where (`id`='".$cid."') and (`er_answer`='0') and (`member_id`='".$_SESSION["memberid"]."') LIMIT 1";
-					$dbquery = $mysqli->query($link,$sql);
+					$dbquery = $mysqli->query($sql);
 				break;			
 		}
 	}

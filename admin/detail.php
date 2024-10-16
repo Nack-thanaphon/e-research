@@ -34,7 +34,7 @@ require_once "../include/convars.php";
 require_once("../include/config_db.php");
 
 $sql = "select * from `ers_document` where (`id`='".$c_document_id."') ";
-$dbquery = $mysqli->query($link,$sql) or die("Can't send query!");
+$dbquery = $mysqli->query($sql) or die("Can't send query!");
 $tRows = $dbquery->num_rows;
 if($tRows > 0){
 	$row = $dbquery->fetch_assoc();
@@ -50,7 +50,7 @@ if($tRows > 0){
 	$c_ed_capital = $row["ed_capital"];
 	$dbquery->free();
 	$sql_d = "select * from `ers_research_type` where `id`='".$c_research_type_id."' ";
-	$dbquery_d = $mysqli->query($link,$sql_d);
+	$dbquery_d = $mysqli->query($sql_d);
 	$nRows_d = $dbquery_d->num_rows;
 	$c_et_name = "";
 	if($nRows_d>0){
@@ -58,7 +58,7 @@ if($tRows > 0){
 		$c_et_name = $result_d["et_name"];
 	}
 	$sql_d = "select * from `ers_section` where `id`='".$c_section_id."' ";
-	$dbquery_d = $mysqli->query($link,$sql_d);
+	$dbquery_d = $mysqli->query($sql_d);
 	$nRows_d = $dbquery_d->num_rows;
 	$c_es_name = "";
 	if($nRows_d>0){
@@ -66,7 +66,7 @@ if($tRows > 0){
 		$c_es_name = $result_d["es_name"];
 	}
 	$sql_d = "select * from `ers_faculty` where `id`='".$c_faculty_id."' ";
-	$dbquery_d = $mysqli->query($link,$sql_d);
+	$dbquery_d = $mysqli->query($sql_d);
 	$nRows_d = $dbquery_d->num_rows;
 	$c_ef_name = "";
 	if($nRows_d>0){
@@ -74,7 +74,7 @@ if($tRows > 0){
 		$c_ef_name = $result_d["ef_name"];
 	}
 } else {include("../include/close_db.php"); echo "<div style='text-align:center;padding-top:50px;color:#ff0000;font-size:16px;'><strong>...ไม่พบข้อมูล...</strong></div>"; die();}
-//$mysqli->query($link,"update `ers_document` set `ed_counter`=`ed_counter`+1 where `id` ='".$c_document_id."'");
+//$mysqli->query("update `ers_document` set `ed_counter`=`ed_counter`+1 where `id` ='".$c_document_id."'");
 
 ?>
 <!DOCTYPE html>
@@ -171,7 +171,7 @@ if($tRows > 0){
 			<?php
 			}
 			$sql = "select * from `ers_document_files` where (`document_id`='".$c_document_id."') order by `id`ASC";
-			$dbquery = $mysqli->query($link,$sql);
+			$dbquery = $mysqli->query($sql);
 			$num_rows = $dbquery->num_rows;
 			if($num_rows>0)
 			{
@@ -228,7 +228,7 @@ if($tRows > 0){
 					$sql = "SELECT m . * , d . * FROM ers_document_researcher m JOIN ers_researcher d ON m.researcher_id = d.id WHERE (m.document_id = $c_document_id) AND (d.researcher_position_status =1) ";
 					$sql .= "Order by d.id ASC ";
 
-					$res = $mysqli->query($link,$sql);
+					$res = $mysqli->query($sql);
 					$totalRows = $res->num_rows;
 
 					if($totalRows!="0")
@@ -242,7 +242,7 @@ if($tRows > 0){
 							$c_ratio = $result["ratio"];
 
 							$sql_d = "select * from `ers_researcher` where `id`='".$c_researcher_id."' ";
-							$dbquery_d = $mysqli->query($link,$sql_d);
+							$dbquery_d = $mysqli->query($sql_d);
 							$nRows_d = $dbquery_d->num_rows;
 							$c_name = "";
 							if($nRows_d>0){
@@ -256,7 +256,7 @@ if($tRows > 0){
 								}
 							}
 							$sql_d = "select * from `ers_project_position` where `id`='".$c_project_position_id."' ";
-							$dbquery_d = $mysqli->query($link,$sql_d);
+							$dbquery_d = $mysqli->query($sql_d);
 							$nRows_d = $dbquery_d->num_rows;
 							$c_position_name = "";
 							if($nRows_d>0){
@@ -305,7 +305,7 @@ if($tRows > 0){
 					$sql = "SELECT m . * , d . * FROM ers_document_researcher m JOIN ers_researcher d ON m.researcher_id = d.id WHERE (m.document_id = $c_document_id) AND (d.researcher_position_status =2) ";
 					$sql .= "Order by d.id DESC ";
 
-					$res = $mysqli->query($link,$sql);
+					$res = $mysqli->query($sql);
 					$totalRows = $res->num_rows;
 
 					if($totalRows!="0")
@@ -319,7 +319,7 @@ if($tRows > 0){
 							$c_ratio = $result["ratio"];
 
 							$sql_d = "select * from `ers_researcher` where `id`='".$c_researcher_id."' ";
-							$dbquery_d = $mysqli->query($link,$sql_d);
+							$dbquery_d = $mysqli->query($sql_d);
 							$nRows_d = $dbquery_d->num_rows;
 							$c_name = "";
 							if($nRows_d>0){
@@ -333,7 +333,7 @@ if($tRows > 0){
 								}
 							}
 							$sql_d = "select * from `ers_project_position` where `id`='".$c_project_position_id."' ";
-							$dbquery_d = $mysqli->query($link,$sql_d);
+							$dbquery_d = $mysqli->query($sql_d);
 							$nRows_d = $dbquery_d->num_rows;
 							$c_position_name = "";
 							if($nRows_d>0){

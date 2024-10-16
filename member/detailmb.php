@@ -36,7 +36,7 @@ require_once("../include/config_db.php");
 $c_edf_filename1 = '';$c_edf_filename2 = '';$c_edf_filename3 = '';$c_edf_filename4 = '';$c_edf_filename5 = '';
 $chk_expire = 0;
 $sql = "select * from `ers_member_request` where (`id`='".$c_id."') and (`er_answer`='1') ";
-$dbquery = $mysqli->query($link,$sql) or die("Can't send query!");
+$dbquery = $mysqli->query($sql) or die("Can't send query!");
 $tRows = $dbquery->num_rows;
 if($tRows > 0){
 	$row = $dbquery->fetch_assoc();
@@ -52,14 +52,14 @@ if($tRows > 0){
 
 	$c_er_answer_name = $row["er_answer_name"];
 	$sql_d = "select * from `ers_document` where `id`='".$c_document_id."' ";
-	$dbquery_d = $mysqli->query($link,$sql_d);
+	$dbquery_d = $mysqli->query($sql_d);
 	$nRows_d = $dbquery_d->num_rows;
 	if($nRows_d>0){
 		$result_d = $dbquery_d->fetch_assoc();
 		$c_ed_name_th = $result_d["ed_name_th"];
 	}
 	$sql_d = "select * from `ers_member` where `id`='".$c_member_id."' ";
-	$dbquery_d = $mysqli->query($link,$sql_d);
+	$dbquery_d = $mysqli->query($sql_d);
 	$nRows_d = $dbquery_d->num_rows;
 	if($nRows_d>0){
 		$result_d = $dbquery_d->fetch_assoc();
@@ -78,7 +78,7 @@ if($tRows > 0){
 		$chk_expire = 1;
 	}
 } else {include("../include/close_db.php"); echo "<div style='text-align:center;padding-top:50px;color:#ff0000;font-size:20px;'><strong>...ไม่พบข้อมูล...</strong></div>"; die();}
-$mysqli->query($link,"update `ers_member_request` set `er_answer_read`='1',`er_answer_counter`=`er_answer_counter`+1 where `id` ='".$c_id."'");
+$mysqli->query("update `ers_member_request` set `er_answer_read`='1',`er_answer_counter`=`er_answer_counter`+1 where `id` ='".$c_id."'");
 ?>
 <!DOCTYPE html>
 <html lang="th" class="no-js">
@@ -156,7 +156,7 @@ $mysqli->query($link,"update `ers_member_request` set `er_answer_read`='1',`er_a
 	  </div>
 	  <?php
 		$sql = "select * from `ers_member_files` where (`request_id`='".$c_id."') and (`emf_approve`='1') order by `id`ASC";
-		$dbquery = $mysqli->query($link,$sql);
+		$dbquery = $mysqli->query($sql);
 		$num_rows = $dbquery->num_rows;
 		if($num_rows>0)
 		{
@@ -171,7 +171,7 @@ $mysqli->query($link,"update `ers_member_request` set `er_answer_read`='1',`er_a
 				//$c_emf_counter_open = $row["emf_counter_open"];
 				//$c_emf_counter_download =$row["emf_counter_download"];
 				$sql_d = "select * from `ers_document_files` where (`id`='".$c_document_files_id."')";
-				$dbquery_d = $mysqli->query($link,$sql_d);
+				$dbquery_d = $mysqli->query($sql_d);
 				$num_rows_d = $dbquery_d->num_rows;
 				if($num_rows_d > 0) {
 					$result_d = $dbquery_d->fetch_assoc();
