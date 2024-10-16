@@ -552,7 +552,7 @@ include("../include/config_db.php");
 <div id="ersshow"></div>
 </body>
 </html>
-<?php include("../include/close_db.php"); ?>
+
 <script>
 document.getElementById("fmnavbar").className = "navbar navbar-default navbar-fixed-top";
 if( document.body.clientWidth > 767) {

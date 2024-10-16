@@ -347,7 +347,7 @@ function c_check2(){
 
 </body>
 </html>
-<?php include("../include/close_db.php"); ?>
+
 <script>
 var sw = screen.width;
 if(sw < 768)

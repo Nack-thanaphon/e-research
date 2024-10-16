@@ -1008,7 +1008,7 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 
 </body>
 </html>
-<?php include("../include/close_db.php"); ?>
+
 <script>
 var sw = screen.width;
 if(sw < 768)

@@ -425,7 +425,7 @@ $mysqli->query("update `ers_member_request` set `er_request_read`='1',`er_reques
 
 </body>
 </html>
-<?php include("../include/close_db.php"); ?>
+
 <script>
 function chkapprove(){
 	if(document.getElementById('chk_approved').checked == true)

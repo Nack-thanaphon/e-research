@@ -340,7 +340,7 @@ function check(){
 
 </body>
 </html>
-<?php include("../include/close_db.php"); ?>
+
 <script>
 var sw = screen.width;
 if(sw < 768)

@@ -392,7 +392,7 @@ include("../include/config_db.php");
 <div id="ersshow"></div>
 </body>
 </html>
-<?php include("../include/close_db.php"); ?>
+
 <script>
 function openWindow(idp) {
 	var url='changepwmb.php?mb_id='+idp;

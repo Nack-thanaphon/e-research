@@ -15,4 +15,3 @@
   </div>
   <div class="text-center" style="margin-top:20px;margin-bottom:30px;"><?php if(defined('__EC_COPYRIGHT__')){ echo __EC_COPYRIGHT__;}?></div>
 </footer>
-<?php include("../include/close_db.php"); ?>

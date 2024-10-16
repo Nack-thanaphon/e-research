@@ -325,7 +325,7 @@ function confirmDelete(span_id,id_order,filename,content_id) {
 
 </body>
 </html>
-<?php include("../include/close_db.php"); ?>
+
 <script>
  $(document).ready(function () {
       $('select').selectize({

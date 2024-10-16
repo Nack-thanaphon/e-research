@@ -245,7 +245,7 @@ $mysqli->query("update `ers_member_request_nodoc` set `er_request_read`='1',`er_
 
 </body>
 </html>
-<?php include("../include/close_db.php"); ?>
+
 <script>
 document.getElementById('s_er_answer_text').focus();
 </script>

@@ -916,7 +916,7 @@ $mysqli->query("update `ers_document` set `ed_counter`=`ed_counter`+1 where `id`
 		</div><!-- /.row -->
 	</div>
 	<div id="ersshow"></div>
-	<?php include("../include/close_db.php"); ?>
+	
 </body>
 
 </html>

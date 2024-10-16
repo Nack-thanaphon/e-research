@@ -524,7 +524,7 @@ $dbquery->free();
 <div id="ersshow"></div>
 </body>
 </html>
-<?php include("../include/close_db.php"); ?>
+
 <script>
 function openWindow(idp) {
 	var url='mbnodoc.php?req_id='+idp;

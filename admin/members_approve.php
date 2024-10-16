@@ -594,7 +594,7 @@ $dbquery->free();
 <div id="ersshow"></div>
 </body>
 </html>
-<?php include("../include/close_db.php"); ?>
+
 <script>
 function openWindow(idp) {
 	var url='mbapprove.php?req_id='+idp;
