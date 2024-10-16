@@ -10,7 +10,7 @@ function sslHttp()
 	return $httpURL;
 }
 $_https = sslHttp();
-$wRoot = $_https . $_SERVER["SERVER_NAME"] . "/e-research";
+$wRoot = $_https . $_SERVER["SERVER_NAME"] . "~scia/e-research";
 $sRoot = $_SERVER["DOCUMENT_ROOT"] . "/e-research";
 define('_web_path', $wRoot, true);
 define('_home_path', $sRoot, true);
