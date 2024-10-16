@@ -393,7 +393,7 @@ $mysqli->query($link,"update `ers_document` set `ed_counter`=`ed_counter`+1 wher
 			  </div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" >&nbsp;</div>			  
 		  </form>
-		<?php}?>
+		<?php } ?>
 		</div><!-- /.col-lg-6 col-md- 8 col-sm-10 col-xs-12 col-lg-offset-3 col-md-offset-2 col-sm-offset-1 -->
 	</div><!-- /.row -->
 	
@@ -586,7 +586,7 @@ $mysqli->query($link,"update `ers_document` set `ed_counter`=`ed_counter`+1 wher
 							$dfile =  'dfile'.$jk;
 							?>
 							<a href="javascript:void(0)" style="color:red;font-size:16px;" title="ยกเลิก" onclick="confirmCancel('<?= $dfile;?>','<?= $c_id;?>','<?= $code_1;?>','1')"><span class="glyphicon glyphicon-minus-sign"></span>&nbsp;<span style="font-size:14px;">ยกเลิก</span><span id="<?= $dfile;?>"></span></a>
-							<?php}?>
+							<?php } ?>
 						</td>
 						<td style="text-align:center;"><?= $c_id;?></td>
 						<td style="text-align:left;">&nbsp;
@@ -613,7 +613,7 @@ $mysqli->query($link,"update `ers_document` set `ed_counter`=`ed_counter`+1 wher
 						<td style="text-align:center;">
 							<?php if(($c_er_answer==1) && ($chk_expire==1)){ ?>
 								<a href="javascript:void(0)" onclick="show_detail('<?= $c_id;?>', '1')" style="color:#000000;"><div  style="background-color:#f8dc67;padding:4px 1px 2px 1px;border-radius:5px;"><span class="glyphicon glyphicon-download" style="color:#006633;font-size:14px;"></span>&nbsp;ดาวน์โหลด</div></a>
-							<?php}?>
+							<?php } ?>
 						</td>
 						<td style="text-align:left;">&nbsp;
 							<?php
@@ -665,7 +665,7 @@ $mysqli->query($link,"update `ers_document` set `ed_counter`=`ed_counter`+1 wher
 	</div><!-- /.row -->
 </div>
 <div id="ersshow"></div>
-<?phpinclude("../include/close_db.php");?>
+<?php include("../include/close_db.php");?>
 </body>
 </html>
 <script>

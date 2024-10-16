@@ -427,14 +427,14 @@ $dbquery->free();
 								echo "&nbsp;".$c_phone."&nbsp;";
 							} else {?>
 								<a href='tel:<?= $c_phone;?>' target="_blank" title='<?= $c_phone;?>'>&nbsp;<?= $c_phone;?>&nbsp;</a>
-							<?php}?>
+							<?php } ?>
 						</td>
 						<td style="text-align:center;padding-left:0;padding-right:0;white-space: nowrap;">
 						<?php if($c_er_request_cancel>=1){
 								echo "&nbsp;".$c_email."&nbsp;";
 							} else {?>
 								<a href='mailto:<?= $c_email;?>?subject=<?= $encodedSubject;?>&body=<?= $encodedBody;?>' target='_blank' title="<?= $c_email;?>">&nbsp;<?= $c_email;?>&nbsp;</a>
-							<?php}?>
+							<?php } ?>
 						</td>
 						<td style="text-align:left;">
 							<?php
@@ -461,7 +461,7 @@ $dbquery->free();
 							} else {
 							?>
 								<div>&nbsp;<a href='javascript:void(0)' onclick='openWindow(<?= $c_id;?>)' title='ตอบกลับสมาชิก'><?= $c_er_answer_approve;?></a>&nbsp;</div>
-							<?php}?>
+							<?php } ?>
 						</td>
 						<td style="text-align:left;">&nbsp;
 							<?php

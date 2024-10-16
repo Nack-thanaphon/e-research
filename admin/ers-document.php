@@ -292,7 +292,7 @@ include("../include/config_db.php");
 							<option value="<?= $yy;?>" <?= $selected_y;?>>
 							  <?= $yy+543;?>
 							</option>
-						<?php}?>
+						<?php } ?>
 					  </select>&nbsp;
 					  </span>
 					  <span class="sbreak2">

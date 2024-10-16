@@ -412,7 +412,7 @@ function confirmDelete(span_id,id_order,filename,content_id,div_id) {
 							<input type="text" name="s_title_th_other" id="s_title_th_other" maxlength="30" class="form-control input_width2"  value="<?= $c_title_th;?>" placeholder="คำนำหน้าชื่อ(ภาษาไทย)">
 						<?php} else {?>
 							<input type="text" name="s_title_th_other" id="s_title_th_other" maxlength="30" class="form-control input_width2"  value="<?= $c_title_th;?>" style="display:none;" placeholder="คำนำหน้าชื่อ(ภาษาไทย)">
-						<?php}?>
+						<?php } ?>
 					</div>
 				  </div>
 				  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
@@ -434,7 +434,7 @@ function confirmDelete(span_id,id_order,filename,content_id,div_id) {
 							<input type="text" name="s_title_en_other" id="s_title_en_other" maxlength="30" class="form-control input_width2"  value="<?= $c_title_en;?>" placeholder="คำนำหน้าชื่อ(อังกฤษ)">
 						<?php} else {?>
 							<input type="text" name="s_title_en_other" id="s_title_en_other" maxlength="30" class="form-control input_width2"  value="<?= $c_title_en;?>" style="display:none;" placeholder="คำนำหน้าชื่อ(อังกฤษ)">
-						<?php}?>
+						<?php } ?>
 					</div>
 				  </div>
 				  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
@@ -472,7 +472,7 @@ function confirmDelete(span_id,id_order,filename,content_id,div_id) {
 									<option value="<?php echo $row_d['id']; ?>" <?php if($c_researcher_position_id==$row_d['id']) echo "selected"?> >&nbsp;&nbsp;- <?php echo $c_status_name; ?></option>
 								<?php } //while ?>
 							</select>
-						<?php}?>
+						<?php } ?>
 					</div>
 				  </div>
 				  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
@@ -490,7 +490,7 @@ function confirmDelete(span_id,id_order,filename,content_id,div_id) {
 									<option value="<?php echo $row_d['id']; ?>" <?php if($c_section_id==$row_d['id']) echo "selected"?> >&nbsp;&nbsp;- <?php echo $row_d['es_name']; ?></option>
 								<?php } //while ?>
 							</select>
-						<?php}?>
+						<?php } ?>
 					</div>
 				  </div>
 				  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
@@ -508,7 +508,7 @@ function confirmDelete(span_id,id_order,filename,content_id,div_id) {
 									<option value="<?php echo $row_d['id']; ?>" <?php if($c_faculty_id==$row_d['id']) echo "selected"?> >&nbsp;&nbsp;- <?php echo $row_d['ef_name']; ?></option>
 								<?php } //while ?>
 							</select>
-						<?php}?>
+						<?php } ?>
 					</div>
 				  </div>
 				  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
@@ -526,7 +526,7 @@ function confirmDelete(span_id,id_order,filename,content_id,div_id) {
 									<option value="<?php echo $row_d['id']; ?>" <?php if($c_academic_position_id==$row_d['id']) echo "selected"?> >&nbsp;&nbsp;- <?php echo $row_d['ea_name']; ?></option>
 								<?php } //while ?>
 							</select>
-						<?php}?>
+						<?php } ?>
 					</div>
 				  </div>
 				  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">

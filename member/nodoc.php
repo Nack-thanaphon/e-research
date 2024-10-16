@@ -488,7 +488,7 @@ if(isset($c_id)){
 							$dfile =  'dfile'.$jk;
 							?>
 							<a href="javascript:void(0)" style="color:red;font-size:16px;" title="ยกเลิก" onclick="confirmCancel('<?= $dfile;?>','<?= $c_id;?>','<?= $code_1;?>','1')"><span class="glyphicon glyphicon-minus-sign"></span>&nbsp;<span style="font-size:14px;">ยกเลิก</span><span id="<?= $dfile;?>"></span></a>
-							<?php}?>
+							<?php } ?>
 						</td>
 						<td style="text-align:center;"><?= $c_id;?></td>
 						<td style="text-align:left;">&nbsp;
@@ -543,7 +543,7 @@ if(isset($c_id)){
 	</div><!-- /.row -->
 </div>
 <div id="ersshow"></div>
-<?phpinclude("../include/close_db.php");?>
+<?php include("../include/close_db.php");?>
 </body>
 </html>
 <script>

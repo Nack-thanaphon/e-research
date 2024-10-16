@@ -181,7 +181,7 @@ function confirmDelete(span_id,id_order,filename,content_id) {
 								<option value="<?php echo $row_d['id']; ?>" <?php if($c_researcher_id==$row_d['id']) echo "selected";?>><?php echo $s_name; ?></option>
 							<?php } //while ?>
 						</select>
-					<?php}?>
+					<?php } ?>
 				</div>
 			  </div>			  
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
@@ -201,7 +201,7 @@ function confirmDelete(span_id,id_order,filename,content_id) {
 								<option value="<?php echo $row_d['id']; ?>" <?php if($c_project_position_id==$row_d['id']) echo "selected";?>><?php echo $row_d['ep_name']; ?></option>
 							<?php } //while ?>
 						</select>
-					<?php}?>
+					<?php } ?>
 				</div>
 			  </div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">

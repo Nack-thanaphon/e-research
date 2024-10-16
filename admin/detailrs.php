@@ -153,7 +153,7 @@ if($tRows > 0){
 					<?php echo "<img src=\"$images\" id=\"photoImage1\" class=\"img-thumbnail-noborder\" styly=\"margin-bottom:10px;\">";?>
 				</div>
 			</div>
-			<?php}?>
+			<?php } ?>
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-5 text-right" style="font-weight: bold;">ชื่อ-นามสกุล(ท.)&nbsp;:&nbsp;</div>
 				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-7 text-left"><?= $c_ec_name_th;?></div>
@@ -330,4 +330,4 @@ if($tRows > 0){
 
 </body>
 </html>
-<?phpinclude("../include/close_db.php");?>
+<?php include("../include/close_db.php");?>

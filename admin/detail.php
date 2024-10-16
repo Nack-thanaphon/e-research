@@ -190,7 +190,7 @@ if($tRows > 0){
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
 							<hr align="center" width="95%" noshade size="1" color="#cccccc">
 						</div>
-						<?php}?>
+						<?php } ?>
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 							<div class="col-lg-3 col-md-3 col-sm-3 col-xs-4 text-right" style="font-weight: bold;white-space: nowrap;">เอกสาร <?= $item;?>&nbsp;:&nbsp;</div>
 							<div class="col-lg-9 col-md-9 col-sm-9 col-xs-8">
@@ -366,7 +366,7 @@ if($tRows > 0){
 </div>
 </body>
 </html>
-<?phpinclude("../include/close_db.php");?>
+<?php include("../include/close_db.php");?>
 <script>
 function openfiles(url){
 	window.location=url;

@@ -46,7 +46,7 @@ if (!defined('__EC_NAME__')) {
 
 <!-- cd-top JS -->
 <script src="../js/main.js"></script>
-<?phpinclude("../include/config_db.php");?>
+<?php include("../include/config_db.php");?>
 
 <div class="container-fluid" style="margin:0;padding:0;">
 	<?php require_once "./header.php"; ?>
@@ -64,6 +64,6 @@ if (!defined('__EC_NAME__')) {
 	<?php require_once("footer.php") ?>
 
 </div>
-<?phpinclude("../include/close_db.php");?>
+<?php include("../include/close_db.php");?>
 </body>
 </html>

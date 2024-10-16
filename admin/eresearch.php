@@ -371,7 +371,7 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 								<option value="<?php echo $row_d['id']; ?>" <?php if($c_section_id==$row_d['id']) echo "selected"?> >&nbsp;&nbsp;- <?php echo $row_d['es_name']; ?></option>
 							<?php } //while ?>
 						</select>
-					<?php}?>
+					<?php } ?>
 				</div>
 			  </div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
@@ -389,7 +389,7 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 								<option value="<?php echo $row_d['id']; ?>" <?php if($c_faculty_id==$row_d['id']) echo "selected"?> >&nbsp;&nbsp;- <?php echo $row_d['ef_name']; ?></option>
 							<?php } //while ?>
 						</select>
-					<?php}?>
+					<?php } ?>
 				</div>
 			  </div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
@@ -411,7 +411,7 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 						<option value="<?= $yy;?>" <?= $selected_y;?>>
 					      <?= $yy+543;?>
 						</option>
-					<?php}?>
+					<?php } ?>
 				  </select>
 				</div>
 			  </div>
@@ -430,7 +430,7 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 								<option value="<?php echo $row_d['id']; ?>" <?php if($c_research_type_id==$row_d['id']) echo "selected"?> >&nbsp;&nbsp;- <?php echo $row_d['et_name']; ?></option>
 							<?php } //while ?>
 						</select>
-					<?php}?>
+					<?php } ?>
 				</div>
 			  </div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
@@ -454,7 +454,7 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 						}
 					?>
 						<input name="file1" type="file" id="file1" style="margin-top:3px;max-width:250px;" accept="application/pdf">
-					<?php}?>
+					<?php } ?>
 				</div>
 			  </div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
@@ -473,7 +473,7 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 						}
 					?>
 						<input name="file2" type="file" id="file2" style="margin-top:3px;max-width:250px;"  accept="application/pdf">
-					<?php}?>
+					<?php } ?>
 				</div>
 			  </div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
@@ -492,7 +492,7 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 						}
 					?>
 						<input name="file3" type="file" id="file3" style="margin-top:3px;max-width:250px;" accept="application/pdf">
-					<?php}?>
+					<?php } ?>
 				</div>
 			  </div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
@@ -511,7 +511,7 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 						}
 					?>
 						<input name="file4" type="file" id="file4" style="margin-top:3px;max-width:250px;" accept="application/pdf">
-					<?php}?>
+					<?php } ?>
 				</div>
 			  </div>
 			  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding:3px;">
@@ -530,7 +530,7 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 						}
 					?>
 						<input name="file5" type="file" id="file5" style="margin-top:3px;max-width:250px;" accept="application/pdf">
-					<?php}?>
+					<?php } ?>
 				</div>
 			  </div>
 			   <?php
@@ -637,7 +637,7 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 						<option value="<?= $yy;?>" <?= $selected_y;?>>
 						  <?= $yy+543;?>
 						</option>
-					<?php}?>
+					<?php } ?>
 				  </select>&nbsp;
 				  </span>
 				  <span class="sbreak2">

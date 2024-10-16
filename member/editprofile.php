@@ -190,7 +190,7 @@ if(isset($c_id)){
 							<input type="text" name="title_other" id="title_other" maxlength="30" class="form-control" value="<?= $c_title;?>" placeholder="คำนำหน้าชื่อ">
 						<?php} else {?>
 							<input type="text" name="title_other" id="title_other" maxlength="30" class="form-control" value="<?= $c_title;?>" style="display:none;" placeholder="คำนำหน้าชื่อ">
-						<?php}?>
+						<?php } ?>
 					</div>
 
 					<div class="col-xs-5 col-sm-3" style="text-align:right;padding: 3px 5px 3px 0px;"><font color="#FF0000">*</font>&nbsp;ชื่อจริง&nbsp;</div>
@@ -227,7 +227,7 @@ if(isset($c_id)){
 							<input type="text" name="institution_other" id="institution_other" maxlength="255" class="form-control" value="<?= $c_institution_other;?>" placeholder="อื่นๆระบุ">
 						<?php} else {?>
 							<input type="text" name="institution_other" id="institution_other" maxlength="255" class="form-control" value="<?= $c_institution_other;?>" style="display:none;" placeholder="อื่นๆระบุ">
-						<?php}?>
+						<?php } ?>
 					</div>
 
 					<div class="col-xs-5 col-sm-3" style="text-align:right;padding: 3px 5px 3px 0px;"><font color="#FF0000">*</font>&nbsp;โทรศัพท์&nbsp;</div>

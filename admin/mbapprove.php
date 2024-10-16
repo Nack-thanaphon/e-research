@@ -313,7 +313,7 @@ $mysqli->query($link,"update `ers_member_request` set `er_request_read`='1',`er_
 							<option value="<?= $i;?>" <?= $selected; ?>>
 							  <?= $i;?>
 							</option>
-						<?php}?>
+						<?php } ?>
 				  </select>
 				  <select name="s_month" id="s_month" style="width:100px;border-radius:5px;border:1px solid #cccccc;">
 					<option value="0">เดือน</option>
@@ -342,7 +342,7 @@ $mysqli->query($link,"update `ers_member_request` set `er_request_read`='1',`er_
 						<option value="<?= $yy;?>" <?= $selected_y;?>>
 					      <?= $yy+543;?>
 						</option>
-					<?php}?>
+					<?php } ?>
 				  </select>
 				</div>
 			  </div>
@@ -389,7 +389,7 @@ $mysqli->query($link,"update `ers_member_request` set `er_request_read`='1',`er_
 							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
 								<hr align="center" width="95%" noshade size="1" color="#cccccc">
 							</div>
-							<?php}?>
+							<?php } ?>
 							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-right" style="font-weight: bold;white-space: nowrap;">เอกสาร <?= $item;?>&nbsp;:&nbsp;</div>
 								<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">

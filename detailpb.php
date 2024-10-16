@@ -365,4 +365,4 @@ $mysqli->query($link,"update `ers_document` set `ed_counter`=`ed_counter`+1 wher
 
 </body>
 </html>
-<?phpinclude("./include/close_db.php");?>
+<?php include("./include/close_db.php");?>

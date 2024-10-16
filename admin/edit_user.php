@@ -209,10 +209,10 @@ function check(){
 				<input type="text" name="u_name" id="u_name" maxlength="30" class="form-control input_width" autocomplete="off" value="<?php echo $c_name; ?>">
 				<?php} else { echo $c_name;?>
 				<input type="hidden" name="u_name" id="u_name" value="<?php echo $c_name;?>">
-				<?php}?>
+				<?php } ?>
 			<?php} else { echo $c_name;?>
 				<input type="hidden" name="u_name" id="u_name" value="<?php echo $c_name;?>">
-			<?php}?>
+			<?php } ?>
 			</div>
 
 			<div class="col-sm-4 col-xs-4 text-right" style="margin:0;padding:0;padding:3px;">รหัสผ่าน&nbsp;:&nbsp;</div>
