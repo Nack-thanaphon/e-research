@@ -43,7 +43,7 @@ if(isset($_POST['u_name']) && isset($_POST['u_password']))
 	}
 	$u_ip = $_SERVER["REMOTE_ADDR"];
 	//$now = date("Y-m-d H:i:s",time());
-	$query_m = "insert into `ers_session` (`id`,`user_name`,`ip_address`,`log_time`,`log_status`) values ('','$admin','$u_ip',now(),'i') ";
+	$query_m = "insert into `ers_session` (`user_name`,`ip_address`,`log_time`,`log_status`) values ('$admin','$u_ip',now(),'i') ";
 	$result_d = $mysqli->query($query_m);
   } else {
 	?>
