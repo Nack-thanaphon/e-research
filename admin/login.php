@@ -2,9 +2,9 @@
 session_start();
 Header("Content-Type: text/html; charset=UTF-8");
 require_once "../include/config.php";
-if (!defined('_web_path')) {
-	exit();
-}
+// if (!defined('_web_path')) {
+// 	exit();
+// }
 include("../include/config_db.php");
 if(isset($_POST['u_name'])){$u_name = $_POST['u_name'];}
 if(isset($_POST['u_password'])){$u_password= $_POST['u_password'];}
