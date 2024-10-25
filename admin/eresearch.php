@@ -121,7 +121,7 @@ if($chk_edit=="1")
 					$file_name = substr($file_name_sur,0,strlen($file_name_sur) - $sur_num);
 					$file_name =str_replace(Array("\n", "\r", "\n\r",'+','-','%','@', '\'', '"', ',' , ';', '&lt;', '&gt;',' '), '_', $file_name);//preg_replace('/[^a-zA-Z0-9_ -]/s','',$file_name);
 					if( mb_strlen($file_name,'UTF-8') > 100 ){
-						$file_name = utf8_substr($file_name,0,100);
+						$file_name = mb_substr($file_name,0,100);
 					}
 
 					$sur1 = strrchr($_FILES["file$i"]["name"], "."); //ตัดนามสกุลไฟล์เก็บไว
@@ -161,7 +161,7 @@ if($chk_edit=="1")
 			$file_name = trim($_FILES['pdf_files']['name'][$i]);
 			$file_name = substr($file_name,0,strlen($file_name)-4);
 			if( mb_strlen($file_name,'UTF-8') > 100 ){
-				$file_name = utf8_substr($file_name,0,100);
+				$file_name = mb_substr($file_name,0,100);
 			}
 			$name = $file_name."_".(Date("dmY_His").".".$file_extension);
 			$filename_upload = $name;
@@ -445,7 +445,7 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 					<?php if($c_edf_link1==1){?>
 						<input type="text" name="s_edf_filename1" id="s_edf_filename1" class="form-control input_width3"  value="<?= $c_edf_filename1;?>" placeholder="ระบุที่อยู่ไฟล์เอกสาร">
 						<input name="file1" type="file" id="file1" style="margin-top:3px;max-width:250px;display:none;" accept="application/pdf">
-					<?php} else {?>
+					<?php } else { ?>
 						<input type="text" name="s_edf_filename1" id="s_edf_filename1" class="form-control input_width3"  value="<?= $c_edf_filename1;?>" readonly="true" placeholder="ระบุที่อยู่ไฟล์เอกสาร" style="color:#999999;display:none;">
 					<?php
 						if($c_edf_filename1!=""){ 
@@ -464,7 +464,7 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 					<?php if($c_edf_link2==1){?>
 						<input type="text" name="s_edf_filename2" id="s_edf_filename2" class="form-control input_width3"  value="<?= $c_edf_filename2;?>" placeholder="ระบุที่อยู่ไฟล์เอกสาร">
 						<input name="file2" type="file" id="file2" style="margin-top:3px;max-width:250px;display:none;" accept="application/pdf">
-					<?php} else {?>
+					<?php } else { ?>
 						<input type="text" name="s_edf_filename2" id="s_edf_filename2" class="form-control input_width3"  value="<?= $c_edf_filename2;?>" readonly="true" placeholder="ระบุที่อยู่ไฟล์เอกสาร" style="color:#999999;display:none;">
 					<?php
 						if($c_edf_filename2!=""){ 
@@ -483,7 +483,7 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 					<?php if($c_edf_link3==1){?>
 						<input type="text" name="s_edf_filename3" id="s_edf_filename3" class="form-control input_width3"  value="<?= $c_edf_filename3;?>" placeholder="ระบุที่อยู่ไฟล์เอกสาร">
 						<input name="file3" type="file" id="file3" style="margin-top:3px;max-width:250px;display:none;" accept="application/pdf">
-					<?php} else {?>
+					<?php } else { ?>
 						<input type="text" name="s_edf_filename3" id="s_edf_filename3" class="form-control input_width3"  value="<?= $c_edf_filename3;?>" readonly="true" placeholder="ระบุที่อยู่ไฟล์เอกสาร" style="color:#999999;display:none;">
 					<?php
 						if($c_edf_filename3!=""){ 
@@ -502,7 +502,7 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 					<?php if($c_edf_link4==1){?>
 						<input type="text" name="s_edf_filename4" id="s_edf_filename4" class="form-control input_width3"  value="<?= $c_edf_filename4;?>" placeholder="ระบุที่อยู่ไฟล์เอกสาร">
 						<input name="file4" type="file" id="file4" style="margin-top:3px;max-width:250px;display:none;" accept="application/pdf">
-					<?php} else {?>
+					<?php } else { ?>
 						<input type="text" name="s_edf_filename4" id="s_edf_filename4" class="form-control input_width3"  value="<?= $c_edf_filename4;?>" readonly="true" placeholder="ระบุที่อยู่ไฟล์เอกสาร" style="color:#999999;display:none;">
 					<?php
 						if($c_edf_filename4!=""){ 
@@ -521,7 +521,7 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 					<?php if($c_edf_link5==1){?>
 						<input type="text" name="s_edf_filename5" id="s_edf_filename5" class="form-control input_width3"  value="<?= $c_edf_filename5;?>" placeholder="ระบุที่อยู่ไฟล์เอกสาร">
 						<input name="file5" type="file" id="file5" style="margin-top:3px;max-width:250px;display:none;" accept="application/pdf">
-					<?php} else {?>
+					<?php } else { ?>
 						<input type="text" name="s_edf_filename5" id="s_edf_filename5" class="form-control input_width3"  value="<?= $c_edf_filename5;?>" readonly="true" placeholder="ระบุที่อยู่ไฟล์เอกสาร" style="color:#999999;display:none;">
 					<?php
 						if($c_edf_filename5!=""){ 
@@ -645,8 +645,7 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 				  <input type="submit" name="Submit" id="Submit" value="ค้นหา" class="btn btn-success" style="width:70px; margin-top:0;">&nbsp;<input type="button" name="Clear" id="Clear" value="ยกเลิก" class="btn btn-info" style="width:70px;margin-top:0;" onclick="window.location='eresearch.php?iRegister=1';"></span>
 
 		  </div>
-		  <!--<input type="hidden" name="c_search_section" id="c_search_section" value="<?php// if($c_search_section){ echo $c_search_section;}else{ echo '';}?>">
-		  <input type="hidden" name="c_search_faculty" id="c_search_faculty" value="<?php// if($c_search_faculty){ echo $c_search_faculty;}else{ echo '';}?>">-->
+		
 		  </form>
 		 
 		  <div class="clearfix"></div>
@@ -765,14 +764,14 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 					$thlen = mb_strlen($c_ed_name_th,'UTF-8');
 					$thlen2 = 70;
 					if($thlen > $thlen2) {
-						$c_ed_name_th2 = utf8_substr($c_ed_name_th,0,$thlen2)."..";
+						$c_ed_name_th2 = mb_substr($c_ed_name_th,0,$thlen2)."..";
 					}
 					$c_ed_name_en = $result["ed_name_en"];
 					$c_ed_name_en2 = $c_ed_name_en;
 					$enlen = mb_strlen($c_ed_name_en,'UTF-8');
 					$enlen2 = 50;
 					if($enlen > $enlen2) {
-						$c_ed_name_en2 = utf8_substr($c_ed_name_en,0,$enlen2)."..";
+						$c_ed_name_en2 = mb_substr($c_ed_name_en,0,$enlen2)."..";
 					}
 					$code_1 = $c_ed_name_th2;
 					$c_section_id = $result["section_id"];
@@ -783,7 +782,7 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 					$ttlen = mb_strlen($c_ed_detail,'UTF-8');
 					$ttlen2 = 60;
 					if($ttlen > $ttlen2) {
-						$c_ed_detail2 = utf8_substr($c_ed_detail,0,$ttlen2)."..";
+						$c_ed_detail2 = mb_substr($c_ed_detail,0,$ttlen2)."..";
 					}
 					$c_ed_counter = $result["ed_counter"];
 
@@ -798,7 +797,7 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 						$eslen = mb_strlen($c_es_name,'UTF-8');
 						$eslen2 = 25;
 						if($eslen > $eslen2) {
-							$c_es_name2 = utf8_substr($c_es_name,0,$eslen2)."..";
+							$c_es_name2 = mb_substr($c_es_name,0,$eslen2)."..";
 						}
 					}
 					$sql_d = "select * from `ers_faculty` where `id`='".$c_faculty_id."' ";
@@ -812,7 +811,7 @@ $_max_file_uploads_pdf = $_max_file_uploads - $num_rows_files;
 						$eflen = mb_strlen($c_ef_name,'UTF-8');
 						$eflen2 = 25;
 						if($eflen > $eflen2) {
-							$c_ef_name2 = utf8_substr($c_ef_name,0,$eflen2)."..";
+							$c_ef_name2 = mb_substr($c_ef_name,0,$eflen2)."..";
 						}
 					}
 
