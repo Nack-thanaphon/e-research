@@ -16,9 +16,6 @@ define('_web_path', '/~scia/e-research');
 define('_home_path', '/~scia/e-research');
 define('SECRET_KEY', 'buu_@_e-research');
 
-
-
-
 function dateThai_edo($strDate) {
     $strYear = date("Y",strtotime($strDate))+543;
     $strMonth= date("n",strtotime($strDate));
