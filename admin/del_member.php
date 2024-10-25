@@ -1,12 +1,11 @@
 <?php
 session_start();
 Header("Content-Type: text/html; charset=utf-8");
-echo "<pre>";
-print_r($_SESSION);
-echo "</pre>";
 
-if (!isset($_SESSION["username"]) || !isset($_SESSION["membername"]) || !isset($_SESSION["memberid"]) || empty($_SESSION["username"])) {
-	// echo "<Script language=\"javascript\">window.location=\"login.php\"</script>";
+
+
+if ( !isset($_SESSION["admin"]) || !isset($_SESSION["userlevel"]) ){
+	echo "<Script language=\"javascript\">window.location=\"login.php\"</script>";
 } else {
 	require_once('../include/config_db.php');
 	$p_path = $_GET['c_file_path'];
