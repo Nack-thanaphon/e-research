@@ -442,14 +442,14 @@ include("../include/config_db.php");
 						$thlen = mb_strlen($c_ed_name_th,'UTF-8');
 						$thlen2 = 100;
 						if($thlen > $thlen2) {
-							$c_ed_name_th2 = utf8_substr($c_ed_name_th,0,$thlen2)."..";
+							$c_ed_name_th2 = mb_substr($c_ed_name_th,0,$thlen2)."..";
 						}
 						$c_ed_name_en = $result["ed_name_en"];
 						$c_ed_name_en2 = $c_ed_name_en;
 						$enlen = mb_strlen($c_ed_name_en,'UTF-8');
 						$enlen2 = 50;
 						if($enlen > $enlen2) {
-							$c_ed_name_en2 = utf8_substr($c_ed_name_en,0,$enlen2)."..";
+							$c_ed_name_en2 = mb_substr($c_ed_name_en,0,$enlen2)."..";
 						}
 						$c_section_id = $result["section_id"];
 						$c_faculty_id = $result["faculty_id"];
@@ -459,7 +459,7 @@ include("../include/config_db.php");
 						$ttlen = mb_strlen($c_ed_detail,'UTF-8');
 						$ttlen2 = 60;
 						if($ttlen > $ttlen2) {
-							$c_ed_detail2 = utf8_substr($c_ed_detail,0,$ttlen2)."..";
+							$c_ed_detail2 = mb_substr($c_ed_detail,0,$ttlen2)."..";
 						}
 						$c_ed_counter = $result["ed_counter"];
 
@@ -474,7 +474,7 @@ include("../include/config_db.php");
 							$eslen = mb_strlen($c_es_name,'UTF-8');
 							$eslen2 = 25;
 							if($eslen > $eslen2) {
-								$c_es_name2 = utf8_substr($c_es_name,0,$eslen2)."..";
+								$c_es_name2 = mb_substr($c_es_name,0,$eslen2)."..";
 							}
 						}
 						$sql_d = "select * from `ers_faculty` where `id`='".$c_faculty_id."' ";
@@ -488,7 +488,7 @@ include("../include/config_db.php");
 							$eflen = mb_strlen($c_ef_name,'UTF-8');
 							$eflen2 = 25;
 							if($eflen > $eflen2) {
-								$c_ef_name2 = utf8_substr($c_ef_name,0,$eflen2)."..";
+								$c_ef_name2 = mb_substr($c_ef_name,0,$eflen2)."..";
 							}
 						}
 

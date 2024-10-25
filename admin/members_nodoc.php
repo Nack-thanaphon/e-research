@@ -349,7 +349,7 @@ $dbquery->free();
 						$reqlen2 = 40;
 						$c_er_request_text2 = $c_er_request_text;
 						if($reqlen > $reqlen2) {
-							$c_er_request_text2 = utf8_substr($c_er_request_text,0,$reqlen2)."..";
+							$c_er_request_text2 = mb_substr($c_er_request_text,0,$reqlen2)."..";
 						}
 						$c_er_request_date = dateThai_edo(substr($row["er_request_date"],0,10));
 
@@ -362,7 +362,7 @@ $dbquery->free();
 						$anslen = mb_strlen($c_er_answer_text,'UTF-8');
 						$anslen2 = 40;
 						if($anslen > $anslen2) {
-							$c_er_answer_text2 = utf8_substr($c_er_answer_text,0,$anslen2)."..";
+							$c_er_answer_text2 = mb_substr($c_er_answer_text,0,$anslen2)."..";
 						}
 						if(!empty($row["er_answer_date"])) {
 							$c_er_answer_date = dateThai_edo(substr($row["er_answer_date"],0,10));
@@ -387,7 +387,7 @@ $dbquery->free();
 						$adrlen2 = 40;
 						$c_address2 = $c_address;
 						if($adrlen > $adrlen2) {
-							$c_address2 = utf8_substr($c_address,0,$adrlen2)."..";
+							$c_address2 = mb_substr($c_address,0,$adrlen2)."..";
 						}
 						$c_institution_name = "";
 						switch ($c_institution_type) {

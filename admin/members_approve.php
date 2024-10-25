@@ -374,7 +374,7 @@ $dbquery->free();
 						$reqlen2 = 25;
 						$c_er_request_text2 = $c_er_request_text;
 						if($reqlen > $reqlen2) {
-							$c_er_request_text2 = utf8_substr($c_er_request_text,0,$reqlen2)."..";
+							$c_er_request_text2 = mb_substr($c_er_request_text,0,$reqlen2)."..";
 						}
 						$c_er_request_date = dateThai_edo(substr($row["er_request_date"],0,10));
 						$c_er_answer_approve = "<span class='glyphicon glyphicon-check' style='color:#ff0099;font-size:14px;'></span>&nbsp;<span class='blink'>รอตรวจสอบ</span>&nbsp;";
@@ -393,7 +393,7 @@ $dbquery->free();
 						$anslen = mb_strlen($c_er_answer_text,'UTF-8');
 						$anslen2 = 20;
 						if($anslen > $anslen2) {
-							$c_er_answer_text2 = utf8_substr($c_er_answer_text,0,$anslen2)."..";
+							$c_er_answer_text2 = mb_substr($c_er_answer_text,0,$anslen2)."..";
 						}
 						if(!empty($row["er_answer_date"])) {
 							$c_er_answer_date = dateThai_edo(substr($row["er_answer_date"],0,10));
@@ -418,7 +418,7 @@ $dbquery->free();
 						$adrlen2 = 20;
 						$c_address2 = $c_address;
 						if($adrlen > $adrlen2) {
-							$c_address2 = utf8_substr($c_address,0,$adrlen2)."..";
+							$c_address2 = mb_substr($c_address,0,$adrlen2)."..";
 						}
 						$c_institution_name = "";
 						switch ($c_institution_type) {
@@ -441,7 +441,7 @@ $dbquery->free();
 							$doclen = mb_strlen($c_ed_name_th,'UTF-8');
 							$doclen2 = 30;
 							if($doclen > $doclen2) {
-								$c_ed_name_th2 = utf8_substr($c_ed_name_th,0,$doclen2)."..";
+								$c_ed_name_th2 = mb_substr($c_ed_name_th,0,$doclen2)."..";
 							}
 						//}
 						$now_date = date('Y-m-d H:i:s');

@@ -74,14 +74,14 @@ if($chk_edit=="1")
 	$file3 = stripcslashes($_FILES['file3']['tmp_name']);
 	$file_name3 = basename($_FILES['file3']['name']);	
 	$filenewcon3 = strstr($file_name3,'.');
-	$filename3 = utf8_substr($file_name3,0,strlen($file_name3)-4);
+	$filename3 = mb_substr($file_name3,0,strlen($file_name3)-4);
 	
 	$now3 = date("Ymd");
 
 	if(!empty($file3))
 	{
 		if(mb_strlen($filename3,'UTF-8') > 10){
-			$filename3 = trim(utf8_substr($filename3,0,10));
+			$filename3 = trim(mb_substr($filename3,0,10));
 		}
 		$filename3 = $filename3.'_';
 		$filesize3 =$_FILES['file3']['size'];
@@ -149,14 +149,14 @@ if($chk_edit=="1")
 	$file4 = stripcslashes($_FILES['file4']['tmp_name']);
 	$file_name4 = basename($_FILES['file4']['name']);	
 	$filenewcon4 = strstr($file_name4,'.');
-	$filename4 = utf8_substr($file_name4,0,strlen($file_name4)-4);
+	$filename4 = mb_substr($file_name4,0,strlen($file_name4)-4);
 	
 	$now4 = date("Ymd");
 
 	if(!empty($file4))
 	{
 		if(mb_strlen($filename4,'UTF-8') > 10){
-			$filename4 = trim(utf8_substr($filename4,0,10));
+			$filename4 = trim(mb_substr($filename4,0,10));
 		}
 		$filename4 = $filename4.'_';
 		$filesize4 =$_FILES['file4']['size'];
@@ -174,14 +174,14 @@ if($chk_edit=="1")
 	$file1 = stripcslashes($_FILES['file1']['tmp_name']);
 	$file_name1=basename($_FILES['file1']['name']);	
 	$filenewcon1 = strstr($file_name1,'.');
-	$filename1 = utf8_substr($file_name1,0,strlen($file_name1)-4);
+	$filename1 = mb_substr($file_name1,0,strlen($file_name1)-4);
 	
 	$now1 = date("Ymd");
 
 	if(!empty($file1))
 	{
 		if(mb_strlen($filename1,'UTF-8') > 10){
-			$filename1 = trim(utf8_substr($filename1,0,10));
+			$filename1 = trim(mb_substr($filename1,0,10));
 		}
 		$filename1 = $filename1.'_';
 		$filesize1 =$_FILES['file1']['size'];
@@ -249,14 +249,14 @@ if($chk_edit=="1")
 	$file2 = stripcslashes($_FILES['file2']['tmp_name']);
 	$file_name2=basename($_FILES['file2']['name']);	
 	$filenewcon2 = strstr($file_name2,'.');
-	$filename2 = utf8_substr($file_name2,0,strlen($file_name2)-4);
+	$filename2 = mb_substr($file_name2,0,strlen($file_name2)-4);
 
 	$now2 = date("Ymd");
 
 	if(!empty($file2))
 	{
 		if(mb_strlen($filename2,'UTF-8') > 10){
-			$filename2 = trim(utf8_substr($filename2,0,10));
+			$filename2 = trim(mb_substr($filename2,0,10));
 		}
 		$filename2 = $filename2.'_';
 		$filesize2 =$_FILES['file2']['size'];
@@ -330,7 +330,7 @@ if($chk_edit=="1")
 		$file_name_sur = htmlspecialchars($_FILES["file_at1"]["name"]);	
 		$file_name = substr($file_name_sur,0,strlen($file_name_sur) - $sur_num);
 		if( mb_strlen($file_name,'UTF-8') > 100 ){
-			$file_name = utf8_substr($file_name,0,100);
+			$file_name = mb_substr($file_name,0,100);
 		}
 
 		$sur1 = strrchr($_FILES["file_at1"]["name"], "."); //ตัดนามสกุลไฟล์เก็บไว
@@ -357,7 +357,7 @@ if($chk_edit=="1")
 		$file_name_sur = htmlspecialchars($_FILES["file_at2"]["name"]);	
 		$file_name = substr($file_name_sur,0,strlen($file_name_sur) - $sur_num);
 		if( mb_strlen($file_name,'UTF-8') > 100 ){
-			$file_name = utf8_substr($file_name,0,100);
+			$file_name = mb_substr($file_name,0,100);
 		}
 
 		$sur1 = strrchr($_FILES["file_at2"]["name"], "."); //ตัดนามสกุลไฟล์เก็บไว
@@ -385,7 +385,7 @@ if($chk_edit=="1")
 		$file_name_sur = htmlspecialchars($_FILES["file_at3"]["name"]);	
 		$file_name = substr($file_name_sur,0,strlen($file_name_sur) - $sur_num);
 		if( mb_strlen($file_name,'UTF-8') > 100 ){
-			$file_name = utf8_substr($file_name,0,100);
+			$file_name = mb_substr($file_name,0,100);
 		}
 
 		$sur1 = strrchr($_FILES["file_at3"]["name"], "."); //ตัดนามสกุลไฟล์เก็บไว

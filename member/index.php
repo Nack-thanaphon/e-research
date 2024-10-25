@@ -745,7 +745,7 @@ $mysqli->query("update `ers_document` set `ed_counter`=`ed_counter`+1 where `id`
 									$reqlen2 = 70;
 									$c_er_request_text2 = $c_er_request_text;
 									if ($reqlen > $reqlen2) {
-										$c_er_request_text2 = utf8_substr($c_er_request_text, 0, $reqlen2) . "..";
+										$c_er_request_text2 = mb_substr($c_er_request_text, 0, $reqlen2) . "..";
 									}
 									$c_er_request_date = dateThai_edo(substr($result["er_request_date"], 0, 10));
 									$c_er_request_read = $result["er_request_read"];
@@ -772,7 +772,7 @@ $mysqli->query("update `ers_document` set `ed_counter`=`ed_counter`+1 where `id`
 									$anslen = mb_strlen($c_er_answert_text, 'UTF-8');
 									$anslen2 = 70;
 									if ($anslen > $anslen2) {
-										$c_er_answert_text2 = utf8_substr($c_er_answert_text, 0, $anslen2) . "..";
+										$c_er_answert_text2 = mb_substr($c_er_answert_text, 0, $anslen2) . "..";
 									}
 									if (!empty($result["er_answer_date"])) {
 										$c_er_answer_date = dateThai_edo(substr($result["er_answer_date"], 0, 10));
@@ -809,7 +809,7 @@ $mysqli->query("update `ers_document` set `ed_counter`=`ed_counter`+1 where `id`
 										$doclen = mb_strlen($c_ed_name_th, 'UTF-8');
 										$doclen2 = 70;
 										if ($doclen > $doclen2) {
-											$c_ed_name_th2 = utf8_substr($c_ed_name_th, 0, $doclen2) . "..";
+											$c_ed_name_th2 = mb_substr($c_ed_name_th, 0, $doclen2) . "..";
 										}
 									}
 

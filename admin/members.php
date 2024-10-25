@@ -293,7 +293,7 @@ include("../include/config_db.php");
 						$adrlen2 = 70;
 						$c_address2 = $c_address;
 						if($adrlen > $adrlen2) {
-							$c_address2 = utf8_substr($c_address,0,$adrlen2)."..";
+							$c_address2 = mb_substr($c_address,0,$adrlen2)."..";
 						}
 						$c_institution_name = "";
 						switch ($c_institution_type) {

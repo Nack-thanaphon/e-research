@@ -110,7 +110,7 @@ class Paginator {
         return $this->return;
     }
 
-    public function utf8_substr($str, $start, $length = null) {
+    public function mb_substr($str, $start, $length = null) {
         if ($length === null) {
             return mb_substr($str, $start);
         } else {

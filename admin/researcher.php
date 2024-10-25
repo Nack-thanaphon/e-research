@@ -128,12 +128,12 @@ if($chk_edit=="1")
 	$file1 = stripcslashes($_FILES['file1']['tmp_name']);
 	$file_name1=basename($_FILES['file1']['name']);	
 	$filenewcon1 = strstr($file_name1,'.');
-	$filename1 = utf8_substr($file_name1,0,strlen($file_name1)-4);
+	$filename1 = mb_substr($file_name1,0,strlen($file_name1)-4);
 
 	if(!empty($file1))
 	{
 		if(mb_strlen($filename1,'UTF-8') > 10){
-			$filename31 = trim(utf8_substr($filename1,0,10));
+			$filename31 = trim(mb_substr($filename1,0,10));
 		}
 		$filename1 = $filename1.'_';
 		$filesize1 = $_FILES['file3']['size'];
