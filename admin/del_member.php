@@ -1,6 +1,10 @@
 <?php
 session_start();
 Header("Content-Type: text/html; charset=utf-8");
+echo "<pre>";
+print_r($_SESSION);
+echo "</pre>";
+
 if (!isset($_SESSION["username"]) || !isset($_SESSION["membername"]) || !isset($_SESSION["memberid"]) || empty($_SESSION["username"])) {
 	// echo "<Script language=\"javascript\">window.location=\"login.php\"</script>";
 } else {
