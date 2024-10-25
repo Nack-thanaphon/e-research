@@ -416,7 +416,7 @@ $dbquery->free();
 					?>
 					<tr>
 						<td style="text-align:center;width:100px;min-width:100px;">
-							<?php$dfile =  'dfile'.$jk;?>
+							<?php $dfile =  'dfile'.$jk;?>
 							<a href="javascript:void(0)" style="color:red;font-size:16px;" title="ลบ" onclick="confirmDelete('<?= $dfile;?>','<?= $c_id;?>','<?= $code_1;?>','1')"><span class="glyphicon glyphicon-trash"></span>&nbsp;<span style="font-size:14px;">ลบ</span><span id="<?= $dfile;?>"></span></a>
 						</td>
 						<td style="text-align:center;padding-left:0;padding-right:0;">&nbsp;<?= $c_id;?>&nbsp;</td>
