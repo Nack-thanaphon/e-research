@@ -100,7 +100,7 @@ if(isset($req_id)){
 			$row = $dbquery->fetch_assoc();
 			$c_member_id = $row["member_id"];
 			$c_er_request_text = $row["er_request_text"];
-			$c_er_request_date = $this->dateThai_edo(substr($row["er_request_date"],0,10));
+			$c_er_request_date = dateThai_edo(substr($row["er_request_date"],0,10));
 			$c_er_answer = $row["er_answer"];
 			$c_er_answer_approve = "<span class='glyphicon glyphicon-remove' style='color:#ff0000;font-size:14px;'></span>";
 			if($c_er_answer==1){
@@ -108,7 +108,7 @@ if(isset($req_id)){
 			}
 			$c_er_answer_text = $row["er_answer_text"];
 			if(!empty($row["er_answer_date"])) {
-				$c_er_answer_date = $this->dateThai_edo(substr($row["er_answer_date"],0,10));
+				$c_er_answer_date = dateThai_edo(substr($row["er_answer_date"],0,10));
 			}
 			$c_er_answer_name = $row["er_answer_name"];
 			

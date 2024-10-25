@@ -351,7 +351,7 @@ $dbquery->free();
 						if($reqlen > $reqlen2) {
 							$c_er_request_text2 = mb_substr($c_er_request_text,0,$reqlen2)."..";
 						}
-						$c_er_request_date = $this->dateThai_edo(substr($row["er_request_date"],0,10));
+						$c_er_request_date = dateThai_edo(substr($row["er_request_date"],0,10));
 
 						$c_er_answer_approve = "<span class='glyphicon glyphicon-check' style='color:#ff0099;font-size:14px;'></span>&nbsp;รอตรวจสอบ&nbsp;";
 						if($c_er_answer==1){
@@ -365,7 +365,7 @@ $dbquery->free();
 							$c_er_answer_text2 = mb_substr($c_er_answer_text,0,$anslen2)."..";
 						}
 						if(!empty($row["er_answer_date"])) {
-							$c_er_answer_date = $this->dateThai_edo(substr($row["er_answer_date"],0,10));
+							$c_er_answer_date = dateThai_edo(substr($row["er_answer_date"],0,10));
 						} else {
 							$c_er_answer_date = "";
 						}
