@@ -1,7 +1,5 @@
 <?php
-		if(isset($mysqli))
-		{
-			$mysqli->close();
-			unset($mysqli);
-		}
-?>
+if (isset($mysqli)) {
+	$mysqli->close();
+	unset($mysqli);
+}

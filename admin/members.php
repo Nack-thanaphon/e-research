@@ -291,7 +291,7 @@ include("../include/config_db.php");
 																																		echo __EC_PICHOME__;
 																																	} ?>') repeat-y; background-attachment:fixed; background-size:contain;height:100%;width:100%;">
 						<thead>
-							<tr id="ontop1" style="background-color:#e5e5e5">
+							<tr id="ontop1" >
 								<th id="ontop2">&nbsp;</th>
 								<th id="ontop3">&nbsp;</th>
 								<th style="vertical-align:middle;text-align:center;" id="ontop4"><a href="members.php?sd=1&sh_order=<?= $sh_order; ?>" target="_parent" style="white-space: nowrap;">ID <?= $a1sort; ?></a></th>
@@ -475,13 +475,7 @@ include("../include/config_db.php");
 										<td style="text-align:center;padding-left:0;padding-right:0;white-space: nowrap;">&nbsp;<a href='mailto:<?= $c_email; ?>' target='_blank' title="<?= $c_email; ?>"><?= $c_email; ?></a>&nbsp;</td>
 										<td style="text-align:left;">
 											<div style="margin-left:5px;margin-right:5px;"><?= $c_address; ?></span>
-												<?php
-												//if($adrlen > $adrlen2) {
-												//	echo "<a href=\"javascript:void(0)\" title='".$c_address."' style='color:#000000;'>".$c_address2."</a>";
-												//} else {
-												//	echo $c_address;
-												//}
-												?>
+												
 										</td>
 									</tr>
 							<?php
