@@ -16,11 +16,3 @@ define('_web_path', '/~scia/e-research');
 define('_home_path', '/~scia/e-research');
 define('SECRET_KEY', 'buu_@_e-research');
 
-function dateThai_edo($strDate) {
-    $strYear = date("Y",strtotime($strDate))+543;
-    $strMonth= date("n",strtotime($strDate));
-    $strDay= date("j",strtotime($strDate));
-    $strMonthCut = Array("","มกราคม","กุมภาพันธ์","มีนาคม","เมษายน","พฤษภาคม","มิถุนายน","กรกฎาคม","สิงหาคม","กันยายน","ตุลาคม","พฤศจิกายน","ธันวาคม");
-    $strMonthThai=$strMonthCut[$strMonth];
-    return "$strDay $strMonthThai $strYear";
-}
