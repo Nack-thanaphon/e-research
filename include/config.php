@@ -15,4 +15,3 @@ $sRoot = $_SERVER["DOCUMENT_ROOT"] . "/e-research";
 define('_web_path', '/~scia/e-research');
 define('_home_path', '/~scia/e-research');
 define('SECRET_KEY', 'buu_@_e-research');
-
