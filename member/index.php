@@ -747,7 +747,7 @@ $mysqli->query("update `ers_document` set `ed_counter`=`ed_counter`+1 where `id`
 									if ($reqlen > $reqlen2) {
 										$c_er_request_text2 = mb_substr($c_er_request_text, 0, $reqlen2) . "..";
 									}
-									$c_er_request_date = dateThai_edo(substr($result["er_request_date"], 0, 10));
+									$c_er_request_date = $this->dateThai_edo(substr($result["er_request_date"], 0, 10));
 									$c_er_request_read = $result["er_request_read"];
 									$c_er_request_read_text = "";
 									if ($c_er_request_read == '1') {
@@ -764,7 +764,7 @@ $mysqli->query("update `ers_document` set `ed_counter`=`ed_counter`+1 where `id`
 										$c_er_answer_approve = "<span class='glyphicon glyphicon-remove' style='color:#ff0000;font-size:14px;'></span>&nbsp;ไม่อนุมัติ";
 									}
 									if (!empty($result["er_answer_expire"])) {
-										$c_er_answert_expire = dateThai_edo(substr($result["er_answer_expire"], 0, 10));
+										$c_er_answert_expire = $this->dateThai_edo(substr($result["er_answer_expire"], 0, 10));
 									} else {
 										$c_er_answert_expire = "";
 									}
@@ -775,7 +775,7 @@ $mysqli->query("update `ers_document` set `ed_counter`=`ed_counter`+1 where `id`
 										$c_er_answert_text2 = mb_substr($c_er_answert_text, 0, $anslen2) . "..";
 									}
 									if (!empty($result["er_answer_date"])) {
-										$c_er_answer_date = dateThai_edo(substr($result["er_answer_date"], 0, 10));
+										$c_er_answer_date = $this->dateThai_edo(substr($result["er_answer_date"], 0, 10));
 									} else {
 										$c_er_answer_date = "";
 									}

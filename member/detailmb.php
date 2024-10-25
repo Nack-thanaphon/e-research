@@ -43,11 +43,11 @@ if($tRows > 0){
 	$c_document_id = $row["document_id"];
 	$c_member_id = $row["member_id"];
 	$c_er_request_text = $row["er_request_text"];
-	$c_er_request_date = dateThai_edo(substr($row["er_request_date"],0,10));
+	$c_er_request_date = $this->dateThai_edo(substr($row["er_request_date"],0,10));
 	$c_er_answer = $row["er_answer"];
 	$c_er_answer_text = $row["er_answer_text"];
 	if(!empty($row["er_answer_expire"])) {
-		$c_er_answer_expire = dateThai_edo(substr($row["er_answer_expire"],0,10));
+		$c_er_answer_expire = $this->dateThai_edo(substr($row["er_answer_expire"],0,10));
 	}
 
 	$c_er_answer_name = $row["er_answer_name"];

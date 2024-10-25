@@ -445,7 +445,7 @@ if(isset($c_id)){
 					$c_id = $result["id"];
 					$doc_id = $result["document_id"];
 					$c_er_request_text = $result["er_request_text"];					
-					$c_er_request_date = dateThai_edo(substr($result["er_request_date"],0,10));
+					$c_er_request_date = $this->dateThai_edo(substr($result["er_request_date"],0,10));
 					$c_er_request_read = $result["er_request_read"];
 					$c_er_request_read_text = "";
 					if($c_er_request_read=='1'){
@@ -466,7 +466,7 @@ if(isset($c_id)){
 					$c_er_answert_text = $result["er_answer_text"];
 					
 					if(!empty($result["er_answer_date"])) {
-						$c_er_answer_date = dateThai_edo(substr($result["er_answer_date"],0,10));
+						$c_er_answer_date = $this->dateThai_edo(substr($result["er_answer_date"],0,10));
 					} else {
 						$c_er_answer_date = "";
 					}

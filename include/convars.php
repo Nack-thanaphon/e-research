@@ -118,7 +118,7 @@ class Paginator {
         }
     }
 
-    public function dateThai_edo($strDate) {
+    public function $this->dateThai_edo($strDate) {
         $strYear = date("Y",strtotime($strDate))+543;
         $strMonth= date("n",strtotime($strDate));
         $strDay= date("j",strtotime($strDate));
